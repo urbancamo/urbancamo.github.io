@@ -1,5 +1,5 @@
-title: Mark Wickens - Development Manager & Senior Software Engineer
----
+
+## Mark Wickens - Manager & Sofware Engineer
 
 A senior software engineer with a decade of remote development experience and two years remote team management backed by nine years as a computer contractor. Starting with scientific visualization software written in C & C++ I moved into the Java ecosphere in the early years and have consolidated that into solid full stack technologies from database to user experience with security running throughout. Most recently I have been coding in Golang both in the office and on open source projects.
 
