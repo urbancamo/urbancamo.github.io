@@ -2,7 +2,11 @@
 title: Mark Wickens - Development Manager & Senior Software Engineer
 ---
 
-Strapline
+A senior software engineer with a decade of remote development experience, two years remote team management backed by a decade of development contracting. Starting with graphical mathematical software written in C & C++ I moved into the Java ecosphere in the early years and have consolidated that into solid full stack technologies from Database to GUI. My most recent experience is using GoLang both in the office and for open source projects.
+
+Passionate about delivering quality software in response to fluid business requirements with frequent inspect and adapt cycles. I have a professional work ethic based on the principles of integrity, quality, respect and innovation. I believe building a close working relationship with customers is key to maximising agility, throughput and velocity and business value.
+
+I am a Certified Scrum Master working towards Advanced Certification.
 
 ### [View my LinkedIn profile](https://www.linkedin.com/in/mark-wickens-5204a56/)
 
