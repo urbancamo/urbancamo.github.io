@@ -1,4 +1,3 @@
----
 title: Mark Wickens - Development Manager & Senior Software Engineer
 ---
 
