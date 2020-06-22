@@ -35,7 +35,7 @@ msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git pu
 Disabling the built in display when using an external monitor:
 
 ```
-xrandr --output 
+xrandr --output LVDS-1 --off
 ```
 When using both the HDMI and VGA output by default the screen left-to-right order is wrong.
 ```
