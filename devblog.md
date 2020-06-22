@@ -1,5 +1,7 @@
 # My Developer Blog
 
+This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
+
 ## 22-JUN-2020
 
 ### GIT Access via SSH keys
