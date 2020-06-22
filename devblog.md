@@ -25,6 +25,11 @@ ssh -T git@github.io
 git clone ssh://git@github.com/urbancamo/urbancamo.github.io
 ```
 
+Committing and pushing changes:
+```
+msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
+```
+
 ### xrandr commands
 
 Disabling the built in display when using an external monitor:
