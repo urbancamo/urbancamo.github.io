@@ -23,8 +23,8 @@ Host github.com
  
 Test the connection and then clone the repo:
 ```
-ssh -T git@github.io
-git clone ssh://git@github.com/urbancamo/urbancamo.github.io
+$ ssh -T git@github.io
+$ git clone ssh://git@github.com/urbancamo/urbancamo.github.io
 ```
 
 Committing and pushing changes:
@@ -37,7 +37,7 @@ msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git pu
 Disabling the built in display when using an external monitor:
 
 ```
-xrandr --output LVDS-1 --off
+$ xrandr --output LVDS-1 --off
 ```
 When using both the HDMI and VGA output by default the screen left-to-right order is wrong.
 ```
@@ -82,7 +82,7 @@ IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SE
 To connect to a particular access point:
 
 ```
-nmcli connection up <SSID> --ask
+$ nmcli connection up <SSID> --ask
 ```
 
 this will prompt for the wifi password.
