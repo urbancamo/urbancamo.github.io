@@ -64,3 +64,7 @@ nmci connection up <SSID> --ask
 ```
 
 this will prompt for the wifi password.
+
+Finally, Jones the cat:
+
+![](jones.png)
