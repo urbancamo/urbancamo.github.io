@@ -70,6 +70,10 @@ nmcli connection up <SSID> --ask
 
 this will prompt for the wifi password.
 
+### Markdown Editor
+
+`ghostwriter` seems pretty good and is easy to install thanks to it being in the ubuntu/debian repository.
+
 Finally, Jones the cat:
 
 ![](jones.png)
