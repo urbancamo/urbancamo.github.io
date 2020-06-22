@@ -8,7 +8,7 @@ Setting up the Toughbook CF-31 to access this blog git repository without the ne
 $ ssh-add ~/.ssh/id_rsa
 ```
 
-Then add the public ssh key signature file `id_rsa.pub` contents to SSH keys listed on [https://github.com/settings/keys]
+Then add the public ssh key signature file `id_rsa.pub` contents to your [github SSH keystore](https://github.com/settings/keys)
 
 I added an alias for github.com in `~/.ssh/config` so that the right port and sub-domain are used:
 ```
