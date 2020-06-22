@@ -1,16 +1,16 @@
-### My Developer Blog
+# My Developer Blog
 
 ## 22-JUN-2020
 
-Using ssh to access this blog git repository.
+Setting up the Toughbook CF-31 to access this blog git repository without the need for passwords.
 
 ```
 $ ssh-add ~/.ssh/id_rsa
 ```
 
-The add the ssh-key `id_rsa.pub` contents to SSH keys listed on https://github.com/settings/keys
+Then add the public ssh key signature file `id_rsa.pub` contents to SSH keys listed on [https://github.com/settings/keys]
 
-Added an alias for github.com in `~/.ssh/config`:
+I added an alias for github.com in `~/.ssh/config` so that the right port and sub-domain are used:
 ```
 Host github.com
 	Hostname ssh.github.com
