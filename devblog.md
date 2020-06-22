@@ -44,6 +44,21 @@ When using both the HDMI and VGA output by default the screen left-to-right orde
 $ xrandr --output HDMI-1 --left-of VGA-1
 ```
 
+### Touchscreen Calibration
+
+If you need to re-calibrate the touchscreen run the command:
+
+```
+msw@cf31:~$ xinput_calibrator --output-type xinput
+```
+Add the following lines to your `.xsession` file:
+
+```
+xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axis Calibration" 32 592 1566
+1 1049 15993
+xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axes Swap" 8 0
+```
+
 ### nmcli commands
 The utility `nmci` provides the ability to control network connections from the command line. 
 
