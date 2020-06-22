@@ -91,6 +91,6 @@ this will prompt for the wifi password.
 
 `ghostwriter` seems pretty good and is easy to install thanks to it being in the ubuntu/debian repository.
 
-Finally, Jones the cat:
+Finally, [Jones the cat](https://avp.fandom.com/wiki/Jones_(cat)) (just to check that ghostscript image import via drag-and-drop works OK):
 
 ![](jones.png)
