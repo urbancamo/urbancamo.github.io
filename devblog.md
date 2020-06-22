@@ -60,7 +60,7 @@ IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SE
 To connect to a particular access point:
 
 ```
-nmci connection up <SSID> --ask
+nmcli connection up <SSID> --ask
 ```
 
 this will prompt for the wifi password.
