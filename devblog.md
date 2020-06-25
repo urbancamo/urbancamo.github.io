@@ -2,6 +2,13 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## 25-JUN-2020
+I continue to use the i3 window manager on both Toughbooks. The keyboard shortcuts, and the way in which you can utilise workspaces for applications makes a lot of sense and is working especially well with the limited real estate of the meagre 1024x768 resolution provided by the daylight readable screen.
+
+I read an article on [one users' experience of switching windows](i3 – Switching Windows) with the various options available. At the bottom of the article a couple of utilities that they used to create animated screen captures were mentioned that are definitely worth investigating further, [peek](https://github.com/phw/peek) and [screenkey](https://www.thregr.org/~wavexx/software/screenkey/).
+
+Editing markup with [ghostwriter](https://github.com/wereturtle/ghostwriter) is pretty seamless, I'm quite happy with the results at the moment!
+
 ## 22-JUN-2020
 
 ### GIT Access via SSH keys
