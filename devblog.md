@@ -2,6 +2,10 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## 27-JUN-2020
+
+Had an interesting problem at work on Friday. We have a `go` program that connects to a server. When we started debugging the `http.get` call we found that a windows setting `https_proxy` was redirecting all requests to a proxy (the server was on the internal network but on a different sub-net). By unsetting the environment variable the `go` program was able to connect without issue.
+
 ## 22-JUN-2020
 
 ### GIT Access via SSH keys
