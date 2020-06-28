@@ -2,6 +2,61 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## 28-JUN-2020 Emulating a 3 button mouse
+
+The Toughbooks have a two button trackpad. It's not the best or most responsive trackpad, it could be twice the size, but it is a standard since the CF-30. With only two buttons cut-and-paste via the middle button standard doesn't worth without a tweak to `xinput` (there are various suggestions on how to do this, but these seems to be at the right level).
+
+So the command that I need to run is:
+
+```
+xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+```
+
+You can determine the right device number (11 in my case) but using the command:
+
+```
+xinput --list
+```
+
+On the CF-30 this produces:
+```
+msw@cf30:~$ xinput --list
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ PS/2 Generic Mouse                        id=11   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Power Button                              id=8    [slave  keyboard (3)]
+    ↳ Fujitsu Component USB Touch Panel         id=9    [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
+    ↳ Panasonic Laptop Support                  id=12   [slave  keyboard (3)]
+```
+
+The next problem is where to put the command so it is run as the XSession is initiating. I firstly tried some different options in my $HOME directory, for example `.xsession`, `.xprofile`, `.Xsession`, '`.xsessionrc`. I added an `echo` in the command script so that I could see it being run.
+
+When using the `sddm` display manager and the `i3` window manager it would appear none of the options I tried worked. Upon investigation I found the command script `/etc/X11/Xsession` creates three variables:
+
+```bash
+USERXSESSION=$HOME/.xsession
+USERXSESSIONRC=$HOME/.xsessionrc
+ALTUSERXSESSION=$HOME/.Xsession
+```
+
+but then these are not subsequently used in the script!
+
+In the end I added a system-wide xsession script in `/etc/X11/Xsession.d` called 76xinput-emulate-three-button-mouse:
+
+```
+xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+echo "$HOME/.xsession has run" > /home/msw/.xsession.log
+```
+
+The second debugging line then proved this script was being run upon reboot.
+
+This kind of thing troubles me, as it means documentation that you read online about how to run a script at startup is probably not right. You may try four different techniques like I did, and none of them work. It's the benefit and curse of having lots of options in the Linux world!
+
 ## 25-JUN-2020
 I continue to use the i3 window manager on both Toughbooks. The keyboard shortcuts, and the way in which you can utilise workspaces for applications makes a lot of sense and is working especially well with the limited real estate of the meagre 1024x768 resolution provided by the daylight readable screen.
 
