@@ -57,6 +57,10 @@ The second debugging line then proved this script was being run upon reboot.
 
 This kind of thing troubles me, as it means documentation that you read online about how to run a script at startup is probably not right. You may try four different techniques like I did, and none of them work. It's the benefit and curse of having lots of options in the Linux world!
 
+## 27-JUN-2020
+
+Had an interesting problem at work on Friday. We have a `go` program that connects to a server. When we started debugging the `http.get` call we found that a windows setting `https_proxy` was redirecting all requests to a proxy (the server was on the internal network but on a different sub-net). By unsetting the environment variable the `go` program was able to connect without issue.
+
 ## 25-JUN-2020
 I continue to use the i3 window manager on both Toughbooks. The keyboard shortcuts, and the way in which you can utilise workspaces for applications makes a lot of sense and is working especially well with the limited real estate of the meagre 1024x768 resolution provided by the daylight readable screen.
 
