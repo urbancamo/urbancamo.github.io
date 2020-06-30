@@ -6,7 +6,7 @@ This will inevitably be a dumping ground of information. Previously I have used 
 
 The Toughbooks have a two button trackpad. It's not the best or most responsive trackpad, it could be twice the size, but it is a standard since the CF-30. With only two buttons cut-and-paste via the middle button standard doesn't worth without a tweak to `xinput` (there are various suggestions on how to do this, but these seems to be at the right level).
 
-So the command that I need to run is:
+So the command that I need to run on the CF-30 is:
 
 ```
 xinput set-prop 11 "libinput Middle Emulation Enabled" 1
@@ -32,6 +32,12 @@ msw@cf30:~$ xinput --list
     ↳ Fujitsu Component USB Touch Panel         id=9    [slave  keyboard (3)]
     ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
     ↳ Panasonic Laptop Support                  id=12   [slave  keyboard (3)]
+```
+
+On the CF-31 Mk4 the command is slightly different:
+
+```
+xinput set-prop 12 "Evdev Middle Button Emulation" 1
 ```
 
 The next problem is where to put the command so it is run as the XSession is initiating. I firstly tried some different options in my $HOME directory, for example `.xsession`, `.xprofile`, `.Xsession`, '`.xsessionrc`. I added an `echo` in the command script so that I could see it being run.
