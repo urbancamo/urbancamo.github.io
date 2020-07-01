@@ -35,7 +35,7 @@ You can determine the right device number (11 in my case) by using the command:
     xinput --list
 
 On the CF-30 this produces:
-
+```bash
    msw@cf30:~$ xinput --list
    ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
    ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
@@ -48,11 +48,11 @@ On the CF-30 this produces:
    ↳ Fujitsu Component USB Touch Panel         id=9    [slave  keyboard (3)]
    ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
    ↳ Panasonic Laptop Support                  id=12   [slave  keyboard (3)]
-
+```
 On the CF-31 Mk4 the command is slightly different:
-
-   xinput set-prop 12 "Evdev Middle Button Emulation" 1
-
+```bash
+   $ xinput set-prop 12 "Evdev Middle Button Emulation" 1
+```
 The next problem is where to put the command so it is run as the XSession is initiating. I firstly tried some different options in my $HOME directory, for example `.xsession`, `.xprofile`, `.Xsession`, '`.xsessionrc`. I added an `echo` in the command script so that I could see it being run.
 
 When using the `sddm` display manager and the `i3` window manager it would appear none of the options I tried worked. Upon investigation I found the command script `/etc/X11/Xsession` creates three variables:
@@ -66,10 +66,10 @@ ALTUSERXSESSION=$HOME/.Xsession
 but then these are not subsequently used in the script!
 
 In the end I added a system-wide xsession script in `/etc/X11/Xsession.d` called 76xinput-emulate-three-button-mouse:
-
-   xinput set-prop 11 "libinput Middle Emulation Enabled" 1
-   echo "$HOME/.xsession has run" > /home/msw/.xsession.log
-
+```bash
+   $ xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+   $ echo "$HOME/.xsession has run" > /home/msw/.xsession.log
+```
 The second debugging line then proved this script was being run upon reboot.
 
 This kind of thing troubles me, as it means documentation that you read online about how to run a script at startup is probably not right. You may try four different techniques like I did, and none of them work. It's the benefit and curse of having lots of options in the Linux world!
@@ -111,7 +111,7 @@ Test the connection and then clone the repo:
 
 Committing and pushing changes:
 
-	   msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
+    msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
 
 
 ### xrandr commands
@@ -119,11 +119,11 @@ Committing and pushing changes:
 Disabling the built in display when using an external monitor:
 
 
-	  $ xrandr --output LVDS-1 --off
+    $ xrandr --output LVDS-1 --off
 
 When using both the HDMI and VGA output by default the screen left-to-right order is wrong.
 
-     $ xrandr --output HDMI-1 --left-of VGA-1
+    $ xrandr --output HDMI-1 --left-of VGA-1
 
 
 ### Touchscreen Calibration
@@ -162,7 +162,7 @@ IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SE
 
 To connect to a particular access point:
 
-   $ nmcli connection up <SSID> --ask
+    $ nmcli connection up <SSID> --ask
 
 this will prompt for the wifi password.
 
