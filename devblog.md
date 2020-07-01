@@ -10,13 +10,10 @@ again.
 
 For the CF-31, I edited `/etc/default/grub` and added `acpi_backlight=native acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
-```
+	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
+
 then update grub:
-```
-$ update-grub
-```
+	$ update-grub
 and reboot.
 
 To install the battery indicator in the i3 bar:
@@ -31,15 +28,11 @@ The Toughbooks have a two button trackpad. It's not the best or most responsive 
 
 So the command that I need to run on the CF-30 is:
 
-```
-xinput set-prop 11 "libinput Middle Emulation Enabled" 1
-```
+	xinput set-prop 11 "libinput Middle Emulation Enabled" 1
 
 You can determine the right device number (11 in my case) but using the command:
 
-```
-xinput --list
-```
+	xinput --list
 
 On the CF-30 this produces:
 ```
