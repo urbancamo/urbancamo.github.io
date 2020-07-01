@@ -13,26 +13,30 @@ For the CF-31, I edited `/etc/default/grub` and added `acpi_backlight=native acp
     GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
 
 then update grub:
-    $ update-grub
+
+```bash
+     $ update-grub
+```
 and reboot.
 
 To install the battery indicator in the i3 bar:
-
+```bash
     $ apt search i3xrocks-
     $ sudo apt install i3xrocks-battery
     $ regolith-look refresh
-
+```
 ## 28-JUN-2020 Emulating a 3 button mouse
 
 The Toughbooks have a two button trackpad. It's not the best or most responsive trackpad, it could be twice the size, but it is a standard since the CF-30. With only two buttons cut-and-paste via the middle button standard doesn't worth without a tweak to `xinput` (there are various suggestions on how to do this, but these seems to be at the right level).
 
 So the command that I need to run on the CF-30 is:
-
-    xinput set-prop 11 "libinput Middle Emulation Enabled" 1
-
+```bash
+    $ xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+```
 You can determine the right device number (11 in my case) by using the command:
-
-    xinput --list
+```bash
+    $ xinput --list
+```
 
 On the CF-30 this produces:
 ```bash
@@ -58,17 +62,17 @@ The next problem is where to put the command so it is run as the XSession is ini
 When using the `sddm` display manager and the `i3` window manager it would appear none of the options I tried worked. Upon investigation I found the command script `/etc/X11/Xsession` creates three variables:
 
 ```bash
-USERXSESSION=$HOME/.xsession
-USERXSESSIONRC=$HOME/.xsessionrc
-ALTUSERXSESSION=$HOME/.Xsession
+    USERXSESSION=$HOME/.xsession
+    USERXSESSIONRC=$HOME/.xsessionrc
+    ALTUSERXSESSION=$HOME/.Xsession
 ```
 
 but then these are not subsequently used in the script!
 
 In the end I added a system-wide xsession script in `/etc/X11/Xsession.d` called 76xinput-emulate-three-button-mouse:
 ```bash
-   $ xinput set-prop 11 "libinput Middle Emulation Enabled" 1
-   $ echo "$HOME/.xsession has run" > /home/msw/.xsession.log
+    $ xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+    $ echo "$HOME/.xsession has run" > /home/msw/.xsession.log
 ```
 The second debugging line then proved this script was being run upon reboot.
 
@@ -90,9 +94,9 @@ Editing markup with [ghostwriter](https://github.com/wereturtle/ghostwriter) is 
 ### GIT Access via SSH keys
 
 Setting up the Toughbook CF-31 to access this blog git repository without the need for passwords.
-
-	$ ssh-add ~/.ssh/id_rsa
-
+```bash
+    $ ssh-add ~/.ssh/id_rsa
+```
 
 Then add the public ssh key signature file `id_rsa.pub` contents to your [github SSH keystore](https://github.com/settings/keys)
 
@@ -104,50 +108,48 @@ Host github.com
 ```
  
 Test the connection and then clone the repo:
-
+```bash
      $ ssh -T git@github.io
      $ git clone ssh://git@github.com/urbancamo/urbancamo.github.io
-
+```
 
 Committing and pushing changes:
-
-    msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
-
+```bash
+    $ git commit -m "Blog updates" . ; git push
+```
 
 ### xrandr commands
 
 Disabling the built in display when using an external monitor:
 
-
+```bash
     $ xrandr --output LVDS-1 --off
-
+```
 When using both the HDMI and VGA output by default the screen left-to-right order is wrong.
-
+```bash
     $ xrandr --output HDMI-1 --left-of VGA-1
-
+```
 
 ### Touchscreen Calibration
 
 If you need to re-calibrate the touchscreen run the command:
-
-
+```bash
    msw@cf31:~$ xinput_calibrator --output-type xinput
-
+```
 Add the following lines to your `.xsession` file:
 
-   
+```   
    xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axis Calibration" 32 592 15661 1049 15993
    xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axes Swap" 8 0
-
+```
 
 ### nmcli commands
 The utility `nmci` provides the ability to control network connections from the command line. 
 
-
 To see a list of wireless access points:
 
 ```
-msw@cf31:~$ nmcli device wifi list
+$ nmcli device wifi list
 IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SECURITY  
 *       D4:CA:6D:84:F4:A2  wickens     Infra  9     270 Mbit/s  84      ▂▄▆█  WPA1 WPA2 
         A0:63:91:F0:34:21  WICKENS4    Infra  7     270 Mbit/s  57      ▂▄▆_  WPA2      
@@ -161,9 +163,9 @@ IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SE
 ```
 
 To connect to a particular access point:
-
+```bash
     $ nmcli connection up <SSID> --ask
-
+```
 this will prompt for the wifi password.
 
 ### Markdown Editor
