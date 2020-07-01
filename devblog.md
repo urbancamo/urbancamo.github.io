@@ -10,10 +10,10 @@ again.
 
 For the CF-31, I edited `/etc/default/grub` and added `acpi_backlight=native acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
 
 then update grub:
-	$ update-grub
+    $ update-grub
 and reboot.
 
 To install the battery indicator in the i3 bar:
@@ -28,33 +28,30 @@ The Toughbooks have a two button trackpad. It's not the best or most responsive 
 
 So the command that I need to run on the CF-30 is:
 
-	xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+    xinput set-prop 11 "libinput Middle Emulation Enabled" 1
 
-You can determine the right device number (11 in my case) but using the command:
+You can determine the right device number (11 in my case) by using the command:
 
-	xinput --list
+    xinput --list
 
 On the CF-30 this produces:
-```
-msw@cf30:~$ xinput --list
-⎡ Virtual core pointer                          id=2    [master pointer  (3)]
-⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
-⎜   ↳ PS/2 Generic Mouse                        id=11   [slave  pointer  (2)]
-⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
-    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
-    ↳ Power Button                              id=6    [slave  keyboard (3)]
-    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
-    ↳ Power Button                              id=8    [slave  keyboard (3)]
-    ↳ Fujitsu Component USB Touch Panel         id=9    [slave  keyboard (3)]
-    ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
-    ↳ Panasonic Laptop Support                  id=12   [slave  keyboard (3)]
-```
+
+   msw@cf30:~$ xinput --list
+   ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+   ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+   ⎜   ↳ PS/2 Generic Mouse                        id=11   [slave  pointer  (2)]
+   ⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+   ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+   ↳ Power Button                              id=6    [slave  keyboard (3)]
+   ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+   ↳ Power Button                              id=8    [slave  keyboard (3)]
+   ↳ Fujitsu Component USB Touch Panel         id=9    [slave  keyboard (3)]
+   ↳ AT Translated Set 2 keyboard              id=10   [slave  keyboard (3)]
+   ↳ Panasonic Laptop Support                  id=12   [slave  keyboard (3)]
 
 On the CF-31 Mk4 the command is slightly different:
 
-```
-xinput set-prop 12 "Evdev Middle Button Emulation" 1
-```
+   xinput set-prop 12 "Evdev Middle Button Emulation" 1
 
 The next problem is where to put the command so it is run as the XSession is initiating. I firstly tried some different options in my $HOME directory, for example `.xsession`, `.xprofile`, `.Xsession`, '`.xsessionrc`. I added an `echo` in the command script so that I could see it being run.
 
@@ -70,10 +67,8 @@ but then these are not subsequently used in the script!
 
 In the end I added a system-wide xsession script in `/etc/X11/Xsession.d` called 76xinput-emulate-three-button-mouse:
 
-```
-xinput set-prop 11 "libinput Middle Emulation Enabled" 1
-echo "$HOME/.xsession has run" > /home/msw/.xsession.log
-```
+   xinput set-prop 11 "libinput Middle Emulation Enabled" 1
+   echo "$HOME/.xsession has run" > /home/msw/.xsession.log
 
 The second debugging line then proved this script was being run upon reboot.
 
@@ -96,9 +91,8 @@ Editing markup with [ghostwriter](https://github.com/wereturtle/ghostwriter) is 
 
 Setting up the Toughbook CF-31 to access this blog git repository without the need for passwords.
 
-```
-$ ssh-add ~/.ssh/id_rsa
-```
+	$ ssh-add ~/.ssh/id_rsa
+
 
 Then add the public ssh key signature file `id_rsa.pub` contents to your [github SSH keystore](https://github.com/settings/keys)
 
@@ -110,42 +104,41 @@ Host github.com
 ```
  
 Test the connection and then clone the repo:
-```
-$ ssh -T git@github.io
-$ git clone ssh://git@github.com/urbancamo/urbancamo.github.io
-```
+
+     $ ssh -T git@github.io
+     $ git clone ssh://git@github.com/urbancamo/urbancamo.github.io
+
 
 Committing and pushing changes:
-```
-msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
-```
+
+	   msw@cf31:~/Projects/urbancamo.github.io$ git commit -m "Blog updates" . ; git push
+
 
 ### xrandr commands
 
 Disabling the built in display when using an external monitor:
 
-```
-$ xrandr --output LVDS-1 --off
-```
+
+	  $ xrandr --output LVDS-1 --off
+
 When using both the HDMI and VGA output by default the screen left-to-right order is wrong.
-```
-$ xrandr --output HDMI-1 --left-of VGA-1
-```
+
+     $ xrandr --output HDMI-1 --left-of VGA-1
+
 
 ### Touchscreen Calibration
 
 If you need to re-calibrate the touchscreen run the command:
 
-```
-msw@cf31:~$ xinput_calibrator --output-type xinput
-```
+
+   msw@cf31:~$ xinput_calibrator --output-type xinput
+
 Add the following lines to your `.xsession` file:
 
-```
-xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axis Calibration" 32 592 1566
-1 1049 15993
-xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axes Swap" 8 0
-```
+   
+   xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axis Calibration" 32 592 15661 1049 15993
+   xinput set-int-prop "Fujitsu Component USB Touch Panel" "Evdev Axes Swap" 8 0
+
 
 ### nmcli commands
 The utility `nmci` provides the ability to control network connections from the command line. 
@@ -169,9 +162,7 @@ IN-USE  BSSID              SSID        MODE   CHAN  RATE        SIGNAL  BARS  SE
 
 To connect to a particular access point:
 
-```
-$ nmcli connection up <SSID> --ask
-```
+   $ nmcli connection up <SSID> --ask
 
 this will prompt for the wifi password.
 
