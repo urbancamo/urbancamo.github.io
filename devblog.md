@@ -134,7 +134,7 @@ When using both the HDMI and VGA output by default the screen left-to-right orde
 
 If you need to re-calibrate the touchscreen run the command:
 ```bash
-   msw@cf31:~$ xinput_calibrator --output-type xinput
+   $ xinput_calibrator --output-type xinput
 ```
 Add the following lines to your `.xsession` file:
 
