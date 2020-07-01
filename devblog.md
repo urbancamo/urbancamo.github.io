@@ -19,6 +19,12 @@ $ update-grub
 ```
 and reboot.
 
+To install the battery indicator in the i3 bar:
+
+    $ apt search i3xrocks-
+    $ sudo apt install i3xrocks-battery
+    $ regolith-look refresh
+
 ## 28-JUN-2020 Emulating a 3 button mouse
 
 The Toughbooks have a two button trackpad. It's not the best or most responsive trackpad, it could be twice the size, but it is a standard since the CF-30. With only two buttons cut-and-paste via the middle button standard doesn't worth without a tweak to `xinput` (there are various suggestions on how to do this, but these seems to be at the right level).
