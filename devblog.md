@@ -2,6 +2,23 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## 01-JUL-2020 Brightness Control on the CF-31
+
+I've installed the `regolith` distribution on the CF-31 to give it a go, and found that the brightness control no longer
+worked, so I had to go through the pain of searching on the internet, and trying multiple options, before I got it working
+again.
+
+For the CF-31, I edited `/etc/default/grub` and added `acpi_backlight=native acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` line:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=native acpi_osi= "
+```
+then update grub:
+```
+$ update-grub
+```
+and reboot.
+
 ## 28-JUN-2020 Emulating a 3 button mouse
 
 The Toughbooks have a two button trackpad. It's not the best or most responsive trackpad, it could be twice the size, but it is a standard since the CF-30. With only two buttons cut-and-paste via the middle button standard doesn't worth without a tweak to `xinput` (there are various suggestions on how to do this, but these seems to be at the right level).
