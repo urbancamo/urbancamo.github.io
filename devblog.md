@@ -124,7 +124,7 @@ Test the connection and then clone the repo:
 
 Committing and pushing changes:
 ```bash
-    $ git commit -m "Blog updates" . ; git push
+    $ git add .; git commit -m "Blog updates" . ; git push
 ```
 
 ### xrandr commands
