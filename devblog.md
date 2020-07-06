@@ -44,6 +44,15 @@ followed by a reboot.
 
 If there is no sound output, run `pavucontrol` and ensure, on the `Output Devices` tab that the mute button isn't enabled.
 
+## 03-JUL-2020 Changing the gnome font rendering scaling
+
+This also affects Chrome which is good as fonts are rendering too big on my 1920x1200 external display
+on the linux box:
+
+```bash
+$ gsettings set org.gnome.desktop.interface text-scaling-factor 0.9
+```
+
 ## 01-JUL-2020 Brightness Control on the CF-31
 
 I've installed the `regolith` distribution on the CF-31 to give it a go, and found that the brightness control no longer
@@ -157,7 +166,7 @@ Test the connection and then clone the repo:
 
 Committing and pushing changes:
 ```bash
-    $ git commit -m "Blog updates" . ; git push
+    $ git add .; git commit -m "Blog updates" . ; git push
 ```
 
 ### xrandr commands
