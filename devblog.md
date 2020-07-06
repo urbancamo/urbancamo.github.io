@@ -2,6 +2,48 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## 06-JUL-2020 Modifying regolith preferences
+
+For i3 configuration it would appear that you need to add overrides in `.config/regolith/Xresources`.
+
+For example:
+
+```
+i3-wm.gaps.inner.size: 2
+i3-wm.bar.font:	pango:JetBrains Mono Medium 11, Material Design Icons 11
+```
+
+current resources can be queried via `$ xrdb -query`.
+
+The [regolith xresources page](https://regolith-linux.org/pt_br/docs/reference/xresources/) lists resources that can be overriden.
+
+## 05-JUL-2020 Headphone & Speaker outputs on the CF-31
+
+Edit: `/usr/share/pulseaudio/alsa-mixer/paths/analog-output-speaker.conf`
+
+In the `analog-output-speaker.conf` file modify
+
+```
+[Element Headphone]
+switch = off
+volume = merge
+override-map.1 = all
+override-map.2 = all-left,all-right
+```
+
+then modify:
+
+```
+[Element Speaker]
+required-any = any
+switch = mute
+volume = off
+```
+
+followed by a reboot.
+
+If there is no sound output, run `pavucontrol` and ensure, on the `Output Devices` tab that the mute button isn't enabled.
+
 ## 01-JUL-2020 Brightness Control on the CF-31
 
 I've installed the `regolith` distribution on the CF-31 to give it a go, and found that the brightness control no longer
