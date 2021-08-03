@@ -3,6 +3,12 @@
 Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)
 to visualize your QSOs in [Google Earth](https://earth.google.com).
 
+Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) to enrich your
+ADIF file with data from [QRZ.com](https://qrz.com).
+
+Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) to produce a 
+table of contacts to for pasting into a Mardown-compatible blog or discussion board.
+
 ## TL;DR (I don't want to read the manual)
 
 The [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) takes your ADIF 
