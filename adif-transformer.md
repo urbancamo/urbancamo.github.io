@@ -105,14 +105,14 @@ Maidenhead locator can be specified for the contacted station.
 
 ### Activities
 The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
-that the contacted station is participating in. For example: Summits on the Air or Parks on the Air. For
+that you or the the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
 each activity the ADIF Transformer loads the database of activity references. The totals are currently:
 
-- 2,8229 Parks on the Air Locations
-- 330 Wainwrights on the Air locations
-- 3,316 Humps on the Air locations
-- 157,201 Summits on the Air locations
-- 51,138 World Wide Flora Fauna locations
+- 2,8229 Parks on the Air
+- 330 Wainwrights on the Air
+- 3,316 Humps on the Air
+- 157,201 Summits on the Air
+- 51,138 World Wide Flora Fauna areas
 
 
 ### The Comment Field in your ADIF file
