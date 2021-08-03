@@ -7,12 +7,12 @@ Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstal
 ADIF file with data from [QRZ.com](https://qrz.com).
 
 Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) to produce a 
-table of contacts to for pasting into a Mardown-compatible blog or discussion board.
+table of contacts.
 
 ## TL;DR (I don't want to read the manual)
 
-The [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) takes your ADIF 
-log file and generates:
+In most cases with a sensible ADIF file you should be able to upload the file and click Process...
+to obtain the three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
 operator name and location, 
@@ -20,9 +20,6 @@ operator name and location,
 - a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted 
 into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/)
 or [WOTA Discourse](https://discourse.wota.xyz/). 
-
-In most cases with a sensible ADIF file you should be able to upload the file and click Process...
-to obtain the three output files. 
 
 ## Quick Start (with a bit more info)
 
@@ -68,18 +65,21 @@ activity that is associated with the station.
 
 |Icon|Suffix|Activity Type|
 |----|------|--------|
-|House|none|none|
-|Mountain|/P|SOTA|
-|Red 'H'|/P|HEMA|
-|Park Bench|/P|POTA|
-|Hiker following Trail|/P|WOTA|
-|Tree|/P|WWFF|
-|Hiker|/P|None|
-|Sailing Boat|/MM|none|
-|Car|/M|none|
+|![](icons/ranger_station.png)House|none|none|
+|![](icons/mountains.png)Mountain|/P|SOTA|
+|![](icons/hospitals.png)Red 'H'|/P|HEMA|
+|![](icons/picnic.png)Park Bench|/P|POTA|
+|![](icons/trail.png)Hiker following Trail|/P|WOTA|
+|![](icons/parks.png)Tree|/P|WWFF|
+|![](icons/hiker.png)Hiker|/P|None|
+|![](icons/sailing.png)Sailing Boat|/MM|none|
+|![](icons/cabs.png)Car|/M|none|
 
 ### Drawing the QSO
 
+ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For 
+HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach
+the target station.
 
 ## Introduction
 
