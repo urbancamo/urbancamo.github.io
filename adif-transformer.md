@@ -108,7 +108,7 @@ The ADIF Transformer knows about _activities_. The term _Activity_ is used to de
 that you or the the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
 each activity the ADIF Transformer loads the database of activity references. The totals are currently:
 
-- 2,8229 Parks on the Air
+- 28,229 Parks on the Air
 - 330 Wainwrights on the Air
 - 3,316 Humps on the Air
 - 157,201 Summits on the Air
