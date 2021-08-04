@@ -1,62 +1,80 @@
 # ADIF Transformer
 
-Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)
-to visualize your QSOs in [Google Earth](https://earth.google.com).
-
-Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) to enrich your
-ADIF file with data from [QRZ.com](https://qrz.com).
-
-Use [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) to produce a 
-table of contacts.
+[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) produces beautiful visualizations of your QSOs  in [Google Earth](https://earth.google.com).
 
 ## TL;DR (I don't want to read the manual)
 
-In most cases with a sensible ADIF file you should be able to upload the file and click Process...
-to obtain the three output files:
+Select your file and click `Process...` to obtain three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
-operator name and location, 
-- a [Google Earth](https://earth.google.com) Project (KML) file and
-- a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted 
-into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/)
-or [WOTA Discourse](https://discourse.wota.xyz/). 
+operator name and location
+- a [Google Earth](https://earth.google.com) Project (KML) file
+- a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/). 
 
-## Quick Start (with a bit more info)
+If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
 
-If you are interested in visualizing your QSOs in Google Earth there are a number of steps the ADIF Transformer
-performs as it processes your ADIF file.
+Otherwise let the transformer know where you are, either by specifying an activity reference, or directly entering your location. You can use right-click on [Google Maps](https://maps.google.com) to find your Latitude & Longitude and paste that string directly into the form.
 
-### 1. Determining Station Locations
+## How It Works (or a bit more info)
 
-ADIF Transformer attempts to determine a location for every station. It does this using a number of
-techniques, in order of preference:
+Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
 
-1. If a latitude/longitude has been specified in the ADIF input file, use that
-2. Where a maidenhead locator has been specified in the ADIF input file, use that
-3. For fixed stations it looks up the location on QRZ.com, preferring Latitude/Longitude over 
-Maidenhead locator.
-4. For portable stations, if there is an activity associated with the station then an attempt is made
-to determine the location based on the activity.
-5. Where the activity doesn't have a location (some Parks on the Air activity locations are trails that
-span multiple states for example) use any specified GRIDSQUARE in the comment
-6. For any station with a 6 character GRIDSQUARE defined this is used failing any other checks
+There are a number of steps the ADIF Transformer performs as it turns your ADIF file into a Google Earth KML project file.
+
+### Determining Your Station Location
+
+Lots here depends on whether you are operating from a fixed location or portable. 
+
+If you are fixed the simplest solution is to ensure your QRZ.COM entry has a latitude & longitude for the most accurate location. 
+
+If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or longitude, or alternatively a Maidenhead Locator. 
+
+If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 10 charater version.
+
+### Determining Other Station Locations
+
+For each of your hard earnt contacts ADIF Transformer attempts to determine a location. It does this using a number of techniques, in order of accuracy:
+
+1. A `LATITUDE` and `LONGITUDE` in the ADIF file.
+1. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
+1. Location in QRZ.com, preferring Latitude & Longitude if set over Maidenhead locator.
+1. A maidenhead locator in the ADIF file `GRIDSQUARE`.
 
 #### Stations without a location
 
-Where no location can be determined a warning is issued, and the station isn't added to the Google 
-Earth KML file. You can correct this by determining either a missing activity for the station, or by 
-specifying either Latitude/Longitude in the ADIF input file or a GRIDSQUARE reference.
+Where no location can be determined a warning is issued, and the station isn't added to the Google Earth KML file. You can correct this by adding an activity for the station, or by specifying their `LATITUDE` and `LONGITUDE` in the ADIF input file or their `GRIDSQUARE` reference.
 
 ### 2. Adding Station Information from QRZ.COM
 
-A lookup is made for additional station information from QRZ.COM. Initially the callsign as logged
-is looked up, but for some callsign references more work is required to determine the information.
+In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth) a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
 
-1. For a portable station, e.g. M0NOM/P, if there is no QRZ.COM page for the /P variant check the
-fixed callsign M0NOM.
-2. For a portable station operating abroad, eg: EA7/M0NOM/P firstly check for EA7/M0NOM/P, then check
-for non-portable in country page EA7/M0NOM, then portable home station 
-3. For other stations, attempt to determine an alternative list of callsigns to check for on QRZ.com
+The initial lookup is for the callsign as logged, but for some callsigns more work is required to determine the information.
+
+The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM page for this callsign. I'll use examples to show how the application tries to determine the most accurate information.
+
+When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF Transformer it would check QRZ.COM for the following callsign variants in order:
+
+- EA7/M0NOM/P
+- EA7/M0NOM
+- M0NOM/P
+- M0NOM
+
+The UK complicates this a little more, as a Scottish operator ``MM0XRT`` activating a HEMA summit in Wales would be ``MW0XRT/P``. In this case QRZ.COM would be queried with UK country callsign variants:
+
+- MW0XRT/P
+- MW0XRT
+- M0XRT/P
+- M0XRT
+- MM0XRT/P
+- MM0XRT
+- MI0XRT/P
+- MI0XRT
+- MD0XRT/P
+- MD0XRT
+- MG0XRT/P
+- MG0XRT
+
+As soon as a variant matches in QRZ.COM the search stops. I've almost certainly only scratched the surface on this process!
 
 ### 3. Selection of Station Icon
 
@@ -77,36 +95,24 @@ activity that is associated with the station.
 
 ### Drawing the QSO
 
-ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For 
-HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach
-the target station.
+ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
 
-## Introduction
+## About ADIF
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
 _Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import 
-contacts without loosing any information. As such it supports a large number of fields designed to
-capture every aspect of a QSO.
+contacts without loosing any information. As such it supports a large number of fields designed to capture every aspect of a QSO.
 
-If your logging program is connected to [QRZ.COM](https://qrz.com) and you have an XML Subscription
-membership then you may find that details are automatically pulled from QRZ.COM about the other station
-and added to your contact. These will be exported by the logging program in ADIF.
+If your logging program is connected to [QRZ.COM](https://qrz.com) and you have an XML Subscription membership then you may find that details are automatically pulled from QRZ.COM about the other station and added to your contact. These will be exported by the logging program in ADIF.
 
-However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM
-or you don't have an XML subscription then the data that you enter as part of the QSO log will be the 
-total information available in the ADIF export.
+However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM or you don't have an XML subscription then the data that you enter as part of the QSO log will be the  total information available in the ADIF export.
 
-The ADIF Transformer gives you the opportunity to add information about the station you have worked both from
-QRZ.com, activity references and using specially-formatted name/value pairs in the comments field,
-where your logging program doesn't have the ability to add data directly.
+The ADIF Transformer gives you the opportunity to add information about the station you have worked both from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, where your logging program doesn't have the ability to add data directly.
 
-This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character
-Maidenhead locator can be specified for the contacted station.
+This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character Maidenhead locator can be specified for the contacted station.
 
 ### Activities
-The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
-that you or the the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
-each activity the ADIF Transformer loads the database of activity references. The totals are currently:
+The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity that you or the the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For each activity the ADIF Transformer loads the database of activity references. The totals are currently:
 
 - 28,229 Parks on the Air
 - 330 Wainwrights on the Air
@@ -114,11 +120,9 @@ each activity the ADIF Transformer loads the database of activity references. Th
 - 157,201 Summits on the Air
 - 51,138 World Wide Flora Fauna areas
 
-
 ### The Comment Field in your ADIF file
 
-The ADIF Transformer looks carefully for key: value pairs in the comment field in your ADIF input file.
-It recognises a keywords. 
+The ADIF Transformer looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
 
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
 Would result in the following ADIF fields being set:
@@ -133,7 +137,7 @@ Would result in the following ADIF fields being set:
 
 #### Comment Name/Value pairs that will be processed
 
-|Type|Comment Key|Sample  Value|Target ADIF Field|
+|Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
 |Summits on the Air|SOTA|G/LD-001|SOTA_REF|
 |Humps on the Air|HEMA|G/HLD-001|SIG/SIG_INFO|
@@ -159,13 +163,10 @@ and there are a log of them!
 
 ## Background
 
-The ADIF Transformer started as a project to allow me to add additional information in the comment field
-of a [Fast Log Entry](https://df3cb.com/fle/) input file so I could specify things like operator name, rig, 
-activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
+The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file so I could specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
-support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across
-the idea of visualizing QSOs using Google Earth.
+support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth.
 
 ## Future Directions
 
