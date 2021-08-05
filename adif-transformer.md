@@ -122,12 +122,12 @@ An ADIF file consists of two sections:
 - header
 - records
 
-###Fields in an ADIF file
+### Fields in an ADIF file
 Each field in the file is proceeded by a field name separated by the length of the field value with a colon.
 For example: `<PROGRAMID:3>FLE` indicates the field is `PROGRAMID` and the text contained in the field
 is `3` characters long with a value of `FLE`.
 
-###Header
+### Header
 The header contains information about the program that generate the file and the ADIF version, for example:
 
 ```
@@ -139,7 +139,7 @@ ADIF Export for Fast Log Entry by DF3CB
 
 The header is terminated with the `<EOH>` marker.
 
-###Records
+### Records
 
 Each record captures all the details of a QSO for both the recording station and the contacted station.
 A record is terminated by the `<EOF>` marker.
