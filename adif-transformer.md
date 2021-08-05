@@ -1,5 +1,7 @@
 # ADIF Transformer
 
+![](images/image-cropped-691-slice.png)
+
 [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) produces beautiful visualizations of your QSOs  in [Google Earth](https://earth.google.com).
 
 ## TL;DR (I don't want to read the manual)
@@ -13,7 +15,7 @@ operator name and location
 
 If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
 
-Otherwise let the transformer know where you are, either by specifying an activity reference, or directly entering your location. You can use right-click on [Google Maps](https://maps.google.com) to find your Latitude & Longitude and paste that string directly into the form.
+If portable, mobile, alternative, or with no fixed station data in QRZ.COM then let the transformer know where you are, either by specifying an activity reference, or directly entering your location. You can use right-click on [Google Maps](https://maps.google.com) to find your Latitude & Longitude and paste that string directly into the form.
 
 ## How It Works (or a bit more info)
 
@@ -54,25 +56,25 @@ The worst case is a portable operator abroad. It is unlikely the operator has cr
 
 When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF Transformer it would check QRZ.COM for the following callsign variants in order:
 
-- EA7/M0NOM/P
-- EA7/M0NOM
-- M0NOM/P
-- M0NOM
+- `EA7/M0NOM/P`
+- `EA7/M0NOM`
+- `M0NOM/P`
+- `M0NOM`
 
-The UK complicates this a little more, as a Scottish operator ``MM0XRT`` activating a HEMA summit in Wales would be ``MW0XRT/P``. In this case QRZ.COM would be queried with UK country callsign variants:
+The UK complicates this a little more, as a Scottish operator `MM0XRT` activating a HEMA summit in Wales would be `MW0XRT/P`. In this case QRZ.COM would be queried with UK country callsign variants:
 
-- MW0XRT/P
-- MW0XRT
-- M0XRT/P
-- M0XRT
-- MM0XRT/P
-- MM0XRT
-- MI0XRT/P
-- MI0XRT
-- MD0XRT/P
-- MD0XRT
-- MG0XRT/P
-- MG0XRT
+- `MW0XRT/P`
+- `MW0XRT`
+- `M0XRT/P`
+- `M0XRT`
+- `MM0XRT/P`
+- `MM0XRT`
+- `MI0XRT/P`
+- `MI0XRT`
+- `MD0XRT/P`
+- `MD0XRT`
+- `MG0XRT/P`
+- `MG0XRT`
 
 As soon as a variant matches in QRZ.COM the search stops. I've almost certainly only scratched the surface on this process!
 
@@ -97,7 +99,7 @@ activity that is associated with the station.
 
 ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
 
-## About ADIF
+## More about ADIF Transformer
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
 _Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import 
@@ -111,8 +113,11 @@ The ADIF Transformer gives you the opportunity to add information about the stat
 
 This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character Maidenhead locator can be specified for the contacted station.
 
-### Activities
-The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity that you or the the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For each activity the ADIF Transformer loads the database of activity references. The totals are currently:
+## Activities
+
+The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
+that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
+each activity the ADIF Transformer loads the database of activity references. The totals are currently:
 
 - 28,229 Parks on the Air
 - 330 Wainwrights on the Air
@@ -120,7 +125,7 @@ The ADIF Transformer knows about _activities_. The term _Activity_ is used to de
 - 157,201 Summits on the Air
 - 51,138 World Wide Flora Fauna areas
 
-### The Comment Field in your ADIF file
+## The Comment Field in your ADIF file
 
 The ADIF Transformer looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
 
@@ -135,7 +140,7 @@ Would result in the following ADIF fields being set:
 |RIG|FT-817|
 |RX_PWR|5|
 
-#### Comment Name/Value pairs that will be processed
+### Comment Name/Value pairs that will be processed
 
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
@@ -163,15 +168,19 @@ and there are a log of them!
 
 ## Background
 
-The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file so I could specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
+The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
 support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth.
+
+## Source Code
+
+ADIF Transformer is written in Java as a Spring Boot Application. It makes use of the following libraries:
+
+- ADIF 
 
 ## Future Directions
 
 - Improve the propagation model
 - Save and Load Preferences
 - Customizable Markdown table fields
-
-
