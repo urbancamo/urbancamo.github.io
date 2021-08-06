@@ -95,10 +95,46 @@ activity that is associated with the station.
 |![](icons/sailing.png)Sailing Boat|/MM|none|
 |![](icons/cabs.png)Car|/M|none|
 
+Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel if information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
+
+The communication paths between stations are also selectable directly from the line drawn on the Google Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visulization) or from the project list.
+
+When you select a communication path a panel of information is displayed that contains both station callsigns, together with the date and time of the contact and the propagation mode. For `SKYWAVE` contacts the number of hops is displayed together with the bounce height, length of contact across the surface of the earth as well as the distance the predicted path of communication took.
+
 ### Drawing the QSO
 
 ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
 
+### The Propagation Model
+
+This is a very simple model designed to map both HF and VHF/UHF contacts, and takes into account both `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. 
+
+For HF it is assumed that the ionospheric reflection height is 350 km, and the radiation angle of the antenna is 6 degrees. This represents an antenna with a low radiation angle, such as a vertical. Six degrees is the lowest angle of propagation that ensure the signal doesn't bisect the surface of the earth as it rises from the originating station.
+
+Where the distance between two stations using HF is short it is assumed that the communication path is `GROUNDWAVE`.
+
+This is the logic applied in determining the propagation mode. Note that there can be considerable improvements made to this model, but any model is only ever going to be a 'best guess'.
+
+If the frequency of signal is > 50 Mhz and the distance is < 400 km then the signal path is modelled as a `GROUNDWAVE` contact.
+
+If the frequency of the signal is > 50 Mhz and the distance is >= 400 km the signal path is modelled as `SPORADIC-E`.
+
+If the frequency of the signal is between 7 Mhz and 50 Mhz and the distance is < 400 km then the signal path is modelled as a `GROUNDWAVE` contact.
+
+If the frequency of the signal is less than 50Mhz and the distance is greater than 400 km then the signal path is modelled as a `SKYWAVE` contact.
+
+This is a very, very rough approximation. A future enhancement will make the model configurable, and ideally would be able to take into account propagation measurements and conditions at the time of the contact to help improve the accuracy of the visualization.
+
+For Groundwave VHF+ contacts the model applies an algorithm to determine a nominal 'bounce height' which is a very crude approximation of the curved signal paths that take place in reality. The algorithm defines the bounce height as 6 x the distance between two contacts in km, and if possible takes into account the height of the stations if that is available from any activities taking place. In general this ensures that the visualization of the signal path between two stations using `GROUNDWAVE` is visible above the earth that runs underneath the path. This isn't always the case where a contact is made from a high to low point or where there is terrain in-between.
+
+### Limitations of the Propagation Model
+
+- No modeling of long-path HF propagation is possible
+- Antenna type or height is not taken into account.
+- Variation in reflection height based on signal frequency isn't considered.
+- Take-off angle is fixed.
+- No support for other propagation modes such as tropospheric ducting
+- 
 ## More about ADIF Transformer
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
@@ -245,13 +281,29 @@ and there are a log of them!
 The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
-support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth.
+support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support for 10 character Maidenhead locators in the mapping tools currently available. The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) android application to determine my 10 character Maidenhead locator.
+
 
 ## Source Code
 
-ADIF Transformer is written in Java as a Spring Boot Application. It makes use of the following libraries:
+ADIF Transformer is written in Java as a Spring Boot Application. It makes use of the following separate GitHub projects.
 
-- ADIF 
+### ADIF Library
+A [fork](https://github.com/urbancamo/adif) of the [ADIF library](https://github.com/MarSik/adif) by Martin Sivák. I have made some corrections and enhancements to the original library.
+
+### The adif-processor
+
+The [adif-processor](https://github.com/urbancamo/adif-processor) contains the main functionality of ADIF Transformer. 
+
+All the code to generate the enhanced ADIF file, interact with QRZ.COM, load the activity databases, generate the KML file and generate the Markdown file is contained in this project. 
+
+The adif-processor contains a standalone, command-line based main application file, so it can be used directly from the command line without a web interface. 
+
+There is a comprehensive set of command line options. See the [project README.md](https://github.com/urbancamo/adif-processor/blob/main/README.md) for more information.
+ 
+### The ADIF Web Front end
+
+The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to the adif-processor. The version you are using is a spring-boot web application that is hosted as an AWS Elastic Beanstalk project.
 
 ## Future Directions
 
