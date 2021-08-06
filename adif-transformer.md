@@ -48,7 +48,7 @@ Where no location can be determined a warning is issued, and the station isn't a
 
 ### 2. Adding Station Information from QRZ.COM
 
-In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth) a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
+In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth, a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
 
 The initial lookup is for the callsign as logged, but for some callsigns more work is required to determine the information.
 
