@@ -1,14 +1,14 @@
-# ADIF Transformer
+# [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
 
 ![](images/image-cropped-691-slice.png)
 
-[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) produces beautiful visualizations of your QSOs in [Google Earth](https://earth.google.com). Use 'Import KML file from computer' via the map pin icon if using desktop Google Earth, otherwise click on the KML file in Android Google Earth to open the KML file.
+[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful visualizations of your QSOs in [Google Earth](https://earth.google.com). Use 'Import KML file from computer' via the map pin icon if using desktop Google Earth, otherwise click on the KML file in Android Google Earth to open the KML file.
 
 ![](images/img.png)
 
 ## TL;DR (I don't want to read the manual)
 
-Select your file and click `Process...` to obtain three output files:
+Select your file in [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗 and click `Process...` to obtain three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
 operator name and location.
