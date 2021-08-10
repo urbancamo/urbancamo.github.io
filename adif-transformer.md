@@ -311,3 +311,53 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 - Improve the propagation model
 - Save and Load Preferences
 - Customizable Markdown table fields
+
+# Examples
+
+## Google Earth KML Project Images
+
+Here are some example Google Earth images from an evening activation of SOTA Summit (Gummer's How G/LD-050)[https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050].
+
+![](images/image2.jpg)
+
+![](images/image0.jpg)
+
+![](images/image1.jpg)
+
+![](images/image3.jpg)
+
+![](images/image4.jpg)
+
+![](images/image5.jpg)
+
+## Markdown Contacts List
+
+|DATE      |TIME |CALLSIGN    |    FREQ| BAND|MODE|RST|RSR|SOTA-TX  |SOTA-RX  |OPERATOR  |SIG  |REF     |COMMENT                      |MHL   |
+|----------|-----|------------|--------|-----|----|---|---|---------|---------|----------|-----|--------|-----------------------------|------|
+|2021.08.01|09:30|G6AEK/M     | 145.450|   2m|  FM| 59| 59|G/LD-050 |         |Molyneux  |     |        |                             |IO83lw|
+|2021.08.01|09:32|2W1PJE/P    | 145.450|   2m|  FM| 58| 59|G/LD-050 |GW/NW-015|Peter     |SOTA |GW/NW-01|SOTA: GW/NW-015              |IO82DS|
+|2021.08.01|09:37|M0YCJ/P     | 145.400|   2m|  FM| 55| 57|G/LD-050 |G/NP-010 |Colwny    |SOTA |G/NP-010|SOTA: G/NP-010               |IO84VD|
+|2021.08.01|09:57|G0UOK/P     | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Dutton    |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
+|2021.08.01|09:58|M7SHZ/P     | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Sharon    |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
+|2021.08.01|09:59|G5ZX/P      | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Steve     |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
+|2021.08.01|10:16|MW7DTE/P    | 145.475|   2m|  FM| 59| 59|G/LD-050 |GW/NW-006|Evans     |SOTA |GW/NW-00|SOTA: GW/NW-006              |IO83AC|
+|2021.08.01|10:20|G4OBK/P     |   7.118|  40m| SSB| 59| 59|G/LD-050 |G/NP-009 |Catterall |SOTA |G/NP-009|SOTA: G/NP-009               |IO84XE|
+|2021.08.01|10:35|CT2HOV/P    |  14.290|  20m| SSB| 57| 57|G/LD-050 |CT/BA-010|Pereira Go|SOTA |CT/BA-01|SOTA: CT/BA-010              |IN51WA|
+|2021.08.01|10:37|G6PJZ/P     | 145.525|   2m|  FM| 55| 43|G/LD-050 |G/TW-003 |Clift     |SOTA |G/TW-003|SOTA: G/TW-003               |IO94LM|
+|2021.08.01|10:45|SP9MA/P     |  10.114|  30m|  CW|559|599|G/LD-050 |SP/SS-012|Jarek     |SOTA |SP/SS-01|SOTA: SP/SS-012              |JO80BT|
+|2021.08.01|10:56|G8TMV/P     |   5.398|  60m| SSB| 59| 59|G/LD-050 |G/WB-015 |TUCKLEY   |SOTA |G/WB-015|SOTA: G/WB-015               |IO82OL|
+|2021.08.01|11:04|F4HPV/P     |  14.280|  20m| SSB| 57| 59|G/LD-050 |F/AM-396 |michel    |SOTA |F/AM-396|SOTA: F/AM-396               |JN33HR|
+|2021.08.01|11:07|I1WKN/P     |  14.288|  20m| SSB| 57| 59|G/LD-050 |I/PM-148 |SERA      |SOTA |I/PM-148|SOTA: I/PM-148               |JN34NH|
+|2021.08.01|11:11|MS0TA/P     |   7.150|  40m| SSB| 57| 59|G/LD-050 |GM/WS-242|Scotland  |SOTA |GM/WS-24|SOTA: GM/WS-242              |IO76NL|
+|2021.08.01|11:18|SA3IEI/P    |  14.064|  20m|  CW|559|559|G/LD-050 |SM/JL-057|Beaton    |SOTA |SM/JL-05|SOTA: SM/JL-057              |JP63PD|
+|2021.08.01|11:25|HB9LEK/P    |  14.286|  20m| SSB| 55| 55|G/LD-050 |HB/ZH-015|Neukomm   |SOTA |HB/ZH-01|SOTA: HB/ZH-015              |JN47FK|
+|2021.08.01|11:29|IU0FBK/P    |  14.220|  20m| SSB| 58| 57|G/LD-050 |         |Marco     |     |        |                             |JN61fv|
+|2021.08.01|11:40|G3TQQ/P     |  14.310|  20m| SSB| 59| 59|G/LD-050 |G/TW-002 |BOTTOMLEY |SOTA |G/TW-002|SOTA: G/TW-002               |IO94JK|
+|2021.08.01|11:46|G5ZX/P      |  14.310|  20m| SSB| 59| 59|G/LD-050 |G/NP-004 |W         |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
+|2021.08.01|11:48|YO8AZQ/P    |  14.310|  20m| SSB| 52| 55|G/LD-050 |YO/EC-227|DONE      |SOTA |YO/EC-22|SOTA: YO/EC-227              |KN27QJ|
+|2021.08.01|11:53|DD2ZN/P     |  14.280|  20m| SSB| 59| 58|G/LD-050 |DM/HE-059|Pralle    |SOTA |DM/HE-05|SOTA: DM/HE-059              |JO40DD|
+|2021.08.01|12:12|2W1PJE/P    | 145.375|   2m|  FM| 59| 59|G/LD-050 |GW/NW-007|Peter     |SOTA |GW/NW-00|SOTA: GW/NW-007              |IO82DS|
+|2021.08.01|12:16|EA2CCG/P    |  14.310|  20m| SSB| 52| 53|G/LD-050 |EA2/NV-14|Montoya Ji|SOTA |EA2/NV-1|SOTA: EA2/NV-148             |IN92AP|
+|2021.08.01|12:19|YO5OTA/P    |  14.283|  20m| SSB| 55| 52|G/LD-050 |YO/WC-225|Pascal    |SOTA |YO/WC-22|SOTA: YO/WC-225              |KN16QN|
+|2021.08.01|12:41|GW7LAS/P    |   3.776|  80m| SSB| 59| 59|G/LD-050 |         |Rob       |HEMA |GW/HMW-0|HEMA: GW/HMW-043             |IO82JD|
+
