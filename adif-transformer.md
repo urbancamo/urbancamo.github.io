@@ -9,8 +9,8 @@
 Select your file and click `Process...` to obtain three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
-operator name and location
-- a [Google Earth](https://earth.google.com) Project (KML) file
+operator name and location.
+- a [Google Earth](https://earth.google.com) Project (KML) file.
 - a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/). 
 
 If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
@@ -31,11 +31,11 @@ If you are fixed the simplest solution is to ensure your QRZ.COM entry has a lat
 
 If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or longitude, or alternatively a Maidenhead Locator. 
 
-If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 10 charater version.
+If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 10 character version.
 
 ### Determining Other Station Locations
 
-For each of your hard earnt contacts ADIF Transformer attempts to determine a location. It does this using a number of techniques, in order of accuracy:
+For each of your hard earned contacts ADIF Transformer attempts to determine a location. It does this using a number of techniques, in order of accuracy:
 
 1. A `LATITUDE` and `LONGITUDE` in the ADIF file.
 1. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
@@ -97,7 +97,7 @@ activity that is associated with the station.
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel if information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
 
-The communication paths between stations are also selectable directly from the line drawn on the Google Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visulization) or from the project list.
+The communication paths between stations are also selectable directly from the line drawn on the Google Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visualization) or from the project list.
 
 When you select a communication path a panel of information is displayed that contains both station callsigns, together with the date and time of the contact and the propagation mode. For `SKYWAVE` contacts the number of hops is displayed together with the bounce height, length of contact across the surface of the earth as well as the distance the predicted path of communication took.
 
@@ -129,12 +129,25 @@ For Groundwave VHF+ contacts the model applies an algorithm to determine a nomin
 
 ### Limitations of the Propagation Model
 
-- No modeling of long-path HF propagation is possible
+- No modeling of long-path HF propagation is possible.
 - Antenna type or height is not taken into account.
 - Variation in reflection height based on signal frequency isn't considered.
 - Take-off angle is fixed.
-- No support for other propagation modes such as tropospheric ducting
-- 
+- No support for other propagation modes such as tropospheric ducting.
+
+## Activities
+
+The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
+that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
+each activity the ADIF Transformer loads the database of activity references. The totals are currently:
+
+- 28,229 Parks on the Air
+- 330 Wainwrights on the Air
+- 3,316 Humps on the Air
+- 157,201 Summits on the Air
+- 51,138 World Wide Flora Fauna areas
+
+
 ## More about ADIF Transformer
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
@@ -222,18 +235,6 @@ In the comment line:
 You will notice that it consists of a number comma-separated key-value pairs. For example, the first
 pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 
-
-## Activities
-
-The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
-that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
-each activity the ADIF Transformer loads the database of activity references. The totals are currently:
-
-- 28,229 Parks on the Air
-- 330 Wainwrights on the Air
-- 3,316 Humps on the Air
-- 157,201 Summits on the Air
-- 51,138 World Wide Flora Fauna areas
 
 ## The Comment Field in your ADIF file
 
