@@ -316,7 +316,7 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 
 ## Google Earth KML Project Images
 
-Here are some example Google Earth images from an evening activation of SOTA Summit (Gummer's How G/LD-050)[https://summits.sota.org.uk/summit/G/LD-050].
+Here are some example Google Earth images from an evening activation of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
 ![](images/image2.jpg)
 
