@@ -8,7 +8,7 @@
 
 ## TL;DR (I don't want to read the manual)
 
-Select your file in [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗 and click `Process...` to obtain three output files:
+Select your ADIF file in [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗 upload form and click `Process...` to obtain three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
 operator name and location.
