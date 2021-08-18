@@ -6,9 +6,9 @@
 
 ![](images/img.png)
 
-## TL;DR (I don't want to read the manual)
+## Quick Start / TL;DR
 
-Select your ADIF file in [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗 upload form and click `Process...` to obtain three output files:
+Select your ADIF file on the [ADIF Transformer upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` to obtain three output files:
 
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
 operator name and location.
@@ -17,7 +17,9 @@ operator name and location.
 
 If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
 
-If portable, mobile, alternative, or with no fixed station data in QRZ.COM then let the transformer know where you are, either by specifying an activity reference, or directly entering your location. You can use right-click on [Google Maps](https://maps.google.com) to find your Latitude & Longitude and paste that string directly into the form.
+If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let transformer know where you are via the form, either by specifying an activity reference, or directly entering your location. 
+
+An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) to- the Latitude & Longitude can be pasted directly into the `Lat/Long` field.
 
 ## How It Works (or a bit more info)
 
@@ -87,7 +89,7 @@ activity that is associated with the station.
 
 |Icon|Suffix|Activity Type|
 |----|------|--------|
-|![](icons/ranger_station.png)House|none|none|
+|![](icons/ranger_station.png)House|none or /A|none|
 |![](icons/mountains.png)Mountain|/P|SOTA|
 |![](icons/hospitals.png)Red 'H'|/P|HEMA|
 |![](icons/picnic.png)Park Bench|/P|POTA|
