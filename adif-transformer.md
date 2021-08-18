@@ -257,24 +257,26 @@ Would result in the following ADIF fields being set:
 
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
-|Summits on the Air|SOTA|G/LD-001|SOTA_REF|
-|Humps on the Air|HEMA|G/HLD-001|SIG/SIG_INFO|
-|Worldwide Flora Fauna|WWFF|GFF-0233|SIG/SIG_INFO|
-|Parks on the Air|POTA|G-0190|SIG/SIG_INFO|
-|Wainwrights on the Air|WOTA|LDW-001|SIG/SIG_INFO|
-|Operator Name|OP|Mark|NAME|
-|Home/Location|QTH|Windermere|QTH|
-|Rig Model|RIG|IC-7100|RIG|
-|RX Power|PWR|50|RX_PWR|
 |Age|AGE|52|AGE|
-|Islands on the Air|IOTA|E-145|IOTA|
-|Maidenhead Locator|GRID|IO84MJ (6/8/10 char)|GRIDSQUARE|
-|Serial No Transmitted|STX|0045|STX|
-|Serial No Received|SRX|0034|SRX|
 |Fists No|FISTS|18162|FISTS|
-|QSL Status|QSL|D/B|QSL_DATE/SQL_SENT|
+|Home/Location|QTH|Windermere|QTH|
+|Humps on the Air|HEMA|G/HLD-001|SIG/SIG_INFO|
+|Islands on the Air|IOTA|E-145|IOTA|
 |Latitude|LAT|50.153|LATITUDE|
 |Longitude|LONG|2.345|LONGITUDE|
+|Maidenhead Locator|GRID|IO84MJ (6/8/10 char)|GRIDSQUARE|
+|Operator Name|OP|Mark|NAME|
+|Parks on the Air|POTA|G-0190|SIG/SIG_INFO|
+|Propagation|PROP|ION|ANT_PATH|
+|QSL Status|QSL|D/B|QSL_DATE/SQL_SENT|
+|Rig Model|RIG|IC-7100|RIG|
+|RX Power|PWR|50|RX_PWR|
+|Serial No Received|SRX|0034|SRX|
+|Serial No Transmitted|STX|0045|STX|
+|SKCC No|SKCC|19250|SKCC|
+|Summits on the Air|SOTA|G/LD-001|SOTA_REF|
+|Wainwrights on the Air|WOTA|LDW-001|SIG/SIG_INFO|
+|Worldwide Flora Fauna|WWFF|GFF-0233|SIG/SIG_INFO|
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
