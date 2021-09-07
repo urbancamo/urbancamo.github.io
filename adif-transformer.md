@@ -21,6 +21,12 @@ If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY
 
 An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) to- the Latitude & Longitude can be pasted directly into the `Lat/Long` field.
 
+## Releases
+
+|Date|New Features|
+|----|------------|
+|07-SEP-2021|Support for Castles on the Air Activity References|
+
 ## How It Works (or a bit more info)
 
 Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
