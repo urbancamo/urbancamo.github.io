@@ -93,15 +93,15 @@ As soon as a variant matches in QRZ.COM the search stops. I've almost certainly 
 There are a number of icons that are used to mark a station, based on the station suffix and any 
 activity that is associated with the station.
 
-|Icon|Suffix|Activity Type|
-|----|------|--------|
+|Icon|Suffix|Activity|Link|
+|----|------|--------|-----------|
 |![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) House|none or /A|none|
-|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png) Mountain|/P|SOTA|
-|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png) Red 'H'|/P|HEMA|
-|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png) Park Bench|/P|POTA|
-|![](http://maps.google.com/mapfiles/kml/shapes/schools.png) Castle|/P/|COTA|
-|![](http://maps.google.com/mapfiles/kml/shapes/trail.png) Hiker following Trail|/P|WOTA|
-|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) Tree|/P|WWFF|
+|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png) Mountain|/P|SOTA|[Summits on the Air](https://www.sota.org.uk/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png) Red 'H'|/P|HEMA|[HuMPs Excluding Marilyns Award](http://hema.org.uk/)
+|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png) Park Bench|/P|POTA|[Parks on the Air](https://parksontheair.com/)
+|![](http://maps.google.com/mapfiles/kml/shapes/schools.png) Castle|/P/|COTA|[World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html)
+|![](http://maps.google.com/mapfiles/kml/shapes/trail.png) Hiker following Trail|/P|WOTA|[Wainwrights on the Air](https://www.wota.org.uk/)
+|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) Tree|/P|WWFF|[World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)
 |![](http://maps.google.com/mapfiles/kml/shapes/hiker.png) Hiker|/P|None|
 |![](http://maps.google.com/mapfiles/kml/shapes/sailing.png) Sailing Boat|/MM|none|
 |![](http://maps.google.com/mapfiles/kml/shapes/cabs.png) Car|/M|none|
