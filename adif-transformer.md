@@ -2,7 +2,7 @@
 
 ![](images/image-cropped-691-slice.png)
 
-[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful visualizations of your QSOs in [Google Earth](https://earth.google.com). Use 'Import KML file from computer' via the map pin icon if using desktop Google Earth, otherwise click on the KML file in Android Google Earth to open the KML file.
+[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful visualizations of your QSOs in [Google Earth](https://earth.google.com). Once you have generated a KML file from [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 'Import KML file from computer' via the map pin icon if using desktop Google Earth, otherwise click on the KML file in Android Google Earth to open the KML file.
 
 ![](images/img.png)
 
@@ -89,15 +89,16 @@ activity that is associated with the station.
 
 |Icon|Suffix|Activity Type|
 |----|------|--------|
-|![](icons/ranger_station.png)House|none or /A|none|
-|![](icons/mountains.png)Mountain|/P|SOTA|
-|![](icons/hospitals.png)Red 'H'|/P|HEMA|
-|![](icons/picnic.png)Park Bench|/P|POTA|
-|![](icons/trail.png)Hiker following Trail|/P|WOTA|
-|![](icons/parks.png)Tree|/P|WWFF|
-|![](icons/hiker.png)Hiker|/P|None|
-|![](icons/sailing.png)Sailing Boat|/MM|none|
-|![](icons/cabs.png)Car|/M|none|
+|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) House|none or /A|none|
+|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png) Mountain|/P|SOTA|
+|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png) Red 'H'|/P|HEMA|
+|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png) Park Bench|/P|POTA|
+|![](http://maps.google.com/mapfiles/kml/shapes/schools.png) Castle|/P/|COTA|
+|![](http://maps.google.com/mapfiles/kml/shapes/trail.png) Hiker following Trail|/P|WOTA|
+|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) Tree|/P|WWFF|
+|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png) Hiker|/P|None|
+|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png) Sailing Boat|/MM|none|
+|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png) Car|/M|none|
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel if information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
 
@@ -150,6 +151,7 @@ each activity the ADIF Transformer loads the database of activity references. Th
 - 3,316 Humps on the Air
 - 157,201 Summits on the Air
 - 51,138 World Wide Flora Fauna areas
+- 66,026 Castles in the World Castles Award Programme
 
 
 ## More about ADIF Transformer
@@ -279,6 +281,7 @@ Would result in the following ADIF fields being set:
 |Summits on the Air|SOTA|G/LD-001|SOTA_REF|
 |Wainwrights on the Air|WOTA|LDW-001|SIG/SIG_INFO|
 |Worldwide Flora Fauna|WWFF|GFF-0233|SIG/SIG_INFO|
+|Castles on the Air|COTA|DL-03609|SIG/SIG_INFO|
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
