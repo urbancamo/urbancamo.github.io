@@ -319,7 +319,7 @@ If the mode isn't specified then it is predicted. Note that the prediction model
 you need to specify that manually. The distance achieved by UHF/HVF contacts varies enormously based on location, antenna and
 mode so long-distance point-to-point contacts are entirely feasible.
 
-![[Tropospheric Ducting](https://urbancamo.github.io/images/TroposphericDuctingContactExample.png)](images/TroposphericDuctingContactExample.png)
+<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](images/TroposphericDuctingContactExample.png)
 _Example of Tropospheric Ducting Visualization_
 
 ## Background
@@ -365,15 +365,15 @@ Here are some example Google Earth images from an [evening activation](https://r
 
 <a href="https://urbancamo.github.io/images/image2.jpg">![](images/image2.jpg)
 
-![[Example 2](https://urbancamo.github.io/images/image0.jpg)](images/image0.jpg)
+<a href="https://urbancamo.github.io/images/image0.jpg">![](images/image0.jpg)
 
-![[Example 3](https://urbancamo.github.io/images/image1.jpg)](images/image1.jpg)
+<a href="https://urbancamo.github.io/images/image1.jpg">![](images/image1.jpg)
 
-![[Example 4](https://urbancamo.github.io/images/image3.jpg)](images/image3.jpg)
+<a href="https://urbancamo.github.io/images/image3.jpg">![](images/image3.jpg)
 
-![[Example 5](https://urbancamo.github.io/images/image4.jpg)](images/image4.jpg)
+<a href="https://urbancamo.github.io/images/image4.jpg">![](images/image4.jpg)
 
-![[Example 6](https://urbancamo.github.io/images/image5.jpg)](images/image5.jpg)
+<a href="https://urbancamo.github.io/images/image5.jpg">![](images/image5.jpg)
 
 ## Example Markdown Contacts List
 
