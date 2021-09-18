@@ -2,18 +2,32 @@
 
 ![](images/image-cropped-691-slice.png)
 
-[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful visualizations of your QSOs in [Google Earth](https://earth.google.com). Once you have generated a KML file from [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 'Import KML file from computer' via the map pin icon if using desktop Google Earth, otherwise click on the KML file in Android Google Earth to open the KML file.
+[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful 
+visualizations of your QSOs in [Google Earth](https://earth.google.com). Once you have generated a KML file 
+from [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 
+_Import KML file from computer_ via the map pin icon if using desktop [Google Earth](https://earth.google.com), 
+otherwise click on the KML file in Android Google Earth to open the KML file.
 
 ![](images/img.png)
 
 ## Quick Start / TL;DR
 
-Select your ADIF file on the [ADIF Transformer upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` to obtain three output files:
+Select your ADIF file on the [ADIF Transformer upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` 
 
+<a href="https://urbancamo.github.io/images/simple-usecase.png">![](images/simple-usecase.png)
+_Simple Use Case_
+
+On a clean run you will be presented with three files:
 - an enhanced ADIF file augmented with data from QRZ.com and activity references including
 operator name and location.
 - a [Google Earth](https://earth.google.com) Project (KML) file.
 - a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/). 
+
+Any processing errors are displayed in the `Errors` text box and any callsigns for which a location could not be determined
+as shown in the `Callsigns without Location` text box.
+
+<a href="https://urbancamo.github.io/images/results.png">![](images/results.png)
+_Example Result Form_
 
 If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
 
@@ -28,7 +42,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 |07-SEP-2021|Support for Castles on the Air Activity References|
 |18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
 
-
+***
 ## How It Works (or a bit more info)
 
 Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
@@ -156,7 +170,7 @@ These value represent an 'average' duct height and width.
 - Antenna type or height is not taken into account.
 - Variation in reflection height based on signal frequency isn't considered.
 - Take-off angle is fixed.
-
+***
 ## Activities
 
 The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
@@ -170,7 +184,7 @@ each activity the ADIF Transformer loads the database of activity references. Th
 - 51,138 World Wide Flora Fauna areas
 - 66,026 Castles in the World Castles Award Programme
 
-
+***
 ## More about ADIF Transformer
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
@@ -185,6 +199,7 @@ The ADIF Transformer gives you the opportunity to add information about the stat
 
 This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character Maidenhead locator can be specified for the contacted station.
 
+***
 ## The ADIF format 30 second Primer
 [ADIF](http://adif.org/) _Amateur Data Interchange Format_ is a text file representation for Amateur radio contacts. It is a popular
 output format for logging programs. The [ADIF specification](https://adif.org/312/ADIF_312.htm) describes the valid content of the header and record fields.
@@ -258,7 +273,7 @@ In the comment line:
 You will notice that it consists of a number comma-separated key-value pairs. For example, the first
 pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 
-
+***
 ## The Comment Field in your ADIF file
 
 The ADIF Transformer looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
@@ -315,6 +330,7 @@ go in the ADIF `NOTES` field. Try to avoid using commas in arbitary text to avoi
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
 
+***
 ## Propagation Modes
 
 These are the valid values for the propagation modes that the ADIF Transformer currently supports that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
@@ -334,6 +350,7 @@ mode so long-distance point-to-point contacts are entirely feasible.
 <a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](images/TroposphericDuctingContactExample.png)
 _Example of Tropospheric Ducting Visualization_
 
+***
 ## Background
 
 The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
@@ -341,7 +358,7 @@ The ADIF Transformer started as a project to allow me to add additional informat
 As I like to record the contacted station location as accurately as possible I then decided to add
 support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support for 10 character Maidenhead locators in the mapping tools currently available. The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) android application to determine my 10 character Maidenhead locator.
 
-
+***
 ## Source Code
 
 ADIF Transformer is written in Java as a Spring Boot Application. It makes use of the following separate GitHub projects.
@@ -363,12 +380,14 @@ There is a comprehensive set of command line options. See the [project README.md
 
 The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to the adif-processor. The version you are using is a spring-boot web application that is hosted as an AWS Elastic Beanstalk project.
 
+***
 ## Future Directions
 
 - Improve the propagation model
 - Save and Load Preferences
 - Customizable Markdown table fields
 
+***
 # Examples
 
 ## Google Earth KML Project Images
