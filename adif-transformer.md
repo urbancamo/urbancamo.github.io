@@ -26,6 +26,8 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 |Date|New Features|
 |----|------------|
 |07-SEP-2021|Support for Castles on the Air Activity References|
+|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
+
 
 ## How It Works (or a bit more info)
 
@@ -118,7 +120,9 @@ ADIF Transformer uses a simple propagation visualization technique based on an i
 
 ### The Propagation Model
 
-This is a very simple model designed to map both HF and VHF/UHF contacts, and takes into account both `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. 
+This is a very simple model designed to map both HF and VHF/UHF contacts.
+I supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify `TROPOSPHERIC_DUCTING`
+for contacts identified as using this propagation.
 
 For HF it is assumed that the ionospheric reflection height is 350 km, and the radiation angle of the antenna is 6 degrees. This represents an antenna with a low radiation angle, such as a vertical. Six degrees is the lowest angle of propagation that ensure the signal doesn't bisect the surface of the earth as it rises from the originating station.
 
@@ -138,13 +142,20 @@ This is a very, very rough approximation. A future enhancement will make the mod
 
 For Groundwave VHF+ contacts the model applies an algorithm to determine a nominal 'bounce height' which is a very crude approximation of the curved signal paths that take place in reality. The algorithm defines the bounce height as 6 x the distance between two contacts in km, and if possible takes into account the height of the stations if that is available from any activities taking place. In general this ensures that the visualization of the signal path between two stations using `GROUNDWAVE` is visible above the earth that runs underneath the path. This isn't always the case where a contact is made from a high to low point or where there is terrain in-between.
 
+### Tropospheric Ducting
+
+In order to visualize a contact that has been via [tropospheric ducting](https://www.amateur-radio-wiki.net/tropospheric-ducting/)
+you must set the `PROPAGATION_MODE` to `TR` in the ADIF input file for that contact. If you are using Fast Log Entry to create your ADIF file add the comment `PROP_MODE: TR`.
+
+The model used is a duct at height 2,000m and a duct width of 500m, so the signal bounces in a duct between 2,250m and 1,750m.
+These value represent an 'average' duct height and width.
+
 ### Limitations of the Propagation Model
 
 - No modeling of long-path HF propagation is possible.
 - Antenna type or height is not taken into account.
 - Variation in reflection height based on signal frequency isn't considered.
 - Take-off angle is fixed.
-- No support for other propagation modes such as tropospheric ducting.
 
 ## Activities
 
@@ -267,30 +278,48 @@ Would result in the following ADIF fields being set:
 
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
-|Age|AGE|52|AGE|
-|Fists No|FISTS|18162|FISTS|
-|Home/Location|QTH|Windermere|QTH|
-|Humps on the Air|HEMA|G/HLD-001|SIG/SIG_INFO|
-|Islands on the Air|IOTA|E-145|IOTA|
-|Latitude|LAT|50.153|LATITUDE|
-|Longitude|LONG|2.345|LONGITUDE|
-|Maidenhead Locator|GRID|IO84MJ (6/8/10 char)|GRIDSQUARE|
-|Operator Name|OP|Mark|NAME|
-|Parks on the Air|POTA|G-0190|SIG/SIG_INFO|
-|Propagation|PROP|ION|ANT_PATH|
-|QSL Status|QSL|D/B|QSL_DATE/SQL_SENT|
-|Rig Model|RIG|IC-7100|RIG|
-|RX Power|PWR|50|RX_PWR|
-|Serial No Received|SRX|0034|SRX|
-|Serial No Transmitted|STX|0045|STX|
-|SKCC No|SKCC|19250|SKCC|
-|Summits on the Air|SOTA|G/LD-001|SOTA_REF|
-|Wainwrights on the Air|WOTA|LDW-001|SIG/SIG_INFO|
-|Worldwide Flora Fauna|WWFF|GFF-0233|SIG/SIG_INFO|
-|Castles on the Air|COTA|DL-03609|SIG/SIG_INFO|
+|Age|`AGE`|52|`AGE`|
+|Castles on the Air|`COTA`|DL-03609|`SIG/SIG_INFO`|
+|Fists No|`FISTS`|18162|`FISTS`|
+|Home/Location|`QTH`|Windermere|`QTH`|
+|Humps on the Air|`HEMA`|G/HLD-001|`SIG`/`SIG_INFO`|
+|Islands on the Air|`IOTA`|E-145|`IOTA`|
+|Latitude|`LAT`|50.153|`LATITUDE`|
+|Longitude|`LONG`|2.345|`LONGITUDE`|
+|Maidenhead Locator|`GRID`|IO84MJ (6/8/10 char)|`GRIDSQUARE`|
+|Operator Name|`OP`|Mark|`NAME`|
+|Parks on the Air|`POTA`|G-0190|`SIG`/`SIG_INFO`|
+|Propagation|`PROP`|ION|`ANT_PATH`|
+|QSL Status|`QSL`|D/B|`QSL_DATE`/`SQL_SENT`|
+|Rig Model|`RIG`|IC-7100|`RIG`|
+|RX Power|`PWR`|50|`RX_PWR`|
+|Serial No Received|`SRX`|0034|`SRX`|
+|Serial No Transmitted|`STX`|0045|`STX`|
+|SKCC No|`SKCC`|19250|`SKCC`|
+|Summits on the Air|`SOTA`|G/LD-001|`SOTA_REF`|
+|Wainwrights on the Air|`WOTA`|LDW-001|`SIG/SIG_INFO`|
+|Worldwide Flora Fauna|`WWFF`|GFF-0233|`SIG/SIG_INFO`|
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
+
+## Propagation Modes
+
+These are the valid values for the propagation modes that the ADIF Transformer currently supports that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
+`PROP`:
+
+|Value|Mode|
+|-----|----|
+|empty|Predict|
+|`TR`|Tropospheric Ducting|
+|`ES`|Sporadic E|
+|`F2`|F2 Reflection|
+
+If the mode isn't specified then it is predicted. Note that the prediction model doesn't include Tropospheric Ducting, 
+you need to specify that manually. The distance achieved by UHF/HVF contacts varies enormously based on location, antenna and
+mode so long-distance point-to-point contacts are entirely feasible.
+
+![](images/TroposphericDuctingContactExample.png)
 
 ## Background
 
@@ -333,17 +362,17 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-![](images/image2.jpg)
+![(https://urbancamo.github.io/images/image2.jpg)](images/image2.jpg)
 
-![](images/image0.jpg)
+![(https://urbancamo.github.io/images/image0.jpg)](images/image0.jpg)
 
-![](images/image1.jpg)
+![(https://urbancamo.github.io/images/image1.jpg)](images/image1.jpg)
 
-![](images/image3.jpg)
+![(https://urbancamo.github.io/images/image3.jpg)](images/image3.jpg)
 
-![](images/image4.jpg)
+![(https://urbancamo.github.io/images/image4.jpg)](images/image4.jpg)
 
-![](images/image5.jpg)
+![(https://urbancamo.github.io/images/image5.jpg)](images/image5.jpg)
 
 ## Markdown Contacts List
 
