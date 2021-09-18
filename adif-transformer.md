@@ -319,7 +319,7 @@ If the mode isn't specified then it is predicted. Note that the prediction model
 you need to specify that manually. The distance achieved by UHF/HVF contacts varies enormously based on location, antenna and
 mode so long-distance point-to-point contacts are entirely feasible.
 
-![](images/TroposphericDuctingContactExample.png)
+![[Tropospheric Ducting](https://urbancamo.github.io/images/TroposphericDuctingContactExample.png)](images/TroposphericDuctingContactExample.png)
 
 ## Background
 
@@ -362,17 +362,17 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-![(https://urbancamo.github.io/images/image2.jpg)](images/image2.jpg)
+![[Example 1](https://urbancamo.github.io/images/image2.jpg)](images/image2.jpg)
 
-![(https://urbancamo.github.io/images/image0.jpg)](images/image0.jpg)
+![[Example 2](https://urbancamo.github.io/images/image0.jpg)](images/image0.jpg)
 
-![(https://urbancamo.github.io/images/image1.jpg)](images/image1.jpg)
+![[Example 3](https://urbancamo.github.io/images/image1.jpg)](images/image1.jpg)
 
-![(https://urbancamo.github.io/images/image3.jpg)](images/image3.jpg)
+![[Example 4](https://urbancamo.github.io/images/image3.jpg)](images/image3.jpg)
 
-![(https://urbancamo.github.io/images/image4.jpg)](images/image4.jpg)
+![[Example 5](https://urbancamo.github.io/images/image4.jpg)](images/image4.jpg)
 
-![(https://urbancamo.github.io/images/image5.jpg)](images/image5.jpg)
+![[Example 6](https://urbancamo.github.io/images/image5.jpg)](images/image5.jpg)
 
 ## Markdown Contacts List
 
