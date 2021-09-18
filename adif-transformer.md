@@ -287,6 +287,7 @@ Would result in the following ADIF fields being set:
 |Latitude|`LAT`|50.153|`LATITUDE`|
 |Longitude|`LONG`|2.345|`LONGITUDE`|
 |Maidenhead Locator|`GRID`|IO84MJ (6/8/10 char)|`GRIDSQUARE`|
+|Notes|`NOTES`|Must take a look at their qrz.com page|`NOTES`|
 |Operator Name|`OP`|Mark|`NAME`|
 |Parks on the Air|`POTA`|G-0190|`SIG`/`SIG_INFO`|
 |Propagation|`PROP`|ION|`ANT_PATH`|
@@ -299,6 +300,17 @@ Would result in the following ADIF fields being set:
 |Summits on the Air|`SOTA`|G/LD-001|`SOTA_REF`|
 |Wainwrights on the Air|`WOTA`|LDW-001|`SIG/SIG_INFO`|
 |Worldwide Flora Fauna|`WWFF`|GFF-0233|`SIG/SIG_INFO`|
+
+When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record between angle brackets, for example:
+
+```
+2111 g7tcq/m  59 59 <QTH: M6 J11 N. Birmingham, PROP: TR> #IO82xq 
+2118 g4iog    55 52 <OP: Bob, QTH: N. Kent, RIG: FT-991, PWR: 50w, QTH: Sittingborne, PROP: TR>
+```
+
+Note that each key is followed by a colon and each pair followed by a comma. To add information to go in the
+comments field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify information to
+go in the ADIF `NOTES` field. Try to avoid using commas in arbitary text to avoid confusing the parser.
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
