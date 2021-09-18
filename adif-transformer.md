@@ -320,6 +320,7 @@ you need to specify that manually. The distance achieved by UHF/HVF contacts var
 mode so long-distance point-to-point contacts are entirely feasible.
 
 ![[Tropospheric Ducting](https://urbancamo.github.io/images/TroposphericDuctingContactExample.png)](images/TroposphericDuctingContactExample.png)
+_Example of Tropospheric Ducting Visualization_
 
 ## Background
 
@@ -362,7 +363,7 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-![[Example 1](https://urbancamo.github.io/images/image2.jpg)](images/image2.jpg)
+<a href="https://urbancamo.github.io/images/image2.jpg">![](images/image2.jpg)
 
 ![[Example 2](https://urbancamo.github.io/images/image0.jpg)](images/image0.jpg)
 
@@ -374,7 +375,7 @@ Here are some example Google Earth images from an [evening activation](https://r
 
 ![[Example 6](https://urbancamo.github.io/images/image5.jpg)](images/image5.jpg)
 
-## Markdown Contacts List
+## Example Markdown Contacts List
 
 |DATE      |TIME |CALLSIGN    |    FREQ| BAND|MODE|RST|RSR|SOTA-TX  |SOTA-RX  |OPERATOR  |SIG  |REF     |COMMENT                      |MHL   |
 |----------|-----|------------|--------|-----|----|---|---|---------|---------|----------|-----|--------|-----------------------------|------|
