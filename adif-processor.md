@@ -1,10 +1,10 @@
-# [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
+# [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
 
 ![](images/image-cropped-691-slice.png)
 
-[ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful 
+[ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful 
 visualizations of your QSOs in [Google Earth](https://earth.google.com). Once you have generated a KML file 
-from [ADIF Transformer](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 
+from [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 
 _Import KML file from computer_ via the map pin icon if using desktop [Google Earth](https://earth.google.com), 
 otherwise click on the KML file in Android Google Earth to open the KML file.
 
@@ -12,7 +12,7 @@ otherwise click on the KML file in Android Google Earth to open the KML file.
 
 ## Quick Start / TL;DR
 
-Select your ADIF file on the [ADIF Transformer upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` 
+Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` 
 
 <a href="https://urbancamo.github.io/images/simple-usecase.png">![](images/simple-usecase.png)
 _Simple Use Case_
@@ -29,9 +29,9 @@ as shown in the `Callsigns without Location` text box.
 <a href="https://urbancamo.github.io/images/results.png">![](images/results.png)
 _Example Result Form_
 
-If you are a fixed station you must have your location set in QRZ.com for the ADIF Transformer to determine your location.
+If you are a fixed station you must have your location set in QRZ.com for the ADIF Processor to determine your location.
 
-If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let transformer know where you are via the form, either by specifying an activity reference, or directly entering your location. 
+If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let processor know where you are via the form, either by specifying an activity reference, or directly entering your location. 
 
 An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) to- the Latitude & Longitude can be pasted directly into the `Lat/Long` field.
 
@@ -48,7 +48,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 
 Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
 
-There are a number of steps the ADIF Transformer performs as it turns your ADIF file into a Google Earth KML project file.
+There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth KML project file.
 
 ### Determining Your Station Location
 
@@ -62,7 +62,7 @@ If you want to make obscure your location a bit then specify a 6 or 8 character 
 
 ### Determining Other Station Locations
 
-For each of your hard earned contacts ADIF Transformer attempts to determine a location. It does this using a number of techniques, in order of accuracy:
+For each of your hard earned contacts ADIF Processor attempts to determine a location. It does this using a number of techniques, in order of accuracy:
 
 1. A `LATITUDE` and `LONGITUDE` in the ADIF file.
 1. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
@@ -81,7 +81,7 @@ The initial lookup is for the callsign as logged, but for some callsigns more wo
 
 The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM page for this callsign. I'll use examples to show how the application tries to determine the most accurate information.
 
-When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF Transformer it would check QRZ.COM for the following callsign variants in order:
+When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF Processor it would check QRZ.COM for the following callsign variants in order:
 
 - `EA7/M0NOM/P`
 - `EA7/M0NOM`
@@ -133,7 +133,7 @@ When you select a communication path a panel of information is displayed that co
 
 ### Drawing the QSO
 
-ADIF Transformer uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
+ADIF Processor uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
 
 ### The Propagation Model
 
@@ -176,9 +176,9 @@ These value represent an 'average' duct height and width.
 ***
 ## Activities
 
-The ADIF Transformer knows about _activities_. The term _Activity_ is used to describe a special activity
+The ADIF Processor knows about _activities_. The term _Activity_ is used to describe a special activity
 that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
-each activity the ADIF Transformer loads the database of activity references. The totals are currently:
+each activity the ADIF Processor loads the database of activity references. The totals are currently:
 
 - 28,229 Parks on the Air
 - 330 Wainwrights on the Air
@@ -188,7 +188,7 @@ each activity the ADIF Transformer loads the database of activity references. Th
 - 66,026 Castles in the World Castles Award Programme
 
 ***
-## More about ADIF Transformer
+## More about ADIF Processor
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
 _Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import 
@@ -198,7 +198,7 @@ If your logging program is connected to [QRZ.COM](https://qrz.com) and you have 
 
 However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM or you don't have an XML subscription then the data that you enter as part of the QSO log will be the  total information available in the ADIF export.
 
-The ADIF Transformer gives you the opportunity to add information about the station you have worked both from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, where your logging program doesn't have the ability to add data directly.
+The ADIF Processor gives you the opportunity to add information about the station you have worked both from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, where your logging program doesn't have the ability to add data directly.
 
 This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character Maidenhead locator can be specified for the contacted station.
 
@@ -279,7 +279,7 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ***
 ## The Comment Field in your ADIF file
 
-The ADIF Transformer looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
+The ADIF Processor looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
 
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
 Would result in the following ADIF fields being set:
@@ -336,7 +336,7 @@ and there are a log of them!
 ***
 ## Propagation Modes
 
-These are the valid values for the propagation modes that the ADIF Transformer currently supports that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
+These are the valid values for the propagation modes that the ADIF Processor currently supports that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
 `PROP`:
 
 |Value|Mode|
@@ -356,7 +356,7 @@ _Example of Tropospheric Ducting Visualization_
 ***
 ## Background
 
-The ADIF Transformer started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
+The ADIF Processor started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
 support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support for 10 character Maidenhead locators in the mapping tools currently available. The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) android application to determine my 10 character Maidenhead locator.
@@ -364,14 +364,14 @@ support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-
 ***
 ## Source Code
 
-ADIF Transformer is written in Java as a Spring Boot Application. It makes use of the following separate GitHub projects.
+ADIF Processor is written in Java as a Spring Boot Application. It makes use of the following separate GitHub projects.
 
 ### ADIF Library
 A [fork](https://github.com/urbancamo/adif) of the [ADIF library](https://github.com/MarSik/adif) by Martin Sivák. I have made some corrections and enhancements to the original library.
 
 ### The adif-processor
 
-The [adif-processor](https://github.com/urbancamo/adif-processor) contains the main functionality of ADIF Transformer. 
+The [adif-processor](https://github.com/urbancamo/adif-processor) contains the main functionality of ADIF Processor. 
 
 All the code to generate the enhanced ADIF file, interact with QRZ.COM, load the activity databases, generate the KML file and generate the Markdown file is contained in this project. 
 
