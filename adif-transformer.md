@@ -41,6 +41,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 |----|------------|
 |07-SEP-2021|Support for Castles on the Air Activity References|
 |18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
+|23-SEP-2021|Support for Lighthouses & Railways on the Air|
 
 ***
 ## How It Works (or a bit more info)
@@ -111,16 +112,18 @@ activity that is associated with the station.
 
 |Icon|Suffix|Activity|Description/Link|
 |----|------|--------|-----------|
-|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) House|none or /A|none|At home or alternate address|
+|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) House|none or /A| |At home or alternate address|
+|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png) Hiker|/P| |Portable|
+|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png) Sailing Boat|/MM| |Maritime Mobile|
+|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png) Car|/M| |Mobile|
 |![](http://maps.google.com/mapfiles/kml/shapes/mountains.png) Mountain|/P|SOTA|[Summits on the Air](https://www.sota.org.uk/)|
 |![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png) Red 'H'|/P|HEMA|[HuMPs Excluding Marilyns Award](http://hema.org.uk/)
 |![](http://maps.google.com/mapfiles/kml/shapes/picnic.png) Park Bench|/P|POTA|[Parks on the Air](https://parksontheair.com/)
 |![](http://maps.google.com/mapfiles/kml/shapes/schools.png) Castle|/P|COTA|[World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html)
 |![](http://maps.google.com/mapfiles/kml/shapes/trail.png) Hiker following Trail|/P|WOTA|[Wainwrights on the Air](https://www.wota.org.uk/)
 |![](http://maps.google.com/mapfiles/kml/shapes/parks.png) Tree|/P|WWFF|[World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)
-|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png) Hiker|/P|None|Portable|
-|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png) Sailing Boat|/MM|none|Maritime Mobile|
-|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png) Car|/M|none|Mobile|
+|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) Marina| |LOTA|[International Lighthouse & Lightship Weekend](https://illw.net/)
+|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) Rail| |ROTA|[Railways on the Air](https://rota.barac.org.uk/)
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel if information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
 
