@@ -200,6 +200,8 @@ each activity the ADIF Processor loads the database of activity references. The 
 - 157,201 Summits on the Air
 - 51,138 World Wide Flora Fauna areas
 - 66,026 Castles in the World Castles Award Programme
+- 1,706 International Lighthouses and Lightships
+- 27 Railways on the Air (based on 2021 entrants)
 
 ***
 ## Satellite Contacts
