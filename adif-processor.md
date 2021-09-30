@@ -42,6 +42,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 |07-SEP-2021|Support for Castles on the Air Activity References|
 |18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
 |23-SEP-2021|Support for Lighthouses & Railways on the Air|
+|26-SEP-2021|Initial Geolocation support via Nominatim|
 
 ***
 ## How It Works (or a bit more info)
@@ -54,34 +55,47 @@ There are a number of steps the ADIF Processor performs as it turns your ADIF fi
 
 Lots here depends on whether you are operating from a fixed location or portable. 
 
-If you are fixed the simplest solution is to ensure your QRZ.COM entry has a latitude & longitude for the most accurate location. 
+If you are fixed the simplest solution is to ensure your QRZ.COM entry has a latitude & longitude for the most 
+accurate location. 
 
-If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or longitude, or alternatively a Maidenhead Locator. 
+If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or longitude, 
+or alternatively a Maidenhead Locator. 
 
-If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 10 character version.
+If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 
+10 character version.
 
 ### Determining Other Station Locations
 
 For each of your hard earned contacts ADIF Processor attempts to determine a location. It does this using a number of techniques, in order of accuracy:
 
 1. A `LATITUDE` and `LONGITUDE` in the ADIF file.
-1. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
-1. Location in QRZ.com, preferring Latitude & Longitude if set over Maidenhead locator.
-1. A maidenhead locator in the ADIF file `GRIDSQUARE`.
+2. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
+3. Location in QRZ.com, preferring Latitude & Longitude if set over Maidenhead locator.
+4. A maidenhead locator in the ADIF file `GRIDSQUARE`.
+5. A Geocoding lookup is made via [Nominatim](https://nominatim.org/) and the OpenStreetMap database using any QRZ.com address data.
+
+Note that a number of locations are regarded as _dubious_ or _invalid_ based on them being the default grid or 
+latitude/longitude location in QRZ.com. In these cases unless an override location is specified in the input ADIF file 
+a Geocoding lookup is made to determine the station location.
 
 #### Stations without a location
 
-Where no location can be determined a warning is issued, and the station isn't added to the Google Earth KML file. You can correct this by adding an activity for the station, or by specifying their `LATITUDE` and `LONGITUDE` in the ADIF input file or their `GRIDSQUARE` reference.
+Where no location can be determined a warning is issued, and the station isn't added to the Google Earth KML file. 
+You can correct this by adding an activity for the station, or by specifying their `LATITUDE` and `LONGITUDE` in the 
+ADIF input file or their `GRIDSQUARE` reference.
 
 ### 2. Adding Station Information from QRZ.COM
 
-In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth, a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
+In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth, 
+a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
 
 The initial lookup is for the callsign as logged, but for some callsigns more work is required to determine the information.
 
-The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM page for this callsign. I'll use examples to show how the application tries to determine the most accurate information.
+The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM page for 
+this callsign. I'll use examples to show how the application tries to determine the most accurate information.
 
-When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF Processor it would check QRZ.COM for the following callsign variants in order:
+When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF 
+Processor it would check QRZ.COM for the following callsign variants in order:
 
 - `EA7/M0NOM/P`
 - `EA7/M0NOM`
@@ -186,6 +200,19 @@ each activity the ADIF Processor loads the database of activity references. The 
 - 157,201 Summits on the Air
 - 51,138 World Wide Flora Fauna areas
 - 66,026 Castles in the World Castles Award Programme
+- 1,706 International Lighthouses and Lightships
+- 27 Railways on the Air (based on 2021 entrants)
+
+***
+## Satellite Contacts
+
+Currently, only QSOs via the [Es’hail 2 / QO-100](https://amsat-uk.org/satellites/geo/eshail-2/) satellite can be visualized. 
+If you would like to display contacts in Google Earth then you must expand the Options... tab on the ADIF Processor Form and
+enter `QO-100` in the `Satellite Name` form field. The `Satellite Mode` form field is free text and allows you to specify
+the content of the ADIF field `SAT_MODE` - this has no effect on the QSO visualisation. If you have also had non-Satellite
+QSOs they can be visualised normally by specifying the band used for the Satellite QSOs in the `Satellite Band` form field.
+So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs then enter `13cm` in the `Satellite Band` form field
+and only QSOS in the input file with band `13cm` will be treated as satellite contacts.
 
 ***
 ## More about ADIF Processor
