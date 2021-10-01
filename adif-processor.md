@@ -366,8 +366,8 @@ When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to
 ```
 
 Note that each key is followed by a colon and each pair followed by a comma. To add information to go in the
-comments field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify information to
-go in the ADIF `NOTES` field. Try to avoid using commas in arbitary text to avoid confusing the parser.
+`COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify information to
+go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid confusing the parser.
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
