@@ -309,7 +309,7 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ***
 ## The Comment Field in your ADIF file
 
-The ADIF Processor looks carefully for key: value pairs in the comment field in your ADIF input file. If it recognises a keyword then acts on the key/value pair to add additional information to the ADIF output file in the correct ADIF field. 
+The ADIF Processor looks carefully for keyword/value pairs in the comment field in your ADIF input file. The keyword should be followed by a colon, and a comma should separate each key/value pair. If the ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information to the ADIF output file in the correct ADIF field. 
 
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
 would be processed one key/value pair at time and would result in the following ADIF fields being set:
