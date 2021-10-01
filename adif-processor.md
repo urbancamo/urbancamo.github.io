@@ -189,6 +189,7 @@ These value represent an 'average' duct height and width.
 - Antenna type or height is not taken into account.
 - Variation in reflection height based on signal frequency isn't considered.
 - Take-off angle is fixed.
+
 ***
 ## Activities
 
@@ -308,20 +309,26 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ***
 ## The Comment Field in your ADIF file
 
-The ADIF Processor looks carefully for key: value pairs in the comment field in your ADIF input file. It recognises a keywords. 
+The ADIF Processor looks carefully for key: value pairs in the comment field in your ADIF input file. If it recognises a keyword then acts on the key/value pair to add additional information to the ADIF output file in the correct ADIF field. 
 
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
-Would result in the following ADIF fields being set:
+would be processed one key/value pair at time and would result in the following ADIF fields being set:
 
 |ADIF Field|Value|
 |----------|-----|
-|NAME|Mark|
 |SIG|HEMA|
 |SIG_INFO|G/HLD-001|
+|NAME|Mark|
 |RIG|FT-817|
 |RX_PWR|5|
 
-### Comment Name/Value pairs that will be processed
+### Comment Name/Value pairs that are supported by the ADIF Processor
+
+In the table below the `Comment Key` column shows the keyword you should specify if you want to add additional information in the ADIF output file. See the `Sample Value` column for an example of the data to be provided. Activity references must use the correct syntax. The `Target ADIF Field` column show where the data will be located in the ADIF output file.
+
+In each case (unless noted) these values refer to the contact station information.
+
+For activity references specifying a reference that has an associated location will also set their `LAT` & `LONG` value for the location associated with the activity reference (unless that location has been overriden explicitly).
 
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
@@ -329,24 +336,27 @@ Would result in the following ADIF fields being set:
 |Castles on the Air|`COTA`|DL-03609|`SIG/SIG_INFO`|
 |Fists No|`FISTS`|18162|`FISTS`|
 |Home/Location|`QTH`|Windermere|`QTH`|
-|Humps on the Air|`HEMA`|G/HLD-001|`SIG`/`SIG_INFO`|
-|Islands on the Air|`IOTA`|E-145|`IOTA`|
+|Humps on the Air Ref.|`HEMA`|G/HLD-001|`SIG`/`SIG_INFO`|
+|Islands on the Air Ref.|`IOTA`|E-145|`IOTA`|
 |Latitude|`LAT`|50.153|`LATITUDE`|
 |Longitude|`LONG`|2.345|`LONGITUDE`|
 |Maidenhead Locator|`GRID`|IO84MJ (6/8/10 char)|`GRIDSQUARE`|
 |Notes|`NOTES`|Must take a look at their qrz.com page|`NOTES`|
 |Operator Name|`OP`|Mark|`NAME`|
-|Parks on the Air|`POTA`|G-0190|`SIG`/`SIG_INFO`|
-|Propagation|`PROP`|ION|`ANT_PATH`|
+|Parks on the Air Ref.|`POTA`|G-0190|`SIG`/`SIG_INFO`|
+|Propagation|`PROP`|TD|`ANT_PATH`|
 |QSL Status|`QSL`|D/B|`QSL_DATE`/`SQL_SENT`|
 |Rig Model|`RIG`|IC-7100|`RIG`|
-|RX Power|`PWR`|50|`RX_PWR`|
+|Power|`PWR`|50|`RX_PWR`|
 |Serial No Received|`SRX`|0034|`SRX`|
 |Serial No Transmitted|`STX`|0045|`STX`|
 |SKCC No|`SKCC`|19250|`SKCC`|
-|Summits on the Air|`SOTA`|G/LD-001|`SOTA_REF`|
-|Wainwrights on the Air|`WOTA`|LDW-001|`SIG/SIG_INFO`|
-|Worldwide Flora Fauna|`WWFF`|GFF-0233|`SIG/SIG_INFO`|
+|Summits on the Air Ref.|`SOTA`|G/LD-001|`SOTA_REF`|
+|Wainwrights on the Air Ref.|`WOTA`|LDW-001|`SIG/SIG_INFO`|
+|Worldwide Flora Fauna Ref.|`WWFF`|GFF-0233|`SIG/SIG_INFO`|
+|Lighthouses on the Air Ref.|`LOTA`|UK0019|`SIG/SIF_INFO`|
+|Railways on the Air Ref.|`ROTA`|GB4LHR|`SIG/SIG_INFO`|
+|Additional Comment|`COMMENT` or `NOTE`|WX: 12 degC Sunny|`COMMENT`|
 
 When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record between angle brackets, for example:
 
