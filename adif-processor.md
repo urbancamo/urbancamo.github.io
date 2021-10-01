@@ -33,7 +33,9 @@ If you are a fixed station you must have your location set in QRZ.com for the AD
 
 If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let processor know where you are via the form, either by specifying an activity reference, or directly entering your location. 
 
-An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) to- the Latitude & Longitude can be pasted directly into the `Lat/Long` field.
+An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select the Latitude & Longitude value which will copy the value onto the clipboard. This can then be pasted directly into the `Lat/Long` field.
+
+**What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, such as Summits on the Air for example.
 
 ## Releases
 
@@ -139,7 +141,7 @@ activity that is associated with the station.
 |![](http://maps.google.com/mapfiles/kml/shapes/marina.png) Marina| |LOTA|[International Lighthouse & Lightship Weekend](https://illw.net/)
 |![](http://maps.google.com/mapfiles/kml/shapes/rail.png) Rail| |ROTA|[Railways on the Air](https://rota.barac.org.uk/)
 
-Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel if information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
+Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel of information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
 
 The communication paths between stations are also selectable directly from the line drawn on the Google Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visualization) or from the project list.
 
