@@ -395,7 +395,7 @@ _Example of Tropospheric Ducting Visualization_
 ***
 ## Background
 
-The ADIF Processor started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This means I can specify things like operator name, rig,  activity reference, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
+The ADIF Processor started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This meant I could specify things like operator name, rig, their power and activity references, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
 support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support for 10 character Maidenhead locators in the mapping tools currently available. The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) android application to determine my 10 character Maidenhead locator.
@@ -420,7 +420,7 @@ There is a comprehensive set of command line options. See the [project README.md
  
 ### The ADIF Web Front end
 
-The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to the adif-processor. The version you are using is a spring-boot web application that is hosted as an AWS Elastic Beanstalk project.
+The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to the adif-processor. The version you are using is a Bootstrap based spring-boot web application that is hosted as an AWS Elastic Beanstalk project.
 
 ***
 ## Future Directions
