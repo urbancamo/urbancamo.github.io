@@ -219,7 +219,21 @@ QSOs they can be visualised normally by specifying the band used for the Satelli
 So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs then enter `13cm` in the `Satellite Band` form field
 and only QSOS in the input file with band `13cm` will be treated as satellite contacts.
 
+### Satellite Modes
+
+Uplink and downlink designations use sets of paired letters following the structure X/Y where X is the uplink band and Y is the downlink band.*
+
+| Designator | H | A | V | U | L | S | S2 | C | X | K | R |
+|------------|---|---|---|---|---|---|----|---|---|---|---|
+|Band|15 m|10 m|2 m|70 cm|23 cm|13 cm|9 cm|5 cm|3 cm|1.2 cm|6 mm|
+|Frequency (General)|21 MHz|29 MHz|145 MHz|435 MHz|1.2 GHz|2.4 GHz|3.4 GHz|5 GHz|10 GHz|24 GHz|47 GHz|
+
+So for example the `SAT_MODE` designator for QO-100 is X/S.
+
+*from [Amateur Radio – PEØSAT](https://www.pe0sat.vgnet.nl/satellite/sat-information/modes/)
+
 ***
+
 ## More about ADIF Processor
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
