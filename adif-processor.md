@@ -1,5 +1,21 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
 
+## Contents
+- [Introduction](#introduction)
+- [Quick Start / TL;DR](#quick-start--tldr)
+- [Releases](#releases)
+- [How it Works (or a bit more info)](#how-it-works-or-a-bit-more-info)
+- [Activities](#activities)
+- [Satellite Contacts](#satellite-contacts)
+- [More about the ADIF Processor](#more-about-adif-processor)
+- [The Comment Field in your ADIF file](#the-comment-field-in-your-adif-file)
+- [Propagation Modes](#propagation-modes)
+- [Background](#background)
+- [Source Code](#source-code)
+- [Future Directions](#future-directions)
+- [Examples](#examples)
+
+## Introduction
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ![](images/image-cropped-691-slice.png)
