@@ -1,4 +1,5 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
+Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ## Contents
 - [Introduction](#introduction)
@@ -16,7 +17,6 @@
 - [Examples](#examples)
 
 ## Introduction
-Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ![](images/image-cropped-691-slice.png)
 
