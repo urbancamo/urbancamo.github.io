@@ -212,12 +212,18 @@ each activity the ADIF Processor loads the database of activity references. The 
 ## Satellite Contacts
 
 Currently, only QSOs via the [Es’hail 2 / QO-100](https://amsat-uk.org/satellites/geo/eshail-2/) satellite can be visualized. 
+
 If you would like to display contacts in Google Earth then you must expand the Options... tab on the ADIF Processor Form and
-enter `QO-100` in the `Satellite Name` form field. The `Satellite Mode` form field is free text and allows you to specify
-the content of the ADIF field `SAT_MODE` - this has no effect on the QSO visualisation. If you have also had non-Satellite
-QSOs they can be visualised normally by specifying the band used for the Satellite QSOs in the `Satellite Band` form field.
-So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs then enter `13cm` in the `Satellite Band` form field
-and only QSOS in the input file with band `13cm` will be treated as satellite contacts.
+select `QO-100` from the `Satellite Name` dropdown list. This automatically populates the `Satellite Mode` and `Satellite Band` text fields, although these can be overriden if required.
+
+The `Satellite Mode` form field is free text and allows you to specify
+the content of the ADIF field `SAT_MODE` - this has no effect on the QSO visualisation. 
+
+If you have non-Satellite
+QSOs in the same ADIF input file they can be visualised normally by specifying the down-link band used for the Satellite QSOs in the `Satellite Band` form field.
+
+So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs locally on a SOTA activation then enter `13cm` in the `Satellite Band` form field.
+Only QSOS in the input file with band `13cm` will be visualized as satellite contacts.
 
 ### Satellite Modes
 
