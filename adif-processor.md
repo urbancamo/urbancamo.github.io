@@ -236,7 +236,7 @@ The `Satellite Mode` form field is free text and allows you to specify
 the content of the ADIF field `SAT_MODE` - this has no effect on the QSO visualisation. 
 
 If you have non-Satellite
-QSOs in the same ADIF input file they can be visualised normally by specifying the down-link band used for the Satellite QSOs in the `Satellite Band` form field.
+QSOs in the same ADIF input file they can be visualised normally by specifying the up-link band used for the Satellite QSOs in the `Satellite Band` form field.
 
 So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs locally on a SOTA activation then enter `13cm` in the `Satellite Band` form field.
 Only QSOS in the input file with band `13cm` will be visualized as satellite contacts.
