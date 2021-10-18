@@ -63,6 +63,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 |18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
 |23-SEP-2021|Support for Lighthouses & Railways on the Air|
 |26-SEP-2021|Initial Geolocation support via Nominatim|
+|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
 
 ***
 ## How It Works (or a bit more info)
@@ -371,6 +372,7 @@ For activity references specifying a reference that has an associated location w
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
 |Age|`AGE`|52|`AGE`|
+|Coordinate†|`COORD`|50°50'56"N 14°38'49"E|`LATITUDE` & `LONGITUDE`|
 |Castles on the Air|`COTA`|DL-03609|`SIG/SIG_INFO`|
 |Fists No|`FISTS`|18162|`FISTS`|
 |Home/Location|`QTH`|Windermere|`QTH`|
@@ -378,7 +380,7 @@ For activity references specifying a reference that has an associated location w
 |Islands on the Air Ref.|`IOTA`|E-145|`IOTA`|
 |Latitude|`LAT`|50.153|`LATITUDE`|
 |Longitude|`LONG`|2.345|`LONGITUDE`|
-|Maidenhead Locator|`GRID`|IO84MJ (6/8/10 char)|`GRIDSQUARE`|
+|Maidenhead Locator|`GRID`|IO84MJ (4/6/8/10 char)|`GRIDSQUARE`|
 |Notes|`NOTES`|Must take a look at their qrz.com page|`NOTES`|
 |Operator Name|`OP`|Mark|`NAME`|
 |Parks on the Air Ref.|`POTA`|G-0190|`SIG`/`SIG_INFO`|
@@ -395,6 +397,8 @@ For activity references specifying a reference that has an associated location w
 |Lighthouses on the Air Ref.|`LOTA`|UK0019|`SIG/SIF_INFO`|
 |Railways on the Air Ref.|`ROTA`|GB4LHR|`SIG/SIG_INFO`|
 |Additional Comment|`COMMENT` or `NOTE`|WX: 12 degC Sunny|`COMMENT`|
+
+†Coordinate can be specified in most latitude/longitude formats including decimal, degrees minute secords, degrees decimal minutes etc.
 
 When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record between angle brackets, for example:
 
