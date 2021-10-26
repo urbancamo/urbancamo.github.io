@@ -2,9 +2,9 @@
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ## Contents
+- [Releases](#releases)
 - [Introduction](#introduction)
 - [Quick Start / TL;DR](#quick-start--tldr)
-- [Releases](#releases)
 - [How it Works (or a bit more info)](#how-it-works-or-a-bit-more-info)
 - [Activities](#activities)
 - [Satellite Contacts](#satellite-contacts)
@@ -15,6 +15,17 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 - [Source Code](#source-code)
 - [Future Directions](#future-directions)
 - [Examples](#examples)
+
+## Releases
+
+|Date|New Features|
+|----|------------|
+|07-SEP-2021|Support for Castles on the Air Activity References|
+|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
+|23-SEP-2021|Support for Lighthouses & Railways on the Air|
+|26-SEP-2021|Initial Geolocation support via Nominatim|
+|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
+|26-OCT-2021|Support for Lanzarote HEMA summits|
 
 ## Introduction
 
@@ -54,16 +65,6 @@ If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY
 An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select the Latitude & Longitude value which will copy the value onto the clipboard. This can then be pasted directly into the `Lat/Long` field.
 
 **What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, such as Summits on the Air for example.
-
-## Releases
-
-|Date|New Features|
-|----|------------|
-|07-SEP-2021|Support for Castles on the Air Activity References|
-|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
-|23-SEP-2021|Support for Lighthouses & Railways on the Air|
-|26-SEP-2021|Initial Geolocation support via Nominatim|
-|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
 
 ***
 ## How It Works (or a bit more info)
