@@ -76,9 +76,11 @@ wind.
 Initially I spotted on the HEMA Facebook Group, then subsequently both the Parks on the Air and WWFF spot systems.
 I don't think POTA brought in any contacts (it was a bad time of day for the USA where most POTA contacts originate) but
 I think the WWFF spot definitely brought in some chasers. When the frequency I was working `14.287 SSB` dried up
-I found that Mike was in QSO with Ed, Ian and Ernie. Ian was always weak with me, generally not moving the meter but
-Ernie came up to around 58 on the peak of the opening. I had a confirmed QSO with Mike, making this the first
-HEMA S2S with a Lanzarote summit and also with Ernie which is quite incredible on 5 watts!
+I found that Mike was in QSO with Ed [DD5LP](https://www.qrz.com/db/DD5LP), Ian [VK3YFD](https://www.qrz.com/db/VK3YFD) 
+and Ernie [VK3DET](https://www.qrz.com/db/VK3DET). Ian was always weak with me, generally not moving the meter but
+Ernie came up to around 58 on the peak of the opening. 
+I had a confirmed QSO with Mike[2E0YYY](https://www.qrz.com/db/2E0YYY), making this the first
+HEMA S2S with a Lanzarote summit and also with Ernie [VK3DET](https://www.qrz.com/db/VK3DET) which is quite incredible on 5 watts!
 
 I had also posted on the [FISTS CW groups.io mailing list](https://fistscw.groups.io/g/main) that I would be operating
 CW and tried therefore to use the FISTS recommended frequency of `14.058` when I did my 20m CW activation. I'm not
