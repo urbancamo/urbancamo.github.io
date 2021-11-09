@@ -23,7 +23,7 @@ visit if you are holidaying on Lanzarote. Here is one description that sums it u
 
 _This is terrain of volcanic origin with strange, curious formations which emerged from the solidification of
 the lava. The presence of vegetation is very scarce, except in the areas with the oldest materials, 
-prior to the las eruptions in the 18th and 19th centuries. Lichens proliferate here, 
+prior to the last eruptions in the 18th and 19th centuries. Lichens proliferate here, 
 there being almost a hundred different species. In the fresher areas the wild geranium, 
 St. John's wort and the Canary Island aeonium are common. As for the fauna, the reptiles and birds, 
 who have adapted well to the exceptional conditions of the park, dominate._ [ref](https://www.spain.info/en/nature/volcanes-natural-park/)
@@ -35,7 +35,7 @@ Lanzarote 1730-1736.
 
 Parking can be found by searching Google Maps for
 [Aparcamiento Montana Colorada, Tinajo](https://www.google.com/maps/place/Aparcamiento+Montana+Colorada/@29.0047073,-13.6859487,17z).
-There is a flat walk with information signs that skirts round the end of the Volcano which is easy underfoot. About
+There is a flat walk with information signs that skirts round the base of the Volcano which is easy underfoot. About
 1km in is the obvious path for ascending to the summit and marked on most terrain maps.
 
 ![](images/Photos/EA8_HLA-004/Screenshot_20211028_100052.png)
@@ -45,7 +45,7 @@ _Car Parking_
 
 ### The Ascent
 
-When I arrived it was still dark. It was windy which is very common on Lanzarote! I had bought my headtorch 
+When I arrived it was still dark. It was windy which is very common on Lanzarote! I had bought my head-torch 
 just in case of an early morning or evening activation and that was put to good use on the ascent. The flat
 path is very easy underfoot. The ascent is on loose, small gravel from volcanic rock. It is fairly easy going
 with shoes/boots with a descent grip on them. The last 25 metres is steeper and requires some extra care to
@@ -79,7 +79,7 @@ I think the WWFF spot definitely brought in some chasers. When the frequency I w
 I found that Mike was in QSO with Ed [DD5LP](https://www.qrz.com/db/DD5LP), Ian [VK3YFD](https://www.qrz.com/db/VK3YFD) 
 and Ernie [VK3DET](https://www.qrz.com/db/VK3DET). Ian was always weak with me, generally not moving the meter but
 Ernie came up to around 58 on the peak of the opening. 
-I had a confirmed QSO with Mike[2E0YYY](https://www.qrz.com/db/2E0YYY), making this the first
+I had a confirmed QSO with Mike [2E0YYY](https://www.qrz.com/db/2E0YYY), making this the first
 HEMA S2S with a Lanzarote summit and also with Ernie [VK3DET](https://www.qrz.com/db/VK3DET) which is quite incredible on 5 watts!
 
 I had also posted on the [FISTS CW groups.io mailing list](https://fistscw.groups.io/g/main) that I would be operating
@@ -93,7 +93,7 @@ I also spotted for 20m CW on the WWFF spotter.
 
 I moved to 15m to catch [Simon G4JPX](https://www.qrz.com/db/G4JXP) who was activating Lanzarote SOTA summit
 [EA8/LA-002](https://summits.sota.org.uk/summit/EA8/LA-002) Atalaya de Femes. He must have been using the same
-frequency as a couple of days ago as he was booming in 59+ as soon as I shifted frequency on the FT-817ND. I only
+frequency as a couple of days ago as he was booming in 59+ as soon as I changed band on the FT-817ND. I only
 had one contact after a spot on WWFF on 15m.
 
 ## Photos
