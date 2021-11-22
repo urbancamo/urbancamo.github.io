@@ -1,4 +1,4 @@
-# [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗
+# [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ## Contents
@@ -26,45 +26,51 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 |26-SEP-2021|Initial Geolocation support via Nominatim|
 |15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
 |26-OCT-2021|Support for Lanzarote HEMA summits|
+|10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
 
 ## Introduction
 
 ![](images/image-cropped-691-slice.png)
 
-[ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	🔗 produces beautiful 
-visualizations of your QSOs in [Google Earth](https://earth.google.com). Once you have generated a KML file 
-from [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/), use 
-_Import KML file from computer_ via the map pin icon if using desktop [Google Earth](https://earth.google.com), 
-otherwise click on the KML file in Android Google Earth to open the KML file.
+[ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) visualizes contacts in your input
+file on [Google Earth](https://earth.google.com). It generates a Google Earth Project file, also known as a KML file, 
+for each contact in the ADIF input file.
+
+To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use _Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+
+The ADIF Processor can also process [SOTA](https://www.sotadata.org.uk/en/) CSV database log files.
 
 ![](images/img.png)
+_Desktop/Browser Google Earth Project Menu_
+
 
 ## Quick Start / TL;DR
 
-Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)	🔗  and click `Process...` 
+Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="https://urbancamo.github.io/images/simple-usecase.png">![](images/simple-usecase.png)
-_Simple Use Case_
+<a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
+_[Simple Use Case](images/adif-processor-upload-form.png)_
 
-On a clean run you will be presented with three files:
-- an enhanced ADIF file augmented with data from QRZ.com and activity references including
-operator name and location.
+You will be presented with three files:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
-- a [Markdown](https://www.markdownguide.org/) table of contacts that can be pasted into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/). 
+- an enhanced ADIF file augmented with data from QRZ.com and activity references including
+  operator name, location, contact distance and bearing etc.
+- a contact list in either [Markdown](https://www.markdownguide.org/) format for pasting into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/), or fixed width column plain text. 
 
-Any processing errors are displayed in the `Errors` text box and any callsigns for which a location could not be determined
-as shown in the `Callsigns without Location` text box.
+Any processing errors are displayed in the `Errors` text box. 
+Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
 <a href="https://urbancamo.github.io/images/results.png">![](images/results.png)
-_Example Result Form_
+_[Example Result Form](images/results.png)_
 
-If you are a fixed station you must have your location set in QRZ.com for the ADIF Processor to determine your location.
+If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
 
-If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let processor know where you are via the form, either by specifying an activity reference, or directly entering your location. 
-
-An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select the Latitude & Longitude value which will copy the value onto the clipboard. This can then be pasted directly into the `Lat/Long` field.
+__TIP__:
+An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select the Latitude & Longitude value which will copy the value onto the clipboard. This can then be pasted directly into the `Location` text box.
 
 **What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, such as Summits on the Air for example.
+
+If you're logging one of the supported activities you should enter the activity reference. Your location will be determined from the activity if possible.
 
 ***
 ## How It Works (or a bit more info)
@@ -87,6 +93,10 @@ If you want to make obscure your location a bit then specify a 6 or 8 character 
 10 character version.
 
 ### Determining Other Station Locations
+
+If you are a fixed station you must have your location set in QRZ.com for the ADIF Processor to determine your location.
+
+If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let processor know where you are via the form, either by specifying an activity reference, or directly entering your location.
 
 For each of your hard earned contacts ADIF Processor attempts to determine a location. It does this using a number of techniques, in order of accuracy:
 
