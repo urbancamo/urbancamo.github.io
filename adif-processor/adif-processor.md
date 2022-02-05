@@ -7,7 +7,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 - [Quick Start](#quick-start)
 - [How it Works (or a bit more info)](#how-it-works-or-a-bit-more-info)
 - [Activities](#activities)
-- [Satellite Support](#satellite-supportsatellitesatellite)
+- [Satellite Support](satellite/satellite)
 - [More about the ADIF Processor](#more-about-adif-processor)
 - [The Comment Field in your ADIF file](#the-comment-field-in-your-adif-file)
 - [Propagation Modes](#propagation-modes)
