@@ -1,4 +1,6 @@
-## Satellite Contacts
+# Satellite Support
+
+## Introduction
 
 QSOs via the [Es’hail 2 / QO-100](https://amsat-uk.org/satellites/geo/eshail-2/) and a number of Low Earth Orbit (LEO)
 satellites can be visualized.
@@ -8,6 +10,7 @@ list below.
 
 ![SO-50 Pass](so-50-pass.png)
 _SO-50 Pass_
+
 ### Where you haven't specified the `SAT_NAME` in the input ADIF file
 
 Expand the Options... tab on the ADIF Processor Form and
@@ -45,7 +48,7 @@ be accurate as the TLE data isn't correct for that date.
 
 TLE data is loaded from [amateur.txt hosted on celestrak.com](http://www.celestrak.com/NORAD/elements/amateur.txt).
 
-### Sorted by Code
+### Supported Satellites Sorted by Code
 
 |Code|Name|
 |----|----|
@@ -91,7 +94,7 @@ TLE data is loaded from [amateur.txt hosted on celestrak.com](http://www.celestr
 |UO-11|UOSAT 2 |
 |ZARYA|ISS |
 
-### Sorted By Name
+### Supported Satellites Sorted By Name
 
 |Name|Code|
 |----|----|
