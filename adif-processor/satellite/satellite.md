@@ -6,6 +6,8 @@ satellites can be visualized.
 If you specify the satellite name or code (see tables below) in the ADIF input file in the field `SAT_NAME` it will be looked up in the supported
 list below.
 
+![SO-50 Pass](so-50-pass.png)
+_SO-50 Pass_
 ### Where you haven't specified the `SAT_NAME` in the input ADIF file
 
 Expand the Options... tab on the ADIF Processor Form and
