@@ -1,34 +1,6 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
-## Contents
-- [Releases](#releases)
-- [Introduction](#introduction)
-- [Quick Start](#quick-start)
-- [How it Works (or a bit more info)](#how-it-works-or-a-bit-more-info)
-- [Activities](#activities)
-- [Satellite Support](satellite/satellite)
-- [More about the ADIF Processor](#more-about-adif-processor)
-- [The Comment Field in your ADIF file](#the-comment-field-in-your-adif-file)
-- [Propagation Modes](#propagation-modes)
-- [Background](#background)
-- [Source Code](#source-code)
-- [Future Directions](#future-directions)
-- [Examples](#examples)
-
-## Releases
-
-|Date|New Features|
-|----|------------|
-|07-SEP-2021|Support for Castles on the Air Activity References|
-|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
-|23-SEP-2021|Support for Lighthouses & Railways on the Air|
-|26-SEP-2021|Initial Geolocation support via Nominatim|
-|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
-|26-OCT-2021|Support for Lanzarote HEMA summits|
-|10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
-|05-FEB-2022|LEO Satellite preliminary support, Long Path HF contact support|
-
 ## Introduction
 
 ![](../images/image-cropped-691-slice.png)
@@ -51,7 +23,6 @@ _Desktop/Browser Google Earth Project Menu_
 
 I recommended following the Quick Start section below to get a feel for the tool, then have a look at 
 the advanced options based on your requirements.
-
 
 ## Quick Start
 
@@ -80,12 +51,33 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 
 If you're logging one of the supported activities you should enter the activity reference. Your location will be determined from the activity if possible.
 
+## More Infomation about ADIF Processor
+
+Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
+_Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import
+contacts without loosing any information. As such it supports a large number of fields designed to capture
+every aspect of a QSO.
+
+You may have connected your logging application to [QRZ.COM](https://qrz.com). If you have an XML Subscription
+membership contact details can be automatically pulled from QRZ.COM.
+
+However, if you use a standalone program such as [Fast Log Entry](https://df3cb.com/fle/) then 
+the data that you enter as part of the QSO log will be the total information available in the ADIF export.
+
+The ADIF Processor will to add information from QRZ.com. Activity references pull are used to locate portable
+operators and add information about the activity. 
+
+Using specially-formatted information in the `COMMENT` field you can populate the correct fields in the output
+ADIF file.
+
+This works really well for [Fast Log Entry](https://df3cb.com/fle/) with only limited support
+for ADIF fields built into the application. 
+
 ***
-## More Information
 
-Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
-
-There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth KML project file.
+## How the ADIF Processor Works
+There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth 
+KML project file.
 
 ### Determining Your Station Location
 
@@ -97,16 +89,35 @@ accurate location.
 If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or 
 longitude, or alternatively a Maidenhead Locator. 
 
-If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most 
+If you want to obscure your location then specify a 6 or 8 character locator rather than the most 
 accurate 10 character version.
+
+If your location isn't fixed (/P, /M, /A) use one of the following to let the ADIF processor know where to place
+you: 
+
+* ADIF input file contains a `MY_SOTA` reference,
+* Use an activity reference in `SIG` `SIG_INFO` that has a location
+* Specify `MY_GRIDSQUARE` or `LATITUDE` & `LONGITUDE`.
+
+If none of these are an option for you then let the processor know where you are via the form, 
+either by specifying an activity reference, or directly entering your location. 
+
+The _Location_ field on the form
+supports any of the coordinate formats you can use in the
+[Coordinate Converter](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/coord), for example:
+
+ * Latitude and Longitude, eg: 54.3709 -2.9099 or 54° 22.260' N, 3° 5.403' W
+ * Maidenhead Locator (4/6/8/10 character), eg: IO84NI
+ * Activity Reference in the SOTA/WOTA/LOTA/POTA/ROTA/COTA/WWFF programmes eg: G/LD-050
+ * An OSGB36 British National Grid Reference, 4 or 5 digit, eg: SD 40891 97674
+ * An OSGB36 British National Grid Easting/Northing, eg: E 332222, N 527763
+ * A street address for geocoding
+
 
 ### Determining Other Station Locations
 
-If you are a fixed station you must have your location set in QRZ.com for the ADIF Processor to determine your location.
-
-If your location isn't fixed (/P, /M, /A) and the ADIF input file contains a `MY_SOTA` reference, an activity reference in `SIG` `SIG_INFO` that has a location, your `MY_GRIDSQUARE` is set or your `LATITUDE` & `LONGITUDE` are set you are good to go. If not then let processor know where you are via the form, either by specifying an activity reference, or directly entering your location.
-
-For each of your hard earned contacts ADIF Processor attempts to determine a location. It does this using a number of techniques, in order of accuracy:
+For each of your hard earned contacts ADIF Processor attempts to determine a location. 
+It does this using a number of techniques, in order of accuracy:
 
 1. A `LATITUDE` and `LONGITUDE` in the ADIF file.
 2. Their Activity location (in the `SIG` and `SIG_INFO` or `SOTA_REF` fields of the ADIF input file).
@@ -115,34 +126,37 @@ For each of your hard earned contacts ADIF Processor attempts to determine a loc
 5. A Geocoding lookup is made via [Nominatim](https://nominatim.org/) and the OpenStreetMap database using any QRZ.com address data.
 
 Note that a number of locations are regarded as _dubious_ or _invalid_ based on them being the default grid or 
-latitude/longitude location in QRZ.com. In these cases unless an override location is specified in the input ADIF file 
-a Geocoding lookup is made to determine the station location.
+latitude/longitude location in QRZ.com. In these cases unless an override location is specified in the
+input ADIF file a Geocoding lookup is made to determine the station location.
 
-#### Stations without a location
+### Stations without a location
 
 Where no location can be determined a warning is issued, and the station isn't added to the Google Earth KML file. 
-You can correct this by adding an activity for the station, or by specifying their `LATITUDE` and `LONGITUDE` in the 
-ADIF input file or their `GRIDSQUARE` reference.
+You can correct this by adding an activity for the station, 
+or by specifying their `LATITUDE` and `LONGITUDE` in the ADIF input file or their `GRIDSQUARE` reference.
 
-### 2. Adding Station Information from QRZ.COM
+### Adding Station Information from QRZ.COM
 
-In order to enrich the ADIF output file, and provide more information when you click on a station icon in Google Earth, 
-a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
+In order to enrich the ADIF output file, and provide more information when you click on a station icon 
+in Google Earth, a lookup is made for additional station information from [QRZ.COM](https://qrz.com). 
 
-The initial lookup is for the callsign as logged, but for some callsigns more work is required to determine the information.
+The initial lookup is for the callsign as logged, but for some callsigns more work is required to 
+determine the information.
 
-The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM page for 
-this callsign. I'll use examples to show how the application tries to determine the most accurate information.
+The worst case is a portable operator abroad. It is unlikely the operator has created a specific QRZ.COM 
+page for this callsign. I'll use examples to show how the application tries to determine the most accurate
+information.
 
-When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and used the ADIF 
-Processor it would check QRZ.COM for the following callsign variants in order:
+When operating on holiday in Spain I used the callsign `EA7/M0NOM/P`. If you had a contact with me and
+used the ADIF Processor it would check QRZ.COM for the following callsign variants in order:
 
 - `EA7/M0NOM/P`
 - `EA7/M0NOM`
 - `M0NOM/P`
 - `M0NOM`
 
-The UK complicates this a little more, as a Scottish operator `MM0XRT` activating a HEMA summit in Wales would be `MW0XRT/P`. In this case QRZ.COM would be queried with UK country callsign variants:
+The UK complicates this a little more, as a Scottish operator `MM0XRT` activating a HEMA summit in Wales
+would be `MW0XRT/P`. In this case QRZ.COM would be queried with UK country callsign variants:
 
 - `MW0XRT/P`
 - `MW0XRT`
@@ -157,12 +171,15 @@ The UK complicates this a little more, as a Scottish operator `MM0XRT` activatin
 - `MG0XRT/P`
 - `MG0XRT`
 
-As soon as a variant matches in QRZ.COM the search stops. I've almost certainly only scratched the surface on this process!
+As soon as a variant matches in QRZ.COM the search stops. I've almost certainly only scratched the surface 
+on this process!
 
-### 3. Selection of Station Icon
+### Station Icons in Google Earth
 
-There are a number of icons that are used to mark a station, based on the station suffix and any 
-activity that is associated with the station.
+Each station in the Google Earth project file has an icon. The icon used depends on the callsign suffix
+or if a station has been recorded doing an activity.
+
+Here are the possible icons:
 
 |Icon|Suffix| Activity  |Description/Link|
 |----|------|-----------|-----------|
@@ -179,63 +196,100 @@ activity that is associated with the station.
 |![](http://maps.google.com/mapfiles/kml/shapes/marina.png) | | LOTA      |[International Lighthouse & Lightship Weekend](https://illw.net/)|
 |![](http://maps.google.com/mapfiles/kml/shapes/rail.png) | | ROTA      |[Railways on the Air](https://rota.barac.org.uk/)|
 
-Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel of information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
+Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
+When you do this a panel of information about the station is displayed. If the operator has a picture 
+on QRZ.COM this is displayed together with details of activity the station was participating in and the
+frequency and mode of contact.
 
-The communication paths between stations are also selectable directly from the line drawn on the Google Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visualization) or from the project list.
+The communication paths between stations are also selectable directly from the line drawn on the Google 
+Earth visualization (noting that a 'shadow' dark gray line is also drawn to help with the visualization) 
+or from the project list.
 
-When you select a communication path a panel of information is displayed that contains both station callsigns, together with the date and time of the contact and the propagation mode. For `SKYWAVE` contacts the number of hops is displayed together with the bounce height, length of contact across the surface of the earth as well as the distance the predicted path of communication took.
+When you select a communication path a panel of information is displayed that contains both station callsigns, 
+together with the date and time of the contact and the propagation mode. For `SKYWAVE` contacts the number 
+of reflections is displayed together with the bounce height, length of contact across the surface of the earth as 
+well as the distance the predicted path of communication took.
 
-### Drawing the QSO
+## Visualizing a QSO
 
-ADIF Processor uses a simple propagation visualization technique based on an ideal antenna. For HF signals this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
+ADIF Processor uses a simple propagation visualization technique based on an ideal antenna. For HF signals 
+this gives an idea of the minimum number of hops your QSO would have needed to reach the target station.
 
 ### The Propagation Model
 
 This is a very simple model designed to map both HF and VHF/UHF contacts.
 
-It supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify `TROPOSPHERIC_DUCTING`
-for contacts identified as using this propagation.
+It supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify
+`TROPOSPHERIC_DUCTING` for contacts identified as using this propagation.
 
-For HF it is assumed that the ionospheric reflection height is 350 km, and the radiation angle of the antenna is 6 degrees. This represents an antenna with a low radiation angle, such as a vertical. Six degrees is the lowest angle of propagation that ensure the signal doesn't bisect the surface of the earth as it rises from the originating station.
+Where the distance between two stations using HF is short it is assumed that the communication 
+path is `GROUNDWAVE`.
 
-Where the distance between two stations using HF is short it is assumed that the communication path is `GROUNDWAVE`.
+This is the logic applied in determining the propagation mode. Note that there can be considerable 
+improvements made to this model, but any model is only ever going to be a 'best guess'.
 
-This is the logic applied in determining the propagation mode. Note that there can be considerable improvements made to this model, but any model is only ever going to be a 'best guess'.
+| Frequency          | Distance   |Classification|
+|--------------------|------------|--------------|
+| > 50 MHz           | < 400 km   | `GROUNDWAVE` |
+| > 50 MHz           | > 400 km   | `SPORADIC-E` |
+| 7 MHz > f > 50 MHz | < 400 km   | `GROUNDWAVE` |
+| < 7 MHz            | >= 400 km  | `SKYWAVE` |
 
-If the frequency of signal is > 50 Mhz and the distance is < 400 km then the signal path is modelled as a `GROUNDWAVE` contact.
 
-If the frequency of the signal is > 50 Mhz and the distance is >= 400 km the signal path is modelled as `SPORADIC-E`.
+This is a very, very rough approximation. A future enhancement will make the model configurable, and 
+ideally would be able to take into account propagation measurements and conditions at the time of the 
+contact to help improve the accuracy of the visualization.
 
-If the frequency of the signal is between 7 Mhz and 50 Mhz and the distance is < 400 km then the signal path is modelled as a `GROUNDWAVE` contact.
-
-If the frequency of the signal is less than 50Mhz and the distance is greater than 400 km then the signal path is modelled as a `SKYWAVE` contact.
-
-This is a very, very rough approximation. A future enhancement will make the model configurable, and ideally would be able to take into account propagation measurements and conditions at the time of the contact to help improve the accuracy of the visualization.
-
-For Groundwave VHF+ contacts the model applies an algorithm to determine a nominal 'bounce height' which is a very crude approximation of the curved signal paths that take place in reality. The algorithm defines the bounce height as 6 x the distance between two contacts in km, and if possible takes into account the height of the stations if that is available from any activities taking place. In general this ensures that the visualization of the signal path between two stations using `GROUNDWAVE` is visible above the earth that runs underneath the path. This isn't always the case where a contact is made from a high to low point or where there is terrain in-between.
+### VHF Contacts 
+For Groundwave VHF+ contacts the model applies an algorithm to determine a nominal 'bounce height' 
+which is a very crude approximation of the curved signal paths that take place in reality. The algorithm 
+defines the bounce height as 6 x the distance between two contacts in km, and if possible takes into 
+account the height of the stations if that is available from any activities taking place. In general 
+this ensures that the visualization of the signal path between two stations using `GROUNDWAVE` is 
+visible above the earth that runs underneath the path. This isn't always the case where a contact 
+is made from a high to low point or where there is terrain in-between.
 
 ### Tropospheric Ducting
 
-In order to visualize a contact that has been via [tropospheric ducting](https://www.amateur-radio-wiki.net/tropospheric-ducting/)
-you must set the `PROPAGATION_MODE` to `TR` in the ADIF input file for that contact. If you are using Fast Log Entry to create your ADIF file add the comment `PROP_MODE: TR`.
+In order to visualize a contact that has been via
+[tropospheric ducting](https://www.amateur-radio-wiki.net/tropospheric-ducting/)
+you must set the `PROPAGATION_MODE` to `TR` in the ADIF input file for that contact.
+If you are using Fast Log Entry to create your ADIF file add the comment `PROP_MODE: TR`.
 
-The model used is a duct at height 2,000m and a duct width of 500m, so the signal bounces in a duct between 2,250m and 1,750m.
-These value represent an 'average' duct height and width.
+The model used is a duct at height 2,000m and a duct width of 500m, so the signal bounces in a
+duct between 2,250m and 1,750m. These value represent an 'average' duct height and width.
+
+### HF Contacts
+
+HF contacts are modelled using a reflection angle that is frequency dependent.
+In the _Options_ pane you can choose from a number of different antenna models, with different angles 
+of radiation.
+
+|Antenna| Radiation Angle |
+|-------|-----------------|
+|Vertical | 15              |
+| YAGI| 10              |
+| Dipole | 20              |
+| Inverted-V | 25              |
+
+This is a very crude approximation of the reality. It affects the number of calculated reflections, with many
+more reflections for example when using an Inverted-V compared to an HF YAGI.
 
 ### Long Path HF Contacts
 
-If you want to visualize long path contacts specify either the `ANTPATH` ADIF parameter as `L` in the ADIF input file,
-or specify `PATH: L` in the `COMMENT` field of the ADIF input file.
+If you want to visualize long path contacts specify either the `ANTPATH` ADIF parameter as `L` in the 
+ADIF input file, or specify `PATH: L` in the `COMMENT` field of the ADIF input file.
 
-Long path contacts are visualized using a path that is 180 degrees reversed from the shortest path azimuth. The antenna
-direction isn't currently 
+Long path contacts are visualized using a path that is 180 degrees reversed from the shortest path azimuth. 
+The antenna direction specified in the ADIF input file isn't currently used during modelling.
+
 
 ***
 ## Activities
 
 The ADIF Processor knows about _activities_. The term _Activity_ is used to describe a special activity
-that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. For
-each activity the ADIF Processor loads the database of activity references. The totals are currently:
+that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. 
+For each activity the ADIF Processor loads the database of activity references. The totals are currently:
 
 - 28,229 Parks on the Air
 - 330 Wainwrights on the Air
@@ -248,36 +302,17 @@ each activity the ADIF Processor loads the database of activity references. The 
 
 ***
 
-# [Satellite Support](satellite/satellite)
+## [Satellite Support](satellite/satellite)
 
+Satellite Support is documented on a [separate page](satellite/satellite).
 ***
 
-## More about ADIF Processor
-
-Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
-_Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import 
-contacts without loosing any information. As such it supports a large number of fields designed to capture 
-every aspect of a QSO.
-
-If your logging program is connected to [QRZ.COM](https://qrz.com) and you have an XML Subscription
-membership then you may find that details are automatically pulled from QRZ.COM about the other 
-station and added to your contact. These will be exported by the logging program in ADIF.
-
-However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM 
-or you don't have an XML subscription then the data that you enter as part of the QSO log will be the
-total information available in the ADIF export.
-
-The ADIF Processor gives you the opportunity to add information about the station you have worked both
-from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, 
-where your logging program doesn't have the ability to add data directly.
-
-This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character
-Maidenhead locator can be specified for the contacted station.
-
-***
 ## The ADIF format 30 second Primer
-[ADIF](http://adif.org/) _Amateur Data Interchange Format_ is a text file representation for Amateur radio contacts. It is a popular
-output format for logging programs. The [ADIF specification](https://adif.org/312/ADIF_312.htm) describes the valid content of the header and record fields.
+
+[ADIF](http://adif.org/) _Amateur Data Interchange Format_ is a text file representation for Amateur 
+radio contacts. It is a popular output format for logging programs. 
+The [ADIF specification](https://adif.org/312/ADIF_312.htm) describes the valid content of the header 
+and record fields.
 
 An ADIF file consists of two sections:
 
@@ -335,11 +370,13 @@ each field of a record into a single line:
 <EOR>
 ```
 
-Note that the QSO has a `<STATION_CALLSIGN:7>` (me) and a `<CALL:7>` G7LAS/P who is on the other end, a date and time, frequency, band, mode, signal reports,
-my SOTA reference `<MY_SOTA_REF:8>`, the operator (basically my callsign without any modifiers) and my Maidenhead
-Locator in `<MY_GRIDSQUARE:6>`.
+Note that the QSO has a `<STATION_CALLSIGN:7>` (me) and a `<CALL:7>` G7LAS/P who is on the other end, 
+a date and time, frequency, band, mode, signal reports,
+my SOTA reference `<MY_SOTA_REF:8>`, the operator (basically my callsign without any modifiers) and my
+Maidenhead Locator in `<MY_GRIDSQUARE:6>`.
 
-Of interest is the comment line, which we will examine further, as this is one of the key features of post-processing.
+Of interest is the comment line, which we will examine further, as this is one of the key features 
+of post-processing.
 In the comment line:
 
 `<COMMENT:47>OP: Rob, PWR: 50, GRID: IO81LC, HEMA: G/HWB-026
@@ -351,7 +388,10 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ***
 ## The Comment Field in your ADIF file
 
-The ADIF Processor looks carefully for keyword/value pairs in the comment field in your ADIF input file. The keyword should be followed by a colon, and a comma should separate each key/value pair. If the ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information to the ADIF output file in the correct ADIF field. 
+The ADIF Processor looks carefully for keyword/value pairs in the comment field in your ADIF input file. 
+The keyword should be followed by a colon, and a comma should separate each key/value pair. If the 
+ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information
+to the ADIF output file in the correct ADIF field. 
 
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
 would be processed one key/value pair at time and would result in the following ADIF fields being set:
@@ -366,11 +406,16 @@ would be processed one key/value pair at time and would result in the following 
 
 ### Comment Name/Value pairs that are supported by the ADIF Processor
 
-In the table below the `Comment Key` column shows the keyword you should specify if you want to add additional information in the ADIF output file. See the `Sample Value` column for an example of the data to be provided. Activity references must use the correct syntax. The `Target ADIF Field` column show where the data will be located in the ADIF output file.
+In the table below the `Comment Key` column shows the keyword you should specify if you want to add 
+additional information in the ADIF output file. See the `Sample Value` column for an example of the 
+data to be provided. Activity references must use the correct syntax. The `Target ADIF Field` column 
+show where the data will be located in the ADIF output file.
 
 In each case (unless noted) these values refer to the contact station information.
 
-For activity references specifying a reference that has an associated location will also set their `LAT` & `LONG` value for the location associated with the activity reference (unless that location has been overriden explicitly).
+For activity references specifying a reference that has an associated location will also set their 
+`LAT` & `LONG` value for the location associated with the activity reference (unless that location 
+has been overriden explicitly).
 
 |Description|Comment Key|Sample  Value|Target ADIF Field|
 |-----|------|--------------------|-----------------|
@@ -401,9 +446,11 @@ For activity references specifying a reference that has an associated location w
 |Railways on the Air Ref.|`ROTA`|GB4LHR|`SIG/SIG_INFO`|
 |Additional Comment|`COMMENT` or `NOTE`|WX: 12 degC Sunny|`COMMENT`|
 
-†Coordinate can be specified in most latitude/longitude formats including decimal, degrees minute secords, degrees decimal minutes etc.
+†Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
+minute secords, degrees decimal minutes etc.
 
-When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record between angle brackets, for example:
+When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record 
+between angle brackets, for example:
 
 ```
 2111 g7tcq/m  59 59 <QTH: M6 J11 N. Birmingham, PROP: TR> #IO82xq 
@@ -411,8 +458,9 @@ When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to
 ```
 
 Note that each key is followed by a colon and each pair followed by a comma. To add information to go in the
-`COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify information to
-go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid confusing the parser.
+`COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify 
+information to go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid 
+confusing the parser.
 
 I will accept requests to map additional fields - these are the most frequently fields used by me,
 and there are a log of them!
@@ -420,7 +468,8 @@ and there are a log of them!
 ***
 ## Propagation Modes
 
-These are the valid values for the propagation modes that the ADIF Processor currently supports that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
+These are the valid values for the propagation modes that the ADIF Processor currently supports 
+that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
 `PROP`:
 
 |Value|Mode|
@@ -430,49 +479,76 @@ These are the valid values for the propagation modes that the ADIF Processor cur
 |`ES`|Sporadic E|
 |`F2`|F2 Reflection|
 
-If the mode isn't specified then it is predicted. Note that the prediction model doesn't include Tropospheric Ducting, 
-you need to specify that manually. The distance achieved by UHF/HVF contacts varies enormously based on location, antenna and
-mode so long-distance point-to-point contacts are entirely feasible.
+If the mode isn't specified then it is predicted. Note that the prediction model doesn't include 
+Tropospheric Ducting, you need to specify that manually. The distance achieved by UHF/HVF contacts 
+varies enormously based on location, antenna and mode so long-distance point-to-point contacts are 
+entirely feasible.
 
-<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](../images/TroposphericDuctingContactExample.png)
+<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](../images/TroposphericDuctingContactExample.png)</a>
 _Example of Tropospheric Ducting Visualization_
 
 ***
-## Background
 
-The ADIF Processor started as a project to allow me to add additional information in the comment field of a [Fast Log Entry](https://df3cb.com/fle/) input file. This meant I could specify things like operator name, rig, their power and activity references, that couldn't be populated directly from [Fast Log Entry](https://df3cb.com/fle/).
+## Background of the Project
+
+The ADIF Processor started as a project to allow me to add additional information in the comment field of 
+a [Fast Log Entry](https://df3cb.com/fle/) input file. This meant I could specify things like operator name,
+rig, their power and activity references, that couldn't be populated directly from 
+[Fast Log Entry](https://df3cb.com/fle/).
 
 As I like to record the contacted station location as accurately as possible I then decided to add
-support for up-to 10 character [Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support for 10 character Maidenhead locators in the mapping tools currently available. The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) android application to determine my 10 character Maidenhead locator.
+support for up-to 10 character 
+[Maidenhead Locator](https://www.dxzone.com/grid-square-locator-system-explained/) references and 
+at that point stumbled across the idea of visualizing QSOs using Google Earth. There isn't much support
+for 10 character Maidenhead locators in the mapping tools currently available. 
+The [aprs.fi](http://aprs.fi/) site allows 10 character Maidenhead locators to be entered. 
+When out in the field I use the [HamGPS](https://apkpure.com/hamgps/ea4eoz.HamGPS) Android 
+application to determine my 10 character Maidenhead locator.
 
 ***
 ## Source Code
 
-ADIF Processor is written in Java as a Spring Boot Application. It makes use of the following separate GitHub projects.
+ADIF Processor is written in Java as a Spring Boot Application. It makes use of the following separate
+GitHub projects.
 
 ### ADIF Library
-A [fork](https://github.com/urbancamo/adif) of the [ADIF library](https://github.com/MarSik/adif) by Martin Sivák. I have made some corrections and enhancements to the original library.
+A [fork](https://github.com/urbancamo/adif) of the [ADIF library](https://github.com/MarSik/adif) 
+by Martin Sivák. I have made some corrections and enhancements to the original library.
 
 ### The adif-processor
 
-The [adif-processor](https://github.com/urbancamo/adif-processor) contains the main functionality of ADIF Processor. 
+The [adif-processor](https://github.com/urbancamo/adif-processor) contains the main functionality of 
+ADIF Processor. 
 
-All the code to generate the enhanced ADIF file, interact with QRZ.COM, load the activity databases, generate the KML file and generate the Markdown file is contained in this project. 
+All the code to generate the enhanced ADIF file, interact with QRZ.COM, load the activity databases, 
+generate the KML file and generate the Markdown file is contained in this project. 
 
-The adif-processor contains a standalone, command-line based main application file, so it can be used directly from the command line without a web interface. 
+The adif-processor contains a standalone, command-line based main application file, so it can be used 
+directly from the command line without a web interface. 
 
-There is a comprehensive set of command line options. See the [project README.md](https://github.com/urbancamo/adif-processor/blob/main/README.md) for more information.
+There is a comprehensive set of command line options. See 
+the [project README.md](https://github.com/urbancamo/adif-processor/blob/main/README.md) for more information.
  
 ### The ADIF Web Front end
 
-The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to the adif-processor. The version you are using is a Bootstrap based spring-boot web application that is hosted as an AWS Elastic Beanstalk project.
+The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to 
+the adif-processor. The version you are using is a Bootstrap based spring-boot web application 
+that is hosted as an AWS Elastic Beanstalk project.
 
 ***
-## Future Directions
+## Release History
 
-- Improve the propagation model
-- Save and Load Preferences
-- Customizable Markdown table fields
+|Date|New Features|
+|----|------------|
+|07-SEP-2021|Support for Castles on the Air Activity References|
+|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
+|23-SEP-2021|Support for Lighthouses & Railways on the Air|
+|26-SEP-2021|Initial Geolocation support via Nominatim|
+|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
+|26-OCT-2021|Support for Lanzarote HEMA summits|
+|10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
+|05-FEB-2022|LEO Satellite preliminary support, Long Path HF contact support|
+
 
 ***
 # Examples
@@ -492,6 +568,7 @@ Here are some example Google Earth images from an [evening activation](https://r
 <a href="https://urbancamo.github.io/images/image4.jpg">![](../images/image4.jpg)
 
 <a href="https://urbancamo.github.io/images/image5.jpg">![](../images/image5.jpg)
+
 
 ## Example Markdown Contacts List
 
