@@ -4,7 +4,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 ## Contents
 - [Releases](#releases)
 - [Introduction](#introduction)
-- [Quick Start / TL;DR](#quick-start--tldr)
+- [Quick Start](#quick-start)
 - [How it Works (or a bit more info)](#how-it-works-or-a-bit-more-info)
 - [Activities](#activities)
 - [Satellite Contacts](#satellite-contacts)
@@ -27,41 +27,49 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 |15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
 |26-OCT-2021|Support for Lanzarote HEMA summits|
 |10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
+|05-FEB-2022|LEO Satellite preliminary support, Long Path HF contact support|
 
 ## Introduction
 
-![](images/image-cropped-691-slice.png)
+![](../images/image-cropped-691-slice.png)
 
-[ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) visualizes contacts in your input
-file on [Google Earth](https://earth.google.com). It generates a Google Earth Project file, also known as a KML file, 
-for each contact in the ADIF input file.
+The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
+that visualizes contacts from an ADIF log file using [Google Earth](https://earth.google.com).
+[SOTA](https://www.sotadata.org.uk/en/) CSV log files are also supported.
 
-To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use _Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+The processor looks for specially formatted comments in your input file which are transposed into the 
+correct ADIF fields in your output file.
 
-The ADIF Processor can also process [SOTA](https://www.sotadata.org.uk/en/) CSV database log files.
+The processor also produces [Markdown](https://www.markdownguide.org/) contact lists. To see your QSOs on
+the desktop browser based [Google Earth](https://earth.google.com) use _Import KML file from computer_ 
+via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
 
-![](images/img.png)
+In a lot of cases you only need to select your ADIF file and process it.
+
+![](../images/img.png)
 _Desktop/Browser Google Earth Project Menu_
 
+I recommended following the Quick Start section below to get a feel for the tool, then have a look at 
+the advanced options based on your requirements.
 
-## Quick Start / TL;DR
+
+## Quick Start
 
 Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
 <a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
 _[Simple Use Case](images/adif-processor-upload-form.png)_
 
-You will be presented with three files:
+You will be presented with three files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
-- an enhanced ADIF file augmented with data from QRZ.com and activity references including
-  operator name, location, contact distance and bearing etc.
-- a contact list in either [Markdown](https://www.markdownguide.org/) format for pasting into a [Discourse](https://www.discourse.org/) server such as [SOTA Reflector](https://reflector.sota.org.uk/) or [WOTA Discourse](https://discourse.wota.xyz/), or fixed width column plain text. 
-
+- an enhanced ADIF file
+- a contact list in either [Markdown](https://www.markdownguide.org/) or plain text format
+- 
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
-<a href="https://urbancamo.github.io/images/results.png">![](images/results.png)
-_[Example Result Form](images/results.png)_
+<a href="https://urbancamo.github.io/images/results.png">![](../images/results.png)
+_[Example Result Form](../images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
 
@@ -73,7 +81,7 @@ An easy way to find your location is to right-click on [Google Maps](https://map
 If you're logging one of the supported activities you should enter the activity reference. Your location will be determined from the activity if possible.
 
 ***
-## How It Works (or a bit more info)
+## More Information
 
 Most folk are primarily interested in visualizing their QSOs in Google Earth, so we'll look at that first. 
 
@@ -86,11 +94,11 @@ Lots here depends on whether you are operating from a fixed location or portable
 If you are fixed the simplest solution is to ensure your QRZ.COM entry has a latitude & longitude for the most 
 accurate location. 
 
-If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or longitude, 
-or alternatively a Maidenhead Locator. 
+If you aren't a fan of QRZ.COM you can override your location on the form either by specifying a latitude or 
+longitude, or alternatively a Maidenhead Locator. 
 
-If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most accurate 
-10 character version.
+If you want to make obscure your location a bit then specify a 6 or 8 character locator rather than the most 
+accurate 10 character version.
 
 ### Determining Other Station Locations
 
@@ -156,20 +164,20 @@ As soon as a variant matches in QRZ.COM the search stops. I've almost certainly 
 There are a number of icons that are used to mark a station, based on the station suffix and any 
 activity that is associated with the station.
 
-|Icon|Suffix|Activity|Description/Link|
-|----|------|--------|-----------|
-|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) House|none or /A| |At home or alternate address|
-|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png) Hiker|/P| |Portable|
-|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png) Sailing Boat|/MM| |Maritime Mobile|
-|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png) Car|/M| |Mobile|
-|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png) Mountain|/P|SOTA|[Summits on the Air](https://www.sota.org.uk/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png) Red 'H'|/P|HEMA|[HuMPs Excluding Marilyns Award](http://hema.org.uk/)
-|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png) Park Bench|/P|POTA|[Parks on the Air](https://parksontheair.com/)
-|![](http://maps.google.com/mapfiles/kml/shapes/schools.png) Castle|/P|COTA|[World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html)
-|![](http://maps.google.com/mapfiles/kml/shapes/trail.png) Hiker following Trail|/P|WOTA|[Wainwrights on the Air](https://www.wota.org.uk/)
-|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) Tree|/P|WWFF|[World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)
-|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) Marina| |LOTA|[International Lighthouse & Lightship Weekend](https://illw.net/)
-|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) Rail| |ROTA|[Railways on the Air](https://rota.barac.org.uk/)
+|Icon|Suffix| Activity  |Description/Link|
+|----|------|-----------|-----------|
+|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png)|none or /A|           |At home or alternate address|
+|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)|/P|           |Portable|
+|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)|/MM|           |Maritime Mobile|
+|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)|/M|           |Mobile|
+|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| SOTA      |[Summits on the Air](https://www.sota.org.uk/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)|/P| HEMA      |[HuMPs Excluding Marilyns Award](http://hema.org.uk/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)|/P| POTA      |[Parks on the Air](https://parksontheair.com/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/schools.png)|/P| COTA      |[World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html)|
+|![](http://maps.google.com/mapfiles/kml/shapes/trail.png)|/P| WOTA      |[Wainwrights on the Air](https://www.wota.org.uk/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) |/P| WWFF      |[World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) | | LOTA      |[International Lighthouse & Lightship Weekend](https://illw.net/)|
+|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) | | ROTA      |[Railways on the Air](https://rota.barac.org.uk/)|
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. When you do this a panel of information about the station is displayed. If the operator has a picture on QRZ.COM this is displayed together with details of activity the station was participating in and the frequency and mode of contact.
 
@@ -184,7 +192,8 @@ ADIF Processor uses a simple propagation visualization technique based on an ide
 ### The Propagation Model
 
 This is a very simple model designed to map both HF and VHF/UHF contacts.
-I supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify `TROPOSPHERIC_DUCTING`
+
+It supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify `TROPOSPHERIC_DUCTING`
 for contacts identified as using this propagation.
 
 For HF it is assumed that the ionospheric reflection height is 350 km, and the radiation angle of the antenna is 6 degrees. This represents an antenna with a low radiation angle, such as a vertical. Six degrees is the lowest angle of propagation that ensure the signal doesn't bisect the surface of the earth as it rises from the originating station.
@@ -213,12 +222,13 @@ you must set the `PROPAGATION_MODE` to `TR` in the ADIF input file for that cont
 The model used is a duct at height 2,000m and a duct width of 500m, so the signal bounces in a duct between 2,250m and 1,750m.
 These value represent an 'average' duct height and width.
 
-### Limitations of the Propagation Model
+### Long Path HF Contacts
 
-- No modeling of long-path HF propagation is possible.
-- Antenna type or height is not taken into account.
-- Variation in reflection height based on signal frequency isn't considered.
-- Take-off angle is fixed.
+If you want to visualize long path contacts specify either the `ANTPATH` ADIF parameter as `L` in the ADIF input file,
+or specify `PATH: L` in the `COMMENT` field of the ADIF input file.
+
+Long path contacts are visualized using a path that is 180 degrees reversed from the shortest path azimuth. The antenna
+direction isn't currently used.
 
 ***
 ## Activities
@@ -237,34 +247,8 @@ each activity the ADIF Processor loads the database of activity references. The 
 - 27 Railways on the Air (based on 2021 entrants)
 
 ***
-## Satellite Contacts
 
-Currently, only QSOs via the [Es’hail 2 / QO-100](https://amsat-uk.org/satellites/geo/eshail-2/) satellite can be visualized. 
-
-If you would like to display contacts in Google Earth then you must expand the Options... tab on the ADIF Processor Form and
-select `QO-100` from the `Satellite Name` dropdown list. This automatically populates the `Satellite Mode` and `Satellite Band` text fields, although these can be overriden if required.
-
-The `Satellite Mode` form field is free text and allows you to specify
-the content of the ADIF field `SAT_MODE` - this has no effect on the QSO visualisation. 
-
-If you have non-Satellite
-QSOs in the same ADIF input file they can be visualised normally by specifying the up-link band used for the Satellite QSOs in the `Satellite Band` form field.
-
-So for example if you have `13cm` QSOs via `QO-100` and `2m` VHF QSOs locally on a SOTA activation then enter `13cm` in the `Satellite Band` form field.
-Only QSOS in the input file with band `13cm` will be visualized as satellite contacts.
-
-### Satellite Modes
-
-Uplink and downlink designations use sets of paired letters following the structure X/Y where X is the uplink band and Y is the downlink band.*
-
-| Designator | H | A | V | U | L | S | S2 | C | X | K | R |
-|------------|---|---|---|---|---|---|----|---|---|---|---|
-|Band|15 m|10 m|2 m|70 cm|23 cm|13 cm|9 cm|5 cm|3 cm|1.2 cm|6 mm|
-|Frequency (General)|21 MHz|29 MHz|145 MHz|435 MHz|1.2 GHz|2.4 GHz|3.4 GHz|5 GHz|10 GHz|24 GHz|47 GHz|
-
-So for example the `SAT_MODE` designator for QO-100 is S/X.
-
-*from [Amateur Radio – PEØSAT](https://www.pe0sat.vgnet.nl/satellite/sat-information/modes/)
+# [Satellite Support](satellite)
 
 ***
 
@@ -272,15 +256,23 @@ So for example the `SAT_MODE` designator for QO-100 is S/X.
 
 Virtually all Ham Radio Logging programs have the ability to produce ADIF files. ADIF stands for
 _Amateur Radio Interchange Format_ and was designed to allow logging applications to export and import 
-contacts without loosing any information. As such it supports a large number of fields designed to capture every aspect of a QSO.
+contacts without loosing any information. As such it supports a large number of fields designed to capture 
+every aspect of a QSO.
 
-If your logging program is connected to [QRZ.COM](https://qrz.com) and you have an XML Subscription membership then you may find that details are automatically pulled from QRZ.COM about the other station and added to your contact. These will be exported by the logging program in ADIF.
+If your logging program is connected to [QRZ.COM](https://qrz.com) and you have an XML Subscription
+membership then you may find that details are automatically pulled from QRZ.COM about the other 
+station and added to your contact. These will be exported by the logging program in ADIF.
 
-However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM or you don't have an XML subscription then the data that you enter as part of the QSO log will be the  total information available in the ADIF export.
+However, if you use a program such as Fast Log Entry, or your logging program isn't connected to QRZ.COM 
+or you don't have an XML subscription then the data that you enter as part of the QSO log will be the
+total information available in the ADIF export.
 
-The ADIF Processor gives you the opportunity to add information about the station you have worked both from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, where your logging program doesn't have the ability to add data directly.
+The ADIF Processor gives you the opportunity to add information about the station you have worked both
+from QRZ.com, activity references and using specially-formatted name/value pairs in the comments field, 
+where your logging program doesn't have the ability to add data directly.
 
-This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character Maidenhead locator can be specified for the contacted station.
+This works really well for Fast Log Entry, where only the SOTA reference, WWFF reference or 6 character
+Maidenhead locator can be specified for the contacted station.
 
 ***
 ## The ADIF format 30 second Primer
@@ -442,7 +434,7 @@ If the mode isn't specified then it is predicted. Note that the prediction model
 you need to specify that manually. The distance achieved by UHF/HVF contacts varies enormously based on location, antenna and
 mode so long-distance point-to-point contacts are entirely feasible.
 
-<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](images/TroposphericDuctingContactExample.png)
+<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](../images/TroposphericDuctingContactExample.png)
 _Example of Tropospheric Ducting Visualization_
 
 ***
@@ -489,17 +481,17 @@ The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-bas
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="https://urbancamo.github.io/images/image2.jpg">![](images/image2.jpg)
+<a href="https://urbancamo.github.io/images/image2.jpg">![](../images/image2.jpg)
 
-<a href="https://urbancamo.github.io/images/image0.jpg">![](images/image0.jpg)
+<a href="https://urbancamo.github.io/images/image0.jpg">![](../images/image0.jpg)
 
-<a href="https://urbancamo.github.io/images/image1.jpg">![](images/image1.jpg)
+<a href="https://urbancamo.github.io/images/image1.jpg">![](../images/image1.jpg)
 
-<a href="https://urbancamo.github.io/images/image3.jpg">![](images/image3.jpg)
+<a href="https://urbancamo.github.io/images/image3.jpg">![](../images/image3.jpg)
 
-<a href="https://urbancamo.github.io/images/image4.jpg">![](images/image4.jpg)
+<a href="https://urbancamo.github.io/images/image4.jpg">![](../images/image4.jpg)
 
-<a href="https://urbancamo.github.io/images/image5.jpg">![](images/image5.jpg)
+<a href="https://urbancamo.github.io/images/image5.jpg">![](../images/image5.jpg)
 
 ## Example Markdown Contacts List
 
