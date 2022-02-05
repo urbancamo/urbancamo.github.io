@@ -222,12 +222,13 @@ you must set the `PROPAGATION_MODE` to `TR` in the ADIF input file for that cont
 The model used is a duct at height 2,000m and a duct width of 500m, so the signal bounces in a duct between 2,250m and 1,750m.
 These value represent an 'average' duct height and width.
 
-### Limitations of the Propagation Model
+### Long Path HF Contacts
 
-- No modeling of long-path HF propagation is possible.
-- Antenna type or height is not taken into account.
-- Variation in reflection height based on signal frequency isn't considered.
-- Take-off angle is fixed.
+If you want to visualize long path contacts specify either the `ANTPATH` ADIF parameter as `L` in the ADIF input file,
+or specify `PATH: L` in the `COMMENT` field of the ADIF input file.
+
+Long path contacts are visualized using a path that is 180 degrees reversed from the shortest path azimuth. The antenna
+direction isn't currently used.
 
 ***
 ## Activities
