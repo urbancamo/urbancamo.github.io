@@ -7,7 +7,7 @@ Passionate about delivering quality, secure software in response to fluid busine
 
 I am a Certified Scrum Master working towards Advanced Certification.
 
-### [Documentation for the ADIF Processor](adif-processor/adif-processor)
+### [Documentation for the ADIF Processor](./adif-processor/adif-processor)
 
 ### [Developer Notes](devblog)
 

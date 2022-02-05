@@ -228,7 +228,7 @@ If you want to visualize long path contacts specify either the `ANTPATH` ADIF pa
 or specify `PATH: L` in the `COMMENT` field of the ADIF input file.
 
 Long path contacts are visualized using a path that is 180 degrees reversed from the shortest path azimuth. The antenna
-direction isn't currently used.
+direction isn't currently 
 
 ***
 ## Activities
