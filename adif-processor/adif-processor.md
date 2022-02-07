@@ -306,6 +306,7 @@ For each activity the ADIF Processor loads the database of activity references. 
 ## [Satellite Support](satellite/satellite)
 
 Satellite Support is documented on a [separate page](satellite/satellite).
+
 ***
 
 ## The ADIF format 30 second Primer
