@@ -1,11 +1,11 @@
 
-## Mark Wickens - Manager & Sofware Engineer
+## Mark Wickens - Engineering Manager & Senior Sofware Engineer
 
 A senior software engineer with a decade of remote development experience and three years remote team management backed by ten years as a computer contractor working in a diverse number of industries. Starting with scientific visualization software written in C & C++ I moved into the Java ecosphere in the early years and have consolidated that into solid full stack technologies from database to user experience with security running throughout. Most recently I have been coding in Golang both in the office and on open source projects.
 
 Passionate about delivering quality, secure software in response to fluid business requirements with frequent inspect and adapt cycles. I have a professional work ethic based on the principles of integrity, quality, respect and innovation. I believe building a close working relationship with customers is key to maximising agility, velocity and business value.
 
-I am a Certified Scrum Master working towards Advanced Certification.
+I am a Certified Scrum Master.
 
 ### [Documentation for the ADIF Processor](./adif-processor/adif-processor)
 
