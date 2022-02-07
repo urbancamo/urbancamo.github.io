@@ -21,4 +21,4 @@ I am a Certified Scrum Master.
 
 ### [Email me mark@wickensonline.co.uk](mailto:mark@wickensonline.co.uk)
 
-<small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/)</small>
+<small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/).</small>
