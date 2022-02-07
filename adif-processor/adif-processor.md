@@ -228,12 +228,12 @@ path is `GROUNDWAVE`.
 This is the logic applied in determining the propagation mode. Note that there can be considerable 
 improvements made to this model, but any model is only ever going to be a 'best guess'.
 
-| Frequency          | Distance   |Classification|
-|--------------------|------------|--------------|
-| > 50 MHz           | < 400 km   | `GROUNDWAVE` |
-| > 50 MHz           | > 400 km   | `SPORADIC-E` |
-| 7 MHz > f > 50 MHz | < 400 km   | `GROUNDWAVE` |
-| < 7 MHz            | >= 400 km  | `SKYWAVE` |
+| Frequency       | Distance   |Classification|
+|-----------------|------------|--------------|
+| 𝑓 > 50 MHz       | < 400 km   | `GROUNDWAVE` |
+| 𝑓 > 50 MHz       | > 400 km   | `SPORADIC-E` |
+| 7 MHz > 𝑓 > 50 MHz | < 400 km   | `GROUNDWAVE` |
+| 𝑓 < 7 MHz        | >= 400 km  | `SKYWAVE` |
 
 
 This is a very, very rough approximation. A future enhancement will make the model configurable, and 
