@@ -6,17 +6,18 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 ![](images/image-cropped-691-slice.png)
 
 The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
-that visualizes contacts from an ADIF log file using [Google Earth](https://earth.google.com).
+that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
 [SOTA](https://www.sotadata.org.uk/en/) CSV log files are also supported.
 
 The processor looks for specially formatted comments in your input file which are transposed into the 
 correct ADIF fields in your output file.
 
-The processor also produces [Markdown](https://www.markdownguide.org/) contact lists. To see your QSOs on
-the desktop browser based [Google Earth](https://earth.google.com) use _Import KML file from computer_ 
-via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+The processor also produces [Markdown](https://www.markdownguide.org/) contact lists.
 
-In a lot of cases you only need to select your ADIF file and process it.
+To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
+_Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+
+In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
 ![](images/img.png)
 
@@ -78,7 +79,7 @@ for ADIF fields built into the application.
 
 ## How the ADIF Processor Works
 There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth 
-KML project file.
+KML project file. Key is identifying a location for each end of a contact.
 
 ### Determining Your Station Location
 
