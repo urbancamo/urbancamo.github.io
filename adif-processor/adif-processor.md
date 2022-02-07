@@ -267,10 +267,10 @@ of radiation.
 
 |Antenna| Radiation Angle |
 |-------|-----------------|
-|Vertical | 15              |
-| YAGI| 10              |
-| Dipole | 20              |
-| Inverted-V | 25              |
+|Vertical | 15°              |
+| YAGI| 10°              |
+| Dipole | 20°              |
+| Inverted-V | 25°              |
 
 This is a very crude approximation of the reality. It affects the number of calculated reflections, with many
 more reflections for example when using an Inverted-V compared to an HF YAGI.
