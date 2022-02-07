@@ -1,11 +1,11 @@
-# [ADIF Processor](https://bit.ly/adifproc/)	
+# [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ## Introduction
 
 ![](../images/image-cropped-691-slice.png)
 
-The [ADIF Processor](https://bit.ly/adifproc/) is an online application
+The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
 that visualizes contacts from an ADIF log file using [Google Earth](https://earth.google.com).
 [SOTA](https://www.sotadata.org.uk/en/) CSV log files are also supported.
 
@@ -26,7 +26,7 @@ the advanced options based on your requirements.
 
 ## Quick Start
 
-Select your ADIF file on the [ADIF Processor upload form](https://bit.ly/adifproc/upload)  and click `Process...` 
+Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
 <a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](../images/adif-processor-upload-form.png)
 _[Simple Use Case](../images/adif-processor-upload-form.png)_
@@ -104,7 +104,7 @@ either by specifying an activity reference, or directly entering your location.
 
 The _Location_ field on the form
 supports any of the coordinate formats you can use in the
-[Coordinate Converter](https://bit.ly/adifproc/coord), for example:
+[Coordinate Converter](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/coord), for example:
 
  * Latitude and Longitude, eg: 54.3709 -2.9099 or 54° 22.260' N, 3° 5.403' W
  * Maidenhead Locator (4/6/8/10 character), eg: IO84NI
