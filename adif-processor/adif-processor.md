@@ -29,7 +29,7 @@ the advanced options based on your requirements.
 Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
 <a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](../images/adif-processor-upload-form.png)
-_[Simple Use Case](../images/adif-processor-upload-form.png)_
+_[Simple Use Case](../images/simple-usecase.png)_
 
 You will be presented with three files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
