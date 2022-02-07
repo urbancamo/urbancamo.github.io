@@ -391,7 +391,7 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ## The Comment Field in your ADIF file
 
 The ADIF Processor looks carefully for keyword/value pairs in the comment field in your ADIF input file. 
-The keyword should be followed by a colon, and a comma should separate each key/value pair. If the 
+The keyword should be followed by a colon, and a comma may optionally separate each key/value pair. If the 
 ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information
 to the ADIF output file in the correct ADIF field. 
 
@@ -406,7 +406,7 @@ would be processed one key/value pair at time and would result in the following 
 |RIG|FT-817|
 |RX_PWR|5|
 
-### Comment Name/Value pairs that are supported by the ADIF Processor
+## Supported Comment Name/Value pairs
 
 In the table below the `Comment Key` column shows the keyword you should specify if you want to add 
 additional information in the ADIF output file. See the `Sample Value` column for an example of the 
@@ -459,7 +459,11 @@ between angle brackets, for example:
 2118 g4iog    55 52 <OP: Bob, QTH: N. Kent, RIG: FT-991, PWR: 50w, QTH: Sittingborne, PROP: TR>
 ```
 
-Note that each key is followed by a colon and each pair followed by a comma. To add information to go in the
+Note that each keyword **must** be followed by a colon and each pair **may** be followed by a comma. 
+If you are specifying a latitude/longitude pair you can use comma separated values (for example when pasted in
+from Google Maps).
+
+To add information to go in the
 `COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify 
 information to go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid 
 confusing the parser.
