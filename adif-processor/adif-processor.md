@@ -1,24 +1,26 @@
-# [ADIF Processor](https://bit.ly/adifproc/)	
+# [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
 ## Introduction
 
-![](../images/image-cropped-691-slice.png)
+![](images/image-cropped-691-slice.png)
 
-The [ADIF Processor](https://bit.ly/adifproc/) is an online application
-that visualizes contacts from an ADIF log file using [Google Earth](https://earth.google.com).
+The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
+that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
 [SOTA](https://www.sotadata.org.uk/en/) CSV log files are also supported.
 
 The processor looks for specially formatted comments in your input file which are transposed into the 
 correct ADIF fields in your output file.
 
-The processor also produces [Markdown](https://www.markdownguide.org/) contact lists. To see your QSOs on
-the desktop browser based [Google Earth](https://earth.google.com) use _Import KML file from computer_ 
-via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+The processor also produces [Markdown](https://www.markdownguide.org/) contact lists.
 
-In a lot of cases you only need to select your ADIF file and process it.
+To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
+_Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
 
-![](../images/img.png)
+In a lot of cases you simply select your ADIF file and process it, no other options are required.
+
+![](images/img.png)
+
 _Desktop/Browser Google Earth Project Menu_
 
 I recommended following the Quick Start section below to get a feel for the tool, then have a look at 
@@ -26,10 +28,10 @@ the advanced options based on your requirements.
 
 ## Quick Start
 
-Select your ADIF file on the [ADIF Processor upload form](https://bit.ly/adifproc/upload)  and click `Process...` 
+Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](../images/adif-processor-upload-form.png)
-_[Simple Use Case](../images/adif-processor-upload-form.png)_
+<a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
+_[Simple Use Case](images/adif-processor-upload-form.png)_
 
 You will be presented with three files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
@@ -39,8 +41,8 @@ You will be presented with three files to download, as required:
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
-<a href="https://urbancamo.github.io/images/results.png">![](../images/results.png)
-_[Example Result Form](../images/results.png)_
+<a href="https://urbancamo.github.io/images/results.png">![](images/results.png)
+_[Example Result Form](images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
 
@@ -77,7 +79,7 @@ for ADIF fields built into the application.
 
 ## How the ADIF Processor Works
 There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth 
-KML project file.
+KML project file. Key is identifying a location for each end of a contact.
 
 ### Determining Your Station Location
 
@@ -104,7 +106,7 @@ either by specifying an activity reference, or directly entering your location.
 
 The _Location_ field on the form
 supports any of the coordinate formats you can use in the
-[Coordinate Converter](https://bit.ly/adifproc/coord), for example:
+[Coordinate Converter](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/coord), for example:
 
  * Latitude and Longitude, eg: 54.3709 -2.9099 or 54° 22.260' N, 3° 5.403' W
  * Maidenhead Locator (4/6/8/10 character), eg: IO84NI
@@ -267,10 +269,10 @@ of radiation.
 
 |Antenna| Radiation Angle |
 |-------|-----------------|
-|Vertical | 15              |
-| YAGI| 10              |
-| Dipole | 20              |
-| Inverted-V | 25              |
+|Vertical | 15°              |
+| YAGI| 10°              |
+| Dipole | 20°              |
+| Inverted-V | 25°              |
 
 This is a very crude approximation of the reality. It affects the number of calculated reflections, with many
 more reflections for example when using an Inverted-V compared to an HF YAGI.
@@ -305,6 +307,7 @@ For each activity the ADIF Processor loads the database of activity references. 
 ## [Satellite Support](satellite/satellite)
 
 Satellite Support is documented on a [separate page](satellite/satellite).
+
 ***
 
 ## The ADIF format 30 second Primer
@@ -389,7 +392,7 @@ pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
 ## The Comment Field in your ADIF file
 
 The ADIF Processor looks carefully for keyword/value pairs in the comment field in your ADIF input file. 
-The keyword should be followed by a colon, and a comma should separate each key/value pair. If the 
+The keyword should be followed by a colon, and a comma may optionally separate each key/value pair. If the 
 ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information
 to the ADIF output file in the correct ADIF field. 
 
@@ -404,7 +407,7 @@ would be processed one key/value pair at time and would result in the following 
 |RIG|FT-817|
 |RX_PWR|5|
 
-### Comment Name/Value pairs that are supported by the ADIF Processor
+## Supported Comment Name/Value pairs
 
 In the table below the `Comment Key` column shows the keyword you should specify if you want to add 
 additional information in the ADIF output file. See the `Sample Value` column for an example of the 
@@ -457,7 +460,11 @@ between angle brackets, for example:
 2118 g4iog    55 52 <OP: Bob, QTH: N. Kent, RIG: FT-991, PWR: 50w, QTH: Sittingborne, PROP: TR>
 ```
 
-Note that each key is followed by a colon and each pair followed by a comma. To add information to go in the
+Note that each keyword **must** be followed by a colon and each pair **may** be followed by a comma. 
+If you are specifying a latitude/longitude pair you can use comma separated values (for example when pasted in
+from Google Maps).
+
+To add information to go in the
 `COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify 
 information to go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid 
 confusing the parser.
@@ -484,7 +491,7 @@ Tropospheric Ducting, you need to specify that manually. The distance achieved b
 varies enormously based on location, antenna and mode so long-distance point-to-point contacts are 
 entirely feasible.
 
-<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](../images/TroposphericDuctingContactExample.png)</a>
+<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](images/TroposphericDuctingContactExample.png)</a>
 _Example of Tropospheric Ducting Visualization_
 
 ***
@@ -557,17 +564,17 @@ that is hosted as an AWS Elastic Beanstalk project.
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="https://urbancamo.github.io/images/image2.jpg">![](../images/image2.jpg)
+<a href="https://urbancamo.github.io/images/image2.jpg">![](images/image2.jpg)
 
-<a href="https://urbancamo.github.io/images/image0.jpg">![](../images/image0.jpg)
+<a href="https://urbancamo.github.io/images/image0.jpg">![](images/image0.jpg)
 
-<a href="https://urbancamo.github.io/images/image1.jpg">![](../images/image1.jpg)
+<a href="https://urbancamo.github.io/images/image1.jpg">![](images/image1.jpg)
 
-<a href="https://urbancamo.github.io/images/image3.jpg">![](../images/image3.jpg)
+<a href="https://urbancamo.github.io/images/image3.jpg">![](images/image3.jpg)
 
-<a href="https://urbancamo.github.io/images/image4.jpg">![](../images/image4.jpg)
+<a href="https://urbancamo.github.io/images/image4.jpg">![](images/image4.jpg)
 
-<a href="https://urbancamo.github.io/images/image5.jpg">![](../images/image5.jpg)
+<a href="https://urbancamo.github.io/images/image5.jpg">![](images/image5.jpg)
 
 
 ## Example Markdown Contacts List
