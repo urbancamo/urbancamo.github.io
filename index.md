@@ -7,6 +7,8 @@ Passionate about delivering quality, secure software in response to fluid busine
 
 I am a Certified Scrum Master.
 
+[Here is my 2022 CV in PDF format](./cv/Mark_Wickens_CV_2022.pdf)
+
 ### [Documentation for the ADIF Processor](./adif-processor/adif-processor)
 
 ### [Developer Notes](devblog)
@@ -21,4 +23,4 @@ I am a Certified Scrum Master.
 
 ### [Email me mark@wickensonline.co.uk](mailto:mark@wickensonline.co.uk)
 
-<small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/).</small>
+<small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/). </small>
