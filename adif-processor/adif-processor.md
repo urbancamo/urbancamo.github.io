@@ -3,7 +3,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 
 ## Introduction
 
-![](./images/image-cropped-691-slice.png)
+![](../adif-processor/images/image-cropped-691-slice.png)
 
 The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
 that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
@@ -19,7 +19,7 @@ _Import KML file from computer_ via the map pin icon. In Android Google Earth si
 
 In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
-![](./images/img.png)
+![](../adif-processor/images/img.png)
 
 _Desktop/Browser Google Earth Project Menu_
 
@@ -30,8 +30,8 @@ the advanced options based on your requirements.
 
 Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](./images/adif-processor-upload-form.png)
-_[Simple Use Case](./images/adif-processor-upload-form.png)_
+<a href="https://urbancamo.github.io/images/adif-processor-upload-form.png">![](../adif-processor/images/adif-processor-upload-form.png)
+_[Simple Use Case](../adif-processor/images/adif-processor-upload-form.png)_
 
 You will be presented with three files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
@@ -41,8 +41,8 @@ You will be presented with three files to download, as required:
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
-<a href="https://urbancamo.github.io/images/results.png">![](./images/results.png)
-_[Example Result Form](./images/results.png)_
+<a href="https://urbancamo.github.io/images/results.png">![](../adif-processor/images/results.png)
+_[Example Result Form](../adif-processor/images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
 
@@ -491,7 +491,7 @@ Tropospheric Ducting, you need to specify that manually. The distance achieved b
 varies enormously based on location, antenna and mode so long-distance point-to-point contacts are 
 entirely feasible.
 
-<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](./images/TroposphericDuctingContactExample.png)</a>
+<a href="https://urbancamo.github.io/images/TroposphericDuctingContactExample.png">![](../adif-processor/images/TroposphericDuctingContactExample.png)</a>
 _Example of Tropospheric Ducting Visualization_
 
 ***
@@ -564,17 +564,17 @@ that is hosted as an AWS Elastic Beanstalk project.
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="https://urbancamo.github.io/images/image2.jpg">![](./images/image2.jpg)
+<a href="https://urbancamo.github.io/images/image2.jpg">![](../adif-processor/images/image2.jpg)
 
-<a href="https://urbancamo.github.io/images/image0.jpg">![](./images/image0.jpg)
+<a href="https://urbancamo.github.io/images/image0.jpg">![](../adif-processor/images/image0.jpg)
 
-<a href="https://urbancamo.github.io/images/image1.jpg">![](./images/image1.jpg)
+<a href="https://urbancamo.github.io/images/image1.jpg">![](../adif-processor/images/image1.jpg)
 
-<a href="https://urbancamo.github.io/images/image3.jpg">![](./images/image3.jpg)
+<a href="https://urbancamo.github.io/images/image3.jpg">![](../adif-processor/images/image3.jpg)
 
-<a href="https://urbancamo.github.io/images/image4.jpg">![](./images/image4.jpg)
+<a href="https://urbancamo.github.io/images/image4.jpg">![](../adif-processor/images/image4.jpg)
 
-<a href="https://urbancamo.github.io/images/image5.jpg">![](./images/image5.jpg)
+<a href="https://urbancamo.github.io/images/image5.jpg">![](../adif-processor/images/image5.jpg)
 
 
 ## Example Markdown Contacts List
@@ -609,4 +609,4 @@ Here are some example Google Earth images from an [evening activation](https://r
 |2021.08.01|12:41|GW7LAS/P    |   3.776|  80m| SSB| 59| 59|G/LD-050 |         |Rob       |HEMA |GW/HMW-0|HEMA: GW/HMW-043             |IO82JD|
 
 
-Documentation Version: `2022-04-05`
+Documentation Version: `2022-04-05b`
