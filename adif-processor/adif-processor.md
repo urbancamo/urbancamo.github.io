@@ -183,20 +183,21 @@ or if a station has been recorded doing an activity.
 
 Here are the possible icons:
 
-|Icon|Suffix| Activity  |Description/Link|
-|----|------|-----------|-----------|
-|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png)|none or /A|           |At home or alternate address|
-|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)|/P|           |Portable|
-|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)|/MM|           |Maritime Mobile|
-|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)|/M|           |Mobile|
-|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| SOTA      |[Summits on the Air](https://www.sota.org.uk/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)|/P| HEMA      |[HuMPs Excluding Marilyns Award](http://hema.org.uk/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)|/P| POTA      |[Parks on the Air](https://parksontheair.com/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/schools.png)|/P| COTA      |[World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html)|
-|![](http://maps.google.com/mapfiles/kml/shapes/trail.png)|/P| WOTA      |[Wainwrights on the Air](https://www.wota.org.uk/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) |/P| WWFF      |[World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) | | LOTA      |[International Lighthouse & Lightship Weekend](https://illw.net/)|
-|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) | | ROTA      |[Railways on the Air](https://rota.barac.org.uk/)|
+|Icon|Suffix| Activity | Description/Link                                                     |
+|----|------|----------|----------------------------------------------------------------------|
+|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png)|none or /A|          | At home or alternate address                                         |
+|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)|/P|          | Portable                                                             |
+|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)|/MM|          | Maritime Mobile                                                      |
+|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)|/M|          | Mobile                                                               |
+|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
+|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| GMA      | [Global Mountain Activity](https://www.cqgma.org/)                 |
+|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)|/P| HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
+|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)|/P| POTA     | [Parks on the Air](https://parksontheair.com/)                       |
+|![](http://maps.google.com/mapfiles/kml/shapes/schools.png)|/P| COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
+|![](http://maps.google.com/mapfiles/kml/shapes/trail.png)|/P| WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
+|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) |/P| WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
+|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) | | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
+|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) | | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
 When you do this a panel of information about the station is displayed. If the operator has a picture 
@@ -293,14 +294,16 @@ The ADIF Processor knows about _activities_. The term _Activity_ is used to desc
 that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. 
 For each activity the ADIF Processor loads the database of activity references. The totals are currently:
 
-- 28,229 Parks on the Air
-- 330 Wainwrights on the Air
-- 3,316 Humps on the Air
+- 30 Railways on the Air
+- 34,621 Parks on the Air
+- 1,178 Islands on the Air
+- 29,727 Global Mountain Activity
+- 3,329 Humps on the Air
+- 51,138 World Wide Flora & Fauna
 - 157,201 Summits on the Air
-- 51,138 World Wide Flora Fauna areas
-- 66,026 Castles in the World Castles Award Programme
-- 1,706 International Lighthouses and Lightships
-- 27 Railways on the Air (based on 2021 entrants)
+- 330 Wainwrights on the Air
+- 65,912 Castles on the Air
+- 1,706 Lighthouses on the Air
 
 ***
 
@@ -555,6 +558,7 @@ that is hosted as an AWS Elastic Beanstalk project.
 |26-OCT-2021|Support for Lanzarote HEMA summits|
 |10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
 |05-FEB-2022|LEO Satellite preliminary support, Long Path HF contact support|
+|13-FEB-2022|Support for Global Mountain Activity References|
 
 
 ***

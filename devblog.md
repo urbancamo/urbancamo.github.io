@@ -2,6 +2,15 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## DynamoDB
+### Running DynamoDB in a local docker container
+
+```
+msw@gram:~sudo docker pull amazon/dynamodb-local
+msw@gram:~sudo docker run -p 8000:8000 amazon/dynamdb-local
+```
+^ usage assumes `aws configure` has been run from the aws cli. 
+
 ## 06-JUL-2020 Modifying regolith preferences
 
 For i3 configuration it would appear that you need to add overrides in `.config/regolith/Xresources`.
