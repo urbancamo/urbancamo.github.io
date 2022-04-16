@@ -50,6 +50,10 @@ TLE data is loaded from [amateur.txt hosted on celestrak.com](http://www.celestr
 
 ### Supported Satellites Sorted By Name
 
+Aliases will be added as required based on what folk have in their input files. 
+Please let me know if your satellites aren't being rendered but they are supported and I'll
+add an alias.
+
 |Name|Code| Aliases |
 |----|----|---------|
 |2015-049G | |         |

@@ -1,6 +1,22 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
 
+***
+## Release History
+
+|Date| New Features                                                                                       |
+|----|----------------------------------------------------------------------------------------------------|
+|07-SEP-2021| Support for Castles on the Air Activity References                                                 |
+|18-SEP-2021| Supports Tropospheric Ducting & QO-100 Satellite Contacts                                          |
+|23-SEP-2021| Support for Lighthouses & Railways on the Air                                                      |
+|26-SEP-2021| Initial Geolocation support via Nominatim                                                          |
+|15-OCT-2021| Improved location accuracy reporting, COORD as a comment option                                    |
+|26-OCT-2021| Support for Lanzarote HEMA summits                                                                 |
+|10-NOV-2021| IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file      |
+|05-FEB-2022| LEO Satellite preliminary support, Long Path HF contact support                                    |
+|13-FEB-2022| Support for Global Mountain Activity References                                                    |
+|16-APR-2022| Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space |
+
 ## Introduction
 
 ![](./images/image-cropped-691-slice.png)
@@ -544,22 +560,6 @@ the [project README.md](https://github.com/urbancamo/adif-processor/blob/main/RE
 The [adifweb](https://github.com/urbancamo/adifweb) project contains the web-based interface to 
 the adif-processor. The version you are using is a Bootstrap based spring-boot web application 
 that is hosted as an AWS Elastic Beanstalk project.
-
-***
-## Release History
-
-|Date|New Features|
-|----|------------|
-|07-SEP-2021|Support for Castles on the Air Activity References|
-|18-SEP-2021|Supports Tropospheric Ducting & QO-100 Satellite Contacts|
-|23-SEP-2021|Support for Lighthouses & Railways on the Air|
-|26-SEP-2021|Initial Geolocation support via Nominatim|
-|15-OCT-2021|Improved location accuracy reporting, COORD as a comment option|
-|26-OCT-2021|Support for Lanzarote HEMA summits|
-|10-NOV-2021|IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file|
-|05-FEB-2022|LEO Satellite preliminary support, Long Path HF contact support|
-|13-FEB-2022|Support for Global Mountain Activity References|
-
 
 ***
 # Examples
