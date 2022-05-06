@@ -38,9 +38,9 @@ Parking can be found by searching Google Maps for
 There is a flat walk with information signs that skirts round the base of the Volcano which is easy underfoot. About
 1km in is the obvious path for ascending to the summit and marked on most terrain maps.
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211028_100052.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211028_100052.png)
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_103923.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_103923.jpg)
 _Car Parking_
 
 ### The Ascent
@@ -54,9 +54,9 @@ I wear trail shoes normally (although I get through them very quickly as the tre
 were ideal for this terrain. Also note that volcanic rock is very sharp, and even just lifting myself off from
 a seated position I managed to cut my wrist!
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_071643.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_071643.jpg)
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_074021.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_074021.jpg)
 
 The summit is marked with a small cairn stone pile. Views are 360 degrees with the National Park to the West.
 
@@ -70,7 +70,7 @@ out around 9 volts.
 I set the antenna up just on the leeward side of the summit, about 0.5m below to shelter from the worst of the 
 wind.
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_075059.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_075059.jpg)
 
 
 Initially I spotted on the HEMA Facebook Group, then subsequently both the Parks on the Air and WWFF spot systems.
@@ -87,7 +87,7 @@ CW and tried therefore to use the FISTS recommended frequency of `14.058` when I
 sure where the chasers originated, but the 
 [Reverse Beacon Network](http://www.reversebeacon.net/dxsd1/dxsd1.php?f=0&c=ea8%2Fm0nom%2Fp&t=dx) did hear me once:
 
-![](images/Photos/EA8_HLA-004/rbn.png)
+![](./images/Photos/EA8_HLA-004/rbn.png)
 
 I also spotted for 20m CW on the WWFF spotter.
 
@@ -100,11 +100,11 @@ had one contact after a spot on WWFF on 15m.
 
 Amazing to watch the sunrise over this magnificent landscape.
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_081448.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_081448.jpg)
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_083309.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_083309.jpg)
 
-![](images/Photos/EA8_HLA-004/IMG_20211027_102051.jpg)
+![](./images/Photos/EA8_HLA-004/IMG_20211027_102051.jpg)
 
 All photos, including some stunning panoramas, are in a [Google Photos album](https://photos.app.goo.gl/E4djNoaNbNVPMwii6).
 
@@ -148,20 +148,20 @@ All photos, including some stunning panoramas, are in a [Google Photos album](ht
 
 Using the [ADIF Processor](https://bit.ly/adifproc):
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_140512.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140512.png)
 _S2S with EA8/G4JXP/P on EA8/LA-002_
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_140914.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140914.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_140946.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140946.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_141027.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_141027.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_141328.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_141328.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_141444.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_141444.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_140717.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140717.png)
 
-![](images/Photos/EA8_HLA-004/Screenshot_20211027_140745.png)
+![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140745.png)
 
