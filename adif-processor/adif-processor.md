@@ -18,7 +18,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 | 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space |
 | 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                 |
 | 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                     |
-
+| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed | 
 ## Introduction
 
 ![](./images/image-cropped-691-slice.png)
