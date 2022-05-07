@@ -4,19 +4,20 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 ***
 ## Release History
 
-|Date| New Features                                                                                       |
-|----|----------------------------------------------------------------------------------------------------|
-|07-SEP-2021| Support for Castles on the Air Activity References                                                 |
-|18-SEP-2021| Supports Tropospheric Ducting & QO-100 Satellite Contacts                                          |
-|23-SEP-2021| Support for Lighthouses & Railways on the Air                                                      |
-|26-SEP-2021| Initial Geolocation support via Nominatim                                                          |
-|15-OCT-2021| Improved location accuracy reporting, COORD as a comment option                                    |
-|26-OCT-2021| Support for Lanzarote HEMA summits                                                                 |
-|10-NOV-2021| IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file      |
-|05-FEB-2022| LEO Satellite preliminary support, Long Path HF contact support                                    |
-|13-FEB-2022| Support for Global Mountain Activity References                                                    |
-|16-APR-2022| Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space |
-|06-MAY-2022| Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file|
+| Date        | New Features                                                                                       |
+|-------------|----------------------------------------------------------------------------------------------------|
+| 07-SEP-2021 | Support for Castles on the Air Activity References                                                 |
+| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                          |
+| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                      |
+| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                          |
+| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                    |
+| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                 |
+| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file      |
+| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                    |
+| 13-FEB-2022 | Support for Global Mountain Activity References                                                    |
+| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space |
+| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                 |
+| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                     |
 
 ## Introduction
 
