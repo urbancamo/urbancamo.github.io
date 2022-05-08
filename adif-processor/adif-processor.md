@@ -19,7 +19,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 | 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                 |
 | 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                     |
 | 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed | 
-
+| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude |
 ## Introduction
 
 ![](./images/image-cropped-691-slice.png)
@@ -202,21 +202,22 @@ or if a station has been recorded doing an activity.
 
 Here are the possible icons:
 
-|Icon|Suffix| Activity | Description/Link                                                     |
-|----|------|----------|----------------------------------------------------------------------|
-|![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png)|none or /A|          | At home or alternate address                                         |
-|![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)|/P|          | Portable                                                             |
-|![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)|/MM|          | Maritime Mobile                                                      |
-|![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)|/M|          | Mobile                                                               |
-|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
-|![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)|/P| GMA      | [Global Mountain Activity](https://www.cqgma.org/)                 |
-|![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)|/P| HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
-|![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)|/P| POTA     | [Parks on the Air](https://parksontheair.com/)                       |
-|![](http://maps.google.com/mapfiles/kml/shapes/schools.png)|/P| COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
-|![](http://maps.google.com/mapfiles/kml/shapes/trail.png)|/P| WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
-|![](http://maps.google.com/mapfiles/kml/shapes/parks.png) |/P| WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
-|![](http://maps.google.com/mapfiles/kml/shapes/marina.png) | | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
-|![](http://maps.google.com/mapfiles/kml/shapes/rail.png) | | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
+| Icon                                                               | Suffix     | Activity | Description/Link                                                     |
+|--------------------------------------------------------------------|------------|----------|----------------------------------------------------------------------|
+| ![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) | none or /A |          | At home or alternate address                                         |
+| ![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)          | /P         |          | Portable                                                             |
+| ![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
+| ![](http://maps.google.com/mapfiles/kml/shapes/airports.png)       | /AM        |          | Aeronautical Mobile                                                  |
+| ![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)           | /M         |          | Mobile                                                               |
+| ![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)      | /P         | SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
+| ![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)      | /P         | GMA      | [Global Mountain Activity](https://www.cqgma.org/)                   |
+| ![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)      | /P         | HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
+| ![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)         | /P         | POTA     | [Parks on the Air](https://parksontheair.com/)                       |
+| ![](http://maps.google.com/mapfiles/kml/shapes/schools.png)        | /P         | COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
+| ![](http://maps.google.com/mapfiles/kml/shapes/trail.png)          | /P         | WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
+| ![](http://maps.google.com/mapfiles/kml/shapes/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
+| ![](http://maps.google.com/mapfiles/kml/shapes/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
+| ![](http://maps.google.com/mapfiles/kml/shapes/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
 When you do this a panel of information about the station is displayed. If the operator has a picture 
@@ -442,34 +443,35 @@ For activity references specifying a reference that has an associated location w
 `LAT` & `LONG` value for the location associated with the activity reference (unless that location 
 has been overriden explicitly).
 
-|Description|Comment Key|Sample  Value|Target ADIF Field|
-|-----|------|--------------------|-----------------|
-|Age|`AGE`|52|`AGE`|
-|Coordinate†|`COORD`|50°50'56"N 14°38'49"E|`LATITUDE` & `LONGITUDE`|
-|Castles on the Air|`COTA`|DL-03609|`SIG/SIG_INFO`|
-|Fists No|`FISTS`|18162|`FISTS`|
-|Home/Location|`QTH`|Windermere|`QTH`|
-|Humps on the Air Ref.|`HEMA`|G/HLD-001|`SIG`/`SIG_INFO`|
-|Islands on the Air Ref.|`IOTA`|E-145|`IOTA`|
-|Latitude|`LAT`|50.153|`LATITUDE`|
-|Longitude|`LONG`|2.345|`LONGITUDE`|
-|Maidenhead Locator|`GRID`|IO84MJ (4/6/8/10 char)|`GRIDSQUARE`|
-|Notes|`NOTES`|Must take a look at their qrz.com page|`NOTES`|
-|Operator Name|`OP`|Mark|`NAME`|
-|Parks on the Air Ref.|`POTA`|G-0190|`SIG`/`SIG_INFO`|
-|Propagation|`PROP`|TD|`ANT_PATH`|
-|QSL Status|`QSL`|D/B|`QSL_DATE`/`SQL_SENT`|
-|Rig Model|`RIG`|IC-7100|`RIG`|
-|Power|`PWR`|50|`RX_PWR`|
-|Serial No Received|`SRX`|0034|`SRX`|
-|Serial No Transmitted|`STX`|0045|`STX`|
-|SKCC No|`SKCC`|19250|`SKCC`|
-|Summits on the Air Ref.|`SOTA`|G/LD-001|`SOTA_REF`|
-|Wainwrights on the Air Ref.|`WOTA`|LDW-001|`SIG/SIG_INFO`|
-|Worldwide Flora Fauna Ref.|`WWFF`|GFF-0233|`SIG/SIG_INFO`|
-|Lighthouses on the Air Ref.|`LOTA`|UK0019|`SIG/SIF_INFO`|
-|Railways on the Air Ref.|`ROTA`|GB4LHR|`SIG/SIG_INFO`|
-|Additional Comment|`COMMENT` or `NOTE`|WX: 12 degC Sunny|`COMMENT`|
+|Description|Comment Key| Sample  Value(s)                       | Target ADIF Field                                             |
+|-----|------|----------------------------------------|---------------------------------------------------------------|
+|Altitude|`ALT`| 30000 ft, 9000m, 9000                  | Station altitude (metres by default), e.g. Aernautical Mobile |
+|Age|`AGE`| 52                                     | `AGE`                                                         |
+|Coordinate†|`COORD`| 50°50'56"N 14°38'49"E                  | `LATITUDE` & `LONGITUDE`                                      |
+|Castles on the Air|`COTA`| DL-03609                               | `SIG/SIG_INFO`                                                |
+|Fists No|`FISTS`| 18162                                  | `FISTS`                                                       |
+|Home/Location|`QTH`| Windermere                             | `QTH`                                                         |
+|Humps on the Air Ref.|`HEMA`| G/HLD-001                              | `SIG`/`SIG_INFO`                                              |
+|Islands on the Air Ref.|`IOTA`| E-145                                  | `IOTA`                                                        |
+|Latitude|`LAT`| 50.153                                 | `LATITUDE`                                                    |
+|Longitude|`LONG`| 2.345                                  | `LONGITUDE`                                                   |
+|Maidenhead Locator|`GRID`| IO84MJ (4/6/8/10 char)                 | `GRIDSQUARE`                                                  |
+|Notes|`NOTES`| Must take a look at their qrz.com page | `NOTES`                                                       |
+|Operator Name|`OP`| Mark                                   | `NAME`                                                        |
+|Parks on the Air Ref.|`POTA`| G-0190                                 | `SIG`/`SIG_INFO`                                              |
+|Propagation|`PROP`| TD                                     | `ANT_PATH`                                                    |
+|QSL Status|`QSL`| D/B                                    | `QSL_DATE`/`SQL_SENT`                                         |
+|Rig Model|`RIG`| IC-7100                                | `RIG`                                                         |
+|Power|`PWR`| 50                                     | `RX_PWR`                                                      |
+|Serial No Received|`SRX`| 0034                                   | `SRX`                                                         |
+|Serial No Transmitted|`STX`| 0045                                   | `STX`                                                         |
+|SKCC No|`SKCC`| 19250                                  | `SKCC`                                                        |
+|Summits on the Air Ref.|`SOTA`| G/LD-001                               | `SOTA_REF`                                                    |
+|Wainwrights on the Air Ref.|`WOTA`| LDW-001                                | `SIG/SIG_INFO`                                                |
+|Worldwide Flora Fauna Ref.|`WWFF`| GFF-0233                               | `SIG/SIG_INFO`                                                |
+|Lighthouses on the Air Ref.|`LOTA`| UK0019                                 | `SIG/SIF_INFO`                                                |
+|Railways on the Air Ref.|`ROTA`| GB4LHR                                 | `SIG/SIG_INFO`                                                |
+|Additional Comment|`COMMENT` or `NOTE`| WX: 12 degC Sunny                      | `COMMENT`                                                     |
 
 †Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
 minute secords, degrees decimal minutes etc.
