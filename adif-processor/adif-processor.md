@@ -446,36 +446,36 @@ For activity references specifying a reference that has an associated location w
 `LAT` & `LONG` value for the location associated with the activity reference (unless that location 
 has been overriden explicitly).
 
-| Description                 | Comment Key         | Sample  Value(s)                       | Target ADIF Field                                           |
-|-----------------------------|---------------------|----------------------------------------|-------------------------------------------------------------|
-| Altitude                    | `ALT`               | 30000 ft, 9000m, 9000                  | Their altitude (metres by default), e.g. Aernautical Mobile |
-| My Altitude                 | `MY_ALT`            | 30000 ft, 9000m, 9000                  | Your altitude (metres by default), e.g. Aernautical Mobile  |
-| Age                         | `AGE`               | 52                                     | `AGE`                                                       |
-| Coordinate†                 | `COORD`             | 50°50'56"N 14°38'49"E                  | `LATITUDE` & `LONGITUDE`                                    |
-| Castles on the Air          | `COTA`              | DL-03609                               | `SIG/SIG_INFO`                                              |
-| Fists No                    | `FISTS`             | 18162                                  | `FISTS`                                                     |
-| Home/Location               | `QTH`               | Windermere                             | `QTH`                                                       |
-| Humps on the Air Ref.       | `HEMA`              | G/HLD-001                              | `SIG`/`SIG_INFO`                                            |
-| Islands on the Air Ref.     | `IOTA`              | E-145                                  | `IOTA`                                                      |
-| Latitude                    | `LAT`               | 50.153                                 | `LATITUDE`                                                  |
-| Longitude                   | `LONG`              | 2.345                                  | `LONGITUDE`                                                 |
-| Maidenhead Locator          | `GRID`              | IO84MJ (4/6/8/10 char)                 | `GRIDSQUARE`                                                |
-| Notes                       | `NOTES`             | Must take a look at their qrz.com page | `NOTES`                                                     |
-| Operator Name               | `OP`                | Mark                                   | `NAME`                                                      |
-| Parks on the Air Ref.       | `POTA`              | G-0190                                 | `SIG`/`SIG_INFO`                                            |
-| Propagation                 | `PROP`              | TD                                     | `ANT_PATH`                                                  |
-| QSL Status                  | `QSL`               | D/B                                    | `QSL_DATE`/`SQL_SENT`                                       |
-| Rig Model                   | `RIG`               | IC-7100                                | `RIG`                                                       |
-| Power                       | `PWR`               | 50                                     | `RX_PWR`                                                    |
-| Serial No Received          | `SRX`               | 0034                                   | `SRX`                                                       |
-| Serial No Transmitted       | `STX`               | 0045                                   | `STX`                                                       |
-| SKCC No                     | `SKCC`              | 19250                                  | `SKCC`                                                      |
-| Summits on the Air Ref.     | `SOTA`              | G/LD-001                               | `SOTA_REF`                                                  |
-| Wainwrights on the Air Ref. | `WOTA`              | LDW-001                                | `SIG/SIG_INFO`                                              |
-| Worldwide Flora Fauna Ref.  | `WWFF`              | GFF-0233                               | `SIG/SIG_INFO`                                              |
-| Lighthouses on the Air Ref. | `LOTA`              | UK0019                                 | `SIG/SIF_INFO`                                              |
-| Railways on the Air Ref.    | `ROTA`              | GB4LHR                                 | `SIG/SIG_INFO`                                              |
-| Additional Comment          | `COMMENT` or `NOTE` | WX: 12 degC Sunny                      | `COMMENT`                                                   |
+| Description                 | Comment Key         | Sample  Value(s)                       | Target ADIF Field        |
+|-----------------------------|---------------------|----------------------------------------|--------------------------|
+| Altitude (in metres)        | `ALT`               | 30000 ft, 9000m, 9000                  | `APP_APROC_ALT`          |
+| My Altitude (in metres)     | `MY_ALT`            | 30000 ft, 9000m, 9000                  | `APP_APROC_MY_ALT`       |
+| Age                         | `AGE`               | 52                                     | `AGE`                    |
+| Coordinate†                 | `COORD`             | 50°50'56"N 14°38'49"E                  | `LATITUDE` & `LONGITUDE` |
+| Castles on the Air          | `COTA`              | DL-03609                               | `SIG/SIG_INFO`           |
+| Fists No                    | `FISTS`             | 18162                                  | `FISTS`                  |
+| Home/Location               | `QTH`               | Windermere                             | `QTH`                    |
+| Humps on the Air Ref.       | `HEMA`              | G/HLD-001                              | `SIG`/`SIG_INFO`         |
+| Islands on the Air Ref.     | `IOTA`              | E-145                                  | `IOTA`                   |
+| Latitude                    | `LAT`               | 50.153                                 | `LATITUDE`               |
+| Longitude                   | `LONG`              | 2.345                                  | `LONGITUDE`              |
+| Maidenhead Locator          | `GRID`              | IO84MJ (4/6/8/10 char)                 | `GRIDSQUARE`             |
+| Notes                       | `NOTES`             | Must take a look at their qrz.com page | `NOTES`                  |
+| Operator Name               | `OP`                | Mark                                   | `NAME`                   |
+| Parks on the Air Ref.       | `POTA`              | G-0190                                 | `SIG`/`SIG_INFO`         |
+| Propagation                 | `PROP`              | TD                                     | `ANT_PATH`               |
+| QSL Status                  | `QSL`               | D/B                                    | `QSL_DATE`/`SQL_SENT`    |
+| Rig Model                   | `RIG`               | IC-7100                                | `RIG`                    |
+| Power                       | `PWR`               | 50                                     | `RX_PWR`                 |
+| Serial No Received          | `SRX`               | 0034                                   | `SRX`                    |
+| Serial No Transmitted       | `STX`               | 0045                                   | `STX`                    |
+| SKCC No                     | `SKCC`              | 19250                                  | `SKCC`                   |
+| Summits on the Air Ref.     | `SOTA`              | G/LD-001                               | `SOTA_REF`               |
+| Wainwrights on the Air Ref. | `WOTA`              | LDW-001                                | `SIG/SIG_INFO`           |
+| Worldwide Flora Fauna Ref.  | `WWFF`              | GFF-0233                               | `SIG/SIG_INFO`           |
+| Lighthouses on the Air Ref. | `LOTA`              | UK0019                                 | `SIG/SIF_INFO`           |
+| Railways on the Air Ref.    | `ROTA`              | GB4LHR                                 | `SIG/SIG_INFO`           |
+| Additional Comment          | `COMMENT` or `NOTE` | WX: 12 degC Sunny                      | `COMMENT`                |
 
 †Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
 minute secords, degrees decimal minutes etc.
