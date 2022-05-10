@@ -450,6 +450,7 @@ has been overriden explicitly).
 |-----------------------------|---------------------|----------------------------------------|--------------------------|
 | Altitude (in metres)        | `ALT`               | 30000 ft, 9000m, 9000                  | `APP_APROC_ALT`          |
 | My Altitude (in metres)     | `MY_ALT`            | 30000 ft, 9000m, 9000                  | `APP_APROC_MY_ALT`       |
+ | Their Antenna               | `ANT`               | Dipole @ 10m                           | `APP_APROC_ANT`          | 
 | Age                         | `AGE`               | 52                                     | `AGE`                    |
 | Coordinate†                 | `COORD`             | 50°50'56"N 14°38'49"E                  | `LATITUDE` & `LONGITUDE` |
 | Castles on the Air          | `COTA`              | DL-03609                               | `SIG/SIG_INFO`           |
