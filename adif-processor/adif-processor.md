@@ -20,7 +20,7 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 | 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                     |
 | 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed | 
 | 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude |
-
+| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field |
 
 
 ## Introduction
