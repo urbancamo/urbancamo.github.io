@@ -1,26 +1,30 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
-Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc)
+Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
+
+Also available in PDF format as [adif-processor.pdf](./adif-processor.pdf).
 
 ***
 ## Release History
 
-| Date        | New Features                                                                                       |
-|-------------|----------------------------------------------------------------------------------------------------|
-| 07-SEP-2021 | Support for Castles on the Air Activity References                                                 |
-| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                          |
-| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                      |
-| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                          |
-| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                    |
-| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                 |
-| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file      |
-| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                    |
-| 13-FEB-2022 | Support for Global Mountain Activity References                                                    |
-| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space |
-| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                 |
-| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                     |
-| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed | 
-| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude |
-| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field |
+| Date        | New Features                                                                                                                                                          |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 07-SEP-2021 | Support for Castles on the Air Activity References                                                                                                                    |
+| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                                                                                             |
+| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                                                                                         |
+| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                                                                                             |
+| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                                                                                       |
+| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                                                                                    |
+| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file                                                                         |
+| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                                                                                       |
+| 13-FEB-2022 | Support for Global Mountain Activity References                                                                                                                       |
+| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zippped KML files to save space                                                                    |
+| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                    |
+| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                        |
+| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  | 
+| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                               |
+| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
+| 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
+| 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
 
 
 ## Introduction
@@ -207,20 +211,20 @@ Here are the possible icons:
 
 | Icon                                                               | Suffix     | Activity | Description/Link                                                     |
 |--------------------------------------------------------------------|------------|----------|----------------------------------------------------------------------|
-| ![](http://maps.google.com/mapfiles/kml/shapes/ranger_station.png) | none or /A |          | At home or alternate address                                         |
-| ![](http://maps.google.com/mapfiles/kml/shapes/hiker.png)          | /P         |          | Portable                                                             |
-| ![](http://maps.google.com/mapfiles/kml/shapes/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
-| ![](http://maps.google.com/mapfiles/kml/shapes/airports.png)       | /AM        |          | Aeronautical Mobile                                                  |
-| ![](http://maps.google.com/mapfiles/kml/shapes/cabs.png)           | /M         |          | Mobile                                                               |
-| ![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)      | /P         | SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
-| ![](http://maps.google.com/mapfiles/kml/shapes/mountains.png)      | /P         | GMA      | [Global Mountain Activity](https://www.cqgma.org/)                   |
-| ![](http://maps.google.com/mapfiles/kml/shapes/hospitals.png)      | /P         | HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
-| ![](http://maps.google.com/mapfiles/kml/shapes/picnic.png)         | /P         | POTA     | [Parks on the Air](https://parksontheair.com/)                       |
-| ![](http://maps.google.com/mapfiles/kml/shapes/schools.png)        | /P         | COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
-| ![](http://maps.google.com/mapfiles/kml/shapes/trail.png)          | /P         | WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
-| ![](http://maps.google.com/mapfiles/kml/shapes/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
-| ![](http://maps.google.com/mapfiles/kml/shapes/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
-| ![](http://maps.google.com/mapfiles/kml/shapes/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
+| ![](./images/ranger_station.png) | none or /A |          | At home or alternate address                                         |
+| ![](./images/hiker.png)          | /P         |          | Portable                                                             |
+| ![](./images/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
+| ![](./images/airports.png)       | /AM        |          | Aeronautical Mobile                                                  |
+| ![](./images/cabs.png)           | /M         |          | Mobile                                                               |
+| ![](./images/mountains.png)      | /P         | SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
+| ![](./images/mountains.png)      | /P         | GMA      | [Global Mountain Activity](https://www.cqgma.org/)                   |
+| ![](./images/hospitals.png)      | /P         | HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
+| ![](./images/picnic.png)         | /P         | POTA     | [Parks on the Air](https://parksontheair.com/)                       |
+| ![](./images/schools.png)        | /P         | COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
+| ![](./images/trail.png)          | /P         | WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
+| ![](./images/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
+| ![](./images/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
+| ![](./images/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
 When you do this a panel of information about the station is displayed. If the operator has a picture 

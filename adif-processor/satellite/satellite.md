@@ -1,3 +1,4 @@
+
 # Satellite Support
 
 ## Introduction
@@ -29,8 +30,8 @@ Only QSOS in the input file with band `13cm` will be visualized as satellite con
 
 | Icon                                                                           | Represents        | Label                     |
 |--------------------------------------------------------------------------------|-------------------|---------------------------|
-| ![](http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png) | Satellite Contact | Time UTC                  |
-| ![](http://maps.google.com/mapfiles/kml/shapes/capital_big_highlight.png)                       | Satellite Track   | Satellite Name & Date UTC |
+| ![](./images/placemark_circle_highlight.png) | Satellite Contact | Time UTC                  |
+| ![](./images/capital_big_highlight.png)                       | Satellite Track   | Satellite Name & Date UTC |
 
 A worked pass of a satellite is show in Google Earth as a red trace. There is a lead to the trace before the first QSO.
 Where multiple QSOs are recorded at the same time the times are interpolated based on the order in the input file.
