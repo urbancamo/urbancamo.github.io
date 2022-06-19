@@ -2,6 +2,67 @@
 
 This will inevitably be a dumping ground of information. Previously I have used Atlassian Confluence to store this kind of information, but I really enjoy the convenience of using github to store markdown. Basically if I want to do everything from a command line there isn't an issue with this approach.
 
+## Kubuntu 22.04 - Panasonic Toughbook Brightess Controls
+The advice below about setting the grub bootline doesn't work any more.
+
+I found `acpi_listen` returned nothing for the power buttons with the 
+changes to the bootline, so I set the boot options back to default, and 
+found the following work around:
+
+/etc/acpi/panasonic-keyboard-backlight.sh :
+```
+#!/bin/sh
+
+# this directory is a symlink on my machine:
+BACKLIGHT_DIR=/sys/class/backlight/intel_backlight
+
+test -d $BACKLIGHT_DIR || exit 0
+
+MIN=0
+MAX=$(cat $BACKLIGHT_DIR/max_brightness)
+VAL=$(cat $BACKLIGHT_DIR/brightness)
+INC=$((MAX/20))
+
+if [ "$1" = down ]; then
+        VAL=$((VAL-INC))
+else
+        VAL=$((VAL+INC))
+fi
+
+if [ "$VAL" -lt $MIN ]; then
+        VAL=$MIN
+elif [ "$VAL" -gt $MAX ]; then
+        VAL=$MAX
+fi
+
+echo $VAL > $BACKLIGHT_DIR/brightness
+
+```
+
+/etc/acpi/events/panasonic-keyboard-backlight-down :
+```
+# /etc/acpi/events/panasonic-keyboard-backlight-down
+# This is called when the user presses the key brightness 
+# down button and calls /etc/acpi/panasonic-keyboard-backlight.sh for
+# further processing.
+
+event=video/brightnessdown BRTDN 00000087 00000000
+action=/etc/acpi/panasonic-keyboard-backlight.sh down
+
+```
+
+/etc/acpi/events/panasonic-keyboard-backlight-up :
+```
+/etc/acpi/events/panasonic-keyboard-backlight-up
+# /etc/acpi/events/panasonic-keyboard-backlight-up
+# This is called when the user presses the key brightness 
+# down button and calls /etc/acpi/panasonic-keyboard-backlight.sh for
+# further processing.
+
+event=video/brightnessup BRTUP 00000086 00000000
+action=/etc/acpi/panasonic-keyboard-backlight.sh up
+
+```
 ## DynamoDB
 ### Running DynamoDB in a local docker container
 
