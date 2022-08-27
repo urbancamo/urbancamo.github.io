@@ -25,7 +25,7 @@ Also available in PDF format as [adif-processor.pdf](./adif-processor.pdf).
 | 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
 | 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
 | 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
-
+| 27-AUG-2022| Version 1.0.59 DXCC entities and better country identification |
 
 ## Introduction
 
@@ -209,8 +209,8 @@ or if a station has been recorded doing an activity.
 
 Here are the possible icons:
 
-| Icon                                                               | Suffix     | Activity | Description/Link                                                     |
-|--------------------------------------------------------------------|------------|----------|----------------------------------------------------------------------|
+| Icon                             | Suffix     | Activity | Description/Link                                                     |
+|----------------------------------|------------|----------|----------------------------------------------------------------------|
 | ![](./images/ranger_station.png) | none or /A |          | At home or alternate address                                         |
 | ![](./images/hiker.png)          | /P         |          | Portable                                                             |
 | ![](./images/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
@@ -225,6 +225,7 @@ Here are the possible icons:
 | ![](./images/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
 | ![](./images/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
 | ![](./images/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
+| ![](./images/info.png)           |            | IOTA     | [Islands on the Air](https://www.iota-world.org/)                    |
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
 When you do this a panel of information about the station is displayed. If the operator has a picture 
@@ -626,4 +627,4 @@ Here are some example Google Earth images from an [evening activation](https://r
 |2021.08.01|12:19|YO5OTA/P    |  14.283|  20m| SSB| 55| 52|G/LD-050 |YO/WC-225|Pascal    |SOTA |YO/WC-22|SOTA: YO/WC-225              |KN16QN|
 |2021.08.01|12:41|GW7LAS/P    |   3.776|  80m| SSB| 59| 59|G/LD-050 |         |Rob       |HEMA |GW/HMW-0|HEMA: GW/HMW-043             |IO82JD|
 
-Documentation Version: 2022-04-05b
+Documentation Version: 2022-08-27
