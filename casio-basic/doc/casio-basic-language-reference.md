@@ -137,14 +137,14 @@ All commands are reserved words.
 
 | Symbol(s) | Description                           |
 |-----------|---------------------------------------|
-| `+`, `-`      | Signs                                 |
-| `+`         | Addition                              |
-| `-`         | Subtraction                           |
-| `*`         | Multiplication                        |
-| `/`         | Division                              |
-| `^`         | Power                                 |
-| `¥`         | Integer division                      |
-| `MOD`       | Integer remainder of integer division |
+| `+`, `-`  | Signs                                 |
+| `+`       | Addition                              |
+| `-`       | Subtraction                           |
+| `*`       | Multiplication                        |
+| `/`       | Division                              |
+| `^`       | Power                                 |
+| `¥`       | Integer division                      |
+| `MOD`     | Integer remainder of integer division |
 
 ### Relational Operators 
 
