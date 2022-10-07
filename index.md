@@ -7,13 +7,15 @@ Passionate about delivering quality, secure software in response to fluid busine
 
 I am a Certified Scrum Master.
 
-[Here is my 2022 CV in PDF format](./cv/Mark_Wickens_CV_2022.pdf)
+[Here is my 2022 CV in PDF format](cv/Mark_Wickens_CV_2022.pdf)
 
-### [Documentation for the ADIF Processor](./adif-processor/adif-processor)
+### [Documentation for the ADIF Processor](adif-processor/adif-processor)
 
 ### [Developer Notes](devblog)
 
 ### [Retrochallenge 2021/10](rc2021_10)
+
+### [Retrochallenge 2022/10](casio-basic/rc2022_10)
 
 ### [Activation of Montaña Colorada on Lanzarote](ea8_hla-004)
 
