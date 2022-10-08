@@ -6,7 +6,7 @@ Indicates the end of file reading.
 ### Format
 ```basic
 EOF     ( file number )
-      ------------------
+          └────┬────┘
       Numeric expression
 ```
 
@@ -16,7 +16,7 @@ IF EOF(1) THEN END
 ```
 
 ### Parameters
-file number: Numeric expression truncated to an integer in the range of 1 <= file number < 2
+file number: Numeric expression truncated to an integer in the range of 1 ≦ file number < 2
 
 ### Explanation
 1. Indicates the end of reading for a file specified by the file number. 

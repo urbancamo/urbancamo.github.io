@@ -5,7 +5,7 @@ Reads data from DATA BANK area.
 
 ### Format
 ```basic
-READ#  variable name [, variable name]*
+READ#  variable name [ , variable name ]*
 ```
 
 ### Parameters

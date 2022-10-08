@@ -9,14 +9,14 @@ final value.
 ### Format
 ```basic
 FOR   control variable name     =      initial value
-                                     ------------------
+                                       └─────┬─────┘
                                      Numeric expression
                                      
                TO     final value       [ STEP      increment ]
-                   ----------------                 ---------
+                      └────┬────┘                   └───┬───┘
                    Numeric expression           Numeric expression
                    
-NEXT  [Control variable name]   [, Control variable name]*
+NEXT  [ Control variable name ]   [ , Control variable name ]*
 ```
 
 ### Example
@@ -38,11 +38,11 @@ proceeds to the next executable statement after `NEXT` when the initial value is
 another `FOR ~ NEXT~ loop). Nested loops must be structured as shown below with
 `NEXT` appearing in reverse sequence of the `FOR` (e.g. `FOR A, FOR B, FOR C ~ NEXT C, NEXT B, NEXT A)`
     ```basic
-    +----10  FOR I=1 TO 12 STEP 3
-    |  +-20  FOR J=1 TO 4 STEP 0.5
-    |  | 30  PRINT I, J
-    |  +-40  NEXT J
-    +----50  NEXT I
+    ┌────10  FOR I=1 TO 12 STEP 3
+    │  ┌─20  FOR J=1 TO 4 STEP 0.5
+    │  │ 30  PRINT I, J
+    │  └─40  NEXT J
+    └────50  NEXT I
          60  END  
     ```
 4. `FOR ~ NEXT` loops can be nested up to 29 levels.
@@ -50,11 +50,11 @@ another `FOR ~ NEXT~ loop). Nested loops must be structured as shown below with
 variable in the `NEXT` statement is recommended when nesting loops.
 6. NEXT statements can be chained by including them under one `NEXT` statement, separated by commas.
     ```basic
-    +----10  FOR I=1 TO 12 STEP 3    +---10  FOR I=1 TO 12 STEP 3
-    |  +-20  FOR J=1 TO 4 STEP 0.5   | +-20  FOR J=1 TO 4 STEP 0.5
-    |  | 30  PRINT I, J              | | 30  PRINT I,J
-    |  +-40  NEXT J                  |-+-40  NEXT J,I
-    +----50  NEXT I                      50  END
+    ┌────10  FOR I=1 TO 12 STEP 3    ┌────10  FOR I=1 TO 12 STEP 3
+    │  ┌─20  FOR J=1 TO 4 STEP 0.5   │  ┌─20  FOR J=1 TO 4 STEP 0.5
+    │  │ 30  PRINT I, J              │  │ 30  PRINT I,J
+    │  └─40  NEXT J                  └──┴─40  NEXT J,I
+    └────50  NEXT I                      50  END
          60  END  
     ```
 7. The control variable retains the value which exceeds the final value

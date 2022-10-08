@@ -5,8 +5,8 @@ Assigns keyboard data input to a variable.
 
 ### Format
 ```basic
-INPUT ["message" {;}] variable [, ["message" {;}], variable
-                 {,}   name                  {,}    name
+INPUT [ "message" ⎧ ; ⎫ ] variable [ , [ "message" ⎧ ; ⎫ ], variable
+                  ⎩ , ⎭     name                   ⎩ , ⎭      name
 ```
 
 ### Example

@@ -7,7 +7,7 @@ Moves the cursor to a specified position on the virtual screen.
 
 ```basic
 LOCATE    X-coordinate     ,   Y-coordinate
-        -----------------    ------------------
+          └────┬─────┘         └────┬─────┘
         Numeric expression   Numeric expression
 ```
 
@@ -25,16 +25,16 @@ of 0 <= Y-coordinate <= 8
 to the right. The Y value coordinate is incremented from each line down.
 
 ```
-          +-------------------------------+ 
-(0, 0) -> |o                             o| <- (31, 0)
-          |                               |
-          |                               |
-          |                               |
-          |                               |
-          |                               |
-          |                               |
-(0, 7) -> |o                             o| <- (31, 7)
-          +-------------------------------+ 
+          ┌────────────────────────────────┐ 
+ (0, 0) → │◉                              ◉│ ← (31, 0)
+          │                                │
+          │                                │
+          │                                │
+          │                                │
+          │                                │
+          │                                │
+ (0, 7) → │◉                              ◉│ ← (31, 7)
+          └────────────────────────────────┘ 
 ```
 
 ### Sample Program

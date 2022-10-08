@@ -5,9 +5,9 @@ Returns memory area size in accordance with argument.
 
 ### Format
 ```basic
-FRE  (      argument      )
-     (--------------------)
-     ( Numeric expression )
+     ⎧     argument       ⎫
+FRE  ⎨     └───┬──┘       ⎬
+     ⎩ Numeric expression ⎭
 ```
 
 ### Example
@@ -16,7 +16,7 @@ PRINT FRE 0
 ```
 
 ### Parameters
-argument: Integer in the range of 0 <= argument <= 3
+argument: Integer in the range of 0 ≦ argument ≦ 3
 
 ### Explanation
 1. parameter = 0: Returns unused memory in variable area in byte units.

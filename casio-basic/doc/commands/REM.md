@@ -5,9 +5,9 @@ Allows remarks or comments to be included within a program. This command is not 
 
 ### Format
 ```basic
-{  REM  }   comments 
-{       }   --------
-{   '   }   String expression
+⎧  REM  ⎫   comments 
+⎨       ⎬   └──┬───┘
+⎩   '   ⎭   String expression
 ```
 
 ### Example
@@ -16,7 +16,7 @@ REM  or  '
 ```
 
 ### Parameters
-comments: String expression (internal codes 20 to 7E and 80 to FB)
+comments: String expression (internal codes 20ʰ to 7Eʰ and 80ʰ to FBʰ)
 
 ### Explanation
 1. Including an apostrophe or `REM` statement following the line number indicates
@@ -26,10 +26,10 @@ text is comments. The `REM` statement can only be used at the beginning of a lin
 3. Any command following the `REM` statement is treated as a comment and is not executed.
     ```basic
     PRINT A:   REM 123      123 is treated as a comment
-                   -> comments
+                   → comments
     PRINT A    REM 123      SN error occurs.
     PRINT A  ' 123          123 is treated as a comment
-               -> comments 
+               → comments 
     ```
 4. An apostrophe is entered by pressing the **,** key following the **SHIFT** key.
 

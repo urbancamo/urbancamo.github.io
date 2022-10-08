@@ -24,8 +24,8 @@ to the variable on the left side.
 2. Numeric expressions can only be assigned numeric variables, and string
 expressions can only be assigned to string variables. A `TM` error is generated
 when an attempt is made to assign a string expression to a numeric variable,
-and visa versa.
-3. `LET` may be ommitted.
+and vice versa.
+3. `LET` may be omitted.
 
 ### Sample Program
 

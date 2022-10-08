@@ -20,10 +20,10 @@ VARLIST
 **EXE**
 
 ```
-|-------------------------------|
-|A       AB       R      AC$()  |
-|-                              |
-|-------------------------------|
+┌────────────────────────────────┐
+│A       AB       R      AC$()   │
+│-                               │
+└────────────────────────────────┘
 ```
 This command displays all variable names and array names currently stored in memory.
 

@@ -6,8 +6,8 @@ Declares a file open for use.
 ### Format:
 ```basic
 
-OPEN "file descriptor" [ FOR { INPUT  } ] AS [#]     file number
-                       [     { OUTPUT } ]            -----------
+OPEN "file descriptor" ⎡ FOR ⎧ INPUT  ⎫ ⎤ AS [#]     file number
+                       ⎣     ⎩ OUTPUT ⎭ ⎦            └────┬────┘
                                                  numeric expression
 ```
 
@@ -18,7 +18,7 @@ OPEN "DATA1" FOR OUTPUT AS #1
 
 ### Parameters
 1. file descriptor: String expression
-2. file number: Numeric expression truncated to an integer in the range 1 <= file number <= 2
+2. file number: Numeric expression truncated to an integer in the range 1 ≦ file number ≦ 2
 
 ### Explanation
 1. Opens the file specified by the file descriptor as the specified file number. 

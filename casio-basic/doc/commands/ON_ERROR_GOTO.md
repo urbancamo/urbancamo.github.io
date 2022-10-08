@@ -6,7 +6,7 @@ Specifies the line number to which execution branches when an error is generated
 ### Format
 ```basic
 ON ERROR GOTO branch destination line number
-              ------------------------------
+              └─────────────┬──────────────┘
                         Line number 
 ```
 
@@ -16,8 +16,7 @@ ON ERROR GOTO 1000
 ```
 
 ### Parameters
-1. branch destination line number:
-   Integer in the range of 0 <= line number <= 65535
+branch destination line number: Integer in the range of 0 ≦ line number ≦ 65535
 
 ### Explanation
 1. Specifies the line number to which program execution branches when an error

@@ -7,8 +7,8 @@ Displays data on the screen.
 ### Format
 
 ```basic
-PRINT [output data] {;} [output data]*
-                    {,}
+PRINT [output data] ⎧ ; ⎫ [output data]*
+                    ⎩ , ⎭
         Output data: TAB (Tab specification), numeric expression,
                      string array
 ```
@@ -37,7 +37,7 @@ than 10 digits.
   exponential expressions, with the display format automatically selected
   according to the value of the expression.
 3. String expressions are dsplayed unchanged. There are, however, special 
-operations for internal codes 00H~1FH, 7FH 
+operations for internal codes 00ʰ ~ 1Fʰ, 7Fʰ 
 (see [CHARACTER CODE TABLE](../other/CHARACTER_CODE_TABLE).
 4. Output is displayed on the screen from the current position of the cursor
 to the right. A line feed results when the cursor reaches the last column

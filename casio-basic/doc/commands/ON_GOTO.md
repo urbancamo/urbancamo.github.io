@@ -5,19 +5,19 @@ Jumps to a specified branch destination in accordance with a specified branching
 
 ### Format
 ```basic
-ON     condition       GOTO    [branch          [, [branch
-       ---------                destination]       destination]]*
+ON     condition       GOTO    [ branch          [, [ branch
+       └───┬───┘                destination ]       destination ] ]*
    Numeric expression
 
-                    {  destination branch line number  }
-                    {  -----------------------------   }
-                    {           Line number            }
-Branch destination: {                                  }
-                    {  # program area number           }
-                    {    ---------------------         }
-                    {    Single character; 0~9         }
-```
+                    ⎧  destination branch line number  ⎫
+                    ⎪  └─────────────┬──────────────┘  ⎪
+                    ⎪           Line number            ⎪
+Branch destination: ⎨                                  ⎬
+                    ⎪  # program area number           ⎪
+                    ⎪    └────────┬────────┘           ⎪
+                    ⎩    Single character; 0~9         ⎭
 
+```
 ### Example
 ```basic
 ON A GOTO 100, 200, 300
@@ -25,7 +25,7 @@ ON A GOTO 100, 200, 300
 
 ### Parameters
 1. branch condition: Numeric expression truncated to an integer
-2. line number: Integer in the range of 1 <= line number <= 65535
+2. line number: Integer in the range of 1 ≦ line number ≦ 65535
 3. program area number: Singe character, 0~9
 
 ### Explanation

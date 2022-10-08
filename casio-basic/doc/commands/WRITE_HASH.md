@@ -5,9 +5,9 @@ Rewrites and deletes DATA BANK data.
 
 ### Format
 ```basic
-WRITE# [ DATA BANK data   ,  [ DATA BANK data ] ]
-       [ --------------      [ -------------- ] ]
-       [   Expression             Expression  ] ]
+       ⎡  DATA BANK data       ⎡ DATA BANK data  ⎤  ⎤
+WRITE# ⎢  └─────┬──────┘   ,   ⎣  └─────┬──────┘ ⎦  ⎥
+       ⎣   Expression             Expression        ⎦
 ```
 
 ### Example

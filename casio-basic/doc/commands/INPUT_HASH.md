@@ -5,8 +5,8 @@ Reads data from a sequential file.
 
 ### Format
 ```basic
-INPUT#     file number      , variable name  [ , variable name]*
-        ------------------
+INPUT#     file number   , variable name  [ , variable name ]*
+           └────┬────┘
         Numeric expression
 ```
 
@@ -16,13 +16,13 @@ INPUT #1, A
 ```
 
 ### Parameters
-file number: Numeric expression truncated to an integer in the range of 1 <= filename < 2.
+file number: Numeric expression truncated to an integer in the range of 1 ≦ filename < 2.
 
 ### Explanation
 1. Reads data from the file specified by the file number.
 2. Data are input in the same format s data input using the [INPUT](INPUT.md) statement
    (see [INPUT](INPUT.md)). Consequently, data are delimited using commas, quotation marks, 
-   CR codes (0DH) or CR, LF codes (0DH, 0AH). Internal codes 00H through 1FH and 7FH cannot be 
+   CR codes (0DH) or CR, LF codes (0Dʰ, 0Aʰ). Internal codes 00ʰ through 1Fʰ and 7Fʰ cannot be 
    input, and leading spaces (spaces preceding that data) are disregarded.
 3. This statement is valid for sequential files opened for input (`FOR INPUT`), and for
    communication circuit (`COM0:`) input/output files.

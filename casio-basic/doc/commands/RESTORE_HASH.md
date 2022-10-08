@@ -6,15 +6,15 @@ of DATA BANK data.
 
 ### Format
 ```basic
-RESTORE# [ "object string"   [     {0}      {line number            } ] ]
-         [ ---------------   [ [,  {1} ] [, {#program area number   } ] ]
-         [ string expression [                                      } ] ]
+RESTORE# ⎡ "object string"   ⎡     ⎧ 0 ⎫      ⎧ line number            ⎫ ⎤ ⎤
+         ⎢ ---------------   ⎢ [,  ⎨   ⎬ ] [, ⎨ #program area number   ⎬ ⎥ ⎥
+         ⎣ string expression ⎣     ⎩ 1 ⎭      ⎩                        ⎭ ⎦ ⎦
 ```
 
 ### Parameters
 1. object string: String expression
 2. line number: Numeric expression. Integer within the range 0 < line number < 65536.
-3. program area number: Numeric expression. Integer within the range 0 <= program area number < 10
+3. program area number: Numeric expression. Integer within the range 0 ≦ program area number < 10
 
 ### Explanation
 1. Searches specific data in the DATA BANK area and sets the DATA BANK area pointer
@@ -28,8 +28,8 @@ commands are performed from the new pointer position.
       Strings are delimited by commas, and not by spaces. A [DA](../errors/DA.md) error is generated when the object string cannot be found.
    3. 
 ```basic
-RESTORE# "object string" [, {0} ], {line number         }
-                            {1}    {#program area number}
+RESTORE# "object string" [, ⎧ 0 ⎫ ], ⎧ line number          ⎫
+                            ⎩ 1 ⎭    ⎩ #program area number ⎭
 ```
 Execution branches to specified line or program area when the object string is not found.
    

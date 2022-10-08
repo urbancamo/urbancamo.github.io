@@ -7,7 +7,7 @@ Reads the contents of the [DATA](DATA) statement into memory.
 ### Format
 
 ```basic
-READ Variable name [, Variable name]*
+READ Variable name [ , Variable name ]*
 ```
 
 ### Example

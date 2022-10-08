@@ -20,8 +20,8 @@ pressed during execution of `INKEY$`.
   - **STOP**: Suspends program execution.
   - One-key commands and one-key functions: Return a null string.
 3. The cursor is not displayed during data input stand by, and input 
-characters are not displayed. Control codes (00H~1FH) can be input, but the 
-corresponding opertions will not be performed.
+characters are not displayed. Control codes (00ʰ~1Fʰ) can be input, but the 
+corresponding operations will not be performed.
 
 ### See
  - [INPUT$](INPUT_STRING.md)

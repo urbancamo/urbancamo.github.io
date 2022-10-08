@@ -5,13 +5,13 @@ Jumps to a specified subroutine.
 
 ### Format
 ```basic
-            { branch destination line number }
-            { ------------------------------ }
-            {          Line number           }
-   GOSUB    {                                }
-            {    # program area number       }
-            {      _____________________     }
-            {      Single character; 0~9     }
+            ⎧ branch destination line number ⎫
+            ⎪  └─────────────┬─────────────┘ ⎪
+            ⎪           Line number          ⎪
+   GOSUB    ⎨                                ⎪
+            ⎪    # program area number       ⎪
+            ⎪      └────────┬────────┘       ⎪
+            ⎩      Single character; 0~9     ⎭
 ```
 
 ### Example
@@ -21,7 +21,7 @@ GOSUB #6
 ```
 
 ### Parameters
-1. branch destination line number: Integer in the range of 1 <= line number <= 65535
+1. branch destination line number: Integer in the range of 1 ≦ line number ≦ 65535
 2. program area number: Single character, 0 ~ 9
 
 ### Explanation

@@ -5,9 +5,9 @@ Assigns a specified number of characters from the keyboard to a variable.
 
 ### Format
 ```basic
-INPUT$  (number of characters)
-         --------------------
-          Numeric expression
+INPUT$  ( number of characters )
+          └────────┬─────────┘
+           Numeric expression
 ```
 
 ### Parameters

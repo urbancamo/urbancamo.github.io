@@ -5,11 +5,11 @@ Output program contents to the printer.
 
 ### Format
 ```basic
-LLIST   { [starting line number] [ - [ending line number]] }
-        {  --------------------       ------------------   }
-        {     line number                  line number     }
-        {  [ . ]                                           }
-        {  [ ALL ]                                         }
+LLIST   ⎧ [ starting line number ] [ - [ ending line number ] ] ⎫
+        ⎪   └────────┬─────────┘         └────────┬───────┘     ⎪
+        ⎨      line number                    line number       ⎬
+        ⎪   [ . ]                                               ⎪
+        ⎩   [ ALL ]                                             ⎭
 ```
 
 ### Example
@@ -19,7 +19,7 @@ LLIST 50-100
 
 ### Parameters
 Both the starting line number and ending line number are within the range of
-1 <= line number <= 65535. The last line number used by BASIC is specified when `.` is used.
+1 ≦ line number ≦ 65535. The last line number used by BASIC is specified when `.` is used.
 1. starting line number: Program line number from which program content printout is to begin.
 The default option is the first line of the program.
 2. ending line number: Program line number at which program content printout is to end.
@@ -36,4 +36,4 @@ without showing program contents on the display.
 ```basic
 LIST
 ```
-Outputs contents of current program area to printer.
+Outputs the contents of current program area to printer.

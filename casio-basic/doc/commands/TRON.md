@@ -26,10 +26,10 @@ RUN
 ```
 
 ```
-|-------------------------------|
-|RUN                            |
-|P0-1                           |
-|-------------------------------|
+┌────────────────────────────────┐
+│RUN                             │
+│P0-1                            │
+└────────────────────────────────┘
 ```
 
 P0 represents currently specified program area and 10 currently executed line number.

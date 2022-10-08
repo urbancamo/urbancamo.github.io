@@ -5,9 +5,10 @@ Sounds the buzzer
 
 ### Format
 ```basic
-BEEP  { 0 }
-      { 1 }
-       ___
+      ⎧ 0 ⎫
+BEEP  ⎨   ⎬
+      ⎩ 1 ⎭
+        ⇧
  Numeric expression
 ```
 ## Example

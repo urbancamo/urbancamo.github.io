@@ -6,7 +6,7 @@ Returns the value stored at the specified memory address.
 ### Format
 ```basic
 PEEK      (address)
-           -------
+           └──┬──┘
        Numeric expression
 ```
 

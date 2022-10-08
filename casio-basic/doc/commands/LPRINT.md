@@ -5,12 +5,12 @@ Output text to the printer.
 
 ### Format
 ```basic
-LPRINT  [output data] [ {,} [output data ] ] *
-                        {;}
+LPRINT  [output data] [ { , } [output data ] ] *
+                        { ; }
                         
-                            [ TAB(numeric expression) ]
-               Output data: [ Numeric expression      ]
-                            [ String expression       ]
+                            ⎡ TAB(numeric expression) ⎤
+               Output data: ⎢ Numeric expression      ⎥
+                            ⎣ String expression       ⎦
 ```
 
 ### Example
@@ -60,7 +60,7 @@ following the printout of the last output data to be the next printing position.
 8. A carrier return is performed when a semicolon or comma is not included at the end of the statement.
 Print positions are counted from 0 to 255, and the count is reset to 0 when it exceeds 255.
 Zone tabs and the TAB function are performed in accordance with the print position.
-`CR`-`LF` (internal code 0DH, 0AH) is performed at this time.
+`CR`-`LF` (internal code 0Dʰ, 0Aʰ) is performed at this time.
 9. Actual printing begins when a carrier return/line feed code is sent, and carrier return/line feed
 is performed automatically when printing reaches the extreme right of the paper.
 

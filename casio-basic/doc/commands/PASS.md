@@ -6,7 +6,7 @@ Specifies or cancels a password.
 ### Format
 ```basic
 PASS     "password"
-     -----------------
+          └──┬───┘
      String expression
 ```
 ### Example

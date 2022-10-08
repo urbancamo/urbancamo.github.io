@@ -6,19 +6,19 @@ condition is met. The `ELSE` statement is executed when the specified condition 
 
 ### Format
 ```basic
-                       { THEN       statement      } {      { statement        }
-IF    condition        {          [ : statement]   } { ELSE {   [: statement   }
-      ---------        {                           } {      {                  }
-      Numeric          { GOTO   branch destination } {      {branch destination}
-      expression
+                       ⎧ THEN       statement      ⎫ ⎧      ⎧  statement         ⎫
+IF    condition        ⎪          [ : statement]   ⎪ ⎪ ELSE ⎪    [: statement ]  ⎪
+      └───┬───┘        ⎨                           ⎪ ⎨      ⎨                    ⎬
+      Numeric          ⎪ GOTO   branch destination ⎪ ⎪      ⎪ branch destination ⎪
+      expression       ⎩                           ⎭ ⎩      ⎩                    ⎭
 
-                    {  destination branch line number  }
-                    {  -----------------------------   }
-                    {           Line number            }
-Branch destination: {                                  }
-                    {  # program area number           }
-                    {    ---------------------         }
-                    {    Single character; 0~9         }
+                    ⎧  destination branch line number  ⎫
+                    ⎪  -----------------------------   ⎪
+                    ⎪           Line number            ⎪
+Branch destination: ⎨                                  ⎬
+                    ⎪  # program area number           ⎪
+                    ⎪    ---------------------         ⎪
+                    ⎩    Single character; 0~9         ⎭
 ```
 
 ### Example
@@ -29,7 +29,7 @@ IF K$="Y" THEN PRINT X ELSE PRINT Y
 
 ### Parameters 
 1. branch condition: Numeric expression truncated to an integer
-2. line number: Integer in the range of 1 <= line number <= 65535
+2. line number: Integer in the range of 1 ≦ line number ≦ 65535
 3. program area number: Single character, 0 ~ 9
 
 ### Explanation
@@ -45,8 +45,8 @@ The `GOTO ~ ELSE` combinations have the same relationships.
 
 ```basic
 IF ~ THEN IF THEN ~ ELSE IF ~ THEN ~ ELSE ~ ELSE ~
-|      |   |___|______|  |______|_____|       |
-|______|______________________________________|
+│      │   └───┴──────┘  └──────┴─────┘       │
+└──────┴──────────────────────────────────────┘
 ```
 
 ### Sample Program
@@ -54,4 +54,4 @@ IF ~ THEN IF THEN ~ ELSE IF ~ THEN ~ ELSE ~ ELSE ~
 10  INPUT "1 TO 9"; A
 20  IF (0<A) AND (A<10) THEN PRINT "GOOD!" ELSE 10
 ```
-"GOOD" is displaye for input values 1 to 9. Re-input is requested for other values.
+"GOOD" is displayed for input values 1 to 9. Re-input is requested for other values.

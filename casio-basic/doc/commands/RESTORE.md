@@ -7,8 +7,8 @@ Specifies a [DATA](DATA) line fir reading by the READ statement.
 ### Format
 
 ```basic
-RESTORE [line number]
-         -----------
+RESTORE [ line number ]
+          └────┬────┘
      numeric expression
 ```
 
@@ -24,7 +24,7 @@ RESTORE (10*10)
 
 ### Parameters
 
-line number: Integer in the range of 1 <= line number <= 65535
+line number: Integer in the range of 1 ≦ line number ≦ 65535
 
 ### Explanation
 

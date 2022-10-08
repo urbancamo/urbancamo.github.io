@@ -6,7 +6,7 @@ Specifies segment base address.
 ### Format
 ```basic
 DEFSEG    segment address
-         ------------------
+         └───────┬───────┘
          Numeric expression
 ```
 
@@ -16,7 +16,7 @@ DEFSEG = 16
 ```
 
 ### Parameters
-segment address: integer within the range of -32768 <= segment < 65536
+segment address: integer within the range of -32768  segment < 65536
 
 ### Explanation
 1. Specifies the segment base address for use with the [PEEK](PEEK.md) and 
@@ -35,4 +35,5 @@ and the segment address within the [PEEK](PEEK.md) and [POKE](POKE.md) format is
 10  DEFSEG = &H1000
 20  A = PEEK(&H00F0)
 ```
-In this case, the value assigned to A is that contained in address 100F0H.
+In this case, the value assigned to A is that contained in address 100F0ʰ.
+

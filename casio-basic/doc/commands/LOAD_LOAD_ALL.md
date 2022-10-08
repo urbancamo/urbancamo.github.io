@@ -6,7 +6,7 @@ Reads from a file into memory.
 ### Format
 ```basic
 LOAD [ALL]   "file descriptor"  [, A]
-              ---------------
+              └──────┬──────┘
              String expression
 ```
 
@@ -47,9 +47,7 @@ LOAD "DEMO1"
    `LOAD , A:` first file saved in ASCII format (attribute S)
 
 ### See
-```basic
-SAVE
-```
+ - [SAVE](SAVE_SAVE_ALL.md)
 
 ### Sample Execution
 ```basic

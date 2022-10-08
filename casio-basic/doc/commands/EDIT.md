@@ -5,10 +5,10 @@ Enters the BASIC edit mode.
 
 ### Format
 ```basic
-        {  [   start line number   ]  }
-        {    ---------------------    }
-  EDIT  {    Line number or period    }
-        {            [ . ]            }
+        ⎧  [   start line number   ]  ⎫
+        ⎪      └───────┬───────┘      ⎪
+  EDIT  ⎨    Line number or period    ⎬
+        ⎩            [ . ]            ⎭
 ```
 
 ### Example 

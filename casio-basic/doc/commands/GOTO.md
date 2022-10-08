@@ -5,13 +5,13 @@ Branches unconditionally to a specified branch destination.
 
 ### Format
 ```basic
-            { branch destination line number }
-            { ------------------------------ }
-            {          Line number           }
-    GOTO    {                                }
-            {    # program area number       }
-            {      _____________________     }
-            {      Single character; 0~9     }
+            ⎧ branch destination line number ⎫
+            ⎪  └─────────────┬─────────────┘ ⎪
+            ⎪           Line number          ⎪
+   GOTO     ⎨                                ⎬
+            ⎪    # program area number       ⎪
+            ⎪      └────────┬────────┘       ⎪
+            ⎩      Single character; 0~9     ⎭
 ```
 
 ### Sample
@@ -21,7 +21,7 @@ GOTO   #7
 ```
 
 ### Parameters
-1. branch destination line number: Integer in the range of 1 <= line number <= 65535
+1. branch destination line number: Integer in the range of 1 ≦ line number ≦ 65535
 2. program area number: Single character, 0 ~ 9
 
 ### Explanation

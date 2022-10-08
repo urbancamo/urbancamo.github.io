@@ -7,7 +7,7 @@ Holds data for reading by the [READ](READ.md) statement.
 
 ```basic
 DATA [data] [, [data]]
-      ----      ----
+      └─┬┘      └─┬┘
      Constant  Constant
 ```
 

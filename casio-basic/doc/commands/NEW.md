@@ -1,7 +1,7 @@
 ## NEW [ALL]
 
 ### Purpose
-Deletes a progra
+Deletes a program
 
 ### Format
 ```basic

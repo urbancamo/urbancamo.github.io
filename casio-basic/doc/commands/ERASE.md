@@ -18,7 +18,7 @@ array name: Variable name
 
 ### Explanation
 1. Erases the specified array from memory.
-2. An error does not result when the specified array does not exist, and the program proceeeds
+2. An error does not result when the specified array does not exist, and the program proceeds
 to the next executable statement.
 3. The `ERASE` statement cannot be used in a `FOR ~ NEXT` loop.
 4. To declare an array using a name already assigned to an existing array,

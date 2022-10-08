@@ -5,18 +5,19 @@ Jumps to a specified subroutine in accordance with a specified branching conditi
 
 ### Format
 ```basic
-ON     condition       GOSUB   [branch          [, [branch
-       ---------                destination]       destination]]*
+ON     condition       GOSUB   [ branch          [, [ branch
+       └───┬───┘                destination ]       destination ] ]*
    Numeric expression
 
 ```basic
-                    {  destination branch line number  }
-                    {  -----------------------------   }
-                    {           Line number            }
-Branch destination: {                                  }
-                    {  # program area number           }
-                    {    ---------------------         }
-                    {    Single character; 0~9         }```
+                    ⎧  destination branch line number  ⎫
+                    ⎪  └─────────────┬──────────────┘  ⎪
+                    ⎪           Line number            ⎪
+Branch destination: ⎨                                  ⎬
+                    ⎪  # program area number           ⎪
+                    ⎪    └────────┬────────┘           ⎪
+                    ⎩    Single character; 0~9         ⎭
+```
 
 ### Example
 ```basic
@@ -25,7 +26,7 @@ ON A GOSUB 1000, 1100, 1200
 
 ### Parameters
 1. branch condition: Numeric expression truncated to an integer
-2. line number: Integer in the range of 1 <= line number <= 65535
+2. line number: Integer in the range of 1 ≦ line number ≦ 65535
 3. program area number: Singe character, 0~9
 
 ### Explanation
