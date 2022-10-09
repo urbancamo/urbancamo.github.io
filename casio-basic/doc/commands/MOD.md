@@ -5,8 +5,8 @@ Returns the remainder of integer division.
 
 ## Format
 ```basic
-( number ) MOD ( divsor )
-  └──┬─┘         └──┬─┘ 
+( number ) MOD ( divisor )
+  └──┬─┘         └──┬──┘ 
   Numeric         Numeric
  expression      expression
 ```
