@@ -1,7 +1,7 @@
 ## PRINT#
 
 ### Purpose
-Outputs data to a sequential file
+Outputs data to a sequential file.
 
 ### Format
 ```basic

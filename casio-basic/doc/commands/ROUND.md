@@ -1,7 +1,7 @@
 ## ROUND
 
 ### Purpose
-Rounds the argument at the specified digit
+Rounds the argument at the specified digit.
 
 ## Format
 ```basic

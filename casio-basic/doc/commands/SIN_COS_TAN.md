@@ -1,7 +1,7 @@
 ## SIN COS TAN
 
 ### Purpose
-Returns the value of the corresponding trigonometric function value for the argument
+Returns the value of the corresponding trigonometric function value for the argument.
 
 ### Format
 ```basic

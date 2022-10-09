@@ -6,7 +6,7 @@ Specifies segment base address.
 ### Format
 ```basic
 DEFSEG    segment address
-         └───────┬───────┘
+          └──────┬──────┘
          Numeric expression
 ```
 

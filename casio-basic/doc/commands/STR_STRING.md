@@ -2,7 +2,7 @@
 
 ### Purpose
 Converts the argument (numeric value or numeric expression value)
-to a string
+to a string.
 
 ### Format
 ```basic

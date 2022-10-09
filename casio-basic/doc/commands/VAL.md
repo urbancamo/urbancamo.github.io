@@ -1,7 +1,7 @@
 ## VAL
 
 ### Purpose
-Converts a numeric character string to a numeric value
+Converts a numeric character string to a numeric value.
 
 ### Format
 ```basic

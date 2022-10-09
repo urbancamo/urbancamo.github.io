@@ -1,7 +1,7 @@
 ## FACT
 
 ### Purpose
-Returns the factorial of argument
+Returns the factorial of argument.
 
 ## Format
 ```basic

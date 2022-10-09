@@ -1,6 +1,6 @@
-# Casio Basic Language
+# Casio Basic - Language Reference
 
-The reference document is the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
+This documentation is reproduced from the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
 
 ## Commands
 
@@ -87,10 +87,10 @@ All commands are reserved words.
 | [OPEN](commands/OPEN)                   | Declares a file open for use                                                                                                                                                                                                                   |         161 |
 | [OR](commands/LOGICAL)                  | Logical OR operator                                                                                                                                                                                                                            |          58 |
 | [PASS](commands/PASS)                   | Specifies or cancels a password                                                                                                                                                                                                                |          88 |
-| [PBGET](commands/PBLOAD_PBGET)                | Reads the data file contents under the specified filename and assigns them to $ variable, A() array or A$() array                                                                                                                              |          82 |
-| [PBLOAD](commands/PBLOAD_PBGET)               | Load PB-100 series programs from cassette tape                                                                                                                                                                                                 |          80 |
-| [PBLOAD#](commands/PBLOAD_PBGET)              | Reads data from the specified filename into the DATA BANK                                                                                                                                                                                      |          82 |
-| [PBLOAD ALL](commands/PBLOAD_PBGET)           | Loads all PB-100 series programs from cassette tape                                                                                                                                                                                            |          80 |
+| [PBGET](commands/PBLOAD_PBGET)          | Reads the data file contents under the specified filename and assigns them to $ variable, A() array or A$() array                                                                                                                              |          82 |
+| [PBLOAD](commands/PBLOAD_PBGET)         | Load PB-100 series programs from cassette tape                                                                                                                                                                                                 |          80 |
+| [PBLOAD#](commands/PBLOAD_PBGET)        | Reads data from the specified filename into the DATA BANK                                                                                                                                                                                      |          82 |
+| [PBLOAD ALL](commands/PBLOAD_PBGET)     | Loads all PB-100 series programs from cassette tape                                                                                                                                                                                            |          80 |
 | [PEEK](commands/PEEK)                   | Returns the value stored at the specified memory address                                                                                                                                                                                       |         123 |
 | [PI](commands/PI)                       | Returns the value of π                                                                                                                                                                                                                         |         142 |
 | [POKE](commands/POKE)                   | Writes data to a specified address                                                                                                                                                                                                             |         124 |
@@ -171,6 +171,22 @@ All commands are reserved words.
 | Symbol(s) | Description   |
 |-----------|---------------|
 | `+`       | Concatenation |
+
+### Order of Operations
+
+Arithmetic, relational and logical operations are performed in the following
+orer of precedence:
+
+1. (,)
+2. Scientific function
+3. Power
+4. Sign ( +,- )
+5. *, /, ¥, MOD
+6. Addition and subtraction
+7. Relational operators
+8. NOT
+9. AND
+10. OR, XOR
 
 ## Reserved Words
 

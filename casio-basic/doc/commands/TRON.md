@@ -1,7 +1,7 @@
 ## TRON
 
 ### Purpose
-Specifies the trace mode
+Specifies the trace mode.
 
 ### Example
 ```basic

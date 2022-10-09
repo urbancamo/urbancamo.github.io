@@ -1,7 +1,7 @@
 ## SET 
 
 ### Purpose
-Specifies output format of numeric data
+Specifies output format of numeric data.
 
 ### Format
 ```basic

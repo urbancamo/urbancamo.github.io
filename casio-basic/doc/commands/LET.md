@@ -3,7 +3,7 @@
 ### Purpose
 
 Assigns the value of an expression on the right side of an equation to the 
-variable on the left side
+variable on the left side.
 
 ### Format
 
