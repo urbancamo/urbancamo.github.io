@@ -25,7 +25,7 @@ commands are performed from the new pointer position.
       Omitting all parameters sets the DATA BANK area pointer to the beginning of the data to be read by the next [READ#](READ_HASH.md) command.
    2. `RESTORE# "object string"`
       Sets the DATA BANK area pointer to the position of the specified object string.
-      Strings are delimited by commas, and not by spaces. A [DA](../errors.md#DA-error) error is generated when the object string cannot be found.
+      Strings are delimited by commas, and not by spaces. A [DA](../errors.md#da-error) error is generated when the object string cannot be found.
    3. 
 ```basic
 RESTORE# "object string" [, ⎧ 0 ⎫ ], ⎧ line number          ⎫

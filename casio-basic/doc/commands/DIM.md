@@ -34,7 +34,7 @@ numeric arrays the initial value is 0, while string arrays are assigned null str
 statement is subjected to the limitations specified for logical lines (255 characters).
 5. Declaring identical (same array name same subscript maximum value) in the same 
 program causes the second declaration to be discarded. Declaring two arrays with identical
-names and different subscript maximum values results in a [DD](../errors.md#DD-error) error.
+names and different subscript maximum values results in a [DD](../errors.md#dd-error) error.
 6. An array variable cannot be used unless they are first declared in a DIM statement.
 
 ### See

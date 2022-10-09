@@ -27,7 +27,7 @@ file number: Numeric expression truncated to an integer in the range of 1 ≦ fi
 3. This statement is valid for sequential files opened for input (`FOR INPUT`), and for
    communication circuit (`COM0:`) input/output files.
 4. Spaces can also be used as delimiters when data are read to numeric variables.
-5. An [ST](../errors.md#ST-error) error is generated when data read exceeds 256 characters.
+5. An [ST](../errors.md#st-error) error is generated when data read exceeds 256 characters.
    Execution continues using an `ON ERROR` statement begins from the 257th character.
 
 ### Sample Program
