@@ -2,7 +2,7 @@
 
 This documentation is reproduced from the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
 
-## Commands
+## Alphabetic Command Index
 
 All commands are reserved words.
 
@@ -198,7 +198,6 @@ Reserved words not listed in the command section.
 | CALC    |
 | CSR     |
 | DEF     |
-| DEFM    |
 | KEY     |
 | MID     |
 | MODE    |
@@ -208,6 +207,10 @@ Reserved words not listed in the command section.
 | TO      |
 | VAC     |
 | VAR     |
+
+## Errors
+
+See the [Error Reference Page](errors.md).
 
 ## Calculation Range
 ± 1 × 10⁻⁹⁹ ~ ± 9.9999999999 × 10⁻⁹⁹ and 0. Internal
