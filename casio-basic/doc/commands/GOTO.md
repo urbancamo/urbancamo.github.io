@@ -27,7 +27,7 @@ GOTO   #7
 ### Explanation
 1. Specifying a line number causes program execution to jump to that line number in the current program area.
 2. Specifying a program area number causes program execution to jump to the first line number of the specified program area.
-3. A [UL](../errors/UL.md) error is generated when the specified line number does not exist.
+3. A [UL](../errors#UL-error) error is generated when the specified line number does not exist.
 
 ### Sample Program
 ```basic

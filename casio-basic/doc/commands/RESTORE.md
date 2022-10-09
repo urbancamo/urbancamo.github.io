@@ -32,8 +32,8 @@ line number: Integer in the range of 1 ≦ line number ≦ 65535
 statement is the default option when the line number is omitted.
 2. When a line number is specified, the first data item in the specified
 [DATA](DATA) line is read by the next READ statement execution. 
-A [UL](../errors/UL) error is generated when the specified line number
-does not exist, while a [DA](../errors/DA) error is generated when no
+A [UL](../errors#UL-error) error is generated when the specified line number
+does not exist, while a [DA](../errors#DA-error) error is generated when no
 data exists in the specified line.
 3. A numeric expression can be used for line number specification. In this
 case, the numeric expression must be enclosed in parentheses.

@@ -65,7 +65,7 @@ PBGET   ⎢ ⎨   ⎬ ⎥  ["filename"]
 ### NOTES
  - Suspending execution of PBLOAD, PBLOAD ALL, PBLOAD#, and PBGET using
    the **STOP** key and then resuming operation should be avoided.
- - A [PO](../errors/PO.md) or [DA](../errors/DA.md) error (data error)
+ - A [PO](../errors#PO-error) or [DA](../errors#DA-error) error (data error)
    is generated when program or data load is unsuccessful using the PB command.
  - The following variables are used as work areas when any of the PB commands
    are executed:
@@ -73,7 +73,7 @@ PBGET   ⎢ ⎨   ⎬ ⎥  ["filename"]
      - a$, b$, c$, d$, e$, f$, g$, h$, i$, j$, k$, l$, m$, n$, o$, p$
  - STAT, EOX, EOY, PUT, GET commands are converted to the code ??? when
    loaded to a PB series computer. Executing programs with this code generates
-   an [SN](../errors/SN.md) error (syntax error). See section 8-1 for
+   an [SN](../errors#SN-error) error (syntax error). See section 8-1 for
    details on manual conversion of code ???.
  - Execution of a PB command while in the PRT mode (**PRT** symbol on display)
    automatically cancels the PRT mode.

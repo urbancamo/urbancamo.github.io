@@ -16,7 +16,7 @@ variable name
 2. Numeric data can only be read into numeric variables, and string data only
 into string variables. Mismatching data and variables generates an error.
 3. Data items can be delimited by commas.
-4. A [DA](../errors/DA.md) error is generated when data are not present to be read.
+4. A [DA](../errors#DA-error) error is generated when data are not present to be read.
 5. The read sequence can be altered using `RESTORE#` command.
 6. Spaces in front of data items are skipped.
 7. Data included within quotation marks are read as a single string.

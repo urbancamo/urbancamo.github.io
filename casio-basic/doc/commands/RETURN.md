@@ -13,7 +13,7 @@ RETURN
 ```
 ### Explanation
 1. Returns program execution to the statement immediately following the statement which originally called a subroutine.
-2. A [GS](../errors/GS.md) error is generated when the `RETURN` statement is executed without first executing a [GOSUB](GOSUB.md) statement.
+2. A [GS](../errors#GS-error) error is generated when the `RETURN` statement is executed without first executing a [GOSUB](GOSUB.md) statement.
 
 ### See
  - [GOSUB](GOSUB.md)

@@ -31,8 +31,8 @@ Subsequent input to and output from open files is performed by designating the f
       Error generated
    2. Communications circuit (`COM0:`)
       Sequential file input/output specified
-6. Only one file (`#1`) can be open at any given time. Attempting to open two or more files results in an [OP](../errors/OP.md) error.
-7. Attempting to open a file which is already open results in an [OP](../errors/OP.md) error.
+6. Only one file (`#1`) can be open at any given time. Attempting to open two or more files results in an [OP](../errors#OP-error) error.
+7. Attempting to open a file which is already open results in an [OP](../errors#OP-error) error.
 8. A file buffer is automatically retained within the stack area. An [OM](../errors#OM-error) error is generated whenever the stack area becomes full.
 9. This command can only be executed within a program.
 

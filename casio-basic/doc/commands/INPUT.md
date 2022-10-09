@@ -27,7 +27,7 @@ the message specification.
 4. The **EXE** key must be pressed following each data input.
 5. Numeric expressions can only be assigned to numeric variables, and 
 string expressions can only be assigned to string variables. A 
-[TM](../errors/TM) error is generated when an attempt is made to 
+[TM](../errors#TM-error) error is generated when an attempt is made to 
 assign a string expression to a numeric variable.
 6. Quotation marks are not used when entering string data. Enclosing a string
 in quotation marks causes the quotation marks to be stored as part of the string.

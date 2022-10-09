@@ -25,7 +25,7 @@ Variable name
 1. Assigns the data contained in a [DATA](DATA) statement to the variables
 on a one-by-one basis.
 2. Numeric data can only be assigned to numeric variables, and string data
-can only be assigned to string variables. A [TM](../errors/TM) error is generated when an
+can only be assigned to string variables. A [TM](../errors#TM-error) error is generated when an
 attempt is made to assign string data to a numeric variable, and vice versa.
 3. The data in [DATA](DATA) statements is read from the lowest line
 number in ascending order. Data are read in order from the beginning of a 
