@@ -25,7 +25,8 @@ Also available in PDF format as [adif-processor.pdf](./adif-processor.pdf).
 | 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
 | 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
 | 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
-| 27-AUG-2022| Version 1.0.59 DXCC entities and better country identification |
+| 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                        |
+| 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                      |
 
 ## Introduction
 
@@ -253,18 +254,21 @@ This is a very simple model designed to map both HF and VHF/UHF contacts.
 It supports predicting `SKYWAVE`, `GROUNDWAVE` and `SPORADIC_E` propagation modes. You can specify
 `TROPOSPHERIC_DUCTING` for contacts identified as using this propagation.
 
+If you use `INTERNET` as the propagation mode comms lines are drawn across the Earth directly between
+stations.
+
 Where the distance between two stations using HF is short it is assumed that the communication 
 path is `GROUNDWAVE`.
 
 This is the logic applied in determining the propagation mode. Note that there can be considerable 
 improvements made to this model, but any model is only ever going to be a 'best guess'.
 
-| Frequency       | Distance   |Classification|
-|-----------------|------------|--------------|
-| 𝑓 > 50 MHz       | < 400 km   | `GROUNDWAVE` |
-| 𝑓 > 50 MHz       | > 400 km   | `SPORADIC-E` |
-| 7 MHz > 𝑓 > 50 MHz | < 400 km   | `GROUNDWAVE` |
-| 𝑓 < 7 MHz        | >= 400 km  | `SKYWAVE` |
+| Frequency            | Distance  | Classification |
+|----------------------|-----------|----------------|
+| 𝑓 > 50 MHz          | < 400 km  | `GROUNDWAVE`   |
+| 𝑓 > 50 MHz          | > 400 km  | `SPORADIC-E`   |
+| 7 MHz > 𝑓 > 50 MHz  | < 400 km  | `GROUNDWAVE`   |
+| 𝑓 < 7 MHz           | >= 400 km | `SKYWAVE`      |
 
 
 This is a very, very rough approximation. A future enhancement will make the model configurable, and 
@@ -296,12 +300,12 @@ HF contacts are modelled using a reflection angle that is frequency dependent.
 In the _Options_ pane you can choose from a number of different antenna models, with different angles 
 of radiation.
 
-|Antenna| Radiation Angle |
-|-------|-----------------|
-|Vertical | 15°              |
-| YAGI| 10°              |
-| Dipole | 20°              |
-| Inverted-V | 25°              |
+| Antenna    | Radiation Angle |
+|------------|-----------------|
+| Vertical   | 15°             |
+| YAGI       | 10°             |
+| Dipole     | 20°             |
+| Inverted-V | 25°             |
 
 This is a very crude approximation of the reality. It affects the number of calculated reflections, with many
 more reflections for example when using an Inverted-V compared to an HF YAGI.
@@ -430,13 +434,13 @@ to the ADIF output file in the correct ADIF field.
 For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
 would be processed one key/value pair at time and would result in the following ADIF fields being set:
 
-|ADIF Field|Value|
-|----------|-----|
-|SIG|HEMA|
-|SIG_INFO|G/HLD-001|
-|NAME|Mark|
-|RIG|FT-817|
-|RX_PWR|5|
+| ADIF Field | Value     |
+|------------|-----------|
+| SIG        | HEMA      |
+| SIG_INFO   | G/HLD-001 |
+| NAME       | Mark      |
+| RIG        | FT-817    |
+| RX_PWR     | 5         |
 
 ## Supported Comment Name/Value pairs
 
@@ -513,12 +517,13 @@ These are the valid values for the propagation modes that the ADIF Processor cur
 that can be specified in the ADIF field `PROP_MODE` or via the Fast Log Entry comment key
 `PROP`:
 
-|Value|Mode|
-|-----|----|
-|empty|Predict|
-|`TR`|Tropospheric Ducting|
-|`ES`|Sporadic E|
-|`F2`|F2 Reflection|
+| Value      | Mode                 |
+|------------|----------------------|
+| empty      | Predict              |
+| `TR`       | Tropospheric Ducting |
+| `ES`       | Sporadic E           |
+| `F2`       | F2 Reflection        |
+| `INTERNET` | Internet-based       |
 
 If the mode isn't specified then it is predicted. Note that the prediction model doesn't include 
 Tropospheric Ducting, you need to specify that manually. The distance achieved by UHF/HVF contacts 
@@ -598,33 +603,33 @@ Here are some example Google Earth images from an [evening activation](https://r
 
 ## Example Markdown Contacts List
 
-|DATE      |TIME |CALLSIGN    |    FREQ| BAND|MODE|RST|RSR|SOTA-TX  |SOTA-RX  |OPERATOR  |SIG  |REF     |COMMENT                      |MHL   |
-|----------|-----|------------|--------|-----|----|---|---|---------|---------|----------|-----|--------|-----------------------------|------|
-|2021.08.01|09:30|G6AEK/M     | 145.450|   2m|  FM| 59| 59|G/LD-050 |         |Molyneux  |     |        |                             |IO83lw|
-|2021.08.01|09:32|2W1PJE/P    | 145.450|   2m|  FM| 58| 59|G/LD-050 |GW/NW-015|Peter     |SOTA |GW/NW-01|SOTA: GW/NW-015              |IO82DS|
-|2021.08.01|09:37|M0YCJ/P     | 145.400|   2m|  FM| 55| 57|G/LD-050 |G/NP-010 |Colwny    |SOTA |G/NP-010|SOTA: G/NP-010               |IO84VD|
-|2021.08.01|09:57|G0UOK/P     | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Dutton    |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
-|2021.08.01|09:58|M7SHZ/P     | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Sharon    |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
-|2021.08.01|09:59|G5ZX/P      | 145.400|   2m|  FM| 59| 59|G/LD-050 |G/NP-004 |Steve     |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
-|2021.08.01|10:16|MW7DTE/P    | 145.475|   2m|  FM| 59| 59|G/LD-050 |GW/NW-006|Evans     |SOTA |GW/NW-00|SOTA: GW/NW-006              |IO83AC|
-|2021.08.01|10:20|G4OBK/P     |   7.118|  40m| SSB| 59| 59|G/LD-050 |G/NP-009 |Catterall |SOTA |G/NP-009|SOTA: G/NP-009               |IO84XE|
-|2021.08.01|10:35|CT2HOV/P    |  14.290|  20m| SSB| 57| 57|G/LD-050 |CT/BA-010|Pereira Go|SOTA |CT/BA-01|SOTA: CT/BA-010              |IN51WA|
-|2021.08.01|10:37|G6PJZ/P     | 145.525|   2m|  FM| 55| 43|G/LD-050 |G/TW-003 |Clift     |SOTA |G/TW-003|SOTA: G/TW-003               |IO94LM|
-|2021.08.01|10:45|SP9MA/P     |  10.114|  30m|  CW|559|599|G/LD-050 |SP/SS-012|Jarek     |SOTA |SP/SS-01|SOTA: SP/SS-012              |JO80BT|
-|2021.08.01|10:56|G8TMV/P     |   5.398|  60m| SSB| 59| 59|G/LD-050 |G/WB-015 |TUCKLEY   |SOTA |G/WB-015|SOTA: G/WB-015               |IO82OL|
-|2021.08.01|11:04|F4HPV/P     |  14.280|  20m| SSB| 57| 59|G/LD-050 |F/AM-396 |michel    |SOTA |F/AM-396|SOTA: F/AM-396               |JN33HR|
-|2021.08.01|11:07|I1WKN/P     |  14.288|  20m| SSB| 57| 59|G/LD-050 |I/PM-148 |SERA      |SOTA |I/PM-148|SOTA: I/PM-148               |JN34NH|
-|2021.08.01|11:11|MS0TA/P     |   7.150|  40m| SSB| 57| 59|G/LD-050 |GM/WS-242|Scotland  |SOTA |GM/WS-24|SOTA: GM/WS-242              |IO76NL|
-|2021.08.01|11:18|SA3IEI/P    |  14.064|  20m|  CW|559|559|G/LD-050 |SM/JL-057|Beaton    |SOTA |SM/JL-05|SOTA: SM/JL-057              |JP63PD|
-|2021.08.01|11:25|HB9LEK/P    |  14.286|  20m| SSB| 55| 55|G/LD-050 |HB/ZH-015|Neukomm   |SOTA |HB/ZH-01|SOTA: HB/ZH-015              |JN47FK|
-|2021.08.01|11:29|IU0FBK/P    |  14.220|  20m| SSB| 58| 57|G/LD-050 |         |Marco     |     |        |                             |JN61fv|
-|2021.08.01|11:40|G3TQQ/P     |  14.310|  20m| SSB| 59| 59|G/LD-050 |G/TW-002 |BOTTOMLEY |SOTA |G/TW-002|SOTA: G/TW-002               |IO94JK|
-|2021.08.01|11:46|G5ZX/P      |  14.310|  20m| SSB| 59| 59|G/LD-050 |G/NP-004 |W         |SOTA |G/NP-004|SOTA: G/NP-004               |IO84TF|
-|2021.08.01|11:48|YO8AZQ/P    |  14.310|  20m| SSB| 52| 55|G/LD-050 |YO/EC-227|DONE      |SOTA |YO/EC-22|SOTA: YO/EC-227              |KN27QJ|
-|2021.08.01|11:53|DD2ZN/P     |  14.280|  20m| SSB| 59| 58|G/LD-050 |DM/HE-059|Pralle    |SOTA |DM/HE-05|SOTA: DM/HE-059              |JO40DD|
-|2021.08.01|12:12|2W1PJE/P    | 145.375|   2m|  FM| 59| 59|G/LD-050 |GW/NW-007|Peter     |SOTA |GW/NW-00|SOTA: GW/NW-007              |IO82DS|
-|2021.08.01|12:16|EA2CCG/P    |  14.310|  20m| SSB| 52| 53|G/LD-050 |EA2/NV-14|Montoya Ji|SOTA |EA2/NV-1|SOTA: EA2/NV-148             |IN92AP|
-|2021.08.01|12:19|YO5OTA/P    |  14.283|  20m| SSB| 55| 52|G/LD-050 |YO/WC-225|Pascal    |SOTA |YO/WC-22|SOTA: YO/WC-225              |KN16QN|
-|2021.08.01|12:41|GW7LAS/P    |   3.776|  80m| SSB| 59| 59|G/LD-050 |         |Rob       |HEMA |GW/HMW-0|HEMA: GW/HMW-043             |IO82JD|
+| DATE       | TIME  | CALLSIGN | FREQ    | BAND | MODE | RST | RSR | SOTA-TX  | SOTA-RX   | OPERATOR   | SIG  | REF      | COMMENT          | MHL    |
+|------------|-------|----------|---------|------|------|-----|-----|----------|-----------|------------|------|----------|------------------|--------|
+| 2021.08.01 | 09:30 | G6AEK/M  | 145.450 | 2m   | FM   | 59  | 59  | G/LD-050 |           | Molyneux   |      |          |                  | IO83lw |
+| 2021.08.01 | 09:32 | 2W1PJE/P | 145.450 | 2m   | FM   | 58  | 59  | G/LD-050 | GW/NW-015 | Peter      | SOTA | GW/NW-01 | SOTA: GW/NW-015  | IO82DS |
+| 2021.08.01 | 09:37 | M0YCJ/P  | 145.400 | 2m   | FM   | 55  | 57  | G/LD-050 | G/NP-010  | Colwny     | SOTA | G/NP-010 | SOTA: G/NP-010   | IO84VD |
+| 2021.08.01 | 09:57 | G0UOK/P  | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Dutton     | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
+| 2021.08.01 | 09:58 | M7SHZ/P  | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Sharon     | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
+| 2021.08.01 | 09:59 | G5ZX/P   | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Steve      | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
+| 2021.08.01 | 10:16 | MW7DTE/P | 145.475 | 2m   | FM   | 59  | 59  | G/LD-050 | GW/NW-006 | Evans      | SOTA | GW/NW-00 | SOTA: GW/NW-006  | IO83AC |
+| 2021.08.01 | 10:20 | G4OBK/P  | 7.118   | 40m  | SSB  | 59  | 59  | G/LD-050 | G/NP-009  | Catterall  | SOTA | G/NP-009 | SOTA: G/NP-009   | IO84XE |
+| 2021.08.01 | 10:35 | CT2HOV/P | 14.290  | 20m  | SSB  | 57  | 57  | G/LD-050 | CT/BA-010 | Pereira Go | SOTA | CT/BA-01 | SOTA: CT/BA-010  | IN51WA |
+| 2021.08.01 | 10:37 | G6PJZ/P  | 145.525 | 2m   | FM   | 55  | 43  | G/LD-050 | G/TW-003  | Clift      | SOTA | G/TW-003 | SOTA: G/TW-003   | IO94LM |
+| 2021.08.01 | 10:45 | SP9MA/P  | 10.114  | 30m  | CW   | 559 | 599 | G/LD-050 | SP/SS-012 | Jarek      | SOTA | SP/SS-01 | SOTA: SP/SS-012  | JO80BT |
+| 2021.08.01 | 10:56 | G8TMV/P  | 5.398   | 60m  | SSB  | 59  | 59  | G/LD-050 | G/WB-015  | TUCKLEY    | SOTA | G/WB-015 | SOTA: G/WB-015   | IO82OL |
+| 2021.08.01 | 11:04 | F4HPV/P  | 14.280  | 20m  | SSB  | 57  | 59  | G/LD-050 | F/AM-396  | michel     | SOTA | F/AM-396 | SOTA: F/AM-396   | JN33HR |
+| 2021.08.01 | 11:07 | I1WKN/P  | 14.288  | 20m  | SSB  | 57  | 59  | G/LD-050 | I/PM-148  | SERA       | SOTA | I/PM-148 | SOTA: I/PM-148   | JN34NH |
+| 2021.08.01 | 11:11 | MS0TA/P  | 7.150   | 40m  | SSB  | 57  | 59  | G/LD-050 | GM/WS-242 | Scotland   | SOTA | GM/WS-24 | SOTA: GM/WS-242  | IO76NL |
+| 2021.08.01 | 11:18 | SA3IEI/P | 14.064  | 20m  | CW   | 559 | 559 | G/LD-050 | SM/JL-057 | Beaton     | SOTA | SM/JL-05 | SOTA: SM/JL-057  | JP63PD |
+| 2021.08.01 | 11:25 | HB9LEK/P | 14.286  | 20m  | SSB  | 55  | 55  | G/LD-050 | HB/ZH-015 | Neukomm    | SOTA | HB/ZH-01 | SOTA: HB/ZH-015  | JN47FK |
+| 2021.08.01 | 11:29 | IU0FBK/P | 14.220  | 20m  | SSB  | 58  | 57  | G/LD-050 |           | Marco      |      |          |                  | JN61fv |
+| 2021.08.01 | 11:40 | G3TQQ/P  | 14.310  | 20m  | SSB  | 59  | 59  | G/LD-050 | G/TW-002  | BOTTOMLEY  | SOTA | G/TW-002 | SOTA: G/TW-002   | IO94JK |
+| 2021.08.01 | 11:46 | G5ZX/P   | 14.310  | 20m  | SSB  | 59  | 59  | G/LD-050 | G/NP-004  | W          | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
+| 2021.08.01 | 11:48 | YO8AZQ/P | 14.310  | 20m  | SSB  | 52  | 55  | G/LD-050 | YO/EC-227 | DONE       | SOTA | YO/EC-22 | SOTA: YO/EC-227  | KN27QJ |
+| 2021.08.01 | 11:53 | DD2ZN/P  | 14.280  | 20m  | SSB  | 59  | 58  | G/LD-050 | DM/HE-059 | Pralle     | SOTA | DM/HE-05 | SOTA: DM/HE-059  | JO40DD |
+| 2021.08.01 | 12:12 | 2W1PJE/P | 145.375 | 2m   | FM   | 59  | 59  | G/LD-050 | GW/NW-007 | Peter      | SOTA | GW/NW-00 | SOTA: GW/NW-007  | IO82DS |
+| 2021.08.01 | 12:16 | EA2CCG/P | 14.310  | 20m  | SSB  | 52  | 53  | G/LD-050 | EA2/NV-14 | Montoya Ji | SOTA | EA2/NV-1 | SOTA: EA2/NV-148 | IN92AP |
+| 2021.08.01 | 12:19 | YO5OTA/P | 14.283  | 20m  | SSB  | 55  | 52  | G/LD-050 | YO/WC-225 | Pascal     | SOTA | YO/WC-22 | SOTA: YO/WC-225  | KN16QN |
+| 2021.08.01 | 12:41 | GW7LAS/P | 3.776   | 80m  | SSB  | 59  | 59  | G/LD-050 |           | Rob        | HEMA | GW/HMW-0 | HEMA: GW/HMW-043 | IO82JD |
 
 Documentation Version: 2022-08-27
