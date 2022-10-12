@@ -56,7 +56,7 @@ the advanced options based on your requirements.
 Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
 <a href="./images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
-_[Simple Use Case](./images/adif-processor-upload-form.png)_
+_[Simple Use Case](images/adif-processor-upload-form.png)_
 
 You will be presented with three files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
@@ -67,7 +67,7 @@ Any processing errors are displayed in the `Errors` text box.
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
 <a href="./images/results.png">![](images/results.png)
-_[Example Result Form](./images/results.png)_
+_[Example Result Form](images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
 
