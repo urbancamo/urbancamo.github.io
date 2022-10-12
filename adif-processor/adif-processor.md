@@ -1,8 +1,6 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
 
-Also available in PDF format as [adif-processor.pdf](./adif-processor.pdf).
-
 ***
 ## Release History
 
@@ -30,7 +28,7 @@ Also available in PDF format as [adif-processor.pdf](./adif-processor.pdf).
 
 ## Introduction
 
-![](./images/image-cropped-691-slice.png)
+![](images/image-cropped-691-slice.png)
 
 The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
 that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
@@ -46,7 +44,7 @@ _Import KML file from computer_ via the map pin icon. In Android Google Earth si
 
 In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
-![](./images/img.png)
+![](images/img.png)
 
 _Desktop/Browser Google Earth Project Menu_
 
@@ -57,7 +55,7 @@ the advanced options based on your requirements.
 
 Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="./images/adif-processor-upload-form.png">![](./images/adif-processor-upload-form.png)
+<a href="./images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
 _[Simple Use Case](./images/adif-processor-upload-form.png)_
 
 You will be presented with three files to download, as required:
@@ -68,7 +66,7 @@ You will be presented with three files to download, as required:
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
-<a href="./images/results.png">![](./images/results.png)
+<a href="./images/results.png">![](images/results.png)
 _[Example Result Form](./images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
@@ -210,23 +208,23 @@ or if a station has been recorded doing an activity.
 
 Here are the possible icons:
 
-| Icon                             | Suffix     | Activity | Description/Link                                                     |
-|----------------------------------|------------|----------|----------------------------------------------------------------------|
-| ![](./images/ranger_station.png) | none or /A |          | At home or alternate address                                         |
-| ![](./images/hiker.png)          | /P         |          | Portable                                                             |
-| ![](./images/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
-| ![](./images/airports.png)       | /AM        |          | Aeronautical Mobile                                                  |
-| ![](./images/cabs.png)           | /M         |          | Mobile                                                               |
-| ![](./images/mountains.png)      | /P         | SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
-| ![](./images/mountains.png)      | /P         | GMA      | [Global Mountain Activity](https://www.cqgma.org/)                   |
-| ![](./images/hospitals.png)      | /P         | HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
-| ![](./images/picnic.png)         | /P         | POTA     | [Parks on the Air](https://parksontheair.com/)                       |
-| ![](./images/schools.png)        | /P         | COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
-| ![](./images/trail.png)          | /P         | WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
-| ![](./images/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
-| ![](./images/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
-| ![](./images/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
-| ![](./images/info.png)           |            | IOTA     | [Islands on the Air](https://www.iota-world.org/)                    |
+| Icon                           | Suffix     | Activity | Description/Link                                                     |
+|--------------------------------|------------|----------|----------------------------------------------------------------------|
+| ![](images/ranger_station.png) | none or /A |          | At home or alternate address                                         |
+| ![](images/hiker.png)          | /P         |          | Portable                                                             |
+| ![](images/sailing.png)        | /MM        |          | Maritime Mobile                                                      |
+| ![](images/airports.png)       | /AM        |          | Aeronautical Mobile                                                  |
+| ![](images/cabs.png)           | /M         |          | Mobile                                                               |
+| ![](images/mountains.png)      | /P         | SOTA     | [Summits on the Air](https://www.sota.org.uk/)                       |
+| ![](images/mountains.png)      | /P         | GMA      | [Global Mountain Activity](https://www.cqgma.org/)                   |
+| ![](images/hospitals.png)      | /P         | HEMA     | [HuMPs Excluding Marilyns Award](http://hema.org.uk/)                |
+| ![](images/picnic.png)         | /P         | POTA     | [Parks on the Air](https://parksontheair.com/)                       |
+| ![](images/schools.png)        | /P         | COTA     | [World Castles Award Programme](http://www.wca.qrz.ru/ENG/main.html) |
+| ![](images/trail.png)          | /P         | WOTA     | [Wainwrights on the Air](https://www.wota.org.uk/)                   |
+| ![](images/parks.png)          | /P         | WWFF     | [World Wide Flora & Fauna in Amateur Radio](https://wwff.co/)        |
+| ![](images/marina.png)         |            | LOTA     | [International Lighthouse & Lightship Weekend](https://illw.net/)    |
+| ![](images/rail.png)           |            | ROTA     | [Railways on the Air](https://rota.barac.org.uk/)                    |
+| ![](images/info.png)           |            | IOTA     | [Islands on the Air](https://www.iota-world.org/)                    |
 
 Stations are selectable on the Google Earth map, or by selecting the station in the project list. 
 When you do this a panel of information about the station is displayed. If the operator has a picture 
@@ -473,7 +471,8 @@ has been overriden explicitly).
 | Notes                       | `NOTES`             | Must take a look at their qrz.com page | `NOTES`                  |
 | Operator Name               | `OP`                | Mark                                   | `NAME`                   |
 | Parks on the Air Ref.       | `POTA`              | G-0190                                 | `SIG`/`SIG_INFO`         |
-| Propagation                 | `PROP`              | TD                                     | `ANT_PATH`               |
+| Propagation                 | `PROP`              | INTERNET                               | `PROPAGATION_MODE`       |
+| Antenna Path                | `PATH`              | L                                      | `ANT_PATH`               |
 | QSL Status                  | `QSL`               | D/B                                    | `QSL_DATE`/`SQL_SENT`    |
 | Rig Model                   | `RIG`               | IC-7100                                | `RIG`                    |
 | Power                       | `PWR`               | 50                                     | `RX_PWR`                 |
@@ -488,7 +487,7 @@ has been overriden explicitly).
 | Additional Comment          | `COMMENT` or `NOTE` | WX: 12 degC Sunny                      | `COMMENT`                |
 
 †Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
-minute secords, degrees decimal minutes etc.
+minute seconds, degrees decimal minutes etc.
 
 When using [Fast Log Entry](https://df3cb.com/fle/), format your comment next to your QSO record 
 between angle brackets, for example:
@@ -530,7 +529,7 @@ Tropospheric Ducting, you need to specify that manually. The distance achieved b
 varies enormously based on location, antenna and mode so long-distance point-to-point contacts are 
 entirely feasible.
 
-<a href="./images/TroposphericDuctingContactExample.png">![](./images/TroposphericDuctingContactExample.png)</a>
+<a href="./images/TroposphericDuctingContactExample.png">![](images/TroposphericDuctingContactExample.png)</a>
 _Example of Tropospheric Ducting Visualization_
 
 ***
@@ -588,17 +587,17 @@ that is hosted as an AWS Elastic Beanstalk project.
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="./images/image2.jpg">![](./images/image2.jpg)
+<a href="./images/image2.jpg">![](images/image2.jpg)
 
-<a href="./images/image0.jpg">![](./images/image0.jpg)
+<a href="./images/image0.jpg">![](images/image0.jpg)
 
-<a href="./images/image1.jpg">![](./images/image1.jpg)
+<a href="./images/image1.jpg">![](images/image1.jpg)
 
-<a href="./images/image3.jpg">![](./images/image3.jpg)
+<a href="./images/image3.jpg">![](images/image3.jpg)
 
-<a href="./images/image4.jpg">![](./images/image4.jpg)
+<a href="./images/image4.jpg">![](images/image4.jpg)
 
-<a href="./images/image5.jpg">![](./images/image5.jpg)
+<a href="./images/image5.jpg">![](images/image5.jpg)
 
 
 ## Example Markdown Contacts List
