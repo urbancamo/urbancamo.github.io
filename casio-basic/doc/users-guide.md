@@ -127,6 +127,7 @@ bit of data. Multiple BASIC program lines can also be linked into a
 single line using colons. 
 
 **EXAMPLE:**
+
   ```basic
   100  R=15:A=7:B=8
   ```
@@ -169,6 +170,7 @@ P: Program area
       already contain programs are replaced by asterisks.
 
 **EXAMPLE:**
+
 Program stored in area 3
 ```
         ┌────────────────────────────────┐
@@ -187,6 +189,7 @@ Ready P0: Current program area=area 0. The current program area
 can be switched by pressing **SHIFT** followed by the desired program area.
 
 **EXAMPLE:**
+
 Switching to program area 5 using **SHIFT** **P5**
 ```
         ┌────────────────────────────────┐
@@ -203,6 +206,7 @@ different procedures:
 **NEW ALL**: Clears all programs stored in memory.
 
 **EXAMPLE:**
+
 Entering **NEW ALL**
 ```
         ┌────────────────────────────────┐
@@ -216,6 +220,7 @@ The operation clears all programs stored in memory and
 returns current program area to 0.
 
 ### Program Input
+
 The following input procedure inputs the sample program for 
 calculation of a cylinder.
 
@@ -238,9 +243,11 @@ is pressed.
 ***
 
 **ONE-KEY INPUT**
+
 The one-key BASIC commands help to make program input even easier.
 
 **EXAMPLE:**
+
 Line 30 input.
 
 3 0 **SHIFT** **INPUT** **SHIFT "** H = **SHIFT "** ; H **EXE**
@@ -257,6 +264,7 @@ depends upon what step of program input the changes are to be made.
 #### 1. Changes in a line before **EXE** is pressed
 
 **EXAMPLE:**
+
 `20  E=15` mistakenly input for `20  R=15`
 
 ```
@@ -286,6 +294,7 @@ the **EXE** key must be pressed to store the entered line in memory.
 #### 2. Changes in a line after EXE is pressed
 
 **EXAMPLE:**
+
 `40  V=P1*R^2*H` mistakenly input for `40  V=PI*R^2*H`
 
 ```
@@ -321,6 +330,7 @@ Characters can also be inserted and deleted using the following
 procedures.
 
 #### i) Insert
+
 `40  V=PI*R2*H` mistakenly input for `40 V=PI*R^2*H`
 
 ```
@@ -347,6 +357,7 @@ INS       │          ¯                     │(Open one space)
 ```
 
 #### ii) Delete
+
 `40  V=PI*RR^2*H` mistakenly input for `40 V=PI*R^2*H`
 
 ```
@@ -375,9 +386,11 @@ The **BS** key works similarly to the **SHIFT** **DEL** operation.
 The difference between the two operations is as follows.
 
 ***
+
 **Difference Between SHIFT DEL and BS
 
 - **SHIFT** **DEL**
+
   Deletes the character at the current cursor location and shifts
   everything to the right of the cursor one space to the left
   ```
@@ -387,6 +400,7 @@ The difference between the two operations is as follows.
   ```
 
 - **BS**
+
   Deletes the character to the left of the current cursor location
   and shifts everything from the cursor position right one space
   to the left.
@@ -441,6 +455,7 @@ the `LIST` operation should be performed by specifying the line
 numbers to be displayed.
 
 **EXAMPLE:**
+
 Displaying from line 110 to line 160 on the virtual screen.
 
 `LIST 110-160` **EXE**
@@ -466,6 +481,7 @@ The **STOP** key suspends the operation, and listing can be resumed
 by pressing **EXE**.
 
 ### 4. Changes within a program following the `EDIT` command
+
 The `EDIT` command makes it easier to edit or review programs
 already stored in memory.
 
@@ -509,6 +525,7 @@ BRK      │ Ready P0                       │(BRK key exits
 ```
 
 ## BASIC PROGRAM EXECUTION
+
 ### Program Execution
 
 Once a BASIC program is stored in memory, it can be executed using
@@ -551,6 +568,7 @@ is executed, causing the display of the next `PRINT` statement to appear
 immediatly following the previous display.
 
 **EXAMPLE 2:**
+
 ```basic
 10  PRINT "BASIC   "
 20  PRINT "PROGRAM "
@@ -576,6 +594,7 @@ EXE      │ PROGRAM                        │
 ```
 
 **EXAMPLE 2:**
+
 ```basic
 10  PRINT "BASIC   ";
 20  PRINT "PROGRAM "
@@ -598,6 +617,7 @@ EXE      │ BASIC PROGRAM                  │
 ```
 
 ### Errors
+
 At times, the results produced by a program are not what is 
 expected. Such irregular executions can be broadly divided
 under two major classifications.
@@ -665,6 +685,7 @@ each program line, making it possible to quickly identify problem lines.
 Executing **TROFF** **EXE** cancels the trace mode.
 
 ## COMMANDS
+
 Though there are a varienty of commands available in BASIC for use in
 programs, the nine fundamental commands listed below are the 
 most widely used.
@@ -700,6 +721,7 @@ execution is terminated when a zero is entered by the operator.
 ```
 
 ➀ **REM**
+
 The `REM` command (line 140) is actually short for the word
 "remarks". The computer disregards anything following a `REM` command,
 and so it is used for such purposes as labels in order to make the 
@@ -707,6 +729,7 @@ program list itself easier to follow. Note that a single quotation mark
 ( **SHIFT** ,) can be used in place of the letters "REM".
 
 ➁ **INPUT**
+
 The `INPUT` command (line 30) is used to allow input from the computer's
 keyboard during program execution. The data input are assigned to a variable
 immediately following the `INPUT` command. In the above example, input 
@@ -714,11 +737,13 @@ numeric data are assigned to the variable N. Note that a string variable must
 be used for string input.
 
 **EXAMPLE**:
+
 ```basic
 10  INPUT A$     ... string input
 ```
 
 ➂ **PRINT**
+
 The `PRINT` command (line 110) is used to display data on the computer's 
 display. In this example, this command is used to display the results of the sum, 
 square root and cube root calculations. When the data are displayed, the `STOP` symbol
@@ -726,10 +751,12 @@ appears and program execution is suspended. Execution can be resumed by pressing
 the **EXE** key.
 
 ➃ **END**
+
 The `END` command (line 130) brings execution of the program to an end, and
 can be included anywhere within a program.
 
 ➄ **IF ~ THEN ~**
+
 the `IF/THEN` command (lines 40 and 50) is used for comparisons of certain
 conditions, basing the next operation upon whether the comparison turns out
 to be `true` or `false`. Line 40 checks whether or not value assigned to n
@@ -751,6 +778,7 @@ is any other value besides zero.
   ```
 
 ➅ **GOTO**
+
 The `GOTO` command (lines 50 and 120) performs a jump to a specified
 line number or program area. The `GOTO` statement in line 120 is an 
 unconditional jump, in that execution always returns to line 10 of the program
@@ -761,6 +789,7 @@ on the other hand, is a conditional jump, because the condition of thje
 * Program area jumps are specified as `GOTO #2` (to jump to program area 2).
 
 ➆ **FOR/NEXT**
+
 The `FOR/NEXT` combination (lines 60 and 90) forms a loop. All of the statements
 within the loop are repeated the number of times specified by a value following
 the word `TO` in the `FOR` statement. In the example being discussed here, the loop
@@ -768,6 +797,7 @@ is repeated N number of times, with the value of N being entered by the
 operator in line 30.
 
 ➇ **READ/DATA/RESTORE**
+
 These statements (lines 70, 180, 20) are used when the amount of data to be 
 handled is too large to require keyboard input with every execution. In this
 case, data are included within the program itself. The `READ` command assigns data to
@@ -776,6 +806,7 @@ variables, the `DATA` statement holds the data to be read, and the
 data item, the `READ` statement never runs out of data to read.
 
 ➈ **GOSUB/RETURN**
+
 The `GOSUB/RETURN` commands (lines 100 and 170) are used for branching
 t and from subroutines. Subroutines (lines 140 through 170) are actually
 mini programs within the main program, and usually represent routines which
@@ -841,6 +872,7 @@ Operators ─┬─ Arithmetic operators   Signs                     +, -
   to an integer. With the MOD operator, the remainder is given the sign of the dividend.
 
 **EXAMPLES**
+
 ```basic
 -15 ¥ 7 = -2
 -15 MOD 7 = 1        -15÷7=-2 .... -1
@@ -874,6 +906,7 @@ detected, regardless of the length of the strings being compared.
 ```
 
 **EXAMPLE**
+
 ```basic
 10  PRINT 10>3           ... -1 returned because 10>3 is true
 20  PRINT 7<1            ... 0 returned because 7<1 is fals
@@ -925,6 +958,7 @@ The result of the operation (including intermediate results) may not
 exceed 255 characters.
 
 **EXAMPLE:**
+
 ```basic
 A$ = "AD" + "1990"
 ```
@@ -1006,6 +1040,7 @@ Multiple strings can be connected with a "+" sign.
 ### Variables
 
 **Numeric Variables**
+
 The following shows the numeric variables include in the sample
 program on page 46:
 
@@ -1033,10 +1068,12 @@ can be thought of as a kind of box as illustrated below:
 ```
 
 **String variables**
+
 Another type of variable is known as a string variable, which is used
 to store character data. String variable names are indicated by "$" following the name.
 
 **EXAMPLE:**
+
 ```basic
 10  A$ = "AD"           ... Assigns "AD" to string variable A$.
 20  INPUT "YEAR="; B$   ... Assigns keyboard input to variable B$.
@@ -1053,6 +1090,7 @@ line 20 results in a display of AD1990 to line 40.
    such as A$.
 
 **Array Variables**
+
 Both numeric variables and string variables can store only one data item
 per variable. Because of this, large amounts of data are better handled
 using array variables (usually referred to as simply "arrays"). Before
@@ -1061,6 +1099,7 @@ at the beginning of the program to "declare" to the computer that an
 array variable is to be employed.
 
 **EXAMPLE**
+
 Declare array variable A for storage of 21 data items.
 ```basic
 10  DIM A(20)
@@ -1070,6 +1109,7 @@ Declare array variable A for storage of 21 data items.
  * A declared value of 20 makes it possible to store 21 data items.
 
 **EXAMPLE**
+
 Find the sum (X) and the sum of squares (Y) for the following 10 data items:
 
 ```basic
@@ -1104,9 +1144,11 @@ but it actually makes programming simpler when large volumes of data are being
 assigned.
 
 **EXAMPLE**
+
 100 data items
 
 **Numeric variables**
+
 ```basic
 10  A1=61: A2=38: A3=90: A4=37: A5=99       ⎫ 
 20  A6=12: A7=17: A8=94: A9=39: A10=75      ⎪ 
@@ -1126,6 +1168,7 @@ assigned.
 
 
 **Array**
+
 ```basic
 10  DIM A(10)
 20  FOR I=1 TO 100: READ A(I): NEXT I  ⎬ Assigns values to array
@@ -1164,6 +1207,7 @@ actual term used to refer to a box is "element". Recalling a stored value is per
 by simply specifying the corresponding element number.
 
 **EXAMPLE:**
+
 Recall value stored in element 4 of array A
 ```basic
 Y=(4)
@@ -1178,6 +1222,7 @@ also contain more than one dimension with elements connected vertically and hori
 into *two-dimensional* and *three-dimensional* arrays.
 
 **EXAMPLE:**
+
 ```basic
 DIM A(2, 3)
 ```
@@ -1196,12 +1241,14 @@ The declaration in this example sets up an array of three lines
 and four columns, making it capable of storing 12 different values.
 
 **Numeric arrays and string arrays**
+
 As with simple variables, arrays can also be declared to hold strings
 by using the "$" symbol following an array variable name. Again remember,
 numeric values cannot be assigned to string arrays and strings cannot be assigned
 to numeric arrays.
 
 **EXAMPLE:**
+
 The following procedure is used to declare an array and store the 
 data for five individuals and their points scored during a certain game.
 
@@ -1222,6 +1269,7 @@ Numeric array `P(5)` declared for points
 ### Summary
 
 **Variable Types**
+
 The three following types of variables are available for use within this unit.
 
 ```
@@ -1249,5 +1297,6 @@ The three following types of variables are available for use within this unit.
 4. The maximum value of subscripts is limited by memory capacity.
 
 **Variable/Array Application**
+
 1. Variables and arrays can be used jointly by all program areas.
 2. Arrays cannot be used unless first declared using the DIM statement.
