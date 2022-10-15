@@ -20,13 +20,28 @@ numeric values with 10-digit mantissas and 2-digit exponents
    (13-digit mantissa and 2-digit exponent for internal operations).
 2. A wide selection of built-in functions makes operation easier.
    - Standard mathematical functions:
-     SIN COS TAN ASN ACS ATN LOG LN EXP SQR ABS SGN
-     INT FIX FRAC PI ROUND RAN# DEG
+     [SIN](commands/SIN_COS_TAN.md)
+     [COS](commands/SIN_COS_TAN.md) [TAN](commands/SIN_COS_TAN.md)
+     [ASN](commands/ASN_ACS_ATN.md) [ACS](commands/ASN_ACS_ATN.md) 
+     [ATN](commands/ASN_ACS_ATN.md) [LOG](commands/LOG_LN.md)
+     [LN](commands/LOG_LN.md) [EXP](commands/EXP.md) 
+     [SQR](commands/SQR.md) [ABS](commands/ABS.md) 
+     [SGN](commands/SGN.md) [INT](commands/INT.md)
+     [FIX](commands/FIX.md) [FRAC](commands/FRAC.md)
+     [PI](commands/PI.md) [ROUND](commands/ROUND.md)
+     [RAN#](commands/RAN_HASH.md) [DEG](commands/DEG.md)
    - Powerful string handling functions
-     CHR$ STR$ MID$ LEFT$ RIGHT$ HEX$ DMS$ ASC VAL LEN
+     [CHR$](commands/CHR_STRING.md) [STR$](commands/STR_STRING.md)
+     [MID$](commands/MID_STRING.md) [LEFT$](commands/LEFT_STRING.md)
+     [RIGHT$](commands/RIGHT_STRING.md) [HEX$](commands/HEX_STRING.md)
+     [DMS$](commands/DMS_STRING.md) [ASC](commands/ASC.md) 
+     [VAL](commands/VAL.md) [LEN](commands/LEN.md)
    - High level mathematical functions
-     POL REC NCR NPR HYPSIN HYPCOS HYPTAN HYPASN HYPACS
-     HYPATN CUR
+     [POL](commands/POL.md) [REC](commands/REC.md) [NCR](commands/NCR.md)
+     [NPR](commands/NPR.md) [HYPSIN](commands/HYP_SIN_COS_TAN.md)
+     [HYPCOS](commands/HYP_SIN_COS_TAN.md) [HYPTAN](commands/HYP_SIN_COS_TAN.md)
+     [HYPASN](commands/HYP_ASN_ACS_ATN.md) [HYPACS](commands/HYP_ASN_ACS_ATN.md)
+     [HYPATN](commands/HYP_ASN_ACS_ATN.md) [CUR](commands/CUR.md)
 3. 10 independent program areas
    Up to ten programs can be stored independently in memory at
    the same time (P0~9).
@@ -34,7 +49,7 @@ numeric values with 10-digit mantissas and 2-digit exponents
    Variable names up to 15 characters long can be used, making it 
    possible to use names that make contents easy to understand.
 5. Powerful debugging function
-   A TRON command displays the number of the program line 
+   A [TRON](commands/TRON.md) command displays the number of the program line 
    currently being executed, making it possible to easily trace
    execution and locate mistakes in programming.
 6. Powerful screen editor
@@ -59,7 +74,9 @@ numeric values with 10-digit mantissas and 2-digit exponents
    ```
 
 8. Expanded file management
-   Such standard BASIC commands as OPEN, CLOSE, INPUT# AND PRINT#
+   Such standard BASIC commands as [OPEN](commands/OPEN.md), 
+   [CLOSE](commands/CLOSE.md), [INPUT#](commands/INPUT_HASH.md) 
+   AND [PRINT#](commands/PRINT_HASH.md)
    are all available for data file reading and writing.
 
 ## BASIC PROGRAM CONFIGURATION
@@ -131,7 +148,7 @@ single line using colons.
   ```basic
   100  R=15:A=7:B=8
   ```
-Such a program line is known as a "multistatement".
+Such a program line is known as a "multi-statement".
 Details concerning the other operations contained in the above 
 program can be found in other sections.
 
@@ -253,6 +270,7 @@ Line 30 input.
 3 0 **SHIFT** **INPUT** **SHIFT "** H = **SHIFT "** ; H **EXE**
 
 ### Program Editing
+
 The procedure used for making corrections or changes to program
 depends upon what step of program input the changes are to be made.
 
@@ -303,7 +321,7 @@ the **EXE** key must be pressed to store the entered line in memory.
         │                                │
         │ ¯                              │
         └────────────────────────────────┘
- ⬆➡➡➡➡➡➡
+ ↑→→→→→→
         ┌────────────────────────────────┐
         │ 40 V=P1*R^2*H                  │
         │       ¯                        │(Move cursor to 1)
@@ -341,7 +359,7 @@ procedures.
           └────────────────────────────────┘
           ┌────────────────────────────────┐
           │ 40 V=P1*R2*H                   │
-⬅⬅⬅⬅⬅  │          ¯                     │(Move cursor to location
+   ←←←←←  │          ¯                     │(Move cursor to location
           │                                │ of insertion)
           └────────────────────────────────┘
           ┌────────────────────────────────┐
@@ -368,7 +386,7 @@ INS       │          ¯                     │(Open one space)
           └────────────────────────────────┘
           ┌────────────────────────────────┐
           │ 40 V=P1*RR^2*H                 │
-⬅⬅⬅⬅⬅  │          ¯                     │(Move cursor to charac-
+   ←←←←←  │          ¯                     │(Move cursor to charac-
           │                                │ ter to be deleted)
           └────────────────────────────────┘
           ┌────────────────────────────────┐
@@ -387,7 +405,7 @@ The difference between the two operations is as follows.
 
 ***
 
-**Difference Between SHIFT DEL and BS
+**Difference Between SHIFT DEL and BS**
 
 - **SHIFT** **DEL**
 
@@ -396,7 +414,7 @@ The difference between the two operations is as follows.
   ```
     A B C D E F G ➡ SHIFT DEL ➡ A B C D E F G
           ¯                             ¯
-          ⬆CURSOR
+          ↑CURSOR
   ```
 
 - **BS**
@@ -407,11 +425,12 @@ The difference between the two operations is as follows.
   ```
     A B C D E F G ➡ BS ➡ A B C D E F G
           ¯                    ¯
-          ⬆CURSOR
+          ↑CURSOR
   ```
 
 ### 3. Changes within a program already input
-The `LIST` command displays the program stored in the current 
+
+The [LIST](commands/LIST.md) command displays the program stored in the current 
 program area from beginning to end.
 ```
          ┌────────────────────────────────┐
@@ -425,13 +444,13 @@ LIST EXE │ 20 R=15                        │
          │ Ready P0                       │
          └────────────────────────────────┘
 ```
-The last line of the program is displayed when the `LIST` operation is 
+The last line of the program is displayed when the [LIST](commands/LIST.md) operation is 
 completed.
 
 ```
               ┌────────────────────────────────┐
               │ 10 REM CYLINDER                │
-⬆⬆⬆⬆⬆⬆⬆⬆ │ 20 R=15                        │
+     ↑↑↑↑↑↑↑↑ │ 20 R=15                        │
               └────────────────────────────────┘
 ```
 The 8-line virtual screen of the computer now makes it possible
@@ -445,13 +464,13 @@ on the display.
                 │  30 INPUT "H=";H
                 │┌────────────────────────────────┐┬
                 ││ 40 V=PI*R^2*H                  ││2-line display
-(8-line virtual ││ 50 PRINT "V=";V                ││⬆⬇ move display
+(8-line virtual ││ 50 PRINT "V=";V                ││↑ ↓ move display
 screen)         │└────────────────────────────────┘┴
                 │ 60 END
                 ┴ 70 Ready P0
 ```
 When a program greater than eight lines is stored in memory,
-the `LIST` operation should be performed by specifying the line
+the [LIST](commands/LIST.md) operation should be performed by specifying the line
 numbers to be displayed.
 
 **EXAMPLE:**
@@ -473,16 +492,16 @@ Displaying from line 110 to line 160 on the virtual screen.
 (8-line virtual ││ Ready P0                       ││
 screen)         ┴└────────────────────────────────┘┴
 ```
-Changes can be made in a program displayed by the `LIST` operation
+Changes can be made in a program displayed by the [LIST](commands/LIST.md) operation
 by using the same procedures outlined for 1 and 2 above.
 
-NOTE: the **BRK** key can be used to terminate the `LIST` operation.
+NOTE: the **BRK** key can be used to terminate the [LIST](commands/LIST.md) operation.
 The **STOP** key suspends the operation, and listing can be resumed
 by pressing **EXE**.
 
-### 4. Changes within a program following the `EDIT` command
+### 4. Changes within a program following the [EDIT](commands/EDIT.md) command
 
-The `EDIT` command makes it easier to edit or review programs
+The [EDIT](commands/EDIT.md) command makes it easier to edit or review programs
 already stored in memory.
 
 ```
@@ -493,13 +512,13 @@ EDIT EXE │ 10 REM CYLINDER                │
          └────────────────────────────────┘
 ```
 
-From this display, ⬇ (or **EXE**) advances to the following line,
-while ⬆ (or **SHIFT** **EXE**) returns to the previous line.
+From this display, ↓ (or **EXE**) advances to the following line,
+while ↑ (or **SHIFT** **EXE**) returns to the previous line.
 
 ```
          ┌────────────────────────────────┐
          │ 30 INPUT "H=";H                │(Displays lines 30
-⬇⬇      │ 40 V=PI+R^2*H                  │ and 40)
+↓↓       │ 40 V=PI+R^2*H                  │ and 40)
          └────────────────────────────────┘
 ```
 Here, a correction will be made in line 40.
@@ -507,13 +526,13 @@ Here, a correction will be made in line 40.
 ```
          ┌────────────────────────────────┐
          │ 40 V=PI+R^2*H                  │(Displays lines 40
-⬇       │ 50 PRINT "V=";V                │ upper line of display)
+↓        │ 50 PRINT "V=";V                │ upper line of display)
          └────────────────────────────────┘
          ┌────────────────────────────────┐
          │ 40 V=PI+R^2*H                  │(Enables program
-➡        │ ¯                              │ editing)
+→        │ ¯                              │ editing)
          └────────────────────────────────┘
-➡➡➡➡➡➡➡ * EXE
+→→→→→→→ * EXE
          ┌────────────────────────────────┐
          │ 40 V=PI+R^2*H                  │(Correction)
          │ 50 PRINT "V=";V                │
@@ -539,7 +558,7 @@ one of the two following procedures.
    Executes the program in the current program area.
 
 Execute the program input in the previous section to determine the 
-volume of a cylinder with a height of 10 (radiux fixed as 15).
+volume of a cylinder with a height of 10 (radius fixed as 15).
 
 ```
          ┌────────────────────────────────┐
@@ -561,10 +580,10 @@ EXE      │ V= 7068.583471                 │
 Display of the volume when this program is executed causes the 
 **STOP** symbol to appear in the upper right of the display. This
 symbol indicates that program execution has been suspended because of 
-execution of the `PRINT` command. Program execution can be resumed
-at this time by pressing the **EXE** key again. Edning a `PRINT` statement
-with a semicolon causes execution to continue when the `PRINT` statment
-is executed, causing the display of the next `PRINT` statement to appear 
+execution of the [PRINT](commands/PRINT.md) command. Program execution can be resumed
+at this time by pressing the **EXE** key again. Edning a [PRINT](commands/PRINT.md) statement
+with a semicolon causes execution to continue when the [PRINT](commands/PRINT.md) statement
+is executed, causing the display of the next [PRINT](commands/PRINT.md) statement to appear 
 immediatly following the previous display.
 
 **EXAMPLE 2:**
@@ -601,7 +620,7 @@ EXE      │ PROGRAM                        │
 30  END
 ```
 
-Including a semicolon at the end of the first `PRINT` statement
+Including a semicolon at the end of the first [PRINT](commands/PRINT.md) statement
 produces the following display.
 
 ```
@@ -646,7 +665,7 @@ line should be checked and corrected to allow proper execution.
 **ii) Program logic errors**
 
 This type of error is generally caused by such illegal operations
-as division by zero or `LOG(0)`. Such errors result in the following
+as division by zero or [LOG](commands/LOG_LN.md)(0). Such errors result in the following
 message being displayed:
 
 ``MA error P0--10``
@@ -654,7 +673,7 @@ message being displayed:
 As before, this message indicates that a mathematical error has been
 detected in line 10 of the program stored in program area 0. In
 this case, however, program lines related to the indicated program
-line as well as indiicated program line itself should be examined
+line as well as indicated program line itself should be examined
 and corrected. When an error message is displayed, the following
 operations can be used to display the line number in which the error
 was detected.
@@ -673,27 +692,27 @@ EDIT .   EXE
 
 #### 2. Irregular execution that does not produce errors
 Such errors are also caused by a flaw in the program, and must be 
-corrected by executing the LIST or EDIT command to examine the program
-to detect the problem. The `TRON` command can also be used to help trace
+corrected by executing the [LIST](commands/LIST.md) or [EDIT](commands/EDIT.md) command to examine the program
+to detect the problem. The [TRON](commands/TRON.md) command can also be used to help trace
 the execution of the program.
 
-Entering **TRON** **EXE** causes the *TR* symbol to appear on the display
+Entering [TRON](commands/TRON.md) **EXE** causes the *TR* symbol to appear on the display
 to indicate that the trace mode is ON. Now executing a BASIC program displays
 the program area and line number as execution is performed, and halts
 execution until **EXE** is pressed. This allows confirmation of 
 each program line, making it possible to quickly identify problem lines.
-Executing **TROFF** **EXE** cancels the trace mode.
+Executing [TROFF](commands/TROFF.md) **EXE** cancels the trace mode.
 
 ## COMMANDS
 
-Though there are a varienty of commands available in BASIC for use in
+Though there are a variety of commands available in BASIC for use in
 programs, the nine fundamental commands listed below are the 
 most widely used.
 
 The following program reads data items contained within the program
 itself, with the number of data items read being determined by input 
 from an operator. The operator may input any value, but note that values
-greater than 5 are handled as 5 (becaus there are only 5 data items
+greater than 5 are handled as 5 (because there are only 5 data items
 in line 180). The program then displays the sum of the data read from
 line 180, followed by the square root and cube root of the sum. Program
 execution is terminated when a zero is entered by the operator.
@@ -722,17 +741,17 @@ execution is terminated when a zero is entered by the operator.
 
 ➀ **REM**
 
-The `REM` command (line 140) is actually short for the word
-"remarks". The computer disregards anything following a `REM` command,
+The [REM](commands/REM.md) command (line 140) is actually short for the word
+"remarks". The computer disregards anything following a [REM](commands/REM.md) command,
 and so it is used for such purposes as labels in order to make the 
 program list itself easier to follow. Note that a single quotation mark
 ( **SHIFT** ,) can be used in place of the letters "REM".
 
 ➁ **INPUT**
 
-The `INPUT` command (line 30) is used to allow input from the computer's
+The [INPUT](commands/INPUT.md) command (line 30) is used to allow input from the computer's
 keyboard during program execution. The data input are assigned to a variable
-immediately following the `INPUT` command. In the above example, input 
+immediately following the [INPUT](commands/INPUT.md) command. In the above example, input 
 numeric data are assigned to the variable N. Note that a string variable must
 be used for string input.
 
@@ -744,7 +763,7 @@ be used for string input.
 
 ➂ **PRINT**
 
-The `PRINT` command (line 110) is used to display data on the computer's 
+The [PRINT](commands/PRINT.md) command (line 110) is used to display data on the computer's 
 display. In this example, this command is used to display the results of the sum, 
 square root and cube root calculations. When the data are displayed, the `STOP` symbol
 appears and program execution is suspended. Execution can be resumed by pressing
@@ -752,18 +771,18 @@ the **EXE** key.
 
 ➃ **END**
 
-The `END` command (line 130) brings execution of the program to an end, and
+The [END](commands/END.md) command (line 130) brings execution of the program to an end, and
 can be included anywhere within a program.
 
 ➄ **IF ~ THEN ~**
 
-the `IF/THEN` command (lines 40 and 50) is used for comparisons of certain
+the [IF~THEN](commands/IF_THEN_ELSE.md) command (lines 40 and 50) is used for comparisons of certain
 conditions, basing the next operation upon whether the comparison turns out
 to be `true` or `false`. Line 40 checks whether or not value assigned to n
 is greater than 5, and assigns a value of 5 to N when the original value is greater.
 When a value of 5 or less is originally assigned to N, execution proceeds
 to the next line, with N retaining its original value. Line 50, checks whether
-or not the value assigned to N is zero. In the case of zero, program execution
+the value assigned to N is zero. In the case of zero, program execution
 jumps to line 130, while execution proceeds to the next line (line 60) when N
 is any other value besides zero.
 
@@ -779,20 +798,20 @@ is any other value besides zero.
 
 ➅ **GOTO**
 
-The `GOTO` command (lines 50 and 120) performs a jump to a specified
-line number or program area. The `GOTO` statement in line 120 is an 
+The [GOTO](commands/GOTO.md) command (lines 50 and 120) performs a jump to a specified
+line number or program area. The [GOTO](commands/GOTO.md) statement in line 120 is an 
 unconditional jump, in that execution always returns to line 10 of the program
-whenever line 120 is executed. The `GOTO` statement in line 50,
-on the other hand, is a conditional jump, because the condition of thje 
-`IF ~ THEN` statement must be met before the jump to line 130 is made.
+whenever line 120 is executed. The [GOTO](commands/GOTO.md) statement in line 50,
+on the other hand, is a conditional jump, because the condition of the 
+[IF~THEN](commands/IF_THEN_ELSE.md) statement must be met before the jump to line 130 is made.
 
 * Program area jumps are specified as `GOTO #2` (to jump to program area 2).
 
 ➆ **FOR/NEXT**
 
-The `FOR/NEXT` combination (lines 60 and 90) forms a loop. All of the statements
+The [FOR/NEXT](commands/FOR_NEXT_STEP.md) combination (lines 60 and 90) forms a loop. All of the statements
 within the loop are repeated the number of times specified by a value following
-the word `TO` in the `FOR` statement. In the example being discussed here, the loop
+the word `TO` in the [FOR](commands/FOR_NEXT_STEP.md) statement. In the example being discussed here, the loop
 is repeated N number of times, with the value of N being entered by the 
 operator in line 30.
 
@@ -800,18 +819,18 @@ operator in line 30.
 
 These statements (lines 70, 180, 20) are used when the amount of data to be 
 handled is too large to require keyboard input with every execution. In this
-case, data are included within the program itself. The `READ` command assigns data to
-variables, the `DATA` statement holds the data to be read, and the 
-`RESTORE` command in line 20 always returns the next read positiojn to the first
-data item, the `READ` statement never runs out of data to read.
+case, data are included within the program itself. The [READ](commands/READ.md) command assigns data to
+variables, the [DATA](commands/DATA.md) statement holds the data to be read, and the 
+[RESTORE](commands/RESTORE.md) command in line 20 always returns the next read position to the first
+data item, the [READ](commands/READ.md) statement never runs out of data to read.
 
 ➈ **GOSUB/RETURN**
 
-The `GOSUB/RETURN` commands (lines 100 and 170) are used for branching
+The [GOSUB/RETURN](commands/GOSUB.md) commands (lines 100 and 170) are used for branching
 t and from subroutines. Subroutines (lines 140 through 170) are actually
 mini programs within the main program, and usually represent routines which
 are performed repeatedly at different locations within the main program.
-This means that `GOSUB/RETURN` makes it possible to write the repeated
+This means that [GOSUB/RETURN](commands/GOSUB.md) makes it possible to write the repeated
 operation once, as a subroutine, instead of writing each time it is needed within
 the main program.
 
@@ -824,15 +843,15 @@ the main program.
        :
 ```
 
-Execution of the `RETURN` statement at the end of a subroutine returns 
-execution of the program back to the statement following the `GOSUB` command.
-In this sample program, execution returns to line 110 after the `RETURN` in line 170
+Execution of the [RETURN](commands/GOSUB.md) statement at the end of a subroutine returns 
+execution of the program back to the statement following the [GOSUB](commands/GOSUB.md) command.
+In this sample program, execution returns to line 110 after the [RETURN](commands/GOSUB.md) in line 170
 is executed.
 
-* `GOSUB` routines can also be used to branch to other program areas,
+* [GOSUB](commands/GOSUB.md) routines can also be used to branch to other program areas,
   as in `GOSUB #3` (branches to program area 3). Note, however, that a return
-  must be made back to the original program area using the `RETURN` command
-  before an `END` command is executed.
+  must be made back to the original program area using the [RETURN](commands/RETURN.md) command
+  before an [END](commands/END.md) command is executed.
 * See [COMMAND REFERENCE](casio-basic-language-reference.md) for further details on BASIC commands.
 
 ## OPERATORS
@@ -865,11 +884,11 @@ Operators ─┬─ Arithmetic operators   Signs                     +, -
 
 ### 1. Arithmetic Operators (+, -, *, /, ^, ¥, MOD)
 
-* Fractions are truncated in ¥ and MOD calculations, when the operands
+* Fractions are truncated in ¥ and [MOD](commands/MOD.md) calculations, when the operands
   on both sides of the operators are not integers.
-* In the ¥ and MOD calculations, the division is performed with the absolute
+* In the ¥ and [MOD](commands/MOD.md) calculations, the division is performed with the absolute
   values of both operands. In integer division (¥), the quotient is truncated
-  to an integer. With the MOD operator, the remainder is given the sign of the dividend.
+  to an integer. With the [MOD](commands/MOD.md) operator, the remainder is given the sign of the dividend.
 
 **EXAMPLES**
 
@@ -975,9 +994,9 @@ order of precedence:
 5. *, /, ¥, MOD
 6. Addition and subtraction
 7. Relational operators
-8. NOT
-9. AND
-10. OR, XOR
+8. [NOT](commands/LOGICAL.md)
+9. [AND](commands/LOGICAL.md)
+10. [OR](commands/LOGICAL.md), [XOR](commands/LOGICAL.md)
 
 Operations are performed from left to right when the order of 
 precedence is identical.
@@ -1051,7 +1070,7 @@ PROGRAM            NUMERIC VARIABLES
 40  V=PI*R^2*H             V
 ```
 
-Numeric variables are so named becaus their contents are handled
+Numeric variables are so named because their contents are handled
 as numbers. Numeric variable names can be up to 15 characters long, and are
 used within programs to store calculation results or constants in memory.
 In the sample program, the value 15 is stored in H, while V, which is the result
@@ -1063,7 +1082,7 @@ can be thought of as a kind of box as illustrated below:
 
 ```
      ┌───┐               ┌───┐
-15 ➡ │ R │    PI*R^2*H ➡ │ V │   
+15 → │ R │    PI*R^2*H → │ V │   
      └───┘               └───┘ 
 ```
 
@@ -1094,7 +1113,7 @@ line 20 results in a display of AD1990 to line 40.
 Both numeric variables and string variables can store only one data item
 per variable. Because of this, large amounts of data are better handled
 using array variables (usually referred to as simply "arrays"). Before
- an array variable can be used within a program, a `DIM` statement must appear
+ an array variable can be used within a program, a [DIM](commands/DIM.md) statement must appear
 at the beginning of the program to "declare" to the computer that an 
 array variable is to be employed.
 
@@ -1189,7 +1208,7 @@ assigned.
 A look at these programs reveals that an increase in data entails
 virtually no change in the portion which calculates the sum and sum
 of squares. The only changes would be in lines 10, 20 and 40, where the
-constant would be cahnged from 10 to 100.
+constant would be changed from 10 to 100.
 
 Again, the concept of the array can be better grasped by thinking of
 them as boxes. Previously, a simple variable was described as a single box.
@@ -1290,7 +1309,7 @@ The three following types of variables are available for use within this unit.
 
 **Arrays**
 
-1. Arrays are declared by `DIM` statements.
+1. Arrays are declared by [DIM](commands/DIM.md) statements.
 2. Elements described by subscripts which are integers greater than 0.
    Fractions are disregarded.
 3. The number of dimensions is limited by stack capacity.
@@ -1299,4 +1318,210 @@ The three following types of variables are available for use within this unit.
 **Variable/Array Application**
 
 1. Variables and arrays can be used jointly by all program areas.
-2. Arrays cannot be used unless first declared using the DIM statement.
+2. Arrays cannot be used unless first declared using the [DIM](commands/DIM.md) statement.
+
+**Counting Bytes used by Variables**
+
+The following outlines the number of bytes reserved when a variable appears
+the first time within a program.
+
+ * **Numeric variables:** (variable name length + 12) bytes in variable area
+ * **String Variables:** (variable name length + 4) bytes in variable area and
+   (string length + 1) bytes in string area. 
+   Areas are reserved for array variables when the array is declared by the [DIM](commands/DIM.md) statement.
+ * **Numeric Array Variables**: (variable name length + 4) + (array size x 8) + (dimension x 2 + 1) bytes in variable area.
+
+   **EXAMPLE:**
+   ```basic
+   DIM XYZ(3, 3, 5, 2)
+   ```
+
+| Category    | Size / bytes               |
+|-------------|----------------------------|
+| Name        | 3                          |
+| Size        | 4x4x6x3=288                |
+| Dimension   | 4                          |
+| Calculation | (3+4)+(288x8)+4x2+1 = 2320 |
+
+ * **String Array Variables** (variable name length + 4) + (array size) + (dimension x 2) bytes in variable area.
+   The lengths of individual strings are required in the variable area when strings are assigned to the array.
+
+   **EXAMPLE:**
+   ```basic
+   10  DIM AB$(3,3)
+   20  AB$(0,0) = "*****"
+   ```
+   
+**Calculating Program Length**
+The following shows points which must be considered when calculating memory 
+requirements for programs.
+
+| Category                      | Size / bytes                                                                  |
+|-------------------------------|-------------------------------------------------------------------------------|
+| Line numbers                  | 2 bytes per line number, regardless of number length (1~65535)                |
+| Commands                      | 2 bytes per command                                                           |
+| Functions                     | 2 bytes per function                                                          |
+| Numeric/alphabetic characters | 1 byte per character (spaces are counted as characters)                       |
+| **EXE** Key                   | 1 byte per **EXE** key operation at end of program line (for storage of line) |
+
+1 byte added to the sum of the above.
+
+**EXAMPLE:**
+```basic
+10  A = SIN X
+```
+2 (line number) + 1 (space following line number) + 1 (A) + 1 (=) + 2 (SIN) + 1 (space) + 1 (X) + 1 (**EXE**) + 1 = 11
+
+This calculation indicates that a total of 11 bytes are required for storage of the above program.
+
+*The space following the line number is added automatically.
+
+## PROGRAM SAVE AND LOAD
+
+The following save and load procedures can only be performed when the FA-6 interface unit is used.
+
+### Program Save
+
+Programs stored in the memory of the unit are protected by the memory back
+up battery even when the power of the unit is switched OFF. The entire contents of the 
+memory, however, are deleted whenever bot the main power supply batteries and the memory
+back up batteries are removed from the unit at the same time, or when the [NEW ALL](commands/NEW.md)
+command is executed. Program area contents can be stored onto standard cassette tapes
+to protect against loss of important data, or to make room for further programming when all
+program areas are full. The following two commands are available for such save operations.
+
+[SAVE](commands/SAVE_SAVE_ALL.md): Saves contents of the current program area.
+
+[SAVE ALL](commands/SAVE_SAVE_ALL.md): Saves entire contents of all program areas.
+
+**EXAMPLE:**
+Executing [SAVE](commands/SAVE_SAVE_ALL.md) in this case saves the contents of program area P0, while 
+[SAVE ALL](commands/SAVE_SAVE_ALL.md) would save the contents of the program areas P0 through P9.
+
+```
+         ┌────────────────────────────────┐
+SAVE EXE │ SAVE                           │(Saves program in pro-
+         │                                │ gram area 0)
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │ SAVE                           │
+         │ Ready P0                       │(Save complete)
+         └────────────────────────────────┘
+```
+
+Filenames up to eight characters long can also be assigned to programs stored
+on cassette tapes using the [SAVE](commands/SAVE_SAVE_ALL.md) and
+[SAVE ALL](commands/SAVE_SAVE_ALL.md) commands.
+
+`SAVE "BASIC"` **EXE**
+
+```
+         ┌────────────────────────────────┐
+         │ SAVE "BASIC"                   │(Saves program under
+         │                                │ filename "BASIC")
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │ SAVE "BASIC"                   │
+         │ Ready P0                       │(Save complete)
+         └────────────────────────────────┘
+```
+
+### Program Verify
+
+The [VERIFY](commands/VERIFY.md) command makes it possible to verify whether the program
+saved using [SAVE](commands/SAVE_SAVE_ALL.md) 
+
+**EXAMPLE:** Verify correct save of the program BASIC
+
+`VERIFY "BASIC"` **EXE**
+
+```
+         ┌────────────────────────────────┐
+         │ VERIFY "BASIC"                 │(Verification of saved
+         │                                │ program)
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │ BASIC     B                    │(Finds specified pro-
+         │                                │ gram and verifies)
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │ BASIC     B                    │
+         │ Ready P0                       │(Verification complete)
+         └────────────────────────────────┘
+```
+
+If the Ready prompt does not appear after some time, check whether the 
+filename entered with the [VERIFY](commands/VERIFY.md) command is correct. If
+it is correct, adjust the volume level of the cassette recorder being used and
+repeat the verification procedure.
+
+```
+         ┌────────────────────────────────┐
+         │ PO error       o               │
+         │ Ready P0                       │ 
+         └────────────────────────────────┘
+```
+
+The error message illustrated above indicates that the program was not saved
+correctly. In this case, check the following items:
+
+ * Verify the program again, this time appending `"CAS1:"` before the filename
+   (`VERIFY "CAS1:BASIC"` in the above example).
+ * Ensure the connections between the computer and cassette tape recorder are 
+   correct and secure.
+ * Ensure that the volume level of the recorder is set to in the vicinity of its maximum.
+ * Check whether the casette tape is damaged.
+ * Check whether the recorder heads are soiled.
+
+Note also that an error will be generated if a program exists on the tape with the 
+same name as that currently present in the computer memory, but the contents of the 
+two programs are different.
+
+*The [VERIFY](commands/VERIFY.md) command automatically determines whether the 
+program being checked was saved using the [SAVE](commands/SAVE_SAVE_ALL.md) or 
+[SAVE ALL](commands/SAVE_SAVE_ALL.md) command.
+
+### Program Load
+
+Programs stored on cassette tapes using the [SAVE](commands/SAVE_SAVE_ALL.md) and
+[SAVE ALL](commands/SAVE_SAVE_ALL.md) can be loaded into the computer using 
+the [LOAD](commands/LOAD_LOAD_ALL.md) and [LOAD ALL](commands/LOAD_LOAD_ALL.md) commands.
+
+**EXAMPLE:**
+Load the program "BASIC" from cassette tape into memory.
+
+```
+         ┌────────────────────────────────┐
+LOAD     │ LOAD                           │(Program load
+         │                                │ command)
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │ BASIC       B                  │(Program filename)
+         │                                │
+         └────────────────────────────────┘
+         ┌────────────────────────────────┐
+         │                                │
+         │ Ready P0                       │(Load complete)
+         └────────────────────────────────┘
+```
+
+Note that executing the [LOAD](commands/LOAD_LOAD_ALL.md) and [LOAD ALL](commands/LOAD_LOAD_ALL.md)
+commands while programs are already stored in memory deletes the current memory contents.
+
+The [LOAD ALL](commands/LOAD_LOAD_ALL.md) command can be used to load programs
+to all the program areas (P0~P9). Specifying a filename in the [LOAD](commands/LOAD_LOAD_ALL.md)
+and [LOAD ALL](commands/LOAD_LOAD_ALL.md) commands causes the unit to search
+for the specified filename for loading into memory. The following table shows the
+relationship between the [LOAD](commands/LOAD_LOAD_ALL.md), [LOAD ALL](commands/LOAD_LOAD_ALL.md),
+[SAVE](commands/SAVE_SAVE_ALL.md) and [SAVE ALL](commands/SAVE_SAVE_ALL.md) commands.
+
+|                     | LOAD | LOAD "filename" | LOAD ALL | LOAD ALL "filename" | 
+|---------------------|------|-----------------|----------|---------------------|
+| SAVE                | ☐    | ☒               | ☒        | ☒                   |
+| SAVE "filename"     | ☐    | ☐               | ☒        | ☒                   |
+| SAVE ALL            | ☒    | ☒               | ☐        | ☒                   |
+| SAVE ALL "filename" | ☒    | ☒               | ☐        | ☐                   |
+
+**NOTE**:
+See PART 7 PERIPHERAL DEVICES for details on using the [SAVE](commands/SAVE_SAVE_ALL.md)
+and [LOAD](commands/LOAD_LOAD_ALL.md) commands.
