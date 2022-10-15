@@ -1,6 +1,6 @@
-# User's Guide
+# PART 6 - BASIC PROGRAMMING
 
-(from Section 6 of the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
+(from Part 6 of the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
 )
 
 Standard BASIC is employed as the programming language for this 
