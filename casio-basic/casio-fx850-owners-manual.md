@@ -1,11 +1,10 @@
-# Casio Basic
+# Casio FX-850P/FX-880P Owners Manual
 
-Here you will find documentation for the FX-850P/FX-880P variant
-of the Casio Pocket Computer BASIC. 
+This is a reproduction of the documentation in 
+the [Casio FX-850P Owners Manual](doc/manuals/Casio_FX-850p_Owners_Manual.pdf) PDF
+in Markdown format for easy reference.
 
-This is a reproduction of the 
-documentation in 
-the [Casio FX-850P Owners Manual](doc/manuals/Casio_FX-850p_Owners_Manual.pdf)
+*Initially it focuses on the parts of the manual that relate to BASIC programming.*
 
 ---
 
