@@ -1,3 +1,6 @@
+*back to [CONTENTS...](../casio-fx850-owners-manual.md)*
+
+
 # PART 5 - DATA BANK FUNCTION
 
 The DATA BANK function built into this unit gives it the capability to totally replace a standard
@@ -81,7 +84,7 @@ and then switch to the CAL mode by pressing **MODE** **0**.
 
 ## DATA DISPLAY
 
-All of the data stored can now be displayed to check for proper input.
+All the data stored can now be displayed to check for proper input.
 While in the CAL mode, press the **MEMO** key to display records 1 and 2.
 Note here that only record 1 is displayed if its length exceeds 32 characters.
 
@@ -253,7 +256,7 @@ current contents of the data bank.
 **IMPORTANT**
 
 Data cleared using the procedures outlined above cannot be recovered.
-Only dlete or clear data when no longer required.
+Only delete or clear data when no longer required.
 
 ## DATA SEARCH
 
@@ -308,7 +311,8 @@ the cursor is displayed and the unit stands by for further input.
 Data stored within the DATA BANK can also be accessed from a BASIC program
 using the following program commands.
 
-`READ#` ─────────────────────────
+---
+### READ#
 
 The standard [READ](commands/READ.md) command is generally used to read
 [DATA](commands/DATA.md) statements contained within a program. The
@@ -327,7 +331,8 @@ command when data does not exist produces a [DA error](errors.md#da-error).
 Any leading spaces in a group of data are skipped, unless the group is 
 included within quotation marks.
 
-`RESTORE#`  ─────────────────────────
+---
+### RESTORE#
 
 As with the standard [RESTORE](commands/RESTORE.md) command, 
 [RESTORE#](commands/RESTORE_HASH.md) can be used to designate a specific
@@ -363,12 +368,13 @@ record which begins with the specified object string.
 
 **FORMAT**: `RESTORE# "object string", {0 or 1}, {line number or # program area number`
 
-The abover format designates a jump to the specified line number or program
+The above format designates a jump to the specified line number or program
 area number for the next [READ#](commands/READ_HASH.md) or 
 [WRITE#](commands/WRITE_HASH.md) operation when the specified object
 string does not exist.
 
-`WRITE#` ─────────────────────────
+---
+### WRITE#
 
 The [WRITE#](commands/WRITE_HASH.md) command is used within a program
 to rewrite or delete DATA BANK data.
@@ -385,9 +391,11 @@ for the next [READ#](commands/READ_HASH.md)/[WRITE#](commands/WRITE_HASH.md)
 operation is deleted when the [WRITE#](commands/WRITE_HASH.md) command
 is executed without specifying DATA BANK data.
 
+---
+
 ## DATA BANK FUNCTION APPLICATIONS
 
-The data bank function can be usd to perform a variety of tasks in additio
+The data bank function can be usd to perform a variety of tasks in addition
 to the applications outlined in this section of the manual.
 Virtually any data imaginable can be stored.
 
@@ -410,7 +418,7 @@ store, recall and execute formulas whenever they are needed.
     └─────┴─────────────────────────────────┘
 ```
 
-The five formulas listed avove are stored in the DATA BANK. Recall the 
+The five formulas listed above are stored in the DATA BANK. Recall the 
 third formula, transfer it to the formula storage function, and then 
 execute it (in the CAL mode).
 
