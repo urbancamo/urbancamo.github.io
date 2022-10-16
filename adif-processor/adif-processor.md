@@ -479,7 +479,8 @@ has been overriden explicitly).
 | Serial No Received          | `SRX`               | 0034                                   | `SRX`                    |
 | Serial No Transmitted       | `STX`               | 0045                                   | `STX`                    |
 | SKCC No                     | `SKCC`              | 19250                                  | `SKCC`                   |
-| Summits on the Air Ref.     | `SOTA`              | G/LD-001                               | `SOTA_REF`               |
+| Summits on the Air Ref.     | `SOTA`, `SOTA_REF`  | G/LD-001                               | `SOTA_REF`               |
+| My Summits on the Air Ref.  | `MY_SOTA_REF`       | G/LD-001                               | `MY_SOTA_REF`            |
 | Wainwrights on the Air Ref. | `WOTA`              | LDW-001                                | `SIG/SIG_INFO`           |
 | Worldwide Flora Fauna Ref.  | `WWFF`              | GFF-0233                               | `SIG/SIG_INFO`           |
 | Lighthouses on the Air Ref. | `LOTA`              | UK0019                                 | `SIG/SIF_INFO`           |
