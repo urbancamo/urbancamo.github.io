@@ -1,4 +1,4 @@
-*back to [CONTENTS...](../casio-fx850-owners-manual.md)*
+*back to [CONTENTS...](casio-fx850-owners-manual.md)*
 
 # PART 7 - PERIPHERAL DEVICES
 

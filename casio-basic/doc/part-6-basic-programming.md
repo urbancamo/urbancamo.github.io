@@ -1,4 +1,4 @@
-*back to [CONTENTS...](../casio-fx850-owners-manual.md)*
+*back to [CONTENTS...](casio-fx850-owners-manual.md)*
 
 # PART 6 - BASIC PROGRAMMING
 
@@ -1305,7 +1305,7 @@ The three following types of variables are available for use within this unit.
  * Variable names can consist of upper, lower case or numeric characters, but 
    a numeric character cannot be used in the first position of the variable name 
    (i.e. 1AE, 3BC$ are illegal).
- * [Reserved words](command-index.md) cannot be used as the leading characters of a variable name
+ * [Reserved words](part-10-command-reference.md) cannot be used as the leading characters of a variable name
    (i.e. `RUNON`, `LIST1$` are illegal).
  * The maximum length of a variable name is 15 characters.
 
