@@ -20,7 +20,7 @@ in Markdown format for easy reference.
 8. [PB-100 Series Compatibility](part-8-pb-100-series-compatibility.md)  *TODO*
 9. [File Handling Fundamentals](part-9-file-handling-fundamentals.md) *TODO*
 10. [Command Reference](part-10-command-reference.md)
-11. [Scientific Library](part-11-scientific-library.md) *TODO*
+11. [Scientific Library](part-11-scientific-library.md) *BASIC Reference Only*
 12. [Appendices](part-12-appendices.md) *TODO*
 13. [Specifications](specifications.md)  *TODO*
 
@@ -28,6 +28,9 @@ in Markdown format for easy reference.
 
 A concise language reference:
  - [Casio Basic Language Reference](casio-basic-language-reference.md)
+
+An application to convert between Casio ASCII and Unicode:
+ - [Casio ASCII to Unicode Converter](casio-ascii-to-unicode-converter.md)
 
 ---
 
