@@ -160,7 +160,7 @@ Casio Description
 | 121            | `y`                | 121               | LATIN SMALL LETTER Y                     |                   |
 | 122            | `z`                | 122               | LATIN SMALL LETTER Z                     |                   |
 | 123            | `{`                | 123               | LEFT CURLY BRACKET                       |                   |
-| 124            | `&vert;`           | 124               | VERTICAL LINE                            |                   |
+| 124            | `¦`                | 166               | BROKEN BAR                               |                   |
 | 125            | `}`                | 125               | RIGHT CURLY BRACKET                      |                   |
 | 126            | `~`                | 126               | TILDE                                    |                   |
 | 127            | `␡`                | 9249              | SYMBOL FOR DELETE                        | DEL               |
@@ -194,7 +194,7 @@ Casio Description
 | 155            | `⁻`                | 8315              | SUPERSCRIPT MINUS                        |                   |
 | 156            | `ⁿ`                | 8319              | SUPERSCRIPT LATIN SMALL LETTER N         |                   |
 | 157            | `﹪`                | 65130             | SMALL PERCENT SIGN                       |                   |
-| 158            | `⁻𝟷`              | 120823            | MATHEMATICAL MONOSPACE DIGIT ONE         |                   |
+| 158            | `⁻¹`               | 120823            | MATHEMATICAL MONOSPACE DIGIT ONE         |                   |
 | 159            | `÷`                | 247               | DIVISION SIGN                            |                   |
 | 160            | `␣`                | 9251              | OPEN BOX                                 | SPC               |
 | 161            | `。`                | 12290             | IDEOGRAPHIC FULL STOP                    |                   |
