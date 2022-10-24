@@ -17,12 +17,17 @@ in Markdown format for easy reference.
 5. [Data Bank Function](part-5-data-bank-function.md)
 6. [BASIC Programming](part-6-basic-programming.md)
 7. [Peripheral Devices](part-7-peripheral-devices.md)
-8. [PB-100 Series Compatibility](part-8-pb-100-series-compatibility.md)
-9. [File Handling Fundamentals](part-9-file-handling-fundamentals.md)
+8. [PB-100 Series Compatibility](part-8-pb-100-series-compatibility.md)  *TODO*
+9. [File Handling Fundamentals](part-9-file-handling-fundamentals.md) *TODO*
 10. [Command Reference](part-10-command-reference.md)
 11. [Scientific Library](part-11-scientific-library.md) *TODO*
 12. [Appendices](part-12-appendices.md) *TODO*
-13. [Specifications](specifications.md) 
+13. [Specifications](specifications.md)  *TODO*
+
+## SUPPLEMENTAL
+
+A concise language reference:
+ - [Casio Basic Language Reference](casio-basic-language-reference.md)
 
 ---
 
