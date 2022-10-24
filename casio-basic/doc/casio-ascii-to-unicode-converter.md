@@ -30,7 +30,7 @@ Casio Description
    representing them in the Unicode file won't match how they will be displayed once defined.
 
  - Character with Casio Position 158 is a single character representing -1. There is no
-   single codepoint unicode equivalent. I've picked the symbol `NOT SIGN`: `¬` as the closest I can find.
+   single codepoint unicode equivalent. I use superscript minus followed by 1.
 
 
 | Casio Position | Unicode Equivalent | Unicode CodePoint    | Unicode Description                      | Casio Description |
@@ -73,7 +73,7 @@ Casio Description
 | 35             | #                  | 35                   | NUMBER SIGN                              |                   |
 | 36             | $                  | 36                   | DOLLAR SIGN                              |                   |
 | 37             | %                  | 37                   | PERCENT SIGN                             |                   |
-| 38             | &                  | 38                   | AMPERSAND                                |                   |
+| 38             | &amp;              | 38                   | AMPERSAND                                |                   |
 | 39             | '                  | 39                   | APOSTROPHE                               |                   |
 | 40             | (                  | 40                   | LEFT PARENTHESIS                         |                   |
 | 41             | )                  | 41                   | RIGHT PARENTHESIS                        |                   |
@@ -97,7 +97,7 @@ Casio Description
 | 59             | ;                  | 59                   | SEMICOLON                                |                   |
 | 60             | <                  | 60                   | LESS-THAN SIGN                           |                   |
 | 61             | =                  | 61                   | EQUALS SIGN                              |                   |
-| 62             | >                  | 62                   | GREATER-THAN SIGN                        |                   |
+| 62             | &gt;               | 62                   | GREATER-THAN SIGN                        |                   |
 | 63             | ?                  | 63                   | QUESTION MARK                            |                   |
 | 64             | @                  | 64                   | COMMERCIAL AT                            |                   |
 | 65             | A                  | 65                   | LATIN CAPITAL LETTER A                   |                   |
@@ -159,7 +159,7 @@ Casio Description
 | 121            | y                  | 121                  | LATIN SMALL LETTER Y                     |                   |
 | 122            | z                  | 122                  | LATIN SMALL LETTER Z                     |                   |
 | 123            | {                  | 123                  | LEFT CURLY BRACKET                       |                   |
-| 124            |                    |                      | 124                                      | VERTICAL LINE     |  |
+| 124            | &vert;             | 124                  | VERTICAL LINE                            |                   |
 | 125            | }                  | 125                  | RIGHT CURLY BRACKET                      |                   |
 | 126            | ~                  | 126                  | TILDE                                    |                   |
 | 127            | ␡                  | 9249                 | SYMBOL FOR DELETE                        | DEL               |
