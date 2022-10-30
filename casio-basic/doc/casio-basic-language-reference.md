@@ -212,7 +212,7 @@ Reserved words not listed in the command section.
 
 ## Errors
 
-See the [Error Reference Page](errors.md).
+See the [Error Reference Page](part-12-2-error-messages.md).
 
 ## Calculation Range
 ± 1 × 10⁻⁹⁹ ~ ± 9.9999999999 × 10⁻⁹⁹ and 0. Internal

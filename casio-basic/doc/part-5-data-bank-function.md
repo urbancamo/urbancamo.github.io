@@ -326,8 +326,8 @@ As shown above, multiple variable names can be specified, with variable
 names being separated by commas. As with the standard [READ](commands/READ.md),
 numeric data can only be assigned to numeric variables, and string data
 to string variables. Mismatching variable types results in a 
-[TM error](errors.md#tm-error), and executing the [READ#](commands/READ_HASH.md) 
-command when data does not exist produces a [DA error](errors.md#da-error).
+[TM error](part-12-2-error-messages.md#tm-error), and executing the [READ#](commands/READ_HASH.md) 
+command when data does not exist produces a [DA error](part-12-2-error-messages.md#da-error).
 Any leading spaces in a group of data are skipped, unless the group is 
 included within quotation marks.
 
@@ -351,7 +351,7 @@ Including an object string with the [RESTORE#](commands/RESTORE_HASH.md)
 command specifies that the next [READ#](commands/READ_HASH.md) or 
 [WRITE#](commands/WRITE_HASH.md) operation is to be performed from the data
 item which begins with the specified object string contained in the 
-DATA BANK. A [DA error](errors.md#da-error) is generated when the specified
+DATA BANK. A [DA error](part-12-2-error-messages.md#da-error) is generated when the specified
 object string does not exist. The maximum capacity for a
 [WRITE#](commands/WRITE_HASH.md) operation is 255 characters, and exceeding
 this value results in an error.

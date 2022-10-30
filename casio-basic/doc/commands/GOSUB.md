@@ -27,8 +27,8 @@ GOSUB #6
 ### Explanation
 1. Program execution branches to the subroutine that starts at the specified 
 line number. Execution is returned from the subroutine by the [RETURN](RETURN.md) statement.
-2. Subroutines can be nested up to 96 levels. Exceeding this value results in an [OM](../errors.md#om-error) error.
-3. A [UL](../errors.md#ul-error) error is generated when the specified line number does not exist.
+2. Subroutines can be nested up to 96 levels. Exceeding this value results in an [OM](../part-12-2-error-messages.md#om-error) error.
+3. A [UL](../part-12-2-error-messages.md#ul-error) error is generated when the specified line number does not exist.
 4. A [CLEAR](CLEAR.md) command cannot be used within a subroutine.
 
 ### See

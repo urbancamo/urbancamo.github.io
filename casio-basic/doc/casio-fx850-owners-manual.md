@@ -21,7 +21,7 @@ in Markdown format for easy reference.
 9. [File Handling Fundamentals](part-9-file-handling-fundamentals.md) *TODO*
 10. [Command Reference](part-10-command-reference.md)
 11. [Scientific Library](part-11-scientific-library.md) *BASIC Reference Only*
-12. [Appendices](part-12-appendices.md) *TODO*
+12. [Appendices](part-12-appendices.md)
 13. [Specifications](specifications.md)  *TODO*
 
 ## SUPPLEMENTAL

@@ -1,6 +1,35 @@
+*back to [CONTENTS...](casio-fx850-owners-manual.md)*
+
+*back to [Part 12 Appendices...](part-12-appendices.md)*
+
 ## Error Messages Table
 
----
+ - [AM error](#am-error)
+ - [BF error](#bf-error)
+ - [BN error](#bn-error)
+ - [BS error](#bs-error)
+ - [BV error](#bv-error)
+ - [DA error](#da-error)
+ - [DD error](#dd-error)
+ - [FC error](#fc-error)
+ - [FO error](#fo-error)
+ - [FR error](#fr-error)
+ - [GS error](#gs-error)
+ - [MA error](#ma-error)
+ - [NR error](#nr-error)
+ - [NX error](#nx-error)
+ - [OM error](#om-error)
+ - [OP error](#op-error)
+ - [OV error](#ov-error)
+ - [PO error](#po-error)
+ - [PR error](#pr-error)
+ - [RE error](#re-error)
+ - [RW error](#rw-error)
+ - [SN error](#sn-error)
+ - [ST error](#st-error)
+ - [TC error](#tc-error)
+ - [TM error](#tm-error)
+ - [UL error](#ul-error)
 
 ### OM error
 

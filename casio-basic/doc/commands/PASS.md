@@ -26,7 +26,7 @@ PASS "TEXT"
 3. Executing this command registers a password when no password previously exists.
 4. Executing the `PASS` statement using a previously registered password cancels
 the password. Specifying a password that is different from that registered, 
-results in a [PR](../errors.md#pr-error) error.
+results in a [PR](../part-12-2-error-messages.md#pr-error) error.
 5. The following operations and commands cannot be executed when a password is registered:
 - Program write
 - `MEMO IN` mode specification
@@ -39,5 +39,5 @@ results in a [PR](../errors.md#pr-error) error.
 tape applies the password to the saved program.
 7. Loading a program (using [LOAD](LOAD_LOAD_ALL.md) or [LOAD ALL](LOAD_LOAD_ALL.md))
 which is protected by a password into the computer causes the password of the loaded
-program to be registered as the computer password. A [PR](../errors.md#pr-error) error
+program to be registered as the computer password. A [PR](../part-12-2-error-messages.md#pr-error) error
 is generated when the current password differs from the password of the loaded program.
