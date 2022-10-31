@@ -8,216 +8,216 @@
 ; rewrited by BLUE on 2003-02-16 for the Casio FX-870P/VX-4
 ; rewrited by BLUE on 2003-11-30 for the Casio VX-3
 ;---------------------------------------------------------------
-; Gernot FinkŽ‚ªì¬‚µAAndreas WichmannŽ‚ÌHP‚ÉPDSˆµ‚¢‚Å
-; ŒöŠJ‚³‚ê‚Ä‚¢‚éCosmic Fly‚ðFX-870P/VX-4/VX-3‚ÉˆÚA‚µ‚Ü‚µ‚½B
-; ƒIƒŠƒWƒiƒ‹”Å‚ÍBASIC+ƒ}ƒVƒ“Œê\¬‚ÅAŒÅ’èƒAƒhƒŒƒX(&h7000`)‚©‚ç
-; ‚µ‚©ŽÀs‚Å‚«‚È‚©‚Á‚½‚Ì‚Å‚·‚ªA‚±‚¿‚ç‚ÍƒI[ƒ‹ƒ}ƒVƒ“Œê‚Å‚©‚Â
-; D‚«‚ÈƒAƒhƒŒƒX‚ÉÄƒAƒZƒ“ƒuƒ‹‰Â”\‚È‚æ‚¤‚É‘‚«Š·‚¦‚Ä‚¢‚Ü‚·B
-; ŽÀs‚É‚Í1520ƒoƒCƒgˆÈã‚Ìƒ}ƒVƒ“ŒêƒGƒŠƒA‚ðŠm•Û‚µ‚Ä‰º‚³‚¢B
-; ˆÚAŽž‚É­X‰ü‘¢‚µ‚Ä‚¢‚Ü‚·‚ªAGAMEŽ©‘Ì‚Í‚Ù‚ÚƒIƒŠƒWƒiƒ‹‚Ì’Ê‚è‚Å‚·B
+; Gernot Finkæ°ãŒä½œæˆã—ã€Andreas Wichmannæ°ã®HPã«PDSæ‰±ã„ã§
+; å…¬é–‹ã•ã‚Œã¦ã„ã‚‹Cosmic Flyã‚’FX-870P/VX-4/VX-3ã«ç§»æ¤ã—ã¾ã—ãŸã€‚
+; ã‚ªãƒªã‚¸ãƒŠãƒ«ç‰ˆã¯BASIC+ãƒžã‚·ãƒ³èªžæ§‹æˆã§ã€å›ºå®šã‚¢ãƒ‰ãƒ¬ã‚¹(&h7000ã€œ)ã‹ã‚‰
+; ã—ã‹å®Ÿè¡Œã§ããªã‹ã£ãŸã®ã§ã™ãŒã€ã“ã¡ã‚‰ã¯ã‚ªãƒ¼ãƒ«ãƒžã‚·ãƒ³èªžã§ã‹ã¤
+; å¥½ããªã‚¢ãƒ‰ãƒ¬ã‚¹ã«å†ã‚¢ã‚»ãƒ³ãƒ–ãƒ«å¯èƒ½ãªã‚ˆã†ã«æ›¸ãæ›ãˆã¦ã„ã¾ã™ã€‚
+; å®Ÿè¡Œã«ã¯1520ãƒã‚¤ãƒˆä»¥ä¸Šã®ãƒžã‚·ãƒ³èªžã‚¨ãƒªã‚¢ã‚’ç¢ºä¿ã—ã¦ä¸‹ã•ã„ã€‚
+; ç§»æ¤æ™‚ã«å°‘ã€…æ”¹é€ ã—ã¦ã„ã¾ã™ãŒã€GAMEè‡ªä½“ã¯ã»ã¼ã‚ªãƒªã‚¸ãƒŠãƒ«ã®é€šã‚Šã§ã™ã€‚
 ;
-; HD61R041‚Å³í‚ÉƒAƒZƒ“ƒuƒ‹‚Å‚«‚é‚æ‚¤‚ÉCRCS:‚ÌJP ($2)‚ðJP $2‚É•ÏXB
+; HD61R041ã§æ­£å¸¸ã«ã‚¢ã‚»ãƒ³ãƒ–ãƒ«ã§ãã‚‹ã‚ˆã†ã«ï¼ŒRCS:ã®JP ($2)ã‚’JP $2ã«å¤‰æ›´ã€‚
 ;---------------------------------------------------------------
 FX870P:	EQU	1		;FX-870P
 VX4:	EQU	2		;VX-4
 VX3:	EQU	3		;VX-3
 ;---------------------------------------------------------------
-; ‹@Ží‚ÌÝ’è
+; æ©Ÿç¨®ã®è¨­å®š
 ;---------------------------------------------------------------
-MODEL:	EQU	VX3		;VX3‚ð‘I‘ð
+MODEL:	EQU	VX3		;VX3ã‚’é¸æŠž
 
 #if (MODEL=FX870P)|(MODEL=VX4)
-LEDTP:	EQU	&H123C		;LCDæ“ªƒAƒhƒŒƒX
-IOBUF:	EQU	&H19D5		;SAVE/LOAD—p I/Oƒoƒbƒtƒ@
+LEDTP:	EQU	&H123C		;LCDå…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+IOBUF:	EQU	&H19D5		;SAVE/LOADç”¨ I/Oãƒãƒƒãƒ•ã‚¡
 ;
-DOTDS:	EQU	&H930F		;LCDÄ•\Ž¦
-BEEP:	EQU	&H33B3		;BEEP‰¹”­¶
-CLS:	EQU	&H2ADF		;‰æ–ÊÁ‹Ž(PRINT CHR$(12)‚Æ“¯“™)
-CROFF:	EQU	&H032E		;ƒJ[ƒ\ƒ‹OFF(KYINŽž‚ÌƒJ[ƒ\ƒ‹•\Ž¦‚ðOFF‚É‚·‚é)
-KYIN:	EQU	&H03A4		;•W€ƒL[“ü—Íˆ—i$0‚É“ü—Í‚³‚ê‚½ƒL[ƒR[ƒh‚ª“ü‚éj
+DOTDS:	EQU	&H930F		;LCDå†è¡¨ç¤º
+BEEP:	EQU	&H33B3		;BEEPéŸ³ç™ºç”Ÿ
+CLS:	EQU	&H2ADF		;ç”»é¢æ¶ˆåŽ»(PRINT CHR$(12)ã¨åŒç­‰)
+CROFF:	EQU	&H032E		;ã‚«ãƒ¼ã‚½ãƒ«OFF(KYINæ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤ºã‚’OFFã«ã™ã‚‹)
+KYIN:	EQU	&H03A4		;æ¨™æº–ã‚­ãƒ¼å…¥åŠ›å‡¦ç†ï¼ˆ$0ã«å…¥åŠ›ã•ã‚ŒãŸã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ãŒå…¥ã‚‹ï¼‰
 INKEY:	EQU	&H191D		;INKEY
-BIOS2:	EQU	&H5323		;BIOS(BANK0)‚ðƒR[ƒ‹‚µ‚ÄBANK1‚É–ß‚éŽž‚ÌƒXƒ^ƒbƒN’l
+BIOS2:	EQU	&H5323		;BIOS(BANK0)ã‚’ã‚³ãƒ¼ãƒ«ã—ã¦BANK1ã«æˆ»ã‚‹æ™‚ã®ã‚¹ã‚¿ãƒƒã‚¯å€¤
 #if MODEL=FX870P
-BASE:	EQU	0		;ƒvƒƒOƒ‰ƒ€Ši”[ƒAƒhƒŒƒX(FX-870P)
+BASE:	EQU	0		;ãƒ—ãƒ­ã‚°ãƒ©ãƒ æ ¼ç´ã‚¢ãƒ‰ãƒ¬ã‚¹(FX-870P)
 #else
-BASE:	EQU	&H1CD0		;ƒvƒƒOƒ‰ƒ€Ši”[ƒAƒhƒŒƒX(FX-870P/VX-4)
+BASE:	EQU	&H1CD0		;ãƒ—ãƒ­ã‚°ãƒ©ãƒ æ ¼ç´ã‚¢ãƒ‰ãƒ¬ã‚¹(FX-870P/VX-4)
 #endif
 #endif
 #if MODEL=VX3
-LEDTP:	EQU	&H6343		;LCD•\Ž¦ƒhƒbƒgƒoƒbƒtƒ@
-IOBUF:	EQU	&H69CE		;SAVE/LOAD—p I/Oƒoƒbƒtƒ@
+LEDTP:	EQU	&H6343		;LCDè¡¨ç¤ºãƒ‰ãƒƒãƒˆãƒãƒƒãƒ•ã‚¡
+IOBUF:	EQU	&H69CE		;SAVE/LOADç”¨ I/Oãƒãƒƒãƒ•ã‚¡
 ;
-KYIN:	EQU	&H03D1	;•W€ƒL[“ü—Íˆ—i$0‚É“ü—Í‚³‚ê‚½ƒL[ƒR[ƒh‚ª“ü‚éj
-CROFF:	EQU	&H1FAE	;ƒJ[ƒ\ƒ‹ON(KYINŽž‚ÌƒJ[ƒ\ƒ‹•\Ž¦‚ðOFF‚É‚·‚é)
-DOTDS:	EQU	&H1FD5		;LCD‰æ–Ê•\Ž¦
-CLS:	EQU	&H31CF		;‰æ–ÊÁ‹Ž(PRINT CHR$(12)‚Æ“¯“™)
-INKEY:	EQU	&H194E		;INKEY$ˆ—
+KYIN:	EQU	&H03D1	;æ¨™æº–ã‚­ãƒ¼å…¥åŠ›å‡¦ç†ï¼ˆ$0ã«å…¥åŠ›ã•ã‚ŒãŸã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ãŒå…¥ã‚‹ï¼‰
+CROFF:	EQU	&H1FAE	;ã‚«ãƒ¼ã‚½ãƒ«ON(KYINæ™‚ã®ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤ºã‚’OFFã«ã™ã‚‹)
+DOTDS:	EQU	&H1FD5		;LCDç”»é¢è¡¨ç¤º
+CLS:	EQU	&H31CF		;ç”»é¢æ¶ˆåŽ»(PRINT CHR$(12)ã¨åŒç­‰)
+INKEY:	EQU	&H194E		;INKEY$å‡¦ç†
 BEEP:	EQU	&H3A8B		;BEEP0
-BIOS2:	EQU	&H5CA9		;BIOS(BANK0)‚ðƒR[ƒ‹‚µ‚ÄBANK1‚É–ß‚éŽž‚ÌƒXƒ^ƒbƒN’l
-BASE:	EQU	&H6CD0		;ƒvƒƒOƒ‰ƒ€Ši”[ƒAƒhƒŒƒX
+BIOS2:	EQU	&H5CA9		;BIOS(BANK0)ã‚’ã‚³ãƒ¼ãƒ«ã—ã¦BANK1ã«æˆ»ã‚‹æ™‚ã®ã‚¹ã‚¿ãƒƒã‚¯å€¤
+BASE:	EQU	&H6CD0		;ãƒ—ãƒ­ã‚°ãƒ©ãƒ æ ¼ç´ã‚¢ãƒ‰ãƒ¬ã‚¹
 #endif
 
-	ORG	BASE			;©ŠeŽ©‚ÌŠÂ‹«‚É‡‚í‚¹‚ÄƒŠƒƒP[ƒg‚µ‚Ä‚­‚¾‚³‚¢
+	ORG	BASE			;â†å„è‡ªã®ç’°å¢ƒã«åˆã‚ã›ã¦ãƒªãƒ­ã‚±ãƒ¼ãƒˆã—ã¦ãã ã•ã„
 	START	MAIN
 ;-----------------------------------------------------
-; MAINˆ—
-; “ü—ÍF‚È‚µ
-; o—ÍF‚È‚µ
+; MAINå‡¦ç†
+; å…¥åŠ›ï¼šãªã—
+; å‡ºåŠ›ï¼šãªã—
 ;-----------------------------------------------------
 MAIN:
-	PRE	IX,LEDTP+192*4		;—˜—pƒ[ƒNƒGƒŠƒA(192ƒoƒCƒg)‚ð‘Ò”ð‚·‚é
+	PRE	IX,LEDTP+192*4		;åˆ©ç”¨ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢(192ãƒã‚¤ãƒˆ)ã‚’å¾…é¿ã™ã‚‹
 	PRE	IY,LEDTP+192*5-1	;
-	PRE	IZ,IOBUF		;‘Ò”ðæ=IOBUF
+	PRE	IZ,IOBUF		;å¾…é¿å…ˆ=IOBUF
 	BUP				;
 
-	LDW	$0,SCORE		;SCOREƒNƒŠƒA
+	LDW	$0,SCORE		;SCOREã‚¯ãƒªã‚¢
 	STW	0,($0)			;
 
 TOP:
-	LDW	$0,SHIPNUM		;SHIPŽc‹@‰Šú‰»
-	ST	3,($0)			;(3‹@)
-	CAL	SSH			;FLYƒf[ƒ^‰Šú‰»
+	LDW	$0,SHIPNUM		;SHIPæ®‹æ©ŸåˆæœŸåŒ–
+	ST	3,($0)			;(3æ©Ÿ)
+	CAL	SSH			;FLYãƒ‡ãƒ¼ã‚¿åˆæœŸåŒ–
 
-	CAL	DISPTITLE		;TITLE•\Ž¦
+	CAL	DISPTITLE		;TITLEè¡¨ç¤º
 LOOP:
-	CAL	INIT			;‰Šú‰»
-	CAL	GAME			;GAMEˆ—
-	JR	Z,BASIC			;BRK“ü—Í‚ÅBASIC‚É–ß‚é
+	CAL	INIT			;åˆæœŸåŒ–
+	CAL	GAME			;GAMEå‡¦ç†
+	JR	Z,BASIC			;BRKå…¥åŠ›ã§BASICã«æˆ»ã‚‹
 
-	CAL	@BEEP			;SHIP”j‰ó‰¹(BEEP)
+	CAL	@BEEP			;SHIPç ´å£ŠéŸ³(BEEP)
 	CAL	@BEEP			;
 
-	PRE	IZ,SHIPNUM		;SHIPŽc‹@XV
+	PRE	IZ,SHIPNUM		;SHIPæ®‹æ©Ÿæ›´æ–°
 	SB	(IZ+$31),$30		;-1
 	JR	NZ,LOOP			;
 
-	PRE	IZ,SCORE		;SCORE/HISCOREŽæ‚èo‚µ
+	PRE	IZ,SCORE		;SCORE/HISCOREå–ã‚Šå‡ºã—
 	LDIW	$0,(IZ+$31)		;(SCORE)
 	LDW	$2,(IZ+$31)		;(HISCORE)
 	SBCW	$2,$0			;HISCORE < SCORE ?
 	JR	NC,MAIN0		;
-	STW	$0,(IZ+$31)		;HISCOREXV
+	STW	$0,(IZ+$31)		;HISCOREæ›´æ–°
 MAIN0:
-	CAL	RELOAD			;ƒ[ƒNƒGƒŠƒAî•ñ•œ‹A
-	CAL	STATUS			;HI,SC,SHIP•\Ž¦
-	CAL	OVER			;GAMEOVERˆ—
-	JR	Z,TOP			;SPC“ü—Í‚ÅÄƒQ[ƒ€
+	CAL	RELOAD			;ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢æƒ…å ±å¾©å¸°
+	CAL	STATUS			;HI,SC,SHIPè¡¨ç¤º
+	CAL	OVER			;GAMEOVERå‡¦ç†
+	JR	Z,TOP			;SPCå…¥åŠ›ã§å†ã‚²ãƒ¼ãƒ 
 
 BASIC:
-	CAL	RELOAD			;ƒ[ƒNƒGƒŠƒAî•ñ•œ‹A
-	PST	UA,&H54			;BASIC‚É–ß‚é
+	CAL	RELOAD			;ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢æƒ…å ±å¾©å¸°
+	PST	UA,&H54			;BASICã«æˆ»ã‚‹
 	RTN				;(BANK0)
 
 ;-----------------------------------------------------
-;ƒ[ƒNƒGƒŠƒAî•ñ•œ‹A
+;ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢æƒ…å ±å¾©å¸°
 ;-----------------------------------------------------
 RELOAD:
-	PRE	IZ,LEDTP+192*4		;—˜—pƒ[ƒNƒGƒŠƒA(192ƒoƒCƒg)‚ð•œ‹A‚·‚é
-	PRE	IX,IOBUF		;‘Ò”ðƒf[ƒ^Ši”[æ=IOBUF
+	PRE	IZ,LEDTP+192*4		;åˆ©ç”¨ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢(192ãƒã‚¤ãƒˆ)ã‚’å¾©å¸°ã™ã‚‹
+	PRE	IX,IOBUF		;å¾…é¿ãƒ‡ãƒ¼ã‚¿æ ¼ç´å…ˆ=IOBUF
 	PRE	IY,IOBUF+191		;
 	BUP				;
 	RTN				;
 
 ;-----------------------------------------------------
-;‰æ–Ê‹y‚Ñƒ[ƒNƒGƒŠƒA‰Šú‰»
+;ç”»é¢åŠã³ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢åˆæœŸåŒ–
 ;-----------------------------------------------------
 INIT:
 	CAL	@CLS			;CLS
 
-	PRE	IX,BOMBWK		;BOMB WORKƒNƒŠƒA
+	PRE	IX,BOMBWK		;BOMB WORKã‚¯ãƒªã‚¢
 	XRW	$0,$0			;
 	LD	$2,8			;
 WKCLR:	STIW	$0,(IX+$31)		;
 	SB	$2,$30			;
 	JR	NZ,WKCLR		;
-	CAL	STATUS			;HI,SC,SHIP•\Ž¦
+	CAL	STATUS			;HI,SC,SHIPè¡¨ç¤º
 	RTN
 
 ;-----------------------------------------------------
-; SCORE/HI-SOCRE/Žc‹@” •\Ž¦
+; SCORE/HI-SOCRE/æ®‹æ©Ÿæ•° è¡¨ç¤º
 ;-----------------------------------------------------
-STATUS:	PRE	IZ,LEDTP+192+126	;HI-SC•\Ž¦
+STATUS:	PRE	IZ,LEDTP+192+126	;HI-SCè¡¨ç¤º
 	LDW	$0,HI			;
 	OR	$3,$30			;
 	CAL	PRINT			;
-	LDW	$0,HISCORE		;HISCORE•\Ž¦
+	LDW	$0,HISCORE		;HISCOREè¡¨ç¤º
 	LDW	$0,($0)			;
 	PRE	IZ,LEDTP+&H161		;
 	CAL	NUM			;
 
-	PRE	IZ,LEDTP+(192*2)+126	;SC•\Ž¦
+	PRE	IZ,LEDTP+(192*2)+126	;SCè¡¨ç¤º
 	LDW	$0,SC			;
 	CAL	PRINT			;
-	LDW	$0,SCORE		;SCORE•\Ž¦
+	LDW	$0,SCORE		;SCOREè¡¨ç¤º
 	LDW	$0,($0)			;
 	PRE	IZ,LEDTP+&H221		;
 	CAL	NUM			;
 
-	PRE	IZ,LEDTP+(192*3)+126	;SHIP•\Ž¦
+	PRE	IZ,LEDTP+(192*3)+126	;SHIPè¡¨ç¤º
 	LDW	$0,SH			;
 	CAL	PRINT			;
 
-	LDW	$0,SHIPNUM		;SHIPŽc‹@”Žæ‚èo‚µ
+	LDW	$0,SHIPNUM		;SHIPæ®‹æ©Ÿæ•°å–ã‚Šå‡ºã—
 	LD	$20,($0)		;
-	AN	$20,$20			;Žc‹@ƒ[ƒ‚È‚ç‹ó”’‚ð•\Ž¦
+	AN	$20,$20			;æ®‹æ©Ÿã‚¼ãƒ­ãªã‚‰ç©ºç™½ã‚’è¡¨ç¤º
 	JR	Z,STR0			;
-	PRE	IX,SHIPCHR		;SHIP•\Ž¦ƒf[ƒ^ƒZƒbƒg
+	PRE	IX,SHIPCHR		;SHIPè¡¨ç¤ºãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ
 STR:
-	LDM	$0,(IX+$31),6		;SHIP•\Ž¦
+	LDM	$0,(IX+$31),6		;SHIPè¡¨ç¤º
 	STIM	$0,(IZ+$31),6		;
 	SB	$20,$30			;
 	JR	NZ,STR			;
 	RTN
 STR0:
-	XRM	$0,$0,6			;•\Ž¦ƒpƒ^[ƒ“ƒNƒŠƒA
-	STIM	$0,(IZ+$31),6		;‹ó”’•\Ž¦
+	XRM	$0,$0,6			;è¡¨ç¤ºãƒ‘ã‚¿ãƒ¼ãƒ³ã‚¯ãƒªã‚¢
+	STIM	$0,(IZ+$31),6		;ç©ºç™½è¡¨ç¤º
 	RTN
 
 ;-----------------------------------------------------
-; TITLE‰æ–Ê
+; TITLEç”»é¢
 ;-----------------------------------------------------
 DISPTITLE:
 	CAL	@CLS			;CLS
 
-	PRE	IZ,LEDTP		;TITLE1•\Ž¦
+	PRE	IZ,LEDTP		;TITLE1è¡¨ç¤º
 	LDW	$0,TITLE1		;
 	OR	$3,$30			;
 	CAL	PRINT			;
-	PRE	IZ,LEDTP+192		;TITLE2•\Ž¦
+	PRE	IZ,LEDTP+192		;TITLE2è¡¨ç¤º
 	LDW	$0,TITLE2		;
 	CAL	PRINT			;
-	PRE	IZ,LEDTP+(192*2)	;TITLE3•\Ž¦
+	PRE	IZ,LEDTP+(192*2)	;TITLE3è¡¨ç¤º
 	LDW	$0,TITLE3		;
 	CAL	PRINT			;
-	PRE	IZ,LEDTP+(192*3)	;TITLE4•\Ž¦
+	PRE	IZ,LEDTP+(192*3)	;TITLE4è¡¨ç¤º
 	LDW	$0,TITLE4		;
 	CAL	PRINT			;
 
-	CAL	STATUS			;HI,SC,SHIP•\Ž¦
+	CAL	STATUS			;HI,SC,SHIPè¡¨ç¤º
 
 	CAL	@BEEP			;BEEP
 
 	CAL	@DOTDS			;DISPLAY LCD
 
-	LDW	$0,SCORE		;SCOREƒNƒŠƒA
+	LDW	$0,SCORE		;SCOREã‚¯ãƒªã‚¢
 	STW	0,($0)			;
 
 ;-----------------------------------------------------
-; [EXE]ƒL[“ü—Í‘Ò‚¿
+; [EXE]ã‚­ãƒ¼å…¥åŠ›å¾…ã¡
 ;-----------------------------------------------------
 KEYWAIT:
 #if 0
-	LDW	$2,INKEY		;INKEY$ŽÀs
+	LDW	$2,INKEY		;INKEY$å®Ÿè¡Œ
 	CAL	RCS			;
 	SBC	$17,$31			;
 	JR	Z,KEYWAIT		;
 
-	LDW	$0,($15)		;[EXE]“ü—Í‚Ü‚Å‘Ò‚Â
+	LDW	$0,($15)		;[EXE]å…¥åŠ›ã¾ã§å¾…ã¤
 #else
-	LDW	$2,CROFF		;ƒJ[ƒ\ƒ‹•\Ž¦OFF
+	LDW	$2,CROFF		;ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤ºOFF
 	CAL	RCS			;
 
-	LDW	$2,KYIN			;KYIN‚ðŽÀs
+	LDW	$2,KYIN			;KYINã‚’å®Ÿè¡Œ
 	CAL	RCS			;
 #endif
 	SBC	$0,&H0D			;
@@ -225,90 +225,90 @@ KEYWAIT:
 	RTN
 
 ;-----------------------------------------------------
-; GAME OVERˆ—
+; GAME OVERå‡¦ç†
 ;-----------------------------------------------------
 OVER:
-	PRE	IZ,LEDTP+200		;GAME OVER•\Ž¦
+	PRE	IZ,LEDTP+200		;GAME OVERè¡¨ç¤º
 	LDW	$0,GAMEOVER		;
 	OR	$3,$30			;
 	CAL	PRINT			;
-	PRE	IZ,LEDTP+(192*2)+24	;KEY TITLE•\Ž¦
+	PRE	IZ,LEDTP+(192*2)+24	;KEY TITLEè¡¨ç¤º
 	LDW	$0,KEYTITLE		;
 	CAL	PRINT			;
 
 	CAL	@DOTDS			;DISPLAY LCD
 
-	CAL	KEYWAIT			;[EXE]“ü—Í‚Ü‚Å‘Ò‚Â
+	CAL	KEYWAIT			;[EXE]å…¥åŠ›ã¾ã§å¾…ã¤
 	RTN
 
 ;-----------------------------------------------------
-; ƒQ[ƒ€ƒƒCƒ“ˆ—
+; ã‚²ãƒ¼ãƒ ãƒ¡ã‚¤ãƒ³å‡¦ç†
 ;-----------------------------------------------------
 GAME:
-;	XRW	$19,$19			;ƒ[ƒN‰Šú‰»
-	LD	$22,$31			;SCORE•\Ž¦—v‹ƒtƒ‰ƒO‰Šú‰»
+;	XRW	$19,$19			;ãƒ¯ãƒ¼ã‚¯åˆæœŸåŒ–
+	LD	$22,$31			;SCOREè¡¨ç¤ºè¦æ±‚ãƒ•ãƒ©ã‚°åˆæœŸåŒ–
 
-	GPO	$0			;BEEP—pƒf[ƒ^Žæ‚èo‚µ
+	GPO	$0			;BEEPç”¨ãƒ‡ãƒ¼ã‚¿å–ã‚Šå‡ºã—
 	AN	$0,127			;
 	OR	$0,64			;
-	PST	PD,$0			;’†‚­‚ç‚¢‚Ì‰¹—Ê‚ðÝ’è
+	PST	PD,$0			;ä¸­ãã‚‰ã„ã®éŸ³é‡ã‚’è¨­å®š
 
-	LDW	$27,&H2C00		;SHIPˆÊ’u ‰Šú’lƒZƒbƒg
+	LDW	$27,&H2C00		;SHIPä½ç½® åˆæœŸå€¤ã‚»ãƒƒãƒˆ
 	XRW	$24,$24			;
-;	PST	IA,&H3D			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è(—”—p)
-L1:	CAL	SHT			;‰¹‚¾‚µˆ—
+;	PST	IA,&H3D			;KEYã‚¹ã‚­ãƒ£ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š(ä¹±æ•°ç”¨)
+L1:	CAL	SHT			;éŸ³ã ã—å‡¦ç†
 	SB	$29,$30			;
 	JR	NZ,L1			;
-	LD	$29,90			;EIV(MIN70)
+	LD	$29,90			;ãƒ»IV(MIN70)
 
-	CAL	KEY			;KEY “ü—Í
-	RTN	Z			;BRK‚É‚ÄI—¹
+	CAL	KEY			;KEY å…¥åŠ›
+	RTN	Z			;BRKã«ã¦çµ‚äº†
 
-	AD	$17,$30			;FLYˆ—‚Í‚QƒXƒLƒƒƒ“‚Éˆê‰ñŽÀs
+	AD	$17,$30			;FLYå‡¦ç†ã¯ï¼’ã‚¹ã‚­ãƒ£ãƒ³ã«ä¸€å›žå®Ÿè¡Œ
 	ANC	$17,$30			;
 	JR	Z,LO2			;
-	CAL	FLY			;FLY ˆÚ“®
-LO2:	CAL	SHIP			;SHIP ˆÚ“®
+	CAL	FLY			;FLY ç§»å‹•
+LO2:	CAL	SHIP			;SHIP ç§»å‹•
 
-	ANC	$17,$30			;‰æ–ÊXV—v‹‚ ‚è ?
+	ANC	$17,$30			;ç”»é¢æ›´æ–°è¦æ±‚ã‚ã‚Š ?
 	JR	Z,LO1			;NO --> LO1
 
 	CAL	@DOTDS			;DISPLAY LCD
 
-	AN	$22,$22			;SCORE•\Ž¦—v‹‚ ‚è
+	AN	$22,$22			;SCOREè¡¨ç¤ºè¦æ±‚ã‚ã‚Š
 	JR	Z,LO1			;NO --> LO1
 
-	LDW	$0,SCORE		;SCORE Žæ‚èo‚µ
+	LDW	$0,SCORE		;SCORE å–ã‚Šå‡ºã—
 	LDW	$0,($0)			;
-	PRE	IZ,LEDTP+&H221		;SCOER•\Ž¦ƒAƒhƒŒƒXÝ’è
-	CAL	NUM			;SCORE•\Ž¦
+	PRE	IZ,LEDTP+&H221		;SCOERè¡¨ç¤ºã‚¢ãƒ‰ãƒ¬ã‚¹è¨­å®š
+	CAL	NUM			;SCOREè¡¨ç¤º
 	LD	$22,$31			;
 
-LO1:	SBC	$28,255			;SHIP”j‰ó
+LO1:	SBC	$28,255			;SHIPç ´å£Š
 	JR	NZ,L1			;NO --> LO1
 	OR	$0,$30			;
 	RTN
 
 ;-----------------------------------------------------
-; KEY“ü—Íˆ—
+; KEYå…¥åŠ›å‡¦ç†
 ;-----------------------------------------------------
-KEY:	PST	IA,5			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è
+KEY:	PST	IA,5			;KEYã‚¹ã‚­ãƒ£ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š
 	CAL	SCAN			;
-	SBC	$0,&H04			;¶[4]
+	SBC	$0,&H04			;å·¦[4]
 	JR	NZ,K1			;
-	SBC	$28,$31			;À•W0‚È‚çˆ—I—¹
+	SBC	$28,$31			;åº§æ¨™0ãªã‚‰å‡¦ç†çµ‚äº†
 	JR	Z,K1			;
 	SB	$28,2			;
 
-K1:	PST	IA,7			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è
+K1:	PST	IA,7			;KEYã‚¹ã‚­ãƒ£ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š
 	CAL	SCAN			;
-	SBC	$0,&H1			;‰E[6]
+	SBC	$0,&H1			;å³[6]
 	JR	NZ,K2			;
 	SBC	$28,100			;
 	JR	Z,K2			;
 	AD	$28,2			;
 
-K2:	PST	IA,9			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è
+K2:	PST	IA,9			;KEYã‚¹ã‚­ãƒ£ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š
 	CAL	SCAN			;
 	SBC	$0,&H04			;SHOT[0]
 	JR	NZ,K3			;
@@ -316,35 +316,35 @@ K2:	PST	IA,9			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è
 	JR	NZ,K3			;
 	LD	$27,$30			;
 
-K3:	PST	IA,1			;KEYƒXƒLƒƒƒ“ƒR[ƒhÝ’è
+K3:	PST	IA,1			;KEYã‚¹ã‚­ãƒ£ãƒ³ã‚³ãƒ¼ãƒ‰è¨­å®š
 	CAL	SCAN			;
-	SBC	$0,&H80			;BRKˆÈŠO‚È‚çƒmƒ“ƒ[ƒó‘Ô‚ÅƒŠƒ^[ƒ“
+	SBC	$0,&H80			;BRKä»¥å¤–ãªã‚‰ãƒŽãƒ³ã‚¼ãƒ­çŠ¶æ…‹ã§ãƒªã‚¿ãƒ¼ãƒ³
 	RTN	NZ			;
-	XR	$0,$0			;BRK‚ð‰Ÿ‚³‚ê‚½‚çƒ[ƒƒtƒ‰ƒO‚ð—§‚Ä‚é
+	XR	$0,$0			;BRKã‚’æŠ¼ã•ã‚ŒãŸã‚‰ã‚¼ãƒ­ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 	RTN
 
 ;-----------------------------------------------------
-; ƒL[ƒXƒLƒƒƒ“ˆ—
+; ã‚­ãƒ¼ã‚¹ã‚­ãƒ£ãƒ³å‡¦ç†
 ;-----------------------------------------------------
-SCAN:	GRE	KY,$0			;ƒL[“ü—Í(1)
-	GRE	KY,$1			;ƒL[“ü—Í(2)
-	SBC	$0,$1			;(1)=(2)‚È‚ç‚ÎA“ü—Íƒf[ƒ^‚ðM—p‚·‚éB
+SCAN:	GRE	KY,$0			;ã‚­ãƒ¼å…¥åŠ›(1)
+	GRE	KY,$1			;ã‚­ãƒ¼å…¥åŠ›(2)
+	SBC	$0,$1			;(1)=(2)ãªã‚‰ã°ã€å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã‚’ä¿¡ç”¨ã™ã‚‹ã€‚
 	JR	NZ,SCAN			;
 	RTN
 
 ;-----------------------------------------------------
-; SHIPˆÚ“®/ƒ~ƒTƒCƒ‹§Œä
+; SHIPç§»å‹•/ãƒŸã‚µã‚¤ãƒ«åˆ¶å¾¡
 ;-----------------------------------------------------
-SHIP:	SBC	$28,255			;SHIP”j‰ó‚³‚ê‚½‚çAˆ—I—¹
+SHIP:	SBC	$28,255			;SHIPç ´å£Šã•ã‚ŒãŸã‚‰ã€å‡¦ç†çµ‚äº†
 	RTN	Z
-	PRE	IX,LEDTP+&H23E		;LCD•\Ž¦ƒAƒhƒŒƒXÝ’è
+	PRE	IX,LEDTP+&H23E		;LCDè¡¨ç¤ºã‚¢ãƒ‰ãƒ¬ã‚¹è¨­å®š
 	LDI	$0,(IX+$28)
 	ANC	$27,7
 	JR	Z,SH2
 	XRC	$23,255
 	JR	Z,SH2
 	GRE	IX,$24
-SH2:	PRE	IZ,SHIPG		;SHIP•`‰æƒf[ƒ^ƒAƒhƒŒƒXƒZƒbƒg
+SH2:	PRE	IZ,SHIPG		;SHIPæç”»ãƒ‡ãƒ¼ã‚¿ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚»ãƒƒãƒˆ
 	LD	$0,13
 SH1:	LD	$1,(IZ+$0)
 	LD	$9,(IX+$0)
@@ -377,24 +377,24 @@ SH6:	LD	$25,$31
 SH4:	RTN
 
 ;-----------------------------------------------------
-; FLY”j‰óˆ—
+; FLYç ´å£Šå‡¦ç†
 ;-----------------------------------------------------
-TR:	LD	$23,255			;FLY”j‰óƒZƒbƒg
+TR:	LD	$23,255			;FLYç ´å£Šã‚»ãƒƒãƒˆ
 	LDW	$16,$30
-	LD	$22,$30			;SCOREXV—v‹ƒZƒbƒg
+	LD	$22,$30			;SCOREæ›´æ–°è¦æ±‚ã‚»ãƒƒãƒˆ
 
-	LDW	$2,SCORE		;SCOREŽæ‚èo‚µ
+	LDW	$2,SCORE		;SCOREå–ã‚Šå‡ºã—
 	LDW	$0,($2)			;
-	ADBW	$0,$16			;SCORE‘‰Á(+1)
-	STW	$0,($2)			;SCOREXV
+	ADBW	$0,$16			;SCOREå¢—åŠ (+1)
+	STW	$0,($2)			;SCOREæ›´æ–°
 
 	LD	$25,$31			;
 	ST	$25,(IX+199)		;
 	LD	$27,5			;
-	GRE	IX,$19			;FLY‰æ–ÊƒAƒhƒŒƒX•Û‘¶
-	PRE	IZ,CRASHG		;”š”­—pƒf[ƒ^ƒZƒbƒg
+	GRE	IX,$19			;FLYç”»é¢ã‚¢ãƒ‰ãƒ¬ã‚¹ä¿å­˜
+	PRE	IZ,CRASHG		;çˆ†ç™ºç”¨ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ
 CLEX:	LD	$0,12
-T1:	LDI	$1,(IZ+$31)		;FLY”š”­ƒpƒ^[ƒ“•\Ž¦
+T1:	LDI	$1,(IZ+$31)		;FLYçˆ†ç™ºãƒ‘ã‚¿ãƒ¼ãƒ³è¡¨ç¤º
 	STI	$1,(IX+$31)		;
 	LD	$1,(IZ+11)		;
 	ST	$1,(IX+191)		;
@@ -403,92 +403,92 @@ T1:	LDI	$1,(IZ+$31)		;FLY”š”­ƒpƒ^[ƒ“•\Ž¦
 	RTN
 
 ;-----------------------------------------------------
-; ‰¹‚¾‚µ
+; éŸ³ã ã—
 ;-----------------------------------------------------
-SHT:	GPO	$2			;Œ»Ý‚Ìƒ|[ƒgó‘Ô‚ð“Ç‚Ýo‚·
+SHT:	GPO	$2			;ç¾åœ¨ã®ãƒãƒ¼ãƒˆçŠ¶æ…‹ã‚’èª­ã¿å‡ºã™
 	LDW	$0,4
-	ANC	$27,255			;’Êí‚Ì‰¹‚¾‚µ
+	ANC	$27,255			;é€šå¸¸ã®éŸ³ã ã—
 	JR	Z,W2
 	SBW	$26,$0
-	SBC	$23,255			;FLY”š”­‰¹ ?
+	SBC	$23,255			;FLYçˆ†ç™ºéŸ³ ?
 	JR	Z,W4
 	ANC	$26,$23
 	JR	Z,W1
-W4:	XR	$2,192			;ƒ|[ƒg”½“](‰¹o‚µ)
+W4:	XR	$2,192			;ãƒãƒ¼ãƒˆåè»¢(éŸ³å‡ºã—)
 	PST	PD,$2
 W1:	RTN
 
 W2:	LD	$23,&H21
 	ANC	$20,255
 	JR	Z,NC1
-	PRE	IZ,SHIPWK		;0ƒpƒ^[ƒ“‚ð•`‰æ‚·‚é(&H739E)
-	PRE	IX,$19			;FLY‰æ–ÊƒAƒhƒŒƒXƒZƒbƒg
+	PRE	IZ,SHIPWK		;0ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’æç”»ã™ã‚‹(&H739E)
+	PRE	IX,$19			;FLYç”»é¢ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚»ãƒƒãƒˆ
 	CAL	CLEX
 	LD	$20,$31
 NC1:	RTN
 
 ;-----------------------------------------------------
-; FLYˆÚ“®/BOMB§Œä
+; FLYç§»å‹•/BOMBåˆ¶å¾¡
 ;-----------------------------------------------------
-FLY:	LD	$13,8			;FLY‹@”“Ç‚Ýž‚Ý(MAX8)
-	LDW	$14,FLYDAT		;FLYƒf[ƒ^ƒGƒŠƒAƒ|ƒCƒ“ƒ^Ý’è
+FLY:	LD	$13,8			;FLYæ©Ÿæ•°èª­ã¿è¾¼ã¿(MAX8)
+	LDW	$14,FLYDAT		;FLYãƒ‡ãƒ¼ã‚¿ã‚¨ãƒªã‚¢ãƒã‚¤ãƒ³ã‚¿è¨­å®š
 	LD	$12,$31			;
 Y1:	LDW	$2,($14)
-	CAL	SHAPE			;FLYÁ‹Ž
-	ADW	$14,$30			;FLYƒ[ƒNƒAƒhƒŒƒXXV
+	CAL	SHAPE			;FLYæ¶ˆåŽ»
+	ADW	$14,$30			;FLYãƒ¯ãƒ¼ã‚¯ã‚¢ãƒ‰ãƒ¬ã‚¹æ›´æ–°
 	ADW	$14,$30
-	SB	$13,$30			;FLY‹@”‚ª–³‚­‚È‚é‚Ü‚ÅŒJ‚è•Ô‚µ
+	SB	$13,$30			;FLYæ©Ÿæ•°ãŒç„¡ããªã‚‹ã¾ã§ç¹°ã‚Šè¿”ã—
 	JR	NZ,Y1
 
 ;	CAL	BOMB
-	CAL	BOMB			;BOMBˆ—
+	CAL	BOMB			;BOMBå‡¦ç†
 
-	LD	$13,8			;FLY‹@”“Ç‚Ýž‚Ý
-	LDW	$14,FLYDAT		;FLYƒf[ƒ^ƒGƒŠƒAƒ|ƒCƒ“ƒ^Ý’è &HC0
+	LD	$13,8			;FLYæ©Ÿæ•°èª­ã¿è¾¼ã¿
+	LDW	$14,FLYDAT		;FLYãƒ‡ãƒ¼ã‚¿ã‚¨ãƒªã‚¢ãƒã‚¤ãƒ³ã‚¿è¨­å®š &HC0
 	LD	$10,$31
 
-Y2:	PRE	IX,$14			;IX = FLYƒf[ƒ^ƒGƒŠƒAƒ|ƒCƒ“ƒ^
+Y2:	PRE	IX,$14			;IX = FLYãƒ‡ãƒ¼ã‚¿ã‚¨ãƒªã‚¢ãƒã‚¤ãƒ³ã‚¿
 
-	GRE	KY,$0			;KEYƒŒƒWƒXƒ^‚ð—”‚ÌŽí‚Æ‚·‚é
+	GRE	KY,$0			;KEYãƒ¬ã‚¸ã‚¹ã‚¿ã‚’ä¹±æ•°ã®ç¨®ã¨ã™ã‚‹
 	LD	$0,$31			;
 
-	LD	$11,(IX+$31)		;$11 = FLYÀ•W
+	LD	$11,(IX+$31)		;$11 = FLYåº§æ¨™
 	SBC	$28,$11			;
 	JR	C,NORE			;
 
 	LD	$0,2			;$0 = 2
 
-NORE:	GST	TM,$11			;$11 = (TM xor FLYƒJƒEƒ“ƒ^’l) and 5
+NORE:	GST	TM,$11			;$11 = (TM xor FLYã‚«ã‚¦ãƒ³ã‚¿å€¤) and 5
 	XR	$11,$13			;
 	AN	$11,5			;
 	JR	Z,ZIEL			;
-	LD	$0,$1			;$0 = $1(KEYƒR[ƒh)
+	LD	$0,$1			;$0 = $1(KEYã‚³ãƒ¼ãƒ‰)
 
-ZIEL:	AN	$0,2			;BIT<1>Žæ‚èo‚µ(0 or 2)
-	LD	$1,(IX+$31)		;$1 = FLYÀ•W
-	XRC	$1,255			;FLY ”j‰ó‚³‚ê‚Ä‚¢‚é?
-	JR	Z,Y3			;ŽŸ‚ÌFLYˆ—‚Ö
+ZIEL:	AN	$0,2			;BIT<1>å–ã‚Šå‡ºã—(0 or 2)
+	LD	$1,(IX+$31)		;$1 = FLYåº§æ¨™
+	XRC	$1,255			;FLY ç ´å£Šã•ã‚Œã¦ã„ã‚‹?
+	JR	Z,Y3			;æ¬¡ã®FLYå‡¦ç†ã¸
 
 	LD	$10,$30			;$10 = 1
-	SBC	$1,100			;FLYÀ•W < 100 ?
+	SBC	$1,100			;FLYåº§æ¨™ < 100 ?
 	JR	NC,Y4			;
-	AD	(IX+$31),$0		;FLYÀ•WXV+2(‚Ü‚½‚Í0)
+	AD	(IX+$31),$0		;FLYåº§æ¨™æ›´æ–°+2(ã¾ãŸã¯0)
 
 Y4:	LD	$0,$30			;$0 = 1
-	ANC	$1,255			;FLY‰æ–Ê’[($1 = 255) ?
+	ANC	$1,255			;FLYç”»é¢ç«¯($1 = 255) ?
 	JR	Z,Y5			;YES --> Y5
-	SB	(IX+$31),$0		;FLYÀ•WXV-2(‚Ü‚½‚Í0)
+	SB	(IX+$31),$0		;FLYåº§æ¨™æ›´æ–°-2(ã¾ãŸã¯0)
 
-Y5:	LD	$1,(IX+$30)		;$1 = FLYƒXƒe[ƒ^ƒX
-	ANC	$1,255			;FLY”j‰ó
+Y5:	LD	$1,(IX+$30)		;$1 = FLYã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
+	ANC	$1,255			;FLYç ´å£Š
 	JR	Z,B3			;
 	SB	(IX+$30),$0		;
 
-B3:	GST	TM,$0			;$0 = TMƒŒƒWƒXƒ^
+B3:	GST	TM,$0			;$0 = TMãƒ¬ã‚¸ã‚¹ã‚¿
 	XR	$0,$8			;
 	AN	$0,$30			;
 	BIU	$0			;
-	LD	$1,(IX+$30)		;$1 = FLYƒXƒe[ƒ^ƒX
+	LD	$1,(IX+$30)		;$1 = FLYã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
 	SBC	$1,15			;$1 > 15
 	JR	NC,B2			;
 	AD	(IX+$30),$0		;
@@ -496,51 +496,51 @@ B2:	LDW	$2,($14)		;
 	LD	$12,255			;
 	CAL	SHAPE			;
 
-Y3:	ADW	$14,$30			;FLYƒ[ƒNƒAƒhƒŒƒXXV
+Y3:	ADW	$14,$30			;FLYãƒ¯ãƒ¼ã‚¯ã‚¢ãƒ‰ãƒ¬ã‚¹æ›´æ–°
 	ADW	$14,$30			;
 
-	SB	$13,$30			;FLYƒJƒEƒ“ƒg -1
+	SB	$13,$30			;FLYã‚«ã‚¦ãƒ³ãƒˆ -1
 	JR	NZ,Y2
 
-	ANC	$10,$30			;FLYŽc‹@‚È‚µ
-	JR	Z,SSH			;FLYƒ[ƒNƒf[ƒ^‚ð‰Šú‰»‚·‚é
+	ANC	$10,$30			;FLYæ®‹æ©Ÿãªã—
+	JR	Z,SSH			;FLYãƒ¯ãƒ¼ã‚¯ãƒ‡ãƒ¼ã‚¿ã‚’åˆæœŸåŒ–ã™ã‚‹
 	RTN
 
 ;-----------------------------------------------------
-; FLYÀ•W‰Šú‰»
+; FLYåº§æ¨™åˆæœŸåŒ–
 ;-----------------------------------------------------
-SSH:	PRE	IX,FLYDAT		;FLYƒ[ƒNæ“ªƒ|ƒCƒ“ƒ^Ý’è
-	LD	$10,16			;ƒ[ƒNƒoƒCƒg”=16
+SSH:	PRE	IX,FLYDAT		;FLYãƒ¯ãƒ¼ã‚¯å…ˆé ­ãƒã‚¤ãƒ³ã‚¿è¨­å®š
+	LD	$10,16			;ãƒ¯ãƒ¼ã‚¯ãƒã‚¤ãƒˆæ•°=16
 
-SSH1:	LD	$0,(IX+16)		;‚PƒoƒCƒg“]‘—
+SSH1:	LD	$0,(IX+16)		;ï¼‘ãƒã‚¤ãƒˆè»¢é€
 	STI	$0,(IX+$31)		;
 
-	SB	$10,$30			;“]‘—I—¹
+	SB	$10,$30			;è»¢é€çµ‚äº†
 	JR	NZ,SSH1
 	RTN
 
 ;-----------------------------------------------------
-; FLY•\Ž¦ˆ—
+; FLYè¡¨ç¤ºå‡¦ç†
 ;-----------------------------------------------------
 SHAPE:	LD	$9,$31			;$9 = 0
 
-	XRC	$2,255			;ˆ——v‹‚ ‚è
+	XRC	$2,255			;å‡¦ç†è¦æ±‚ã‚ã‚Š
 	JR	Z,NOSH			;
 
-	LD	$0,$3			;$0 = FLYƒXƒe[ƒ^ƒX(YÀ•W)
-	AN	$0,7			;ƒ}ƒXƒN(07h)
+	LD	$0,$3			;$0 = FLYã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹(Yåº§æ¨™)
+	AN	$0,7			;ãƒžã‚¹ã‚¯(07h)
 
-	AN	$2,127			;FLY XÀ•Wƒ}ƒXƒN(7fh)
-	LD	$1,$3			;$1 = FLYƒXƒe[ƒ^ƒX
-	PRE	IX,LEDTP-1		;LCD‰æ–Êæ“ªÀ•WƒZƒbƒg(&H6200)
+	AN	$2,127			;FLY Xåº§æ¨™ãƒžã‚¹ã‚¯(7fh)
+	LD	$1,$3			;$1 = FLYã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
+	PRE	IX,LEDTP-1		;LCDç”»é¢å…ˆé ­åº§æ¨™ã‚»ãƒƒãƒˆ(&H6200)
 
-S1:	ANC	$1,&H18			;ƒXƒe[ƒ^ƒX BIT<4>=0 and BIT<0>=0 ?
+S1:	ANC	$1,&H18			;ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ BIT<4>=0 and BIT<0>=0 ?
 	JR	Z,S2			;
 
-	LDI	$4,(IX+191)		;‰æ–ÊÀ•WXV(IX=IX+192)
-	SB	$1,8,JR S1		;ƒXƒe[ƒ^ƒXXV(-8)
+	LDI	$4,(IX+191)		;ç”»é¢åº§æ¨™æ›´æ–°(IX=IX+192)
+	SB	$1,8,JR S1		;ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹æ›´æ–°(-8)
 
-S2:	LDI	$4,(IX+$2)		;FLY•\Ž¦
+S2:	LDI	$4,(IX+$2)		;FLYè¡¨ç¤º
 	PRE	IZ,FLYG			;
 	LD	$4,5
 S3:	LD	$6,(IZ+$4)
@@ -564,7 +564,7 @@ S5:	LD	$8,(IX+$31)		;
 	SBC	$8,&HAA
 	JR	NZ,SHA1
 
-	LD	$12,15			;FLY”j‰óƒZƒbƒg
+	LD	$12,15			;FLYç ´å£Šã‚»ãƒƒãƒˆ
 	LD	$9,255			;
 	ST	$9,($14)		;
 
@@ -579,34 +579,34 @@ SHA1:	XR	$8,$5
 NOSH:	RTN
 
 ;-----------------------------------------------------
-; BOMBˆ—
+; BOMBå‡¦ç†
 ;-----------------------------------------------------
 BOMB:	LDW	$0,BOMBWK		;FLYDATA+&H20;&H73E0
-	AD	$21,$30			;FLYƒJƒEƒ“ƒgXV
-	LD	$2,8			;BOMBŒÂ”(MAX15)
+	AD	$21,$30			;FLYã‚«ã‚¦ãƒ³ãƒˆæ›´æ–°
+	LD	$2,8			;BOMBå€‹æ•°(MAX15)
 
-B1:	LDW	$6,($0)			;BOMBÀ•W“Ç‚Ýž‚Ý
-	ANC	$6,255			;‰æ–Ê’[‚Å–³‚¯‚ê‚ÎA•`‰æˆ—(B9)‚Ö
+B1:	LDW	$6,($0)			;BOMBåº§æ¨™èª­ã¿è¾¼ã¿
+	ANC	$6,255			;ç”»é¢ç«¯ã§ç„¡ã‘ã‚Œã°ã€æç”»å‡¦ç†(B9)ã¸
 	JR	NZ,B9			;
 
-	LDW	$3,FLYDAT		;FLYÀ•WŽæ‚èž‚Ý(&H73C0)
-	LD	$5,$21			;FLYƒJƒEƒ“ƒg’l‚ð‘ã“ü
-	AD	$21,$30			;+1iƒJƒEƒ“ƒgXV)
+	LDW	$3,FLYDAT		;FLYåº§æ¨™å–ã‚Šè¾¼ã¿(&H73C0)
+	LD	$5,$21			;FLYã‚«ã‚¦ãƒ³ãƒˆå€¤ã‚’ä»£å…¥
+	AD	$21,$30			;+1ï¼ˆã‚«ã‚¦ãƒ³ãƒˆæ›´æ–°)
 	AN	$5,7			;$5 = $5 MOD 7
 	BIU	$5			;*2
 	OR	$3,$5			;&H73C0+(0,2,4,..,14)
-	LDW	$3,($3)			;FLYÀ•W“Ç‚Ýž‚Ý
+	LDW	$3,($3)			;FLYåº§æ¨™èª­ã¿è¾¼ã¿
 
-	SBC	$3,255			;FLY”j‰ó‚È‚çAŽŸ‚ÌBOMBˆ—‚Ö
+	SBC	$3,255			;FLYç ´å£Šãªã‚‰ã€æ¬¡ã®BOMBå‡¦ç†ã¸
 	JR	Z,B8			;
 
 	OR	$3,$30			;$3 = $3 or 1
-	STW	$3,($0)			;ƒ[ƒNƒAƒŠƒA“à—eXV
-	LDW	$6,$3			;XV‚µ‚½À•W‚ð—^‚¦‚é
+	STW	$3,($0)			;ãƒ¯ãƒ¼ã‚¯ã‚¢ãƒªã‚¢å†…å®¹æ›´æ–°
+	LDW	$6,$3			;æ›´æ–°ã—ãŸåº§æ¨™ã‚’ä¸Žãˆã‚‹
 
-B9:	LD	$3,$7			;BOMB•\Ž¦ˆ—
+B9:	LD	$3,$7			;BOMBè¡¨ç¤ºå‡¦ç†
 	PRE	IX,LEDTP-1		;&H6200
-	LDI	$8,(IX+$6)		;BOMBÀ•Wƒf[ƒ^“Ç‚Ýž‚Ý
+	LDI	$8,(IX+$6)		;BOMBåº§æ¨™ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
 	LD	$6,128			;
 
 B4:	AN	$3,7			;
@@ -617,7 +617,7 @@ B4:	AN	$3,7			;
 B12:	SBC	$7,30			;
 	JR	NZ,B6			;
 
-	LD	$6,7			;BOMB”­ŽË‰¹
+	LD	$6,7			;BOMBç™ºå°„éŸ³
 	CAL	SB			;
 
 B6:	AN	$7,&H18			;
@@ -638,93 +638,93 @@ B10:	LDW	$6,($0)
 	LD	$3,$31
 	ST	$3,(IX+2)
 
-	SB	$6,$28			;SHIP”j‰ó?
+	SB	$6,$28			;SHIPç ´å£Š?
 	SB	$6,9			;
 	JR	NC,B11			;NO-->B11
-	LD	$28,255			;SHIP”j‰óƒZƒbƒg
+	LD	$28,255			;SHIPç ´å£Šã‚»ãƒƒãƒˆ
 
-B11:	XRW	$6,$6			;BOMBƒ[ƒNÁ–Å
+B11:	XRW	$6,$6			;BOMBãƒ¯ãƒ¼ã‚¯æ¶ˆæ»…
 	STW	$6,($0)			;
 
-B8:	ADW	$0,$30			;ƒ[ƒNƒAƒhƒŒƒXXV
+B8:	ADW	$0,$30			;ãƒ¯ãƒ¼ã‚¯ã‚¢ãƒ‰ãƒ¬ã‚¹æ›´æ–°
 	ADW	$0,$30			;
 
-	SB	$2,$30			;BOMB” -1
+	SB	$2,$30			;BOMBæ•° -1
 	JP	NC,B1
 	RTN
 
 ;-----------------------------------------------------
-; BOMB—p‰¹‚¾‚µˆ—
+; BOMBç”¨éŸ³ã ã—å‡¦ç†
 ;-----------------------------------------------------
-SB:	LD	$12,3			;‰¹o‚µˆ—
+SB:	LD	$12,3			;éŸ³å‡ºã—å‡¦ç†
 SB1:	GPO	$13			;
-	XR	$13,192			;‰¹‚Ìó‘Ô‚ð”½“]‚·‚é
+	XR	$13,192			;éŸ³ã®çŠ¶æ…‹ã‚’åè»¢ã™ã‚‹
 	PST	PD,$13			;
-	SB	$12,$30			;Ý’è‚³‚ê‚½‰ñ”•ªAŒJ‚è•Ô‚·
+	SB	$12,$30			;è¨­å®šã•ã‚ŒãŸå›žæ•°åˆ†ã€ç¹°ã‚Šè¿”ã™
 	JR	NZ,SB1			;
 	RTN
 
 ;-----------------------------------------------------
-; SCORE•\Ž¦
-; BANK2æ“ª‚É‚ ‚éFONTƒf[ƒ^‚ðŽg‚Á‚Ä“¾“_‚ð•\Ž¦‚·‚é
-; “ü—Í IZ=LCD•\Ž¦ŠJŽnƒAƒhƒŒƒX
+; SCOREè¡¨ç¤º
+; BANK2å…ˆé ­ã«ã‚ã‚‹FONTãƒ‡ãƒ¼ã‚¿ã‚’ä½¿ã£ã¦å¾—ç‚¹ã‚’è¡¨ç¤ºã™ã‚‹
+; å…¥åŠ› IZ=LCDè¡¨ç¤ºé–‹å§‹ã‚¢ãƒ‰ãƒ¬ã‚¹
 ;-----------------------------------------------------
 NUM:
-	GST	UA,$2			;BANK•Û‘¶
-	PST	UA,&H65			;BANK 2Ý’è(IX)
-	LD	$3,4			;•\Ž¦Œ…Ý’è(5Œ…)
+	GST	UA,$2			;BANKä¿å­˜
+	PST	UA,&H65			;BANK 2è¨­å®š(IX)
+	LD	$3,4			;è¡¨ç¤ºæ¡è¨­å®š(5æ¡)
 LL:	
-	PRE	IX,&H10*6		;”ŽšFONTƒAƒhƒŒƒXæ“ªŽw’è
-	LD	$4,$1			;ÅãˆÊŒ…Žæ‚èo‚µ
+	PRE	IX,&H10*6		;æ•°å­—FONTã‚¢ãƒ‰ãƒ¬ã‚¹å…ˆé ­æŒ‡å®š
+	LD	$4,$1			;æœ€ä¸Šä½æ¡å–ã‚Šå‡ºã—
 	AN	$4,&HF0			;
 
-	BID	$4			;ƒtƒHƒ“ƒgƒAƒhƒŒƒXŒvŽZ
+	BID	$4			;ãƒ•ã‚©ãƒ³ãƒˆã‚¢ãƒ‰ãƒ¬ã‚¹è¨ˆç®—
 	LD	$5,$4			;
 	BID	$5			;
 	BID	$5			;
 	SB	$4,$5			;
 
-	LDM	$5,(IX+$4),6		;ƒtƒHƒ“ƒg•\Ž¦
+	LDM	$5,(IX+$4),6		;ãƒ•ã‚©ãƒ³ãƒˆè¡¨ç¤º
 	STIM	$5,(IZ+$31),6		;
 
-	DIUW	$0			;Œ…‰º‚°
+	DIUW	$0			;æ¡ä¸‹ã’
 	SB	$3,$30			;
 	JR	NC,LL			;
 
-	PST	UA,$2			;BANK‚ðŒ³‚É–ß‚·
+	PST	UA,$2			;BANKã‚’å…ƒã«æˆ»ã™
 	RTN
 
 ;-----------------------------------------------------
-; PRINT ˆ—
-; IZ‚©‚çŽn‚Ü‚éLCD‰æ–Êã‚É($0)‚ÅŽw’è‚³‚ê‚½•¶Žš—ñ‚ð•\Ž¦‚·‚éB
-; “ü—ÍF$0,$1=Žw’è•¶Žš—ñƒ|ƒCƒ“ƒ^
-;       $3=•¶Žš”½“](0ˆÈŠO:NORMAL¤0:”½“])
-;       IZ= LCD•\Ž¦ƒ|ƒCƒ“ƒ^
-; ”j‰ó‚³‚ê‚éƒŒƒWƒXƒ^ IZ,IX,$0`$8
+; PRINT å‡¦ç†
+; IZã‹ã‚‰å§‹ã¾ã‚‹LCDç”»é¢ä¸Šã«($0)ã§æŒ‡å®šã•ã‚ŒãŸæ–‡å­—åˆ—ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+; å…¥åŠ›ï¼š$0,$1=æŒ‡å®šæ–‡å­—åˆ—ãƒã‚¤ãƒ³ã‚¿
+;       $3=æ–‡å­—åè»¢(0ä»¥å¤–:NORMALï½¤0:åè»¢)
+;       IZ= LCDè¡¨ç¤ºãƒã‚¤ãƒ³ã‚¿
+; ç ´å£Šã•ã‚Œã‚‹ãƒ¬ã‚¸ã‚¹ã‚¿ IZ,IX,$0ã€œ$8
 ;-----------------------------------------------------
 PRINT:
 PRL:
-	LD	$4,($0)			;‚P•¶ŽšŽæ‚èo‚µ
-	AN	$4,$4			;NULL‚È‚çI—¹
+	LD	$4,($0)			;ï¼‘æ–‡å­—å–ã‚Šå‡ºã—
+	AN	$4,$4			;NULLãªã‚‰çµ‚äº†
 	JR	Z,PREND			;
 
-	SB	$4,&H20			;ƒLƒƒƒ‰ƒNƒ^ƒR[ƒh•â³
+	SB	$4,&H20			;ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ã‚³ãƒ¼ãƒ‰è£œæ­£
 
-	LD	$5,$31			;ƒtƒHƒ“ƒgƒAƒhƒŒƒXŒvŽZ
-	BIUW	$4			;*2(2”{)
+	LD	$5,$31			;ãƒ•ã‚©ãƒ³ãƒˆã‚¢ãƒ‰ãƒ¬ã‚¹è¨ˆç®—
+	BIUW	$4			;*2(2å€)
 	LDW	$6,$4			;
-	BIUW	$6			;*2(4”{)
-	ADW	$4,$6			;(6”{‚ðì¬)
-	PRE	IX,$4			;FONTƒAƒhƒŒƒXŽw’è
+	BIUW	$6			;*2(4å€)
+	ADW	$4,$6			;(6å€ã‚’ä½œæˆ)
+	PRE	IX,$4			;FONTã‚¢ãƒ‰ãƒ¬ã‚¹æŒ‡å®š
 
-	GST	UA,$2			;BANK•Û‘¶
-	PST	UA,&H65			;BANK 2Ý’è(IX)
-	LDM	$4,(IX+$31),6		;FONT“Ç‚Ýž‚Ý
-	PST	UA,$2			;BANK‚ðŒ³‚É–ß‚·
+	GST	UA,$2			;BANKä¿å­˜
+	PST	UA,&H65			;BANK 2è¨­å®š(IX)
+	LDM	$4,(IX+$31),6		;FONTèª­ã¿è¾¼ã¿
+	PST	UA,$2			;BANKã‚’å…ƒã«æˆ»ã™
 
-	STIM	$4,(IZ+$31),6		;FONT•\Ž¦
+	STIM	$4,(IZ+$31),6		;FONTè¡¨ç¤º
 
-	ADW	$0,$30			;•¶Žš—ñƒ|ƒCƒ“ƒ^XV
+	ADW	$0,$30			;æ–‡å­—åˆ—ãƒã‚¤ãƒ³ã‚¿æ›´æ–°
 	JR	PRL			;
 PREND:
 	RTN
@@ -737,20 +737,20 @@ PREND:
 	JR	RCS			;
 
 ;-----------------------------------------------------
-; BEEP”­¶
+; BEEPç™ºç”Ÿ
 ;-----------------------------------------------------
 @BEEP:
 	LDW	$2,BEEP			;BEEP
 	JR	RCS			;
 
 ;-----------------------------------------------------
-; LCDÄ•\Ž¦
+; LCDå†è¡¨ç¤º
 ;-----------------------------------------------------
 @DOTDS:
 	LDW	$2,DOTDS		;DISPLAY LCD
 
 ;-----------------------------------------------------
-; BIOSƒ‹[ƒ`ƒ“ŒÄ‚Ño‚µˆ—
+; BIOSãƒ«ãƒ¼ãƒãƒ³å‘¼ã³å‡ºã—å‡¦ç†
 ;-----------------------------------------------------
 RCS:	LDW	$0,BIOS2
 	PHSW	$1
@@ -758,14 +758,14 @@ RCS:	LDW	$0,BIOS2
 	JP	$2
 
 ;-----------------------------------------------------
-; ƒ[ƒN/•Ï”
+; ãƒ¯ãƒ¼ã‚¯/å¤‰æ•°
 ;-----------------------------------------------------
-SHIPNUM:DB	0			;SHIPŽc‹@”ƒ[ƒN
-SCORE:	DW	0			;SCOREƒf[ƒ^
-HISCORE:DW	0			;HI-SCOREƒf[ƒ^
+SHIPNUM:DB	0			;SHIPæ®‹æ©Ÿæ•°ãƒ¯ãƒ¼ã‚¯
+SCORE:	DW	0			;SCOREãƒ‡ãƒ¼ã‚¿
+HISCORE:DW	0			;HI-SCOREãƒ‡ãƒ¼ã‚¿
 
 ;-----------------------------------------------------
-; •\Ž¦•¶Žš—ñ
+; è¡¨ç¤ºæ–‡å­—åˆ—
 ;-----------------------------------------------------
 TITLE1:	DB	"## Cosmic Fly ##",0
 TITLE2:	DB	"Key Function",0
@@ -776,12 +776,12 @@ KEYTITLE:DB	"PUSH [EXE]",0
 HI:	DB	"HI-SC:",0
 SC:	DB	"SCORE:",0
 SH:	DB	"SHIP :",0
-SHIPCHR:DB	&H04,&H0C,&H1C,&H0C,&H04,&H00	;SHIPƒLƒƒƒ‰ƒNƒ^
+SHIPCHR:DB	&H04,&H0C,&H1C,&H0C,&H04,&H00	;SHIPã‚­ãƒ£ãƒ©ã‚¯ã‚¿
 
 ;-----------------------------------------------------
-; FLY & BOMB—p•\Ž¦ƒf[ƒ^/ƒ[ƒNƒGƒŠƒA
+; FLY & BOMBç”¨è¡¨ç¤ºãƒ‡ãƒ¼ã‚¿/ãƒ¯ãƒ¼ã‚¯ã‚¨ãƒªã‚¢
 ;-----------------------------------------------------
-;16ƒoƒCƒgƒAƒ‰ƒCƒ“ã‚Éƒf[ƒ^‚ðŠi”[‚·‚é•K—v‚ª‚ ‚é
+;16ãƒã‚¤ãƒˆã‚¢ãƒ©ã‚¤ãƒ³ä¸Šã«ãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´ã™ã‚‹å¿…è¦ãŒã‚ã‚‹
 GDATA:	ORG	(GDATA+16)#&HFFF0
 SHIPG:	DB	0,0,0,&H01,&H03,&H03,&H03,&H07,&H03,&H03,&H03,&H01,&H00
 FLYG:	DB	0,&HC0,&HD0,&H20,&HD0,&HC0,&H00,&H00,&H00
