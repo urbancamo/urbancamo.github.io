@@ -18,11 +18,11 @@
 
 The contents of the compressed file are as follows:
 
-| Online Viewable File        | Casio ASCII File             |   Purpose                                  |
+| Online Viewable File        | Casio ASCII File             | Purpose                                    |
 |:----------------------------|:-----------------------------|:-------------------------------------------|
 | [Readme.txt](Readme.md)     | [Readme.txt](Readme.txt)     | This file, document in English.            |
 | [ReadmeJ.txt](ReadmeJ.txt)  | [ReadmeJ.txt](ReadmeJ.txt)   | Document in Japanese.                      |
-| [Cosmic2.s](Cosmic2.md)     | [Cosmic2.s](Cosmic2.s)       | Source code of Cosmic Fly.                 |
+| [Cosmic2.s](Cosmic2.md)     | [Cosmic2.s](Cosmic2.s)       | Assembler source code of Cosmic Fly.       |
 | [clr.b](clr.md)             | [clr.b](clr.b)               | Expanded clear command for Vx-4/Fx-870p.   |
 | [CosmicV4.bas](CosmicV4.md) | [CosmicV4.bas](CosmicV4.bas) | Stand-alone distribution for Vx-4/Fx-870p. |
 
