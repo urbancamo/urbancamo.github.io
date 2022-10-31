@@ -11,6 +11,8 @@ I am a Certified Scrum Master.
 
 ### [Documentation for the ADIF Processor](adif-processor/adif-processor)
 
+### [Casio FX-850P/FX-880P Online Manual](casio-basic/doc/casio-fx850-owners-manual.md)
+
 ### [Developer Notes](devblog)
 
 ### [Retrochallenge 2021/10](rc2021_10)
