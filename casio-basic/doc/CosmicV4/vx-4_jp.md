@@ -1,4 +1,5 @@
 ### Cosmic Fly stand-alone version (for FX-870P/VX-4)
+…reproduced here from the original file: [http://luckleo.cocolog-nifty.com/pockecom/VX-4/HTML/issue/vx-4_issue-001_cosmic-fly.html](http://luckleo.cocolog-nifty.com/pockecom/VX-4/HTML/issue/vx-4_issue-001_cosmic-fly.html).
 
 Casio's Pocket Computer VX-4 and FX-870P games are almost non-existent on the internet. 
 
@@ -34,8 +35,8 @@ This time, through Mr. Jun Amano, Mr. Ao gave me permission to publish it here, 
 
 [Click here to download CosmicV4.zip](../../archives/CosmicV4.zip).
 
-The target machines are FX-870P and VX-4, but VX-4 that does not have 32KB and RP-8 and RP-33 that 
-do not have expanded memory are excluded . This is because the size of the executable program 
+The target machines are FX-870P and VX-4, but <span style="color:red;font-weight:bold;">VX-4 that does not have 32KB and RP-8 and RP-33 that 
+do not have expanded memory are excluded</span>. This is because the size of the executable program 
 is a little less than 6KB, so the VX-4, which has only 8KB of RAM, cannot even load files with `F.COM`.
 
 The operation procedure up to the game is as follows.
