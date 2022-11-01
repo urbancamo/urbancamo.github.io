@@ -5,9 +5,9 @@ Casio's Pocket Computer VX-4 and FX-870P games are almost non-existent on the in
 
 The games for the PC-G850 series, which is made by Sharp and is a school education model like the VX-4, 
 are in contrast to the flood of games on the internet. This situation is the reason why I opened 
-the "Casio VX-4 (Pocket Computer) page", but the lack of information about the VX-4 is a problem. However,
+the “Casio VX-4 (Pocket Computer) page”, but the lack of information about the VX-4 is a problem. 
 
-Jun Amano's "Casio PB-1000 forever ! " It felt like a high threshold for beginners.
+However, Jun Amano's “Casio PB-1000 forever!” It felt like a high threshold for beginners.
 
  - After installing the file management utility "VX-Menu" (for PB-1000), transfer the game file to 
    the pocket computer, save it, and run it.
@@ -21,7 +21,7 @@ but it is far from the situation where a person unfamiliar with VX-4 loads and r
 
 Therefore, although the memory usage efficiency is poor, it would be convenient if there was a 
 standalone version that automatically loads and executes machine language by embedding a machine 
-language program in a BASIC program with a DATA statement, which is one of the common methods 
+language program in a BASIC program with a `DATA` statement, which is one of the common methods 
 for Pocket Computers.
 
 I made a standalone version of Mr. Ao's "Cosmic Fly" (all machine language). 
@@ -35,15 +35,17 @@ This time, through Mr. Jun Amano, Mr. Ao gave me permission to publish it here, 
 
 [Click here to download CosmicV4.zip](../../archives/CosmicV4.zip).
 
+The [README is here](Readme.md).
+
 The target machines are FX-870P and VX-4, but <span style="color:red;font-weight:bold;">VX-4 that does not have 32KB and RP-8 and RP-33 that 
 do not have expanded memory are excluded</span>. This is because the size of the executable program 
 is a little less than 6KB, so the VX-4, which has only 8KB of RAM, cannot even load files with `F.COM`.
 
 The operation procedure up to the game is as follows.
-1.	Transfer `CosmicV4.bas` in `CosmicV4.zip` (and `clr.b` if the extension **CLEAR** for securing the machine 
-language area is not installed in the pocket computer) from the PC to one of the program areas 
-P0 to P9 of the pocket computer. increase. Any transfer software on the PC side is fine,
-but PB-1000 Data Communicator32 ver.1.31 is convenient.
+1. Transfer `CosmicV4.bas` in `CosmicV4.zip` (and `clr.b` if the extension **CLEAR** for securing the machine 
+   language area is not installed in the pocket computer) from the PC to one of the program areas 
+   P0 to P9 of the pocket computer. increase. Any transfer software on the PC side is fine,
+   but PB-1000 Data Communicator32 ver.1.31 is convenient.
 2. On the pocket computer side, load with F.COM. In the case of RS-232C, it is necessary to match 
    the communication conditions of both.
 3. Allocate a 1520-byte machine language area with extended **CLEAR**. In the case of `clr.b`, if you run it first,
@@ -60,9 +62,8 @@ but PB-1000 Data Communicator32 ver.1.31 is convenient.
    - However, if you want to secure the user area, delete CosmicV4.bas with F.COM's **NEW** command. 
      Even in that case, Cosmic Fly's machine language program remains in the machine language area, 
      so Cosmic Fly can be started by executing **MODE110(7376)**[EXE]
-
-4.	The game is an orthodox invader type game. Move the SPACE SHIP left and right to avoid the balls 
-    that the enemy's Cosmic Fly shoots and SHOT to destroy the Cosmic Fly. Key operations are
+5. The game is an orthodox invader type game. Move the SPACE SHIP left and right to avoid the balls 
+   that the enemy's Cosmic Fly shoots and SHOT to destroy the Cosmic Fly. Key operations are
     
     [EXE] ... start game,
     [BRK] ... end game,
