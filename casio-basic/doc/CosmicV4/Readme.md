@@ -7,13 +7,13 @@
 ---------------------------------------------------------------
  
  - rewritten by BLUE <qze12045@nifty.com> on 2003-12-04 for the Casio FX-870P/VX-4/VX-3 systems.
- - [http://www.geocities.co.jp/SiliconValley/2104/](http://www.geocities.co.jp/SiliconValley/2104/)
+ - [http://hd61700.yukimizake.net/](http://hd61700.yukimizake.net/)
 
 ---------------------------------------------------------------
 
  - quick loader rewritten by 123 for readability, usability and portability
  - [http://luckleo.cocolog-nifty.com/pockecom/VX-4/HTML/vx-4_jp.html](http://luckleo.cocolog-nifty.com/pockecom/VX-4/HTML/vx-4_jp.html)
-
+ - see this cached [English translation]
 ---------------------------------------------------------------
 
 The contents of the compressed file are as follows:
