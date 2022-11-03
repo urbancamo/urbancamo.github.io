@@ -46,7 +46,7 @@ The operation procedure up to the game is as follows.
    language area is not installed in the pocket computer) from the PC to one of the program areas 
    P0 to P9 of the pocket computer. increase. Any transfer software on the PC side is fine,
    but PB-1000 Data Communicator32 ver.1.31 is convenient.
-2. On the pocket computer side, load with F.COM. In the case of RS-232C, it is necessary to match 
+2. On the pocket computer side, load with `F.COM`. In the case of RS-232C, it is necessary to match 
    the communication conditions of both.
 3. Allocate a 1520-byte machine language area with extended **CLEAR**. In the case of `clr.b`, if you run it first,
    `MODE110(&H18F5)` is displayed, so execute **MODE110(&H18F5),1520** [EXE] in command mode to secure the machine 
@@ -64,13 +64,13 @@ The operation procedure up to the game is as follows.
      so Cosmic Fly can be started by executing **MODE110(7376)**[EXE]
 5. The game is an orthodox invader type game. Move the SPACE SHIP left and right to avoid the balls 
    that the enemy's Cosmic Fly shoots and SHOT to destroy the Cosmic Fly. Key operations are
-    
+``` 
     [EXE] ... start game,
     [BRK] ... end game,
     [ 4 ] ... move SHIP left,
     [ 6 ] ... move SHIP right,
     [ 0 ] ... shot Launch
-
+```
 Also, as an important note, if you run a C program in C language mode, the data in the machine language area 
 will be destroyed, so the Cosmic Fly machine language program loaded in the machine language area will also be 
 destroyed. It will be. Even in such a case, `CosmicV4.bas` has a simple check function that automatically
