@@ -1,4 +1,4 @@
-## LEFG$
+## LEFT$
 
 ### Purpose
 Returns a substring of a specified length from the left of a string.
