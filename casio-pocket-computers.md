@@ -64,7 +64,7 @@ to Markdown format for easy reference.
 ### [Retrochallenge October 2022 Entry](casio-basic/rc2022_10.md)
 
 My retrochallenge focussed on developing the [Converter](https://github.com/urbancamo/casio-basic),
-installing a modern day 32KB RAM expansion, the [RP-33](https://www.soigeneris.com/casio-rp-33-module-redux).
+I also installed a modern day 32KB RAM expansion, the [RP-33](https://www.soigeneris.com/casio-rp-33-module-redux) into my VX-4.
 
 ## Casio Pocket Computer Links
 
