@@ -156,7 +156,7 @@ All commands are reserved words.
 | `<>`, `><`  | Does not equal          |
 | `<`         | Less than               |
 | `>`         | Greater than            |
-| `=<`, `<=`  | Lesss than or equal to  |
+| `=<`, `<=`  | Less than or equal to   |
 | `=>`, '`>=` | Greater than equal to ~ |
 
 ### Logical Operators
