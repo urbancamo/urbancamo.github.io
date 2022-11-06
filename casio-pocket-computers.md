@@ -9,6 +9,8 @@ an emulator for these machines which would be a great help in writing BASIC prog
 So I've set myself a mission to try and get to that point, with the aid of the
 [Retrochallenge Competition](https://www.retrochallenge.org) to spur me on.
 
+![Casio VX4](casio-basic/doc/images/Casio-VX-4.jpg)
+
 ## My Applications & Documentation
 
 ### [A Converter between Casio ASCII and Unicode](https://github.com/urbancamo/casio-basic)
