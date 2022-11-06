@@ -32,7 +32,7 @@ Here's a short example from
 
 This is a Scala Application to convert back and forth between Casio ASCII and Unicode.
 The documentation includes a [reference card](casio-basic/doc/casio-ascii-to-unicode-converter.md)
-showing the mapping between Unicode and Casio ASCII.
+and a [cheat sheet](casio-basic/doc/casio-ascii-cheat-sheet.md) showing the mapping between Unicode and Casio ASCII.
 
 
 | HEX   | 0               | 1     | 2     | 3    | 4   | 5   | 6     | 7   | 8   | 9   | A   | B   | C   | D   | E   | F   |
