@@ -11,7 +11,7 @@
 | [PASS](commands/PASS.md)       | [ON GOTO](commands/ON_GOTO.md)           | [BEEP](commands/BEEP.md)                   |
 | [NEW (ALL)](commands/NEW.md)   | [ON GOSUB](commands/ON_GOSUB.md)         | [INPUT](commands/INPUT.md)                 |
 | [CLEAR](commands/CLEAR.md)     | [IF~THEN~ELSE](commands/IF_THEN_ELSE.md) | [INKEY$](commands/INKEY_STRING.md)         |
-| [FRE](commands/FRE.md)         | IF~GOTO~ELSE                             | [INPUT$](commands/INPUT_STRING.md)         |
+| [FRE](commands/FRE.md)         | [IF~GOTO~ELSE](commands/IF_THEN_ELSE.md) | [INPUT$](commands/INPUT_STRING.md)         |
 | [EDIT](commands/EDIT.md)       | [REM](commands/REM.md)                   | [ERASE](commands/ERASE.md)                 |
 | [VARLIST](commands/VARLIST.md) | [LET](commands/LET.md)                   | [PEEK](commands/PEEK.md)                   |
 | [RUN](commands/RUN.md)         | [DATA](commands/DATA.md)                 | [POKE](commands/POKE.md)                   |
