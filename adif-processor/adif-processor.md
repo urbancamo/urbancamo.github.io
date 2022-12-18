@@ -1,32 +1,6 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
-
-***
-## Release History
-
-| Date        | New Features                                                                                                                                                          |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 07-SEP-2021 | Support for Castles on the Air Activity References                                                                                                                    |
-| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                                                                                             |
-| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                                                                                         |
-| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                                                                                             |
-| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                                                                                       |
-| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                                                                                    |
-| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file                                                                         |
-| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                                                                                       |
-| 13-FEB-2022 | Support for Global Mountain Activity References                                                                                                                       |
-| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zipped KML files to save space                                                                     |
-| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                    |
-| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                        |
-| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  |
-| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                               |
-| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
-| 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
-| 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
-| 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                        |
-| 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                      |
-| 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                           |
-                                                                                                                                                        
+                                                                                                                                                      
 
 ## Introduction
 
@@ -34,10 +8,17 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 
 The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
 that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
-[SOTA](https://www.sotadata.org.uk/en/) CSV log files are also supported.
+[SOTA](https://www.sotadata.org.uk/en/) CSV log files can also be used.
 
-The processor looks for specially formatted comments in your input file which are transposed into the 
-correct ADIF fields in your output file.
+As well as allowing you to view and explore your contacts in Google Earth, you will be able to:
+- see a [Markdown](https://www.markdownguide.org/) or text table of contacts.
+- use the output ADIF file which contains QRZ.com data, accurate contact distances and fields populated from comments in the input file.
+- print [QSL labels](./qsl-labels/qsl-labels.md).
+
+One of the benefits of using the ADIF Processor before uploading/storing your ADIF file 
+is detecting errors in callsigns and activity references (e.g. POTA or SOTA references).
+
+A high-level overview of the process is shown below:
 
 ```
             ┌─────────────┐
@@ -57,15 +38,14 @@ Augmented  Google   Markdown  QSL Labels
 ```
 
 The processor also produces a [Markdown](https://www.markdownguide.org/) format contact table 
-(for pasting into a reflector) and can generate labels for QSL cards.
+(for pasting into a reflector) and can [generate labels for QSL cards](./qsl-labels/qsl-labels.md).
 
 To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
 _Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
 
 In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
-![](images/google-earth-project.png)
-
+![Google Earth Contacts Sample](images/google-earth-project.png)
 _Desktop/Browser Google Earth Project Menu_
 
 I recommended following the Quick Start section below to get a feel for the tool, then have a look at 
@@ -75,19 +55,19 @@ the advanced options based on your requirements.
 
 Select your ADIF or SOTA CSV file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="./images/adif-processor-upload-form.png">![](images/upload-form.png)
+<a href="./images/adif-processor-upload-form.png">![Upload Form](images/upload-form.png)
 _[Simple Use Case](images/upload-form.png)_
 
 You will be presented with four files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
 - an enhanced ADIF file
 - a contact list in either [Markdown](https://www.markdownguide.org/) or plain text format
-- a QSL label file
+- a [QSL label file](./qsl-labels/qsl-labels.md)
 
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
-<a href="./images/results.png">![](images/results.png)
+<a href="./images/results.png">![Sample Results](images/results.png)
 _[Example Result Form](images/results.png)_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
@@ -609,17 +589,17 @@ that is hosted as an AWS Elastic Beanstalk project.
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="./images/sample1.png">![](images/sample1.png)
+<a href="./images/sample1.png">![Sample Google Earth Image 1](images/sample1.png)
 
-<a href="./images/sample2.png">![](images/sample2.png)
+<a href="./images/sample2.png">![Sample Google Earth Image 2](images/sample2.png)
 
-<a href="./images/sample3.png">![](images/sample3.png)
+<a href="./images/sample3.png">![Sample Google Earth Image 3](images/sample3.png)
 
-<a href="./images/sample4.png">![](images/sample4.png)
+<a href="./images/sample4.png">![Sample Google Earth Image 4](images/sample4.png)
 
-<a href="./images/sample5.png">![](images/sample5.png)
+<a href="./images/sample5.png">![Sample Google Earth Image 5](images/sample5.png)
 
-<a href="./images/sample6.png">![](images/sample6.png)
+<a href="./images/sample6.png">![Sample Google Earth Image 6](images/sample6.png)
 
 
 ## Example Markdown Contacts List
@@ -691,5 +671,33 @@ Here are some example Google Earth images from an [evening activation](https://r
 | 23:08 | [NW7E](https://qrz.com/db/NW7E)         | 20m  | SSB  | 57  | 54  | Michael   |      |                                                           |
 | 23:10 | [N1FSX](https://qrz.com/db/N1FSX)       | 20m  | SSB  | 57  | 42  | Chris     |      |                                                           |
 | 00:13 | [VE9RK](https://qrz.com/db/VE9RK)       | 20m  | SSB  | 59  | 59  | Richard   |      |                                                           |
+
+
+***
+## Release History
+
+| Date        | New Features                                                                                                                                                          |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 07-SEP-2021 | Support for Castles on the Air Activity References                                                                                                                    |
+| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                                                                                             |
+| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                                                                                         |
+| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                                                                                             |
+| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                                                                                       |
+| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                                                                                    |
+| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file                                                                         |
+| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                                                                                       |
+| 13-FEB-2022 | Support for Global Mountain Activity References                                                                                                                       |
+| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zipped KML files to save space                                                                     |
+| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                    |
+| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                        |
+| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  |
+| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                               |
+| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
+| 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
+| 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
+| 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                        |
+| 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                      |
+| 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                           |
+| 18-DEC-2022 | Version 1.0.71 - Documentation refresh                                                                                                                                |
 
 Documentation Version: 2022-12-18
