@@ -1,6 +1,7 @@
 
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
-![](images/image-cropped-691-slice.png)
+![Cropped Google Earth contacts](images/image-cropped-691-slice.png)
+
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
 
 ## Introduction
