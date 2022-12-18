@@ -1,7 +1,8 @@
 # QSL Labels
 
 ## Introduction
-The ADIF Processor includes rudimentary support for printing QSL 
+
+The ADIF Processor includes simple support for printing QSL 
 card labels. I added this as I found existing logging program support
 for printing labels quite difficult to use, and this enables me to 
 print labels without needing to import contacts into a logging program.
@@ -12,6 +13,7 @@ The process is as follows:
  - download the QSL label file.
  - paste the QSL label file into Microsoft Word, or another word processor.
  - print the labels.
+ - save the QSL'd contacts list.
 
 I use A4 Avery Labels code is J8159/L7159, the labels are 
 63.5mm X 33.9mm and there are 24 labels per sheet.
@@ -22,6 +24,9 @@ This uses Courier 9 point font.
 An example QSL label output file is:
 
 ![QSL Labels Sample](../images/qsl-labels.png)
+
+QSL labels are generated for any station that has bureau mentioned in their 
+QSL information and are not in the exclusion list.
 
 When this is loaded into Word is should look like this:
 
@@ -89,12 +94,33 @@ Format:
 └────────────────────────────┘
 ```
 
+The _QSL via..._ line is as specified by the station in
+their QRZ.com information.
+
+_Your activity reference_ is pulled from either your `MY_SOTA_REF`, `MY_POTA_REF` or 
+`MY_SIG_INFO/MY_SIG_REF` ADIF fields.
+
+_Your QSL message_ is generated from the ADIF `QSLMSG` field 
+(in Fast Log Entry add a `qslmsg` entry).
+
+### Excluding stations from QSL Label generation
+
+For stations you have frequent contacts with you might want to exclude
+generating labels. Do this by specifying a 
+_Don't QSL Callsign List_ on the Options panel of the main ADIF Processor
+form. Any stations in this list will not have a QSL label generated.
+
+If you want to build up a list of stations that you have already QSL'd
+then add the _QSL'd Contacts_ list on the results form to your 
+exclusion list. It  doesn't matter if a station appears more than 
+once. Spaces separate stations with an optional comment.
+
 ## Limitations
 
 It's worth noting the limitations:
 
-- I only support 24 labels per sheet with 63.5mm X 33.9mm label dimensions
-- This is for bureau contacts. As the processor loads QRZ.com information 
+- I only support 24 labels per sheet with 63.5mm X 33.9mm label dimensions.
+- This is strictly for bureau contacts. As the ADIF Processor loads QRZ.com information 
   for each contact it looks at the qsl information and determines if bureau
   is mentioned. If it is a label is generated.
 - If you have more than one contact for a station separate labels are generated.
