@@ -1,10 +1,9 @@
+
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
+![](images/image-cropped-691-slice.png)
 Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
-                                                                                                                                                      
 
 ## Introduction
-
-![](images/image-cropped-691-slice.png)
 
 The [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/) is an online application
 that visualizes amateur radio contacts from an ADIF log file using [Google Earth](https://earth.google.com).
