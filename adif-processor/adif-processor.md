@@ -18,13 +18,15 @@ Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adi
 | 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zipped KML files to save space                                                                     |
 | 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                    |
 | 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                        |
-| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  | 
+| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  |
 | 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                               |
 | 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
 | 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
 | 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
 | 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                        |
 | 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                      |
+| 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                           |
+                                                                                                                                                        
 
 ## Introduction
 
@@ -37,14 +39,32 @@ that visualizes amateur radio contacts from an ADIF log file using [Google Earth
 The processor looks for specially formatted comments in your input file which are transposed into the 
 correct ADIF fields in your output file.
 
-The processor also produces [Markdown](https://www.markdownguide.org/) contact lists.
+```
+            ┌─────────────┐
+            │ ADIF or CSV │
+            └─────────────┘
+                   ↓
+ ┌───────────────────────────────────┐   ┌────────┐
+ │               ADIF                │ ← │ Form   │
+ │             Processor             │   │ Options│
+ └───────────────────────────────────┘   └────────┘
+    ↓         ↓         ↓         ↓
+┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐
+│ ADIF │  │ KML  │  │  MD  │  │ TXT  │
+└──────┘  └──────┘  └──────┘  └──────┘
+Augmented  Google   Markdown  QSL Labels
+  ADIF     Earth     Table   for Printing
+```
+
+The processor also produces a [Markdown](https://www.markdownguide.org/) format contact table 
+(for pasting into a reflector) and can generate labels for QSL cards.
 
 To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
 _Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
 
 In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
-![](images/img.png)
+![](images/google-earth-project.png)
 
 _Desktop/Browser Google Earth Project Menu_
 
@@ -53,16 +73,17 @@ the advanced options based on your requirements.
 
 ## Quick Start
 
-Select your ADIF file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
+Select your ADIF or SOTA CSV file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
 
-<a href="./images/adif-processor-upload-form.png">![](images/adif-processor-upload-form.png)
-_[Simple Use Case](images/adif-processor-upload-form.png)_
+<a href="./images/adif-processor-upload-form.png">![](images/upload-form.png)
+_[Simple Use Case](images/upload-form.png)_
 
-You will be presented with three files to download, as required:
+You will be presented with four files to download, as required:
 - a [Google Earth](https://earth.google.com) Project (KML) file.
 - an enhanced ADIF file
 - a contact list in either [Markdown](https://www.markdownguide.org/) or plain text format
-- 
+- a QSL label file
+
 Any processing errors are displayed in the `Errors` text box. 
 Any callsigns for which a location could not be determined are shown in the `Callsigns without Location` text box.
 
@@ -588,48 +609,87 @@ that is hosted as an AWS Elastic Beanstalk project.
 
 Here are some example Google Earth images from an [evening activation](https://reflector.sota.org.uk/t/sunset-and-dx-in-the-lake-district-does-it-get-any-better-than-this/26261) of SOTA Summit [Gummer's How G/LD-050](https://sotl.as/map/coordinates/54.312226,-2.989878/10.0#/summits/G/LD-050).
 
-<a href="./images/image2.jpg">![](images/image2.jpg)
+<a href="./images/sample1.png">![](images/sample1.png)
 
-<a href="./images/image0.jpg">![](images/image0.jpg)
+<a href="./images/sample2.png">![](images/sample2.png)
 
-<a href="./images/image1.jpg">![](images/image1.jpg)
+<a href="./images/sample3.png">![](images/sample3.png)
 
-<a href="./images/image3.jpg">![](images/image3.jpg)
+<a href="./images/sample4.png">![](images/sample4.png)
 
-<a href="./images/image4.jpg">![](images/image4.jpg)
+<a href="./images/sample5.png">![](images/sample5.png)
 
-<a href="./images/image5.jpg">![](images/image5.jpg)
+<a href="./images/sample6.png">![](images/sample6.png)
 
 
 ## Example Markdown Contacts List
 
-| DATE       | TIME  | CALLSIGN | FREQ    | BAND | MODE | RST | RSR | SOTA-TX  | SOTA-RX   | OPERATOR   | SIG  | REF      | COMMENT          | MHL    |
-|------------|-------|----------|---------|------|------|-----|-----|----------|-----------|------------|------|----------|------------------|--------|
-| 2021.08.01 | 09:30 | G6AEK/M  | 145.450 | 2m   | FM   | 59  | 59  | G/LD-050 |           | Molyneux   |      |          |                  | IO83lw |
-| 2021.08.01 | 09:32 | 2W1PJE/P | 145.450 | 2m   | FM   | 58  | 59  | G/LD-050 | GW/NW-015 | Peter      | SOTA | GW/NW-01 | SOTA: GW/NW-015  | IO82DS |
-| 2021.08.01 | 09:37 | M0YCJ/P  | 145.400 | 2m   | FM   | 55  | 57  | G/LD-050 | G/NP-010  | Colwny     | SOTA | G/NP-010 | SOTA: G/NP-010   | IO84VD |
-| 2021.08.01 | 09:57 | G0UOK/P  | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Dutton     | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
-| 2021.08.01 | 09:58 | M7SHZ/P  | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Sharon     | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
-| 2021.08.01 | 09:59 | G5ZX/P   | 145.400 | 2m   | FM   | 59  | 59  | G/LD-050 | G/NP-004  | Steve      | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
-| 2021.08.01 | 10:16 | MW7DTE/P | 145.475 | 2m   | FM   | 59  | 59  | G/LD-050 | GW/NW-006 | Evans      | SOTA | GW/NW-00 | SOTA: GW/NW-006  | IO83AC |
-| 2021.08.01 | 10:20 | G4OBK/P  | 7.118   | 40m  | SSB  | 59  | 59  | G/LD-050 | G/NP-009  | Catterall  | SOTA | G/NP-009 | SOTA: G/NP-009   | IO84XE |
-| 2021.08.01 | 10:35 | CT2HOV/P | 14.290  | 20m  | SSB  | 57  | 57  | G/LD-050 | CT/BA-010 | Pereira Go | SOTA | CT/BA-01 | SOTA: CT/BA-010  | IN51WA |
-| 2021.08.01 | 10:37 | G6PJZ/P  | 145.525 | 2m   | FM   | 55  | 43  | G/LD-050 | G/TW-003  | Clift      | SOTA | G/TW-003 | SOTA: G/TW-003   | IO94LM |
-| 2021.08.01 | 10:45 | SP9MA/P  | 10.114  | 30m  | CW   | 559 | 599 | G/LD-050 | SP/SS-012 | Jarek      | SOTA | SP/SS-01 | SOTA: SP/SS-012  | JO80BT |
-| 2021.08.01 | 10:56 | G8TMV/P  | 5.398   | 60m  | SSB  | 59  | 59  | G/LD-050 | G/WB-015  | TUCKLEY    | SOTA | G/WB-015 | SOTA: G/WB-015   | IO82OL |
-| 2021.08.01 | 11:04 | F4HPV/P  | 14.280  | 20m  | SSB  | 57  | 59  | G/LD-050 | F/AM-396  | michel     | SOTA | F/AM-396 | SOTA: F/AM-396   | JN33HR |
-| 2021.08.01 | 11:07 | I1WKN/P  | 14.288  | 20m  | SSB  | 57  | 59  | G/LD-050 | I/PM-148  | SERA       | SOTA | I/PM-148 | SOTA: I/PM-148   | JN34NH |
-| 2021.08.01 | 11:11 | MS0TA/P  | 7.150   | 40m  | SSB  | 57  | 59  | G/LD-050 | GM/WS-242 | Scotland   | SOTA | GM/WS-24 | SOTA: GM/WS-242  | IO76NL |
-| 2021.08.01 | 11:18 | SA3IEI/P | 14.064  | 20m  | CW   | 559 | 559 | G/LD-050 | SM/JL-057 | Beaton     | SOTA | SM/JL-05 | SOTA: SM/JL-057  | JP63PD |
-| 2021.08.01 | 11:25 | HB9LEK/P | 14.286  | 20m  | SSB  | 55  | 55  | G/LD-050 | HB/ZH-015 | Neukomm    | SOTA | HB/ZH-01 | SOTA: HB/ZH-015  | JN47FK |
-| 2021.08.01 | 11:29 | IU0FBK/P | 14.220  | 20m  | SSB  | 58  | 57  | G/LD-050 |           | Marco      |      |          |                  | JN61fv |
-| 2021.08.01 | 11:40 | G3TQQ/P  | 14.310  | 20m  | SSB  | 59  | 59  | G/LD-050 | G/TW-002  | BOTTOMLEY  | SOTA | G/TW-002 | SOTA: G/TW-002   | IO94JK |
-| 2021.08.01 | 11:46 | G5ZX/P   | 14.310  | 20m  | SSB  | 59  | 59  | G/LD-050 | G/NP-004  | W          | SOTA | G/NP-004 | SOTA: G/NP-004   | IO84TF |
-| 2021.08.01 | 11:48 | YO8AZQ/P | 14.310  | 20m  | SSB  | 52  | 55  | G/LD-050 | YO/EC-227 | DONE       | SOTA | YO/EC-22 | SOTA: YO/EC-227  | KN27QJ |
-| 2021.08.01 | 11:53 | DD2ZN/P  | 14.280  | 20m  | SSB  | 59  | 58  | G/LD-050 | DM/HE-059 | Pralle     | SOTA | DM/HE-05 | SOTA: DM/HE-059  | JO40DD |
-| 2021.08.01 | 12:12 | 2W1PJE/P | 145.375 | 2m   | FM   | 59  | 59  | G/LD-050 | GW/NW-007 | Peter      | SOTA | GW/NW-00 | SOTA: GW/NW-007  | IO82DS |
-| 2021.08.01 | 12:16 | EA2CCG/P | 14.310  | 20m  | SSB  | 52  | 53  | G/LD-050 | EA2/NV-14 | Montoya Ji | SOTA | EA2/NV-1 | SOTA: EA2/NV-148 | IN92AP |
-| 2021.08.01 | 12:19 | YO5OTA/P | 14.283  | 20m  | SSB  | 55  | 52  | G/LD-050 | YO/WC-225 | Pascal     | SOTA | YO/WC-22 | SOTA: YO/WC-225  | KN16QN |
-| 2021.08.01 | 12:41 | GW7LAS/P | 3.776   | 80m  | SSB  | 59  | 59  | G/LD-050 |           | Rob        | HEMA | GW/HMW-0 | HEMA: GW/HMW-043 | IO82JD |
 
-Documentation Version: 2022-08-27
+| TIME  | CALLSIGN                                | BAND | MODE | RST | RSR | OPERATOR  | SIG  | REF                                                       |
+|-------|-----------------------------------------|------|------|-----|-----|-----------|------|-----------------------------------------------------------|
+| 19:45 | [EA3KE](https://qrz.com/db/EA3KE)       | 20m  | SSB  | 59  | 59  | Tony      |      |                                                           |
+| 20:05 | [9A/G0JDK](https://qrz.com/db/9A/G0JDK) | 20m  | SSB  | 59  | 59  | Alan      |      |                                                           |
+| 20:08 | [M5TUE/P](https://qrz.com/db/M5TUE)     | 2m   | FM   | 59  | 59  | Nigel     |      |                                                           |
+| 20:24 | [G0HIK](https://qrz.com/db/G0HIK)       | 2m   | FM   | 59  | 58  | Nick      |      |                                                           |
+| 20:31 | [9A5THR](https://qrz.com/db/9A5THR)     | 20m  | SSB  | 59  | 59  | Tomy      |      |                                                           |
+| 20:39 | [LA9DSA/P](https://qrz.com/db/LA9DSA)   | 40m  | SSB  | 59  | 59  | Knot      | SOTA | [LA/HM-024](https://summits.sota.org.uk/summit/LA/HM-024) |
+| 20:46 | [YU1XA](https://qrz.com/db/YU1XA)       | 20m  | SSB  | 59  | 59  | Blagomir  |      |                                                           |
+| 20:51 | [EA4HKV](https://qrz.com/db/EA4HKV)     | 20m  | SSB  | 59  | 56  | Jorge     |      |                                                           |
+| 20:59 | DG9FBH                                  | 20m  | SSB  | 59  | 59  | Lota      |      |                                                           |
+| 21:08 | [LZ950TM](https://qrz.com/db/LZ950TM)   | 20m  | SSB  | 59  | 59  | Bulgarian |      |                                                           |
+| 21:10 | [IT9GSZ](https://qrz.com/db/IT9GSZ)     | 20m  | SSB  | 59  | 59  | Nunziato  |      |                                                           |
+| 21:22 | [PZ2YT](https://qrz.com/db/PZ2YT)       | 20m  | SSB  | 59  | 56  | Yudel     |      |                                                           |
+| 21:29 | [CX4RT](https://qrz.com/db/CX4RT)       | 20m  | SSB  | 59  | 57  | Juan      |      |                                                           |
+| 21:50 | [K2J](https://qrz.com/db/K2J)           | 20m  | SSB  | 59  | 59  | 13        |      |                                                           |
+| 21:56 | [W3ZW](https://qrz.com/db/W3ZW)         | 20m  | SSB  | 53  | 55  | Wilf      |      |                                                           |
+| 21:58 | [YT2MDM](https://qrz.com/db/YT2MDM)     | 20m  | SSB  | 59  | 59  | Vlad      |      |                                                           |
+| 22:01 | [DJ5AV](https://qrz.com/db/DJ5AV)       | 20m  | SSB  | 59  | 57  | Michael   |      |                                                           |
+| 22:02 | [KA3YIA](https://qrz.com/db/KA3YIA)     | 20m  | SSB  | 57  | 53  | DONALD    |      |                                                           |
+| 22:04 | [SV2JAO](https://qrz.com/db/SV2JAO)     | 20m  | SSB  | 59  | 59  | Andreas   |      |                                                           |
+| 22:04 | [S57ILF](https://qrz.com/db/S57ILF)     | 20m  | SSB  | 59  | 55  | FRANCI    |      |                                                           |
+| 22:07 | [KC1GTK](https://qrz.com/db/KC1GTK)     | 20m  | SSB  | 59  | 59  | Paul      |      |                                                           |
+| 22:09 | [K5UA](https://qrz.com/db/K5UA)         | 20m  | SSB  | 57  | 57  | Charles   |      |                                                           |
+| 22:10 | OK9MAT                                  | 20m  | SSB  | 57  | 57  |           |      |                                                           |
+| 22:12 | [K0DV](https://qrz.com/db/K0DV)         | 20m  | SSB  | 59  | 56  | Doug      |      |                                                           |
+| 22:14 | [9A7KJI](https://qrz.com/db/9A7KJI)     | 20m  | SSB  | 59  | 59  | Hinko     |      |                                                           |
+| 22:14 | [PY2ZZ](https://qrz.com/db/PY2ZZ)       | 20m  | SSB  | 59  | 59  | MARIO     |      |                                                           |
+| 22:15 | [W4LDS](https://qrz.com/db/W4LDS)       | 20m  | SSB  | 59  | 59  | Luis      |      |                                                           |
+| 22:16 | [SP9AMH](https://qrz.com/db/SP9AMH)     | 20m  | SSB  | 51  | 57  | Mariusz   |      |                                                           |
+| 22:17 | [LU9OZX](https://qrz.com/db/LU9OZX)     | 20m  | SSB  | 59  | 59  | Frank     |      |                                                           |
+| 22:18 | [PT9ZE](https://qrz.com/db/PT9ZE)       | 20m  | SSB  | 59  | 59  | Joe       |      |                                                           |
+| 22:19 | [WA1AYY](https://qrz.com/db/WA1AYY)     | 20m  | SSB  | 59  | 58  | Dom       |      |                                                           |
+| 22:22 | [W8JES](https://qrz.com/db/W8JES)       | 20m  | SSB  | 57  | 55  | John      |      |                                                           |
+| 22:26 | [KG5HTH](https://qrz.com/db/KG5HTH)     | 20m  | SSB  | 58  | 52  | PHILIP    |      |                                                           |
+| 22:28 | [OE6END](https://qrz.com/db/OE6END)     | 20m  | SSB  | 59  | 53  | Andy      |      |                                                           |
+| 22:29 | [KO1Z](https://qrz.com/db/KO1Z)         | 20m  | SSB  | 59  | 55  | Robert    |      |                                                           |
+| 22:35 | [6Y5HM](https://qrz.com/db/6Y5HM)       | 20m  | SSB  | 59  | 59  | Hugh      |      |                                                           |
+| 22:37 | [VE3NEP](https://qrz.com/db/VE3NEP)     | 20m  | SSB  | 57  | 57  | Frank     |      |                                                           |
+| 22:41 | [VE3CNF](https://qrz.com/db/VE3CNF)     | 20m  | SSB  | 59  | 45  | Fred      |      |                                                           |
+| 22:42 | [VE3OWV](https://qrz.com/db/VE3OWV)     | 20m  | SSB  | 59  | 57  | Nick      |      |                                                           |
+| 22:49 | [W3EMD](https://qrz.com/db/W3EMD)       | 20m  | SSB  | 59  | 58  | Buzz      |      |                                                           |
+| 22:52 | [K1CAL](https://qrz.com/db/K1CAL)       | 20m  | SSB  | 59  | 59  | Cal       |      |                                                           |
+| 22:54 | [YV5HNJ](https://qrz.com/db/YV5HNJ)     | 20m  | SSB  | 57  | 57  | Ramon     |      |                                                           |
+| 22:55 | [K2BQ](https://qrz.com/db/K2BQ)         | 20m  | SSB  | 59  | 59  | Paul      |      |                                                           |
+| 22:59 | [VA3EMF](https://qrz.com/db/VA3EMF)     | 20m  | SSB  | 55  | 55  | Peter     |      |                                                           |
+| 23:01 | [UT1AN](https://qrz.com/db/UT1AN)       | 20m  | SSB  | 59  | 59  | Alexander |      |                                                           |
+| 23:06 | [K2L](https://qrz.com/db/K2L)           | 20m  | SSB  | 59  | 59  | K2L       |      |                                                           |
+| 23:30 | [4X6HU](https://qrz.com/db/4X6HU)       | 20m  | SSB  | 58  | 57  | Rami      |      |                                                           |
+| 23:34 | [VO1CH](https://qrz.com/db/VO1CH)       | 20m  | SSB  | 59  | 59  | Chris     |      |                                                           |
+| 23:41 | [LU3MCJ](https://qrz.com/db/LU3MCJ)     | 20m  | SSB  | 59  | 57  | Emil      |      |                                                           |
+| 23:43 | [VA3QAK/P](https://qrz.com/db/VA3QAK/P) | 20m  | SSB  | 59  | 59  | Adrian    |      |                                                           |
+| 23:45 | [WB3DSB](https://qrz.com/db/W3EDS)      | 20m  | SSB  | 59  | 58  | Terry     |      |                                                           |
+| 23:47 | [KA1KA](https://qrz.com/db/WW1XX)       | 20m  | SSB  | 59  | 58  | Adam      |      |                                                           |
+| 23:49 | [KC1OSX](https://qrz.com/db/KC1OSX)     | 20m  | SSB  | 59  | 59  | Steve     |      |                                                           |
+| 23:51 | [NW7E](https://qrz.com/db/NW7E)         | 20m  | SSB  | 56  | 53  | Mike      |      |                                                           |
+| 23:51 | [KQ4TL](https://qrz.com/db/KQ4TL)       | 20m  | SSB  | 59  | 56  | Ted       |      |                                                           |
+| 23:53 | [KI5KEE](https://qrz.com/db/KI5KEE)     | 20m  | SSB  | 59  | 58  | John      |      |                                                           |
+| 23:54 | [W5ZZ](https://qrz.com/db/W5ZZ)         | 20m  | SSB  | 59  | 59  | Werg      |      |                                                           |
+| 23:57 | [W6FDR](https://qrz.com/db/W6FDR)       | 20m  | SSB  | 59  | 55  | Mel       |      |                                                           |
+| 23:57 | [WX8G](https://qrz.com/db/WX8G)         | 20m  | SSB  | 59  | 59  | Gary      |      |                                                           |
+| 23:59 | [K2BQ](https://qrz.com/db/K2BQ)         | 20m  | SSB  | 59  | 59  | Paul      |      |                                                           |
+| 23:05 | [KU4SD](https://qrz.com/db/KU4SD)       | 20m  | SSB  | 59  | 59  | Garrett   |      |                                                           |
+| 23:08 | [NW7E](https://qrz.com/db/NW7E)         | 20m  | SSB  | 57  | 54  | Michael   |      |                                                           |
+| 23:10 | [N1FSX](https://qrz.com/db/N1FSX)       | 20m  | SSB  | 57  | 42  | Chris     |      |                                                           |
+| 00:13 | [VE9RK](https://qrz.com/db/VE9RK)       | 20m  | SSB  | 59  | 59  | Richard   |      |                                                           |
+
+Documentation Version: 2022-12-18
