@@ -676,28 +676,28 @@ Here are some example Google Earth images from an [evening activation](https://r
 ***
 ## Release History
 
-| Date        | New Features                                                                                                                                                          |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 07-SEP-2021 | Support for Castles on the Air Activity References                                                                                                                    |
-| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                                                                                             |
-| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                                                                                         |
-| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                                                                                             |
-| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                                                                                       |
-| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                                                                                    |
-| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file                                                                         |
-| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                                                                                       |
-| 13-FEB-2022 | Support for Global Mountain Activity References                                                                                                                       |
-| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zipped KML files to save space                                                                     |
-| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                    |
-| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                        |
-| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                  |
-| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                               |
-| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                    |
-| 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support |
-| 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                      |
-| 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                        |
-| 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                      |
-| 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                           |
-| 18-DEC-2022 | Version 1.0.71 - Documentation refresh                                                                                                                                |
-
+| Date        | New Features                                                                                                                                                                                                                   |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 07-SEP-2021 | Support for Castles on the Air Activity References                                                                                                                                                                             |
+| 18-SEP-2021 | Supports Tropospheric Ducting & QO-100 Satellite Contacts                                                                                                                                                                      |
+| 23-SEP-2021 | Support for Lighthouses & Railways on the Air                                                                                                                                                                                  |
+| 26-SEP-2021 | Initial Geolocation support via Nominatim                                                                                                                                                                                      |
+| 15-OCT-2021 | Improved location accuracy reporting, COORD as a comment option                                                                                                                                                                |
+| 26-OCT-2021 | Support for Lanzarote HEMA summits                                                                                                                                                                                             |
+| 10-NOV-2021 | IOTA incorporated as an activity. Bearings now generated in KML contact info and listing file                                                                                                                                  |
+| 05-FEB-2022 | LEO Satellite preliminary support, Long Path HF contact support                                                                                                                                                                |
+| 13-FEB-2022 | Support for Global Mountain Activity References                                                                                                                                                                                |
+| 16-APR-2022 | Version 1.0.24 - Much improved satellite support and now generates zipped KML files to save space                                                                                                                              |
+| 06-MAY-2022 | Version 1.0.31 - Handles Log4OM Lat/Long format in ADIF input file                                                                                                                                                             |
+| 07-MAY-2022 | Version 1.0.32 - Support for Irish Grid references in the coordinate converter                                                                                                                                                 |
+| 07-MAY-2022 | Version 1.0.33 - Input files with your callsign undefined for some records processed                                                                                                                                           |
+| 08-MAY-2022 | Version 1.0.38 - Add support for Aeronautical Mobile including altitude                                                                                                                                                        |
+| 10-MAY-2022 | Version 1.0.39 - rewrite altitude support to use an ADIF application defined field                                                                                                                                             |
+| 05-JUN-2022 | Version 1.0.45 <br/> - SOTA database refresh as of 14-MAY-2022 <br/> - UK Jubilee secondary locator callsign support <br/> - ADIF coordinate format converter support                                                          |
+| 12-JUN-2022 | Version 1.0.48 - Support for ADIF Spec 3.1.3 read/write includes new MY_WWFF_REF/WWFF_REF fields                                                                                                                               |
+| 27-AUG-2022 | Version 1.0.59 DXCC entities and better country identification                                                                                                                                                                 |
+| 11-OCT-2022 | Version 1.0.61 - Supports visualizing internet propagation modes                                                                                                                                                               |
+| 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                                                                                    |
+| 18-DEC-2022 | Version 1.0.71 - Documentation refresh                                                                                                                                                                                         |
+| 22-DEC-2022 | Version 1.0.72 - Support for ADIF Spec 3.1.4 read/write, Specific fields for POTA, Support for Altitude of Station, HamQTH & HamlogEu QSL Upload status/date, Overhaul station activity list to support more than one POTA ref |
 Documentation Version: 2022-12-18
