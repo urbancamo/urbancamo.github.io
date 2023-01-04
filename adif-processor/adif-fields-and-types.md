@@ -8,6 +8,9 @@ additional information in the ADIF output file.
 Each value is checked against the corresponding `ADIF Type`. The types, including any restrictions, as shown in the 
 second table.
 
+**NOTE:** For list types, such as POTA_REF, ensure that references are listed as comma-separated without any spaces, 
+for example: `<POTA_REF: EA-2120,EA-0825,EA-0050>`.
+
 ## ADIF Fields
 
 | ADIF Field                 | ADIF Type                                        |
