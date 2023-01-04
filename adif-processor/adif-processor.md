@@ -2,7 +2,9 @@
 # [ADIF Processor](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/)	
 ![Cropped Google Earth contacts](images/image-cropped-691-slice.png)
 
-Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc).
+Available through the shorter link: [https://bit.ly/adifproc](https://bit.ly/adifproc). 
+Please consider joining the [adifproc groups.io group](https://groups.io/g/adifproc) for 
+update announcements, bug reports etc.
 
 ## Introduction
 
@@ -12,7 +14,8 @@ that visualizes amateur radio contacts from an ADIF log file using [Google Earth
 
 As well as allowing you to view and explore your contacts in Google Earth, you will be able to:
 - see a [Markdown](https://www.markdownguide.org/) or text table of contacts.
-- use the output ADIF file which contains QRZ.com data, accurate contact distances and fields populated from comments in the input file.
+- use the output ADIF file which contains QRZ.com data, accurate contact distances and fields populated from comments
+  in the input file.
 - print [QSL labels](./qsl-labels/qsl-labels.md).
 
 One of the benefits of using the ADIF Processor before uploading/storing your ADIF file 
@@ -53,7 +56,9 @@ the advanced options based on your requirements.
 
 ## Quick Start
 
-Select your ADIF or SOTA CSV file on the [ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload)  and click `Process...` 
+Select your ADIF or SOTA CSV file on the 
+[ADIF Processor upload form](http://adifweb-env.eba-saseumwd.eu-west-2.elasticbeanstalk.com/upload) 
+and click `Process...` 
 
 <a href="./images/adif-processor-upload-form.png">![Upload Form](images/upload-form.png)
 _[Simple Use Case](images/upload-form.png)_
@@ -70,14 +75,19 @@ Any callsigns for which a location could not be determined are shown in the `Cal
 <a href="./images/results.png">![Sample Results](images/results.png)
 _[Example Result Form](images/results.png)_
 
-If the ADIF Processor cannot determine your location then you specify it using any common location format in the _Location_ text field.
+If the ADIF Processor cannot determine your location then you specify it using any common location 
+format in the _Location_ text field.
 
 __TIP__:
-An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select the Latitude & Longitude value which will copy the value onto the clipboard. This can then be pasted directly into the `Location` text box.
+An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select 
+the Latitude & Longitude value which will copy the value onto the clipboard. 
+This can then be pasted directly into the `Location` text box.
 
-**What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, such as Summits on the Air for example.
+**What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, 
+such as Summits on the Air for example.
 
-If you're logging one of the supported activities you should enter the activity reference. Your location will be determined from the activity if possible.
+If you're logging one of the supported activities you should enter the activity reference. 
+Your location will be determined from the activity if possible.
 
 ## More Infomation about ADIF Processor
 
@@ -104,6 +114,7 @@ for ADIF fields built into the application.
 ***
 
 ## How the ADIF Processor Works
+
 There are a number of steps the ADIF Processor performs as it turns your ADIF file into a Google Earth 
 KML project file. Key is identifying a location for each end of a contact.
 
@@ -123,8 +134,8 @@ accurate 10 character version.
 If your location isn't fixed (/P, /M, /A) use one of the following to let the ADIF processor know where to place
 you: 
 
-* ADIF input file contains a `MY_SOTA` reference,
-* Use an activity reference in `SIG` `SIG_INFO` that has a location
+* ADIF input file contains a `MY_SOTA_REF`, `MY_POTA_REF`, `MY_WWFF_REF`
+* A supported activity and reference in the `MY_SIG_INFO` & `MY_SIG_REF` fields, where that activity has a location
 * Specify `MY_GRIDSQUARE` or `LATITUDE` & `LONGITUDE`.
 
 If none of these are an option for you then let the processor know where you are via the form, 
@@ -140,7 +151,6 @@ supports any of the coordinate formats you can use in the
  * An OSGB36 British National Grid Reference, 4 or 5 digit, eg: SD 40891 97674
  * An OSGB36 British National Grid Easting/Northing, eg: E 332222, N 527763
  * A street address for geocoding
-
 
 ### Determining Other Station Locations
 
@@ -325,16 +335,70 @@ The ADIF Processor knows about _activities_. The term _Activity_ is used to desc
 that you or the contacted station are participating in. For example: Summits on the Air or Parks on the Air. 
 For each activity the ADIF Processor loads the database of activity references. The totals are currently:
 
-- 30 Railways on the Air
-- 34,621 Parks on the Air
-- 1,178 Islands on the Air
-- 29,727 Global Mountain Activity
-- 3,329 Humps on the Air
+- 166,398 Summits on the Air
+- 40,115 Parks on the Air
 - 51,138 World Wide Flora & Fauna
-- 157,201 Summits on the Air
+- 1,178 Islands on the Air
+- 3,329 Humps on the Air
 - 330 Wainwrights on the Air
+- 29,727 Global Mountain Activity
 - 65,912 Castles on the Air
 - 1,706 Lighthouses on the Air
+- 37 Railways on the Air
+
+Specific activity notes:
+
+### Summits on the Air
+
+Summits on the Air references can be used to accurately define the operator's location, as the programme requires them
+to be within 25m vertical of the actual summit. If you want to be more accurate you can override the location.
+
+### Parks on the Air
+
+The ADIF format 3.1.4 allows for multiple Parks on the Air references to be specified, as the operator may have 
+multiple park references. For example. Whitbarrow Scar in the Lake District is both its' own POTA reference
+[G-0190 Whitbarrow National Nature Reserve](https://pota.app/#/park/G-0190) and is also contained in 
+[G-0165 Lake District National Park](https://pota.app/#/park/G-0165), so both parks are activated at the same time.
+Where there are multiple activity references the first reference is used as the operator location, 
+so if you are listing more than one park use the most accurate reference first, or specify the operators' location.
+
+As another example if you are activating [G-0165 Lake District National Park](https://pota.app/#/park/G-0165) you should
+override the location of the operator as the location specified for the POTA reference is a 
+central marker for the entire national park.
+
+### WWFF
+
+World-wide Flora Fauna locations may or may not have a location specified, therefore it is generally best to 
+override the location of the operator.
+
+### Islands on the Air
+
+Locations are approximate, depending on the size of the island, so a location should be specified for the operator.
+
+### Humps on the Air
+
+Locations are summit references and are accurate, so the HEMA reference is normally good enough.
+
+### Wainwrights on the Air
+
+Locations are summit references and are accurate, so the WOTA reference is normally good enough.
+
+### Global Mountain Activity
+
+Locations are summit references and are accurate, so the GMA reference is normally good enough.
+
+### Castles on the Air
+
+Locations are the location of the castle and are generate accurate, so normally good enough.
+
+### Lighthouses on the Air
+
+Locations are the location of the lighthouse or lightship, so normally good enough.
+
+### Railways on the Air
+
+I update the location of the railways on the air references every year, so they are generally good enough.
+
 
 ***
 
@@ -416,11 +480,11 @@ Of interest is the comment line, which we will examine further, as this is one o
 of post-processing.
 In the comment line:
 
-`<COMMENT:47>OP: Rob, PWR: 50, GRID: IO81LC, HEMA: G/HWB-026
+`<COMMENT:49>NAME: Rob, PWR: 50, GRID: IO81LC, HEMA: G/HWB-026
 `
 
 You will notice that it consists of a number comma-separated key-value pairs. For example, the first
-pair key is `OP` with value `ROB`, then `PWR` value `50` etc.
+pair key is `NAME` with value `Rob`, then `PWR` value `50` etc.
 
 ***
 ## The Comment Field in your ADIF file
@@ -430,7 +494,7 @@ The keyword should be followed by a colon, and a comma may optionally separate e
 ADIF Processor recognises a keyword then it acts on the key/value pair to add additional information
 to the ADIF output file in the correct ADIF field. 
 
-For example a comment like: `HEMA: G/HLD-001, OP: Mark, RIG: FT-817, PWR: 5`
+For example a comment like: `HEMA: G/HLD-001, NAME: Mark, RIG: FT-817, PWR: 5`
 would be processed one key/value pair at time and would result in the following ADIF fields being set:
 
 | ADIF Field | Value     |
@@ -443,6 +507,11 @@ would be processed one key/value pair at time and would result in the following 
 
 ## Supported Comment Name/Value pairs
 
+The ADIF Processor supports all ADIF field names, as defined in the [ADIF Specification](http://adif.org.uk/).
+See the [ADIF Fields & Types](./adif-fields-and-types.md) page for a complete list.
+
+In addition to the standard field names, a number of shortcuts are supported, as specified in the table below.
+
 In the table below the `Comment Key` column shows the keyword you should specify if you want to add 
 additional information in the ADIF output file. See the `Sample Value` column for an example of the 
 data to be provided. Activity references must use the correct syntax. The `Target ADIF Field` column 
@@ -454,39 +523,18 @@ For activity references specifying a reference that has an associated location w
 `LAT` & `LONG` value for the location associated with the activity reference (unless that location 
 has been overriden explicitly).
 
-| Description                 | Comment Key         | Sample  Value(s)                       | Target ADIF Field        |
-|-----------------------------|---------------------|----------------------------------------|--------------------------|
-| Altitude (in metres)        | `ALT`               | 30000 ft, 9000m, 9000                  | `APP_APROC_ALT`          |
-| My Altitude (in metres)     | `MY_ALT`            | 30000 ft, 9000m, 9000                  | `APP_APROC_MY_ALT`       |
- | Their Antenna               | `ANT`               | Dipole @ 10m                           | `APP_APROC_ANT`          | 
-| Age                         | `AGE`               | 52                                     | `AGE`                    |
-| Coordinate†                 | `COORD`             | 50°50'56"N 14°38'49"E                  | `LATITUDE` & `LONGITUDE` |
-| Castles on the Air          | `COTA`              | DL-03609                               | `SIG/SIG_INFO`           |
-| Fists No                    | `FISTS`             | 18162                                  | `FISTS`                  |
-| Home/Location               | `QTH`               | Windermere                             | `QTH`                    |
-| Humps on the Air Ref.       | `HEMA`              | G/HLD-001                              | `SIG`/`SIG_INFO`         |
-| Islands on the Air Ref.     | `IOTA`              | E-145                                  | `IOTA`                   |
-| Latitude                    | `LAT`               | 50.153                                 | `LATITUDE`               |
-| Longitude                   | `LONG`              | 2.345                                  | `LONGITUDE`              |
-| Maidenhead Locator          | `GRID`              | IO84MJ (4/6/8/10 char)                 | `GRIDSQUARE`             |
-| Notes                       | `NOTES`             | Must take a look at their qrz.com page | `NOTES`                  |
-| Operator Name               | `OP`                | Mark                                   | `NAME`                   |
-| Parks on the Air Ref.       | `POTA`              | G-0190                                 | `SIG`/`SIG_INFO`         |
-| Propagation                 | `PROP`              | INTERNET                               | `PROPAGATION_MODE`       |
-| Antenna Path                | `PATH`              | L                                      | `ANT_PATH`               |
-| QSL Status                  | `QSL`               | D/B                                    | `QSL_DATE`/`SQL_SENT`    |
-| Rig Model                   | `RIG`               | IC-7100                                | `RIG`                    |
-| Power                       | `PWR`               | 50                                     | `RX_PWR`                 |
-| Serial No Received          | `SRX`               | 0034                                   | `SRX`                    |
-| Serial No Transmitted       | `STX`               | 0045                                   | `STX`                    |
-| SKCC No                     | `SKCC`              | 19250                                  | `SKCC`                   |
-| Summits on the Air Ref.     | `SOTA`, `SOTA_REF`  | G/LD-001                               | `SOTA_REF`               |
-| My Summits on the Air Ref.  | `MY_SOTA_REF`       | G/LD-001                               | `MY_SOTA_REF`            |
-| Wainwrights on the Air Ref. | `WOTA`              | LDW-001                                | `SIG/SIG_INFO`           |
-| Worldwide Flora Fauna Ref.  | `WWFF`              | GFF-0233                               | `SIG/SIG_INFO`           |
-| Lighthouses on the Air Ref. | `LOTA`              | UK0019                                 | `SIG/SIF_INFO`           |
-| Railways on the Air Ref.    | `ROTA`              | GB4LHR                                 | `SIG/SIG_INFO`           |
-| Additional Comment          | `COMMENT` or `NOTE` | WX: 12 degC Sunny                      | `COMMENT`                |
+| Description                 | Comment Key | Sample  Value(s)      | Target ADIF Field        |
+|-----------------------------|-------------|-----------------------|--------------------------|
+| Coordinate†                 | `COORD`     | 50°50'56"N 14°38'49"E | `LATITUDE` & `LONGITUDE` |
+| Islands on the Air Ref.     | `IOTA`      | E-145                 | `IOTA`                   |
+| Parks on the Air Ref.       | `POTA`      | G-0190,G-0165         | `POTA_REF`               |
+| Summits on the Air Ref.     | `SOTA`      | G/LD-001              | `SOTA_REF`               |
+| Castles on the Air          | `COTA`      | DL-03609              | `SIG`/`SIG_INFO`         |
+| Humps on the Air Ref.       | `HEMA`      | G/HLD-001             | `SIG`/`SIG_INFO`         |
+| Wainwrights on the Air Ref. | `WOTA`      | LDW-001               | `SIG`/`SIG_INFO`         |
+| Worldwide Flora Fauna Ref.  | `WWFF`      | GFF-0233              | `SIG`/`SIG_INFO`         |
+| Lighthouses on the Air Ref. | `LOTA`      | UK0019                | `SIG`/`SIF_INFO`         |
+| Railways on the Air Ref.    | `ROTA`      | GB4LHR                | `SIG`/`SIG_INFO`         |
 
 †Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
 minute seconds, degrees decimal minutes etc.
@@ -496,7 +544,7 @@ between angle brackets, for example:
 
 ```
 2111 g7tcq/m  59 59 <QTH: M6 J11 N. Birmingham, PROP: TR> #IO82xq 
-2118 g4iog    55 52 <OP: Bob, QTH: N. Kent, RIG: FT-991, PWR: 50w, QTH: Sittingborne, PROP: TR>
+2118 g4iog    55 52 <NAME: Bob RIG: FT-991 PWR: 50w QTH: Sittingborne PROP: TR>
 ```
 
 Note that each keyword **must** be followed by a colon and each pair **may** be followed by a comma. 
@@ -505,11 +553,7 @@ from Google Maps).
 
 To add information to go in the
 `COMMENT` field of the ADIF file directly use a key of `COMMENT`, or use a key of `NOTES` to specify 
-information to go in the ADIF `NOTES` field. Try to avoid using commas in arbitrary text to avoid 
-confusing the parser.
-
-I will accept requests to map additional fields - these are the most frequently fields used by me,
-and there are a log of them!
+information to go in the ADIF `NOTES` field.
 
 ***
 ## Propagation Modes
@@ -700,4 +744,7 @@ Here are some example Google Earth images from an [evening activation](https://r
 | 17-DEC-2022 | Version 1.0.71 - QSL label printing support                                                                                                                                                                                    |
 | 18-DEC-2022 | Version 1.0.71 - Documentation refresh                                                                                                                                                                                         |
 | 22-DEC-2022 | Version 1.0.72 - Support for ADIF Spec 3.1.4 read/write, Specific fields for POTA, Support for Altitude of Station, HamQTH & HamlogEu QSL Upload status/date, Overhaul station activity list to support more than one POTA ref |
-Documentation Version: 2022-12-18
+| 28-DEC-2022 | Version 1.0.85 - Now using a websocket to provide better feedback of progress. The dreaded 'Gateway timeout' should never happen now. Limit processing to 500 QSOs but you will get a partial process                          |
+| 04-JAN-2023 | Version 1.1.0 - Supports all ADIF fields as comment entries, updated POTA list                                                                                                                                                 |
+
+Documentation Version: 2023-01-04
