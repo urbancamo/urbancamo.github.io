@@ -11,6 +11,8 @@ I am a Certified Scrum Master.
 
 ### [Documentation for the ADIF Processor](adif-processor/adif-processor)
 
+### [DEC Legacy](declegacy.md)
+
 ### [Casio Pocket Computers](casio-pocket-computers.md)
 
 ### [Developer Notes](devblog)

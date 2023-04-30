@@ -746,5 +746,5 @@ Here are some example Google Earth images from an [evening activation](https://r
 | 22-DEC-2022 | Version 1.0.72 - Support for ADIF Spec 3.1.4 read/write, Specific fields for POTA, Support for Altitude of Station, HamQTH & HamlogEu QSL Upload status/date, Overhaul station activity list to support more than one POTA ref |
 | 28-DEC-2022 | Version 1.0.85 - Now using a websocket to provide better feedback of progress. The dreaded 'Gateway timeout' should never happen now. Limit processing to 500 QSOs but you will get a partial process                          |
 | 04-JAN-2023 | Version 1.1.0 - Supports all ADIF fields as comment entries, updated POTA list                                                                                                                                                 |
-
-Documentation Version: 2023-01-04
+| 25-MAR-2023 | Version 1.1.18 - Checks Name and State against QRZ, updated HEMA summits                                                                                                                                                       |                                                                                                                                                     |
+Documentation Version: 2023-03-26
