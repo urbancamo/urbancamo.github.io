@@ -56,7 +56,7 @@ the advanced options based on your requirements.
 ## Quick Start
 
 Select your ADIF or SOTA CSV file on the 
-[ADIF Processor upload form](https://www.adif.ukupload) 
+[ADIF Processor upload form](https://www.adif.uk/upload) 
 and click `Process...` 
 
 <a href="./images/adif-processor-upload-form.png">![Upload Form](images/upload-form.png)
@@ -142,7 +142,7 @@ either by specifying an activity reference, or directly entering your location.
 
 The _Location_ field on the form
 supports any of the coordinate formats you can use in the
-[Coordinate Converter](https://www.adif.ukcoord), for example:
+[Coordinate Converter](https://www.adif.uk/coord), for example:
 
  * Latitude and Longitude, eg: 54.3709 -2.9099 or 54° 22.260' N, 3° 5.403' W
  * Maidenhead Locator (4/6/8/10 character), eg: IO84NI
