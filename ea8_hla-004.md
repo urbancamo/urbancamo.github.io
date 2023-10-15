@@ -48,7 +48,7 @@ _Car Parking_
 When I arrived it was still dark. It was windy which is very common on Lanzarote! I had bought my head-torch 
 just in case of an early morning or evening activation and that was put to good use on the ascent. The flat
 path is very easy underfoot. The ascent is on loose, small gravel from volcanic rock. It is fairly easy going
-with shoes/boots with a descent grip on them. The last 25 metres is steeper and requires some extra care to
+with shoes/boots with a decent grip on them. The last 25 metres is steeper and requires some extra care to
 avoid slipping. Obviously the descent is if anything worse, I wouldn't be attempting this is standard trainers.
 I wear trail shoes normally (although I get through them very quickly as the tread pattern is very soft) and they
 were ideal for this terrain. Also note that volcanic rock is very sharp, and even just lifting myself off from
