@@ -7,7 +7,7 @@ For now see the [README file](https://github.com/urbancamo/javaapiforkml/blob/ma
 The dependency in Maven is:
 
 ```xml
-<!-- https://mvnrepository.com/artifact/uk.m0nom/JavaAPIforKml -->
+<!-- https://mvnrepository.com/artifact/uk.m0nom/javaapiforkml -->
 <dependency>
     <groupId>uk.m0nom</groupId>
     <artifactId>javaapiforkml</artifactId>
