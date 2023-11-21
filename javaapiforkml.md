@@ -10,7 +10,7 @@ The dependency in Maven is:
 <!-- https://mvnrepository.com/artifact/uk.m0nom/JavaAPIforKml -->
 <dependency>
     <groupId>uk.m0nom</groupId>
-    <artifactId>JavaAPIforKml</artifactId>
-    <version>3.0.4</version>
+    <artifactId>javaapiforkml</artifactId>
+    <version>3.0.5</version>
 </dependency>
 ```
