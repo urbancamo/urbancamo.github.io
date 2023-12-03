@@ -82,6 +82,8 @@ _[Example Result Form](images/results.png)_
 If the ADIF Processor cannot determine your location then you specify it using any common location 
 format in the _Location_ text field.
 
+Some ADIF file, predominantly those auomatically generated for data-mode contacts, don't specify your callsign. If you get an error 'STATION_CALLSIGN or OPERATOR not defined' you can add your callsign in the 'Callsign' form field.
+
 __TIP__:
 An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select 
 the Latitude & Longitude value which will copy the value onto the clipboard. 
