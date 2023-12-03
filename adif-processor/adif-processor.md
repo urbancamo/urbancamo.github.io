@@ -47,8 +47,13 @@ _Import KML file from computer_ via the map pin icon. In Android Google Earth si
 
 In a lot of cases you simply select your ADIF file and process it, no other options are required.
 
-![Google Earth Contacts Sample](images/google-earth-project.png)
-_Desktop/Browser Google Earth Project Menu_
+![new.png](./images/new.png)
+
+_Desktop/Browser Google Earth New Option_
+
+![local.png](./images/local.png)
+
+_Desktop/Browser Google Earth Local KML Import Dialog_
 
 I recommended following the Quick Start section below to get a feel for the tool, then have a look at 
 the advanced options based on your requirements.
