@@ -146,7 +146,7 @@ All photos, including some stunning panoramas, are in a [Google Photos album](ht
 
 ## Google Earth QSO Visualizations
 
-Using the [ADIF Processor](https://bit.ly/adifproc):
+Using the [ADIF Processor](https://www.adif.uk):
 
 ![](./images/Photos/EA8_HLA-004/Screenshot_20211027_140512.png)
 _S2S with EA8/G4JXP/P on EA8/LA-002_
