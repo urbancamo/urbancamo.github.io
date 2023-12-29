@@ -1,4 +1,8 @@
 
+# <span style='color:red'>ADIF Processor Users:</span>
+
+I'm experiencing some difficulty updating DNS at this time: please use [this link](http://adifweb17-env.eba-yfj9g5d5.eu-west-2.elasticbeanstalk.com) to access the ADIF Processor until these issues are resolved.
+
 ## Mark Wickens - Engineering Manager & Senior Sofware Engineer
 
 A senior software engineer with a decade of remote development experience and three years remote team management backed by ten years as a computer contractor working in a diverse number of industries. Starting with scientific visualization software written in C & C++ I moved into the Java ecosphere in the early years and have consolidated that into solid full stack technologies from database to user experience with security running throughout. Most recently I have been coding in Golang both in the office and on open source projects.
