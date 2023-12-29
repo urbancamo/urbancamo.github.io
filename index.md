@@ -1,7 +1,7 @@
 
 # <span style='color:red'>ADIF Processor Users:</span>
 
-I'm experiencing some difficulty updating DNS at this time: please use [this link](http://adifweb17-env.eba-yfj9g5d5.eu-west-2.elasticbeanstalk.com) to access the ADIF Processor until these issues are resolved.
+If you are experiencing issues accessing the ADIF Processor via [https://www.adif.uk](https://www.adif.uk) then please use [this link](http://adifweb17-env.eba-yfj9g5d5.eu-west-2.elasticbeanstalk.com) to access it until these issues are resolved.
 
 ## Mark Wickens - Engineering Manager & Senior Sofware Engineer
 
