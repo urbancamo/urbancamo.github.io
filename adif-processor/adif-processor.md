@@ -546,6 +546,7 @@ has been overriden explicitly).
 | Worldwide Flora Fauna Ref.  | `WWFF`      | GFF-0233              | `SIG`/`SIG_INFO`         |
 | Lighthouses on the Air Ref. | `LOTA`      | UK0019                | `SIG`/`SIF_INFO`         |
 | Railways on the Air Ref.    | `ROTA`      | GB4LHR                | `SIG`/`SIG_INFO`         |
+| Bunkers on the Air Ref.     | `BOTA`      | B/GW-0173             | `SIG`/`SIG_INFO`         |
 
 †Coordinate can be specified in most latitude/longitude formats including decimal, degrees 
 minute seconds, degrees decimal minutes etc.
