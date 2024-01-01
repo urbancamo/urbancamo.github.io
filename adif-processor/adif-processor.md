@@ -51,6 +51,9 @@ In a lot of cases you simply select your ADIF file and process it, no other opti
 
 _Desktop/Browser Google Earth New Option_
 
+![google-earth-menu.png](images/google-earth-menu.png)
+_Import option on the Google Earth menu_
+
 ![local.png](./images/local.png)
 
 _Desktop/Browser Google Earth Local KML Import Dialog_
@@ -79,21 +82,18 @@ Any callsigns for which a location could not be determined are shown in the `Cal
 <a href="./images/results.png">![Sample Results](images/results.png)
 _[Example Result Form](images/results.png)_
 
-If the ADIF Processor cannot determine your location then you specify it using any common location 
-format in the _Location_ text field.
-
-Some ADIF file, predominantly those auomatically generated for data-mode contacts, don't specify your callsign. If you get an error 'STATION_CALLSIGN or OPERATOR not defined' you can add your callsign in the 'Callsign' form field.
+If the ADIF Processor cannot determine your location then you specify it using any common location format (lat/long, maidenhead, an address etc.) in the _Location_ text field.
 
 __TIP__:
-An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select 
-the Latitude & Longitude value which will copy the value onto the clipboard. 
+An easy way to find your location is to right-click on [Google Maps](https://maps.google.com) and select
+the Latitude & Longitude value which will copy the value onto the clipboard.
 This can then be pasted directly into the `Location` text box.
 
-**What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, 
-such as Summits on the Air for example.
+Some ADIF files, predominantly those automatically generated for data-mode contacts, don't include your callsign. If you get an error 'STATION_CALLSIGN or OPERATOR not defined' then specify your callsign in the 'Callsign' form field.
 
-If you're logging one of the supported activities you should enter the activity reference. 
-Your location will be determined from the activity if possible.
+**What is an activity?** - any of the supported contests/challenges listed on the ADIF Processor form, such as Summits on the Air for example.
+
+If you're logging for one of the supported activities you should enter the activity reference if it isn't included in your input file. Your location will be determined from the activity if possible.
 
 ## More Infomation about ADIF Processor
 
