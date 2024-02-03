@@ -41,9 +41,11 @@ gets very cluttered.
 
 ## Limitations
 
-The TLE data is accurate on the day the ADIF file is processed. I am working on the ability to use historic TLE data. 
-As a result if you try and process a file with contacts from a significant time ago the visualization won't 
-be accurate as the TLE data isn't correct for that date.
+The TLE data on the NORAD site is only valid for the current day - they don't archive the data for 
+general availability.
+
+I've been capturing TLE data from NORAD since 13-MAR-2022, so if your QSOs are on that date, or later,
+then they can be visualized for one of the supported satellites.
 
 ## Supported Satellites
 
