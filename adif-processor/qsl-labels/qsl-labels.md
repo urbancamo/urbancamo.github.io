@@ -101,7 +101,7 @@ _Your activity reference_ is pulled from either your `MY_SOTA_REF`, `MY_POTA_REF
 `MY_SIG_INFO/MY_SIG_REF` ADIF fields.
 
 _Your QSL message_ is generated from the ADIF `QSLMSG` field 
-(in Fast Log Entry add a `qslmsg` entry).
+(in Fast Log Entry add a `qslmsg` entry to your comment, e.g: `QSLMSG: Thx for the contact`).
 
 ### Excluding stations from QSL Label generation
 
