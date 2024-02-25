@@ -28,10 +28,10 @@ activation then enter `13cm` in the `Satellite Band` form field.
 
 Only QSOS in the input file with band `13cm` will be visualized as satellite contacts.
 
-| Icon                                                                           | Represents        | Label                     |
-|--------------------------------------------------------------------------------|-------------------|---------------------------|
-| ![](./images/placemark_circle_highlight.png) | Satellite Contact | Time UTC                  |
-| ![](./images/capital_big_highlight.png)                       | Satellite Track   | Satellite Name & Date UTC |
+| Icon                                          | Represents        | Label                     |
+|-----------------------------------------------|-------------------|---------------------------|
+| ![](../images/placemark_circle_highlight.png) | Satellite Contact | Time UTC                  |
+| ![](../images/capital_big_highlight.png)      | Satellite Track   | Satellite Name & Date UTC |
 
 A worked pass of a satellite is show in Google Earth as a red trace. There is a lead to the trace before the first QSO.
 Where multiple QSOs are recorded at the same time the times are interpolated based on the order in the input file.
