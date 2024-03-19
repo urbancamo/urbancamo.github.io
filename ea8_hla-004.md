@@ -106,7 +106,7 @@ Amazing to watch the sunrise over this magnificent landscape.
 
 ![](./images/Photos/EA8_HLA-004/IMG_20211027_102051.jpg)
 
-All photos, including some stunning panoramas, are in a [Google Photos album](https://photos.app.goo.gl/E4djNoaNbNVPMwii6).
+All photos, including some stunning panoramas, are in a [OneDrive Photos album](https://1drv.ms/a/s!ApYWbrbJ9DxChPYHjB-Cv00WWvANEA?e=SXVGH7).
 
 ## The Log Book
 
