@@ -57,98 +57,98 @@ Aliases will be added as required based on what folk have in their input files.
 Please let me know if your satellites aren't being rendered but they are supported and I'll
 add an alias.
 
-|Name|Code| Aliases |
-|----|----|---------|
-|2015-049G | |         |
-|AAUSAT 4 | |         |
-|BEESAT-1 | |         |
-|BEESAT-2 | |         |
-|BEESAT-3 | |         |
-|BEESAT-4 | |         |
-|BRICSAT2 |NO-103|         |
-|BY70-2 | |         |
-|BY70-3 | |         |
-|CAS-2T & KS-1Q | |         |
-|CAS-6 |TO-108|         |
-|CUBEBUG-2 |LO-74|         |
-|CUBESAT XI-IV |CO-57|         |
-|CUBESAT XI-V | |         |
-|CUTE-1.7+APD II |CO-65|         |
-|CUTE-1 |CO-55|         |
-|DELFI-C3 |DO-64|         |
-|DIWATA-2B | |         |
-|DIY-1 |ARDUIQUBE|         |
-|DUCHIFAT-1 | |         |
-|DUCHIFAT-3 | |         |
-|ES'HAIL 2 | |         |
-|E-ST@R-II | |         |
-|EYESAT A |AO-27|         |
-|FALCONSAT-3 | |         |
-|FOX-1CLIFF |AO-95|         |
-|FOX-1D |AO-92|         |
-|FUNCUBE-1 |AO-73|         |
-|GOMX-1 | |         |
-|HUSKYSAT-1 |HO-107|         |
-|ISS |ZARYA| ARISS   |
-|ITAMSAT |IO-26|         |
-|ITASAT 1 | |         |
-|ITUPSAT1 | |         |
-|JAISAT-1 | |         |
-|JAS-2 |FO-29|         |
-|JUGNU | |         |
-|JY1SAT |JO-97|         |
-|KAITUO 1A | |         |
-|KAITUO 1B | |         |
-|KKS-1 |KISEKI|         |
-|LAPAN-A2 | |         |
-|LILACSAT-2 | |         |
-|LUSAT |LO-19|         |
-|MAX VALIER SAT | |         |
-|M-CUBED & EXP-1 PRIME | |         |
-|MOZHAYETS 4 |RS-22|         |
-|NAYIF-1 |EO-88|         |
-|NEXUS |FO-99|         |
-|NUDT-PHONESAT | |         |
-|NUSAT-1 |FRESCO|         |
-|ORBITAL FACTORY 2 || |
-|OSCAR 7 |AO-7|         |
-|PCSAT |NO-44|         |
-|PHASE 3B |AO-10|         |
-|PSAT2 |NO-104|         |
-|QB50P1 | |         |
-|RADFXSAT-2 |AO-109|         |
-|RADFXSAT |FOX-1B|         |
-|RADIO ROSTO |RS-15|         |
-|RS-44 & BREEZE-KM R/B | |         |
-|SALSAT | |         |
-|SAUDISAT 1C |SO-50|         |
-|SEEDS II |CO-66|         |
-|SOMP | |         |
-|SPROUT | |         |
-|SRMSAT | |         |
-|STRAND-1 | |         |
-|SWISSCUBE | |         |
-|TECHSAT 1B |GO-32|         |
-|TIANWANG 1A |TW-1A|         |
-|UNISAT-6 | |         |
-|UOSAT 2 |UO-11|         |
-|UVSQ-SAT | |         |
-|UWE-3 | |         |
-|UWE-4 | |         |
-|XIWANG-1 |HOPE-1|         |
-|XW-2A | |         |
-|XW-2B | |         |
-|XW-2C | |         |
-|XW-2D | |         |
-|XW-2E | |         |
-|XW-2F | |         |
-|XW-3 |CAS-9|         |
-|YUBILEINY |RS-30|         |
-|ZACUBE-1 |TSHEPISOSAT|         |
-|ZDPS 2A | |         |
-|ZDPS 2B | |         |
-|ZHUHAI-1 01 |CAS-4A|         |
-|ZHUHAI-1 02 |CAS-4B|         |
+|Name| Code        | Aliases |
+|----|-------------|---------|
+|2015-049G |             |         |
+|AAUSAT 4 |             |         |
+|BEESAT-1 |             |         |
+|BEESAT-2 |             |         |
+|BEESAT-3 |             |         |
+|BEESAT-4 |             |         |
+|BRICSAT2 | NO-103      |         |
+|BY70-2 |             |         |
+|BY70-3 |             |         |
+|CAS-2T & KS-1Q |             |         |
+|CAS-6 | TO-108      |         |
+|CUBEBUG-2 | LO-74       |         |
+|CUBESAT XI-IV | CO-57       |         |
+|CUBESAT XI-V |             |         |
+|CUTE-1.7+APD II | CO-65       |         |
+|CUTE-1 | CO-55       |         |
+|DELFI-C3 | DO-64       |         |
+|DIWATA-2B |             |         |
+|DIY-1 | ARDUIQUBE   |         |
+|DUCHIFAT-1 |             |         |
+|DUCHIFAT-3 |             |         |
+|ES'HAIL 2 | QO-100      |         |
+|E-ST@R-II |             |         |
+|EYESAT A | AO-27       |         |
+|FALCONSAT-3 |             |         |
+|FOX-1CLIFF | AO-95       |         |
+|FOX-1D | AO-92       |         |
+|FUNCUBE-1 | AO-73       |         |
+|GOMX-1 |             |         |
+|HUSKYSAT-1 | HO-107      |         |
+|ISS | ZARYA       | ARISS   |
+|ITAMSAT | IO-26       |         |
+|ITASAT 1 |             |         |
+|ITUPSAT1 |             |         |
+|JAISAT-1 |             |         |
+|JAS-2 | FO-29       |         |
+|JUGNU |             |         |
+|JY1SAT | JO-97       |         |
+|KAITUO 1A |             |         |
+|KAITUO 1B |             |         |
+|KKS-1 | KISEKI      |         |
+|LAPAN-A2 |             |         |
+|LILACSAT-2 |             |         |
+|LUSAT | LO-19       |         |
+|MAX VALIER SAT |             |         |
+|M-CUBED & EXP-1 PRIME |             |         |
+|MOZHAYETS 4 | RS-22       |         |
+|NAYIF-1 | EO-88       |         |
+|NEXUS | FO-99       |         |
+|NUDT-PHONESAT |             |         |
+|NUSAT-1 | FRESCO      |         |
+|ORBITAL FACTORY 2 |             | |
+|OSCAR 7 | AO-7        |         |
+|PCSAT | NO-44       |         |
+|PHASE 3B | AO-10       |         |
+|PSAT2 | NO-104      |         |
+|QB50P1 |             |         |
+|RADFXSAT-2 | AO-109      |         |
+|RADFXSAT | FOX-1B      |         |
+|RADIO ROSTO | RS-15       |         |
+|RS-44 & BREEZE-KM R/B |             |         |
+|SALSAT |             |         |
+|SAUDISAT 1C | SO-50       |         |
+|SEEDS II | CO-66       |         |
+|SOMP |             |         |
+|SPROUT |             |         |
+|SRMSAT |             |         |
+|STRAND-1 |             |         |
+|SWISSCUBE |             |         |
+|TECHSAT 1B | GO-32       |         |
+|TIANWANG 1A | TW-1A       |         |
+|UNISAT-6 |             |         |
+|UOSAT 2 | UO-11       |         |
+|UVSQ-SAT |             |         |
+|UWE-3 |             |         |
+|UWE-4 |             |         |
+|XIWANG-1 | HOPE-1      |         |
+|XW-2A |             |         |
+|XW-2B |             |         |
+|XW-2C |             |         |
+|XW-2D |             |         |
+|XW-2E |             |         |
+|XW-2F |             |         |
+|XW-3 | CAS-9       |         |
+|YUBILEINY | RS-30       |         |
+|ZACUBE-1 | TSHEPISOSAT |         |
+|ZDPS 2A |             |         |
+|ZDPS 2B |             |         |
+|ZHUHAI-1 01 | CAS-4A      |         |
+|ZHUHAI-1 02 | CAS-4B      |         |
 
 ### Supported Satellites Sorted by Code
 
@@ -186,6 +186,7 @@ add an alias.
 |NO-103|BRICSAT2 |
 |NO-104|PSAT2 |
 |NO-44|PCSAT |
+|QO-100|ES'HAIL 2|
 |RS-15|RADIO ROSTO |
 |RS-22|MOZHAYETS 4 |
 |RS-30|YUBILEINY |
