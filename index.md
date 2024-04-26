@@ -6,7 +6,7 @@ Passionate about delivering quality, secure software in response to fluid busine
 
 I am a Certified Scrum Master.
 
-[Here is my 2022 CV in PDF format](cv/Mark_Wickens_CV_2022.pdf)
+[Here is my 2024 CV in PDF format](cv/Mark_Wickens_CV_2024.pdf)
 
 ### [Java API For Google Earth KML files](javaapiforkml.md)
 
