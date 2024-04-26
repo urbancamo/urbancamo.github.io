@@ -2,6 +2,8 @@
 
 ### [Here is my 2024 CV in PDF format](cv/Mark_Wickens_CV_2024.pdf)
 
+### [View my LinkedIn profile](https://www.linkedin.com/in/mark-wickens-5204a56/)
+
 ### [Java API For Google Earth KML files](javaapiforkml.md)
 
 ### [Documentation for the ADIF Processor](adif-processor/adif-processor)
@@ -17,8 +19,6 @@
 ### [Retrochallenge 2022/10](casio-basic/rc2022_10)
 
 ### [Activation of Montaña Colorada on Lanzarote](ea8_hla-004)
-
-### [View my LinkedIn profile](https://www.linkedin.com/in/mark-wickens-5204a56/)
 
 ### [Follow me on Twitter @urbancamo](https://twitter.com/urbancamo)
 
