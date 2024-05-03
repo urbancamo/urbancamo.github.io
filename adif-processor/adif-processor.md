@@ -56,7 +56,6 @@ update announcements, bug reports etc.
 - [Examples](#examples)
   * [Google Earth KML Project Images](#google-earth-kml-project-images)
   * [Example Markdown Contacts List](#example-markdown-contacts-list)
-  * [Release History](#release-history)
 
 <!-- TOC end -->
 
@@ -82,13 +81,13 @@ flowchart TD
     A[Input File] --> |ADIF/CSV| B(ADIF Processor)
     B --> |KML| D[Google Earth]
     B --> |ADIF| C[Augmented ADIF]
-    B --> |MD| E[Markdown]
+    B --> |MD/TXT| E[Contacts List]
     B --> |TXT| F[QSL Labels]
     G[Form Options] --> B
 ```
 
 The processor also produces a [Markdown](https://www.markdownguide.org/) format contact table
-(for pasting into a reflector) and can [generate labels for QSL cards](./qsl-labels/qsl-labels.md).
+for pasting into a reflector, or a plain text contact list, and can [generate labels for QSL cards](./qsl-labels/qsl-labels.md).
 
 To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
 _Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
