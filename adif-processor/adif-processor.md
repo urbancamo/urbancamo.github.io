@@ -462,7 +462,9 @@ I update the location of the railways on the air references every year, so they 
 
 ### Bunkers on the Air
 
-Locations are bunker references and are accurate, so the bunker reference is normally good enough.
+Locations are bunker references and are accurate, so if you are near the bunker then the reference
+is good enough. As the activation zone is a 1km square around the bunker, if you are activating at 
+any distance from the bunker consider providing a more accurate location reference.
 
 ***
 
