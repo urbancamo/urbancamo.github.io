@@ -14,8 +14,12 @@ Haven Lea, Queens Drive, Windermere, Cumbria, LA23 2EL
 
 Company Number: 15727875
 
-## Contact
+## Contacts
 
+### Mark Wickens
 - Email: [mark@agilemindswork.uk](mailto:mark@agilemindswork.uk)
 - Phone: [+44 (0)7917 653012](tel:+447917653012)
-- Website: [https://www.agilemindswork.uk](https://www.agilemindswork.uk)
+
+### Alex Wickens
+- Email: [alex@agilemindswork.uk](mailto:alex@agilemindswork.uk)
+- Phone: [+44 (0)7766 313032](tel:+447766313032)
