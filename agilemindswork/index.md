@@ -1,3 +1,13 @@
+---
+title: "Agile Minds Work"
+author: "Mark Wickens"
+date: "16-JUL-2024"
+output: 
+  html_document:
+     css: ../css/cayman.css
+     self_contained: no
+---
+
 [![Agile Minds Work](./agilemindswork-logo.jpg)](https://www.agilemindswork.uk)
 
 # Agile Minds Work
