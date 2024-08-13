@@ -1,5 +1,7 @@
 # Cosmic Fly 
 
+![Cosmic Fly](../images/cosmic-fly.png)
+
  - a public domain game for the Casio PB-1000
  - written by Gernot Fink <gernot.fink@munich.netsurf.de>
  - published by Andreas Wichmann on 2000-03-03 on [http://www.itkp.uni-bonn.de/~wichmann/pb1000.html](http://www.itkp.uni-bonn.de/~wichmann/pb1000.html)
