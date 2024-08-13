@@ -42,4 +42,6 @@ Open to new opportunities and challenges, I am excited to bring my wealth of exp
 
 ### [Retrochallenge 2022/10](casio-basic/rc2022_10)
 
+**wickensonline.co.uk** - if you are after content from the old website then the wayback machine is your friend: [http://wickensonline.co.uk](https://web.archive.org/web/20160317103809/http://www.wickensonline.co.uk/app/index.html#/home).
+
 <small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/). </small>
