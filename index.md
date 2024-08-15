@@ -30,8 +30,6 @@ Open to new opportunities and challenges, I am excited to bring my wealth of exp
 
 ### [Follow me on Twitter @urbancamo](https://twitter.com/urbancamo)
 
-### [Email me mark@wickensonline.co.uk](mailto:mark@wickensonline.co.uk)
-
 ### [Developer Notes](devblog)
 
 ### [DEC Legacy](declegacy.md)
@@ -47,3 +45,6 @@ Open to new opportunities and challenges, I am excited to bring my wealth of exp
 **wickensonline.co.uk** - some of my old content on [https://www.wickensonline.co.uk](https://www.wickensonline.co.uk) has been reinstated, however if you are after content from the old website that isn't there then the wayback machine is your friend: [http://wickensonline.co.uk](https://web.archive.org/web/20160317103809/http://www.wickensonline.co.uk/app/index.html#/home).
 
 <small>This site is hosted on GitHub Pages, if you want one then simply [follow these instructions](https://pages.github.com/). </small>
+
+**[Email me: mark@wickensonline.co.uk](mailto:mark@wickensonline.co.uk)**
+
