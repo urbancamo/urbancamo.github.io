@@ -75,16 +75,7 @@ One of the benefits of using the ADIF Processor before uploading/storing your AD
 is detecting errors in callsigns and activity references (e.g. POTA or SOTA references).
 
 A high-level overview of the process is shown below:
-
-```mermaid
-flowchart TD
-    A[Input File] --> |ADIF/CSV| B(ADIF Processor)
-    B --> |KML| D[Google Earth]
-    B --> |ADIF| C[Augmented ADIF]
-    B --> |MD/TXT| E[Contacts List]
-    B --> |TXT| F[QSL Labels]
-    G[Form Options] --> B
-```
+![ADIF Processor Flowchart](./images/flowchart.png)
 
 The processor also produces a [Markdown](https://www.markdownguide.org/) format contact table
 for pasting into a reflector, or a plain text contact list, and can [generate labels for QSL cards](./qsl-labels/qsl-labels.md).
