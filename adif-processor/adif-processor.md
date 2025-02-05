@@ -80,22 +80,6 @@ A high-level overview of the process is shown below:
 The processor also produces a [Markdown](https://www.markdownguide.org/) format contact table
 for pasting into a reflector, or a plain text contact list, and can [generate labels for QSL cards](./qsl-labels/qsl-labels.md).
 
-To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
-_Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
-
-In a lot of cases you simply select your ADIF file and process it, no other options are required.
-
-![new.png](./images/new.png)
-
-_Desktop/Browser Google Earth New Option_
-
-![google-earth-menu.png](images/google-earth-menu.png)
-_Import option on the Google Earth menu_
-
-![local.png](./images/local.png)
-
-_Desktop/Browser Google Earth Local KML Import Dialog_
-
 I recommended following the Quick Start section below to get a feel for the tool, then have a look at
 the advanced options based on your requirements.
 
@@ -119,6 +103,22 @@ Any callsigns for which a location could not be determined are shown in the `Cal
 
 <a href="./images/results.png">![Sample Results](images/results.png)
 _[Example Result Form](images/results.png)_
+
+In a lot of cases you simply select your ADIF file and process it, no other options are required.
+
+To see your QSOs on the desktop browser based [Google Earth](https://earth.google.com) use
+_Import KML file from computer_ via the map pin icon. In Android Google Earth simply click on the downloaded ADIF file.
+
+![new.png](./images/new.png)
+
+_Desktop/Browser Google Earth New Option_
+
+![google-earth-menu.png](images/google-earth-project.png)
+_Import option on the Google Earth menu_
+
+![local.png](./images/local.png)
+
+_Desktop/Browser Google Earth Local KML Import Dialog_
 
 If the ADIF Processor cannot determine your location then you specify it using any common location format (lat/long, maidenhead, an address etc.) in the _Location_ text field.
 
