@@ -18,7 +18,7 @@ Key Highlights:
 
 Open to new opportunities and challenges, I am excited to bring my wealth of experience to a dynamic team ready to innovate and excel in the ever-evolving landscape of software development.
 
-### [Here is my 2024 CV in PDF format](cv/Mark_Wickens_CV_2024.pdf)
+### [Here is my 2025 CV in PDF format](cv/Mark_Wickens_CV_2025.pdf)
 
 ### [View my LinkedIn profile](https://www.linkedin.com/in/mark-wickens-5204a56/)
 
