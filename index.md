@@ -1,6 +1,4 @@
-## Mark Wickens - Engineering Manager & Senior Sofware Engineer
-
-With over a decade of remote working experience as a Senior Principal Software Engineer and a proven track record as an Engineering Manager, I have successfully navigated the realm of remote development and team management.
+## Mark Wickens - Engineering Manager, Tech Lead & Senior Sofware Engineer
 
 Open to new opportunities and challenges, I am excited to bring my wealth of experience to a dynamic team ready to innovate and excel in the ever-evolving landscape of software development.
 
