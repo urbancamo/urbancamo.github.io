@@ -1,0 +1,16 @@
+	.TITLE	HELLO - Hello World Program
+
+	.PSECT	$CODE,EXE,NOWRT
+
+	.ENTRY	HELLO,^M<>
+
+	PUSHAQ	MSG		; Push address of message
+	CALLS	#1,G^LIB$PUT_OUTPUT ; Call output routine
+
+	RET			; Return to DCL
+
+	.PSECT	$DATA,NOEXE,WRT
+
+MSG:	.ASCID	/Hello, World!/
+
+	.END	HELLO
