@@ -34,6 +34,7 @@ GOTO finished
 
 solve_nqueens:
 ! Backtracking algorithm to place queens
+<<<<<<< HEAD
 ROW = 1
 GOTO place_queen
 
@@ -73,6 +74,38 @@ FOR COL = 1 TO N
 
     next_col:
 NEXT COL
+=======
+FOR ROW = 1 TO N
+    FOR COL = 1 TO N
+        ! Check if queen can be placed at (ROW, COL)
+        SAFE = 1
+        FOR I = 1 TO ROW - 1
+            ! Check column conflict
+            IF QUEEN(I) = COL THEN
+                SAFE = 0
+                GOTO check_done
+            END IF
+            ! Check diagonal conflicts
+            IF ABS(QUEEN(I) - COL) = ABS(I - ROW) THEN
+                SAFE = 0
+                GOTO check_done
+            END IF
+        NEXT I
+
+        check_done:
+        IF SAFE = 1 THEN
+            QUEEN(ROW) = COL
+            IF ROW = N THEN
+                ! Found a solution
+                SOLUTIONS = SOLUTIONS + 1
+                PRINT "Solution "; SOLUTIONS; ":"
+                GOSUB print_solution
+            END IF
+        END IF
+    NEXT COL
+    QUEEN(ROW) = 0
+NEXT ROW
+>>>>>>> 33478d63b780b60b340d6142bd31a13971b4a90b
 RETURN
 
 print_solution:
