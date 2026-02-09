@@ -1,6 +1,6 @@
 ## Mark Wickens - Engineering Manager, Tech Lead & Senior Software Engineer
 
-### [2025 CV in PDF format](cv/Mark_Wickens_CV_2025.pdf)
+### [2026 CV in PDF format](cv/Mark_Wickens_CV_2026-revB.pdf)
 
 ### [LinkedIn profile](https://www.linkedin.com/in/mark-wickens-5204a56/)
 
