@@ -22,7 +22,7 @@ in Markdown format for easy reference.
 10. [Command Reference](part-10-command-reference.md)
 11. [Scientific Library](part-11-scientific-library.md) *BASIC Reference Only*
 12. [Appendices](part-12-appendices.md)
-13. [Specifications](specifications.md)  *TODO*
+13. [Specifications](specifications.md)
 
 ## SUPPLEMENTAL
 
