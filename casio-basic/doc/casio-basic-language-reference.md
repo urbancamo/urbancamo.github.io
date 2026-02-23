@@ -2,7 +2,7 @@
 
 # Casio Basic - Language Reference
 
-This documentation is reproduced from the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
+This documentation is reproduced from the PDF Scan of the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf).
 
 ## Alphabetic Command Index
 

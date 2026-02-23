@@ -1,7 +1,7 @@
 # Casio FX-850P/FX-880P Owners Manual
 
 This is a reproduction of the documentation in 
-the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf) PDF
+the PDF Scan of the [Casio FX-850P Owners Manual](manuals/Casio_FX-850p_Owners_Manual.pdf)
 in Markdown format for easy reference.
 
 *Initially it focuses on the parts of the manual that relate to BASIC programming.*
