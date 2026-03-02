@@ -6,4 +6,4 @@
 - [Retrochallenge 2024/10](retrostuff/rc2024_10.md)
 - [Retrochallenge 2025/10](retrostuff/rc2025_10.md)
 - [Casio Pocket Computers](casio-pocket-computers.md)
-- [Casio Basic Language Reference Manual](casio-basic/doc/casio-fx850-owners-manual.md)
+- [Casio FX-850P/FX-880P Owners Manual](casio-basic/doc/casio-fx850-owners-manual.md)
