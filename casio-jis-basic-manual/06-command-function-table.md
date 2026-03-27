@@ -27,7 +27,6 @@ These commands are entered directly in the calculator's command mode (not within
 | [LIST#](commands/LIST_HASH.md) | List program to sequential file | All Models |
 | [SAVE#](commands/SAVE_HASH.md) | Save program to data file | All Models |
 | [LOAD#](commands/LOAD_HASH.md) | Load program from data file | **[FX-850P/880P]** |
-| [MERGE#](commands/MERGE_HASH.md) | Merge program from data file | **[FX-850P/880P]** |
 | [NEW#](commands/NEW_HASH.md) | Delete a data file | All Models |
 | [FILES](commands/FILES.md) | Display list of data files | **[FX-870P/VX-4]** |
 | [FORMAT](commands/FORMAT.md) | Format a floppy disk | **[FX-870P/VX-4]** |
