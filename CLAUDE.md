@@ -69,6 +69,19 @@ Pick whichever of these two shapes fits the content (most posts are one or the o
 6. Where relevant, a closing data table (log book, comparison, etc.) and/or a links/
    resources section
 
+## Retrostuff source code
+
+Posts under `retrostuff/` (Retrochallenge entries etc.) usually have an accompanying source
+code project that is **not** in this repository. On the local drive, that source lives in a
+similarly named folder under `./retro/`, sibling to this repo — e.g. the blog
+`retrostuff/rc2026_10.md` corresponds to local folder `./retro/rc2026_10`.
+
+Each of these local project folders is its own GitHub repository under the `urbancamo`
+account, named to match — e.g. `./retro/rc2026_10` is published at
+`https://github.com/urbancamo/rc2026_10`. When a blog post needs to link to source code
+that only exists in one of these local folders, link to the corresponding GitHub repository
+(`https://github.com/urbancamo/<folder-name>`), not to a local file path.
+
 ## Markdown mechanics
 
 - Section headings: short, Title Case, plain description of content (`## The Radio`,
