@@ -1,23 +1,23 @@
 # Plan: CLAUDE.md for Blog Writing
 
-> Status: For review — nothing has been written to `CLAUDE.md` yet.
+> Status: For review — nothing has been written to `../../../CLAUDE.md` yet.
 > This document records what I found analysing the existing posts in this repo, and gives
 > the exact content I propose to add to `CLAUDE.md` once you approve it.
 
 ## What I looked at
 
 `urbancamo.github.io` isn't a Jekyll `_posts` collection — posts are individual `.md` files
-scattered through the repo, indexed by hand from `index.md` / `retrostuff.md` / `devblog.md`.
+scattered through the repo, indexed by hand from `../../../index.md` / `retrostuff.md` / `devblog.md`.
 I read every post-like file to find patterns:
 
-- `devblog.md` — running technical dev-log, dated entries, terse how-to style (1,529 words)
-- `ea8_hla-004.md` — HEMA/POTA/WWFF radio activation report, narrative (1,285 words)
-- `retrostuff/rc2025_10.md` — Retrochallenge entry, multi-update log with nav (2,088 words)
-- `retrostuff/rc2021_10.md` — Retrochallenge entry, shorter multi-update log (429 words)
-- `retrostuff/rc2024_10.md` / `rc2026_10.md` — Retrochallenge "goals" stub posts (21–56 words)
-- `casio-basic/rc2022_10.md` — Retrochallenge entry, dated log with wrap-up (1,021 words)
-- `casio-pocket-computers.md` — reference-style project round-up (951 words)
-- `declegacy.md`, `javaapiforkml.md` — short placeholder/pointer pages (32–53 words)
+- `../../../devblog.md` — running technical dev-log, dated entries, terse how-to style (1,529 words)
+- `../../../ea8_hla-004.md` — HEMA/POTA/WWFF radio activation report, narrative (1,285 words)
+- `../../../retrostuff/rc2025_10.md` — Retrochallenge entry, multi-update log with nav (2,088 words)
+- `../../../retrostuff/rc2021_10.md` — Retrochallenge entry, shorter multi-update log (429 words)
+- `../../../retrostuff/rc2024_10.md` / `rc2026_10.md` — Retrochallenge "goals" stub posts (21–56 words)
+- `../../../casio-basic/rc2022_10.md` — Retrochallenge entry, dated log with wrap-up (1,021 words)
+- `../../../casio-pocket-computers.md` — reference-style project round-up (951 words)
+- `../../../declegacy.md`, `javaapiforkml.md` — short placeholder/pointer pages (32–53 words)
 
 Post length varies enormously (a stub can be 4 sentences; a full writeup can run 2,000+
 words) — length is driven entirely by how much there is to say, not a target word count.
@@ -63,7 +63,7 @@ Confirmed consistently across every post (`colour`, `favourite`, `organised`, `r
     terminal transcripts, source code or config files.
     - For long-running/multi-session posts, add a "reverse chronological" jump list right
       under the H1, using 📍 for the newest entry and ‣ for older ones, linking to `#dd-mon-yyyy`
-      anchors, then a `---` rule before the intro (see `retrostuff/rc2025_10.md`).
+      anchors, then a `---` rule before the intro (see `../../../retrostuff/rc2025_10.md`).
     - A short stub is fine as a starting point (just `# Title` + `## Goals` + one image) —
       it gets filled in over time as updates land.
   - **Report-style post** (radio activations, project write-ups): opens with a short scene-
@@ -94,7 +94,7 @@ Confirmed consistently across every post (`colour`, `favourite`, `organised`, `r
 - Don't invent structure that isn't present in the source (no "TL;DR" boxes, no tag lists,
   no author bios) — these posts don't use them anywhere in the repo.
 
-## Proposed `CLAUDE.md` content
+## Proposed `../../../CLAUDE.md` content
 
 The file below is what I'd write into `/Users/msw/code/urbancamo.github.io/CLAUDE.md`
 (currently empty) if you approve this plan. It's deliberately written as direct instructions
@@ -179,8 +179,8 @@ Pick whichever of these two shapes fits the content (most posts are one or the o
 ## Open questions before I apply this
 
 1. Anything from the above you want removed, tightened, or added before it goes into
-   `CLAUDE.md`?
-2. Do you want a worked example post included in `CLAUDE.md` itself (a short one, e.g.
+   `../../../CLAUDE.md`?
+2. Do you want a worked example post included in `../../../CLAUDE.md` itself (a short one, e.g.
    `retrostuff/rc2024_10.md`), or is the description above sufficient?
 3. Should this file also tell Claude *where* new posts should live / how they get linked
-   into `index.md` / `retrostuff.md`, or do you want to handle indexing yourself each time?
+   into `../../../index.md` / `retrostuff.md`, or do you want to handle indexing yourself each time?
