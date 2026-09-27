@@ -91,4 +91,10 @@ that only exists in one of these local folders, link to the corresponding GitHub
 - Inline backticks for filenames, commands, frequencies and other short technical tokens.
 - External links are inline Markdown (`[text](url)`), used liberally — callsigns to
   qrz.com, competitions to their home page, tools/repos to GitHub.
+- An image's italic caption goes on the very next line, with **no blank line** in between
+  (e.g. `![alt](path)` then `_Caption_` directly below). GitHub Pages' default kramdown
+  config parses Markdown in GFM mode, which turns that single newline into a line break, so
+  the caption still renders on its own line — but stays tight against the photo instead of
+  gaining the extra paragraph margin a blank line would add. A blank line before the next
+  heading or paragraph after the caption is still needed as normal.
 - Don't invent structural elements that aren't demonstrated in the existing posts.

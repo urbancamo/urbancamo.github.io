@@ -146,7 +146,6 @@ for how photographic character art can look.
 Well worth a watch: footage of Paul Smith actually at work is quite amazing.
 
 [![Watch: Paul Smith, typewriter artist (YouTube)](https://img.youtube.com/vi/svzPm8lT36o/hqdefault.jpg)](https://www.youtube.com/watch?v=svzPm8lT36o)
-
 _Paul Smith at his typewriter — click to watch on YouTube_
 
 ### Mainframe Line-Printer Art (1960s–70s)
