@@ -11,6 +11,7 @@ This post summarises that session: seven starter ideas, with the throwaway "big 
 resulting in a research rabbit hole that ended up shaping this month's project.
 
 ![PSi PP404 line printer](../images/psi-pp404-line-printer.png)
+
 _The PP404, ready for a month of paper_
 
 ## The Printer
