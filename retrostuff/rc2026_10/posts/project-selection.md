@@ -107,7 +107,7 @@ _The Cambridge Z88 — small, Z80-based, and bundled with the PipeDream spreadsh
 
 ### Getting the Data to the Printer
 
-This part is already solved. The PP404 talks Parallel, Serial (RS-232C/RS-422) or USB, and defaults to
+This part is already solved. The PP404 talks Parallel, Serial RS-232C, and defaults to
 Epson LQ/ESC/P2 emulation, so my [escp](https://github.com/urbancamo/escp) project — a small C99
 command-line filter, built with the PP404 specifically in mind — handles it: initialisation, pitch and font
 selection, bold/underline/italic, draft or letter-quality mode, form feeds and raw byte injection, all
