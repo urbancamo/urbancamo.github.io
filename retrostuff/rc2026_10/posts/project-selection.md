@@ -1,5 +1,7 @@
 # RC2026/10: Choosing a Dot Matrix Printer Project
 
+`DATE: 27-SEP-2026`
+
 I've got a PSi PP404 sat on the desk — a proper industrial wide-carriage line printer — a decent stack of
 fanfold paper, and two fresh ribbons. All I lacked was a plan. With Retrochallenge 2026/10 starting in
 October, I spent an evening at the end of September brainstorming ideas with Claude to see what a fast,
